@@ -47,6 +47,24 @@ function getLinkedInColors() {
 }
 
 /**
+ * Normalize LinkedIn color input to a canonical config key.
+ * Accepts variants like "darkblue", "dark-blue", and "darkBlue".
+ * @param {string} color
+ * @returns {'darkBlue' | 'orange' | 'turquoise' | null}
+ */
+function normalizeLinkedInColor(color) {
+  const normalized = String(color ?? '')
+    .trim()
+    .toLowerCase()
+    .replace(/[\s_-]+/g, '');
+
+  if (normalized === 'darkblue') return 'darkBlue';
+  if (normalized === 'orange') return 'orange';
+  if (normalized === 'turquoise') return 'turquoise';
+  return null;
+}
+
+/**
  * Relative luminance (sRGB) for contrast calculation.
  * @param {string} hex - Hex color e.g. "#0B2649"
  * @returns {number} Luminance 0..1
@@ -284,10 +302,11 @@ async function generateLinkedInImage(type, options) {
 
     // Validate color – use config.json brand colors only (Regenfass LinkedIn palette)
     const linkedinColors = getLinkedInColors();
-    const colorHex = linkedinColors[color.toLowerCase()];
-    if (!colorHex) {
+    const normalizedColor = normalizeLinkedInColor(color);
+    if (!normalizedColor) {
       throw new Error(`Invalid color: ${color}. Must be one of: darkBlue, orange, turquoise`);
     }
+    const colorHex = linkedinColors[normalizedColor];
 
     // Determine output format
     let outputFormat = format;
@@ -302,7 +321,7 @@ async function generateLinkedInImage(type, options) {
       mkdirSync(outputDir, { recursive: true });
     }
 
-    info(`Generating ${type} image: ${width}x${height}px with ${color} background...`);
+    info(`Generating ${type} image: ${width}x${height}px with ${normalizedColor} background...`);
 
     if (!hexToRgb(colorHex)) {
       throw new Error(`Invalid color hex: ${colorHex}`);
@@ -338,7 +357,7 @@ async function generateLinkedInImage(type, options) {
         logoToUse,
         logoWidth,
         logoHeight,
-        color,
+        normalizedColor,
         useHorizontalForBanner
       );
 
@@ -414,7 +433,7 @@ async function generateLinkedInImage(type, options) {
     info(`Size: ${width}x${height}px`);
     info(`Format: ${outputFormat.toUpperCase()}`);
     info(`File size: ${finalSizeMB.toFixed(2)}MB`);
-    info(`Color: ${color} (${colorHex})`);
+    info(`Color: ${normalizedColor} (${colorHex})`);
     if (text) {
       info(`Text: ${text}`);
     }
@@ -445,7 +464,7 @@ function parseArgs() {
     if (arg === '--type' && i + 1 < args.length) {
       parsed.type = args[++i];
     } else if (arg === '--color' && i + 1 < args.length) {
-      parsed.color = args[++i].toLowerCase();
+      parsed.color = args[++i];
     } else if (arg === '--logo' && i + 1 < args.length) {
       parsed.logo = args[++i];
     } else if (arg === '--text' && i + 1 < args.length) {
@@ -697,15 +716,16 @@ async function main() {
       }
 
       // Validate color
+      const normalizedColor = normalizeLinkedInColor(args.color);
       const validColors = ['darkBlue', 'orange', 'turquoise'];
-      if (!validColors.includes(args.color)) {
+      if (!normalizedColor) {
         error(`Invalid color: ${args.color}. Must be one of: ${validColors.join(', ')}`);
         process.exit(1);
       }
 
       // Generate image
       await generateLinkedInImage(args.type, {
-        color: args.color,
+        color: normalizedColor,
         logoPath: args.logo,
         text: args.text,
         outputPath: args.output,

@@ -166,7 +166,7 @@ Examples:
  */
 async function main() {
   try {
-    console.log(header('README Header Image Generator', 'Generate README header images from SVG templates'));
+    header('README Header Image Generator', 'Generate README header images from SVG templates');
     
     const args = parseArgs();
 

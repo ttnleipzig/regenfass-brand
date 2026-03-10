@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Generate sample avatars
- * Creates example avatars with Abstract 5 background (one variant per portrait and size)
+ * Creates example avatars with the Tabler raindrop wallpaper background
  */
 
 import { join, resolve, basename, extname } from 'path';
@@ -88,10 +88,10 @@ async function generateSampleAvatars() {
  */
 async function main() {
   try {
-    header('Sample Avatars Generator', 'Generiere Beispiel-Avatare mit Abstract-5-Hintergrund', 'bgCyan');
+    header('Sample Avatars Generator', 'Generiere Beispiel-Avatare mit Regentropfen-Tapete', 'bgCyan');
 
     info('Generiere Beispiel-Avatare:');
-    info('  - Hintergrund: Abstract 5 (immer in Farbe)');
+    info('  - Hintergrund: Tabler raindrop wallpaper (immer in Farbe)');
     info('  - Varianten: Farbe + Graustufen-Portrait (Person Grau, Hintergrund Farbe)');
     info('  - Größen: 256px, 512px');
     info('');

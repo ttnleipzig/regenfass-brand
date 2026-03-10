@@ -48,7 +48,7 @@ function resolveAvatarBackgroundPath() {
 }
 
 /**
- * Generate square avatar with Abstract 5 background
+ * Generate square avatar with the configured wallpaper background
  * @param {string} portraitPath - Path to cut-out portrait image (PNG with transparency)
  * @param {number} size - Output size in pixels (square)
  * @param {string} outputPath - Output file path
@@ -76,11 +76,11 @@ async function generateAvatar(portraitPath, size, outputPath, options = {}) {
 
     const backgroundPath = resolveAvatarBackgroundPath();
     const usesFallbackBackground = !backgroundPath;
-    info(`Generating ${size}x${size}px avatar${usesFallbackBackground ? ` with solid dark blue fallback background (${FALLBACK_BACKGROUND_HEX})` : ' with Abstract 5 background'}${grayscalePortrait ? ' (portrait in grayscale)' : ''}...`);
+    info(`Generating ${size}x${size}px avatar${usesFallbackBackground ? ` with solid dark blue fallback background (${FALLBACK_BACKGROUND_HEX})` : ' with Tabler raindrop wallpaper background'}${grayscalePortrait ? ' (portrait in grayscale)' : ''}...`);
 
     const targetSize = size;
 
-    // Use the configured SVG background when present; otherwise fall back to a solid brand color.
+    // Use the configured background wallpaper when present; otherwise fall back to a solid brand color.
     const background = backgroundPath
       ? await sharp(readFileSync(backgroundPath))
           .resize(size, size, { fit: 'cover', position: 'center' })
@@ -371,7 +371,7 @@ Options:
   --output <path>      Output file path
   --help, -h           Show this help message
 
-Background: configured avatar background with a solid dark blue fallback when the asset is missing.
+Background: Tabler raindrop wallpaper from assets/backgrounds/5.svg with a solid dark blue fallback when the asset is missing.
 The portrait is composited centered on top.
 
 If no arguments are provided, an interactive prompt will guide you through the process.
