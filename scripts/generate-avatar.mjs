@@ -24,6 +24,28 @@ const projectRoot = resolve(__dirname, '..');
 // Load configuration once at module level
 const CONFIG = loadConfig();
 const AVATAR_CONFIG = CONFIG.avatarGenerator;
+const FALLBACK_BACKGROUND_HEX = CONFIG.linkedin?.colors?.darkBlue ?? CONFIG.brand.colors.navy;
+
+/**
+ * Resolve configured avatar background if available.
+ * Returns null when the referenced asset is absent so callers can use a solid fallback.
+ * @returns {string | null}
+ */
+function resolveAvatarBackgroundPath() {
+  const candidates = [
+    AVATAR_CONFIG.abstractBackgroundPath,
+    CONFIG.linkedin?.backgroundPath,
+  ].filter(Boolean);
+
+  for (const candidate of candidates) {
+    const fullPath = join(projectRoot, candidate);
+    if (existsSync(fullPath)) {
+      return fullPath;
+    }
+  }
+
+  return null;
+}
 
 /**
  * Generate square avatar with Abstract 5 background
@@ -42,11 +64,6 @@ async function generateAvatar(portraitPath, size, outputPath, options = {}) {
       throw new Error(`Portrait image not found: ${portraitPath}`);
     }
 
-    const backgroundPath = join(projectRoot, AVATAR_CONFIG.abstractBackgroundPath);
-    if (!existsSync(backgroundPath)) {
-      throw new Error(`Abstract background not found: ${backgroundPath}`);
-    }
-
     if (size <= 0 || !Number.isInteger(size)) {
       throw new Error(`Invalid size: ${size}. Must be a positive integer`);
     }
@@ -57,15 +74,28 @@ async function generateAvatar(portraitPath, size, outputPath, options = {}) {
       mkdirSync(outputDir, { recursive: true });
     }
 
-    info(`Generating ${size}x${size}px avatar with Abstract 5 background${grayscalePortrait ? ' (portrait in grayscale)' : ''}...`);
+    const backgroundPath = resolveAvatarBackgroundPath();
+    const usesFallbackBackground = !backgroundPath;
+    info(`Generating ${size}x${size}px avatar${usesFallbackBackground ? ` with solid dark blue fallback background (${FALLBACK_BACKGROUND_HEX})` : ' with Abstract 5 background'}${grayscalePortrait ? ' (portrait in grayscale)' : ''}...`);
 
     const targetSize = size;
 
-    // Rasterize Abstract 5 SVG to size×size as background (always color)
-    const background = await sharp(readFileSync(backgroundPath))
-      .resize(size, size, { fit: 'cover', position: 'center' })
-      .png()
-      .toBuffer();
+    // Use the configured SVG background when present; otherwise fall back to a solid brand color.
+    const background = backgroundPath
+      ? await sharp(readFileSync(backgroundPath))
+          .resize(size, size, { fit: 'cover', position: 'center' })
+          .png()
+          .toBuffer()
+      : await sharp({
+          create: {
+            width: size,
+            height: size,
+            channels: 4,
+            background: FALLBACK_BACKGROUND_HEX,
+          },
+        })
+          .png()
+          .toBuffer();
 
     // Resize portrait; optionally convert to grayscale (person only)
     let portraitPipeline = sharp(portraitPath)
@@ -341,7 +371,7 @@ Options:
   --output <path>      Output file path
   --help, -h           Show this help message
 
-Background: Abstract 5 (assets/backgrounds/5.svg) is used as the avatar background.
+Background: configured avatar background with a solid dark blue fallback when the asset is missing.
 The portrait is composited centered on top.
 
 If no arguments are provided, an interactive prompt will guide you through the process.

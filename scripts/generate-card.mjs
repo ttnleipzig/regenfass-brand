@@ -136,6 +136,7 @@ function createColor(hex) {
 
 const COLORS = {
   navy: createColor(CONFIG.brand.colors.navy),
+  darkBlue: createColor(CONFIG.linkedin?.colors?.darkBlue ?? CONFIG.brand.colors.aqua),
   white: createColor(CONFIG.brand.colors.white),
   aqua: createColor(CONFIG.brand.colors.aqua),
   /** Turquoise accent for job title on navy card (visible; config aqua may be dark) */
@@ -344,7 +345,7 @@ function renderFrontSide(page, data, fonts, images) {
     y: 0,
     width: pageWidth,
     height: pageHeight,
-    color: COLORS.navy,
+    color: COLORS.darkBlue,
   });
   
   // Logo positioning
@@ -514,13 +515,13 @@ function renderBackSide(page, data, fonts, images) {
   const safeOffset = mmToPt(SAFE_AREA_OFFSET_MM);
   const padding = mmToPt(5); // 5mm padding inside safe area
   
-  // Background (orange brand accent)
+  // Background (solid dark blue brand background)
   page.drawRectangle({
     x: 0,
     y: 0,
     width: pageWidth,
     height: pageHeight,
-  color: COLORS.orange,
+    color: COLORS.darkBlue,
   });
   
   // QR Code container: left 8.5mm (3.5mm offset + 5mm padding), 50mm x 50mm
@@ -873,12 +874,21 @@ export async function generateBusinessCardWithPdfLib(contactData, outputDir) {
   const qrCodeBuffer = await generateQRCodeBuffer(vCardData);
   cardProgress('QR-Code generiert', 'done');
   
-  // Load and convert logos (solo + venitus)
+  // Load and convert logos. The secondary lockup is optional because
+  // older asset paths may be absent in newer brand packages.
   const logoPath = join(projectRoot, 'assets', 'logos', 'solo', 'regenfass-solo-light-card-solid.svg');
-  const venitusPath = join(projectRoot, 'assets', 'logos', 'a-venitus-company', 'regenfass-a-venitus-company-horizontal-light.svg');
   cardProgress('Lade Logo …', 'generating');
   const logoPngBuffer = await svgToPng(logoPath, 1000, 1000);
-  const venitusPngBuffer = await svgToPng(venitusPath, 548, 447);
+  const venitusCandidates = [
+    join(projectRoot, 'assets', 'logos', 'a-venitus-company', 'regenfass-a-venitus-company-horizontal-light.svg'),
+  ];
+  const venitusPath = venitusCandidates.find((candidate) => existsSync(candidate));
+  let venitusPngBuffer = null;
+  if (venitusPath) {
+    venitusPngBuffer = await svgToPng(venitusPath, 548, 447);
+  } else {
+    warn('Optional secondary logo not found. Continuing without the small sub-logo on the front side.');
+  }
   cardProgress('Logo geladen', 'done');
   
   // Create PDF document
@@ -890,7 +900,7 @@ export async function generateBusinessCardWithPdfLib(contactData, outputDir) {
   
   // Embed images
   const logoImage = await pdfDoc.embedPng(logoPngBuffer);
-  const venitusImage = await pdfDoc.embedPng(venitusPngBuffer);
+  const venitusImage = venitusPngBuffer ? await pdfDoc.embedPng(venitusPngBuffer) : null;
   const qrCodeImage = await pdfDoc.embedPng(qrCodeBuffer);
   
   const images = {
