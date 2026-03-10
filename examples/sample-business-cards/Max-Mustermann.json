@@ -1,14 +1,14 @@
 {
   "name": "Max Mustermann",
   "position": "Geschäftsführer",
-  "email": "max@regenfass.digital",
+  "email": "max@regenfass.eu",
   "phone": "+49 123 456789",
   "mobile": "+49 123 4567890",
   "address": "Musterstraße 123",
   "postalCode": "12345",
   "city": "Berlin",
   "country": "Deutschland",
-  "website": "regenfass.digital",
+  "website": "regenfass.eu",
   "socialMedia": [
     {
       "name": "LinkedIn",

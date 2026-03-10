@@ -35,19 +35,19 @@ for (const { src, dst, urlPath } of filesToMove) {
   const oldUrl = src.replace('app/', '').replace('.html', '');
   content = content.replace(
     new RegExp(`https://regenfass\\.github\\.io/regenfass\\.cicd/${oldUrl}\\.html`, 'g'),
-    `https://brand.regenfass.digital/${urlPath}`
+    `https://brand.regenfass.eu/${urlPath}`
   );
   
   // Update canonical URLs
   content = content.replace(
     new RegExp(`https://regenfass\\.github\\.io/regenfass\\.cicd/${oldUrl}\\.html`, 'g'),
-    `https://brand.regenfass.digital/${urlPath}`
+    `https://brand.regenfass.eu/${urlPath}`
   );
   
   // Update JSON-LD URLs
   content = content.replace(
     new RegExp(`"url":\\s*"https://regenfass\\.github\\.io/regenfass\\.cicd/${oldUrl}\\.html"`, 'g'),
-    `"url": "https://brand.regenfass.digital/${urlPath}"`
+    `"url": "https://brand.regenfass.eu/${urlPath}"`
   );
   
   // Update navigation - replace old flat navigation with hierarchical
