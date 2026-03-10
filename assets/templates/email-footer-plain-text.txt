@@ -1,7 +1,6 @@
 --
 {{companyName}}
 {{#if address}}{{address}}{{/if}}
-
 {{#if name}}{{name}}{{/if}}
 {{#if position}}{{position}}{{/if}}
 {{#if email}}E-Mail: {{email}}{{/if}}

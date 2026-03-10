@@ -102,6 +102,19 @@ async function generateSoloCardSolidSvg(sourceBuffer) {
 }
 
 /**
+ * Export solo card-solid SVG to PNG (512x512)
+ */
+async function generateSoloCardSolidPng() {
+  const svgPath = join(SOLO_DIR, 'regenfass-solo-light-card-solid.svg');
+  const svg = readFileSync(svgPath);
+  await sharp(svg)
+    .resize(512, 512, { fit: 'contain' })
+    .png()
+    .toFile(join(SOLO_DIR, 'regenfass-solo-light-card-solid.png'));
+  console.log('  regenfass-solo-light-card-solid.png');
+}
+
+/**
  * Horizontal logo SVG: icon + "Regenfass" text. Dark = light text on dark bg, Light = dark text (transparent bg).
  */
 async function generateHorizontalSvgs(sourceBuffer) {
@@ -137,25 +150,35 @@ async function generateHorizontalSvgs(sourceBuffer) {
   console.log('  regenfass-horizontal-light.svg');
 }
 
+const HORIZONTAL_PNG_BACKGROUND = { r: 0, g: 0, b: 0, alpha: 0 };
+
 /**
- * Export horizontal SVGs to PNG (200x50 and high-res)
+ * Export one horizontal SVG to PNG (200x50 and high-res)
+ */
+async function exportHorizontalSvgToPng(svgPath, baseName) {
+  const svg = readFileSync(svgPath);
+  const outDir = dirname(svgPath);
+  await sharp(svg)
+    .resize(200, 50, { fit: 'contain', background: HORIZONTAL_PNG_BACKGROUND })
+    .png()
+    .toFile(join(outDir, `${baseName}-200x50.png`));
+  console.log(`  ${baseName}-200x50.png`);
+
+  const meta = await sharp(svg).metadata();
+  const scale = 2;
+  await sharp(svg)
+    .resize((meta.width || 250) * scale, (meta.height || 50) * scale, { fit: 'contain', background: HORIZONTAL_PNG_BACKGROUND })
+    .png()
+    .toFile(join(outDir, `${baseName}-hr.png`));
+  console.log(`  ${baseName}-hr.png`);
+}
+
+/**
+ * Export horizontal SVGs (dark and light) to PNG (200x50 and high-res each)
  */
 async function generateHorizontalPngs() {
-  const lightSvgPath = join(HORIZONTAL_DIR, 'regenfass-horizontal-light.svg');
-  const lightSvg = readFileSync(lightSvgPath);
-  await sharp(lightSvg)
-    .resize(200, 50, { fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 0 } })
-    .png()
-    .toFile(join(HORIZONTAL_DIR, 'regenfass-horizontal-light-200x50.png'));
-  console.log('  regenfass-horizontal-light-200x50.png');
-
-  const meta = await sharp(lightSvg).metadata();
-  const scale = 2;
-  await sharp(lightSvg)
-    .resize((meta.width || 250) * scale, (meta.height || 50) * scale, { fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 0 } })
-    .png()
-    .toFile(join(HORIZONTAL_DIR, 'regenfass-horizontal-light-hr.png'));
-  console.log('  regenfass-horizontal-light-hr.png');
+  await exportHorizontalSvgToPng(join(HORIZONTAL_DIR, 'regenfass-horizontal-dark.svg'), 'regenfass-horizontal-dark');
+  await exportHorizontalSvgToPng(join(HORIZONTAL_DIR, 'regenfass-horizontal-light.svg'), 'regenfass-horizontal-light');
 }
 
 async function main() {
@@ -167,6 +190,7 @@ async function main() {
   await generateSoloPngs(sourceBuffer);
   await generateSoloLightSvg(sourceBuffer);
   await generateSoloCardSolidSvg(sourceBuffer);
+  await generateSoloCardSolidPng();
   console.log('Generating horizontal variants...');
   await generateHorizontalSvgs(sourceBuffer);
   await generateHorizontalPngs();
