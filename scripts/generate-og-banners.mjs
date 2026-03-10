@@ -24,8 +24,8 @@ const bgGraphic = `<rect width="1200" height="630" fill="${BG_DARK_BLUE}"/>`;
 const FONT_STACK =
   'ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;';
 
-/** Logo height in banner (px). Original asset is 48px tall. */
-const LOGO_HEIGHT = 72;
+/** Logo height in banner (px). Original asset is 48px tall; 2.2× scale. */
+const LOGO_HEIGHT = Math.round(144);
 
 /**
  * Load Regenfass logo from assets/logos/horizontal/regenfass-horizontal-dark.svg.
