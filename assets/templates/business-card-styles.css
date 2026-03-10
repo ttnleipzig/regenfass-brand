@@ -1,0 +1,259 @@
+/* Business Card Styles */
+/* Print specifications: 85mm x 55mm final size with 2mm bleed = 89mm x 59mm PDF size */
+/* Safe area: 82mm x 52mm (content 1.5mm from edge, centered with 3.5mm offset) */
+
+@page {
+  size: 89mm 59mm; /* Includes 2mm bleed on all sides */
+  margin: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 89mm; /* PDF size with bleed */
+  height: 59mm; /* PDF size with bleed */
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 10pt;
+  line-height: 1.5;
+  color: #000000;
+  background: #FFFFFF;
+  overflow: hidden;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  position: relative;
+}
+
+/* Front side body has dark background extending to bleed */
+body.front-page {
+  background: #1E2A45;
+}
+
+/* Safe area container - content must be within this area */
+.safe-area {
+  width: 82mm; /* 85mm - 3mm (1.5mm margin on each side) */
+  height: 52mm; /* 55mm - 3mm (1.5mm margin on each side) */
+  position: absolute;
+  left: 3.5mm; /* (89mm - 82mm) / 2 = 3.5mm offset */
+  top: 3.5mm; /* (59mm - 52mm) / 2 = 3.5mm offset */
+  overflow: visible;
+}
+
+/* Front Side Styles */
+.business-card-front {
+  width: 89mm; /* Extend to bleed area */
+  height: 59mm; /* Extend to bleed area */
+  padding: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #1E2A45; /* Background extends to bleed */
+}
+
+.logo-container {
+  position: absolute;
+  left: 3.5mm; /* Safe area offset */
+  top: 3.5mm; /* Safe area offset */
+  width: 40mm;
+  height: 52mm; /* Safe area height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  z-index: 1;
+}
+
+.contact-info {
+  position: absolute;
+  left: 48.5mm; /* 3.5mm (offset) + 45mm (original position) */
+  top: 15.5mm; /* 3.5mm (offset) + 12mm (original position) */
+  right: 9.5mm; /* 3.5mm (offset) + 6mm (original margin) */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 2;
+  min-height: 0;
+}
+
+.logo-container img.logo-image,
+.logo-container .logo-svg-wrapper {
+  width: 100%;
+  height: auto;
+  max-height: 47mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: contain;
+  padding-top: 8mm;
+  padding-left: 2mm;
+}
+
+.logo-container .logo-svg-wrapper svg {
+  width: 100%;
+  height: auto;
+  max-height: 47mm;
+  display: block;
+  margin: auto;
+}
+
+.name {
+  font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12pt;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 1.5mm;
+  line-height: 1.1;
+}
+
+.position {
+  font-size: 7.5pt;
+  font-weight: 600;
+  color: #00FFDC;
+  margin-bottom: 1.5mm;
+  line-height: 1.2;
+}
+
+.company-name {
+  font-size: 7pt;
+  font-weight: 500;
+  color: #CCCCCC;
+  margin-bottom: 3mm;
+  line-height: 1.2;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1mm;
+}
+
+.contact-item {
+  font-size: 7pt;
+  color: #FFFFFF;
+  line-height: 1.3;
+  display: flex;
+  align-items: center;
+}
+
+.contact-item a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  color: #00FFDC;
+}
+
+.contact-label {
+  font-weight: 600;
+  color: #CCCCCC;
+  width: 10mm;
+  flex-shrink: 0;
+  white-space: nowrap;
+  text-align: left;
+}
+
+/* Back Side Styles - Grayscale */
+.business-card-back {
+  width: 89mm; /* Extend to bleed area */
+  height: 59mm; /* Extend to bleed area */
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4mm;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #FFFFFF; /* Background extends to bleed */
+  /* Safe area padding */
+  padding-left: 8.5mm; /* 3.5mm (offset) + 5mm (original padding) */
+  padding-right: 8.5mm;
+  padding-top: 8.5mm;
+  padding-bottom: 8.5mm;
+}
+
+.qr-container {
+  flex: 0 0 auto;
+  width: 50mm;
+  height: 50mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-code {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-code img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.qr-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2mm;
+  color: #333333;
+}
+
+.qr-title {
+  font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 9pt;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 2mm;
+  line-height: 1.2;
+}
+
+.qr-description {
+  font-size: 7pt;
+  color: #666666;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .business-card-front,
+  .business-card-back {
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+}
+
+/* Brand Colors */
+:root {
+  --color-primary: #000000;
+  --color-secondary: #FFFFFF;
+  --color-selection-aqua: #00FFDC;
+  --color-selection-aqua-medium: #00BFA5;
+  --color-selection-aqua-dark: #006B5F;
+  --color-selection-navy: #1E2A45;
+  --color-selection-fuchsia: #FF008F;
+  --color-neutral-dark-gray: #333333;
+  --color-neutral-medium-gray: #666666;
+  --color-neutral-light-gray: #CCCCCC;
+}

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{basePath}}favicon.svg">
+    <link rel="alternate icon" href="{{basePath}}logos/solo/regenfass-solo-light.png">
+    <link rel="apple-touch-icon" href="{{basePath}}logos/solo/regenfass-solo-light.png">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="{{basePath}}manifest.json">
+    <meta name="theme-color" content="#1E2A45">
+    
+    <meta name="description" content="Regenfass Typography - Brand fonts and typography guidelines (system UI stack)">
+    <meta name="keywords" content="Regenfass, fonts, typography, system-ui, brand fonts">
+    <meta name="author" content="Regenfass">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="German">
+    <title>Fonts - Regenfass</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://brand.regenfass.digital/fundamentals/fonts.html">
+    <meta property="og:title" content="Typography - Regenfass">
+    <meta property="og:description" content="Brand fonts and typography guidelines for Regenfass - system UI stack, line-height 1.4">
+    <meta property="og:image" content="{{repoBaseUrl}}/assets/banner/opengraph/fonts.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/svg+xml">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="Regenfass">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://brand.regenfass.digital/fundamentals/fonts.html">
+    <meta name="twitter:title" content="Typography - Regenfass">
+    <meta name="twitter:description" content="Brand fonts and typography guidelines for Regenfass">
+    <meta name="twitter:image" content="{{repoBaseUrl}}/assets/banner/opengraph/fonts.svg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://brand.regenfass.digital/fundamentals/fonts.html">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Typography - Regenfass",
+      "description": "Brand fonts and typography guidelines for Regenfass",
+      "url": "https://brand.regenfass.digital/fundamentals/fonts.html",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Regenfass Corporate Identity",
+        "url": "https://brand.regenfass.digital/"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "Typography",
+        "description": "Regenfass typography: ui-sans-serif, system-ui, sans-serif with emoji fallbacks; line-height 1.4"
+      }
+    }
+    </script>
+    
+    <!-- Custom Styles (imported via main.js) – uses system UI font stack, no external font required -->
+    <script type="module" src="../main.js"></script>
+</head>
+<body>
+    <!-- include: navigation -->
+    
+    <!-- include: hero -->
+
+    <main role="main">
+    <!-- Why Typography Matters Section -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-6">Why Typography Matters</h2>
+            <div class="prose max-w-none">
+                <p class="font-body text-lg text-gray-700 mb-4">
+                    <strong>What is typography used for?</strong> Typography is everywhere text plays a role—on websites, in documents, on social media, in presentations, on packaging, and in all communication materials. It doesn't just make content readable, but also conveys personality and mood. The right font choice creates hierarchy, directs attention, and helps communicate complex information clearly. Typography is the foundation on which your messages build.
+                </p>
+                <p class="font-body text-lg text-gray-700 mb-4">
+                    <strong>Why is it so important?</strong> Type is more than just letters on a page—it's a powerful communication tool. The right typography makes the difference between "that looks professional" and "that looks carelessly thrown together". It influences how people perceive your content and whether they take the time to read it. Consistent typography builds trust, improves readability, and makes your brand recognizable. Bad typography can ruin even the best content.
+                </p>
+                <p class="font-body text-lg text-gray-700">
+                    <strong>What can you achieve with it?</strong> With professional typography, you improve the readability of your content and make it more accessible to your target audience. You create a visual hierarchy that guides people through your content and highlights important information. The right font choice conveys your brand personality and makes your communication consistent and trustworthy. Whether it's short headlines or long texts—good typography makes the difference between "forgotten" and "unforgettable".
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regenfass Brand Font Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8">System UI – Regenfass Brand Font</h2>
+            <p class="font-body text-lg text-gray-700 mb-8">
+                The brand uses the system UI font stack for headings and body text. One stack for all typography. Line height: <strong>1.4</strong>. No external font loading required.
+            </p>
+            
+            <div class="card-aqua mb-8">
+                <h3 class="font-heading text-xl font-bold text-navy mb-4">Font stack (CSS)</h3>
+                <pre class="font-mono text-sm bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"</code></pre>
+                <p class="font-body text-sm text-gray-600 mt-4">
+                    Used for <code>--font-heading</code> and <code>--font-body</code> in <code>app/styles.css</code>.
+                </p>
+            </div>
+            
+            <div class="card p-8 mb-8">
+                <div class="space-y-6">
+                    <div>
+                        <p class="font-body text-5xl font-normal mb-2 text-gray-900" style="line-height: 1.4">The quick brown fox jumps over the lazy dog</p>
+                        <p class="text-sm text-gray-600">Regular, line-height 1.4</p>
+                    </div>
+                    <div>
+                        <p class="font-body text-5xl font-semibold mb-2 text-gray-900" style="line-height: 1.4">The quick brown fox jumps over the lazy dog</p>
+                        <p class="text-sm text-gray-600">Bold (600), line-height 1.4</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-aqua">
+                <h3 class="font-heading text-xl font-bold text-navy mb-4">Specification</h3>
+                <ul class="font-body text-gray-700 space-y-2 list-disc list-inside">
+                    <li><strong>Font stack:</strong> ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"</li>
+                    <li><strong>Line height:</strong> 1.4</li>
+                    <li><strong>Usage:</strong> Headings and body (same stack)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typography Showcase Section -->
+    <section id="typography-showcase" class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-12 text-center">Typography Showcase</h2>
+            
+            <div class="mb-16">
+                <h3 class="font-heading text-2xl font-bold text-navy mb-8">System UI stack – Line height 1.4</h3>
+                
+                <!-- Weight 400 - Regular -->
+                <div class="mb-12 card-aqua">
+                    <h4 class="font-heading text-lg font-semibold text-gray-600 mb-4">Weight 400 – Regular</h4>
+                    <div class="space-y-6" style="line-height: 1.4">
+                        <div>
+                            <p class="font-body text-5xl font-normal mb-2 text-gray-900">The quick brown fox jumps over the lazy dog</p>
+                            <p class="text-sm text-gray-600">H1: 48px / 3rem, Regular (400), line-height 1.4</p>
+                        </div>
+                        <div>
+                            <p class="font-body text-4xl font-normal mb-2 text-gray-900">The quick brown fox jumps over the lazy dog</p>
+                            <p class="text-sm text-gray-600">H2: 40px / 2.5rem, Regular (400), line-height 1.4</p>
+                        </div>
+                        <div>
+                            <p class="font-body text-lg font-normal mb-2 text-gray-900">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            </p>
+                            <p class="text-sm text-gray-600">Body: 18px, Regular (400), line-height 1.4</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weight 600 - Bold -->
+                <div class="mb-12 card-aqua">
+                    <h4 class="font-heading text-lg font-semibold text-gray-600 mb-4">Weight 600 – Bold</h4>
+                    <div class="space-y-6" style="line-height: 1.4">
+                        <div>
+                            <p class="font-body text-5xl font-semibold mb-2 text-gray-900">The quick brown fox jumps over the lazy dog</p>
+                            <p class="text-sm text-gray-600">H1: 48px / 3rem, Bold (600), line-height 1.4</p>
+                        </div>
+                        <div>
+                            <p class="font-body text-2xl font-semibold mb-2 text-gray-900">The quick brown fox jumps over the lazy dog</p>
+                            <p class="text-sm text-gray-600">H4: 24px / 1.5rem, Bold (600), line-height 1.4</p>
+                        </div>
+                        <div>
+                            <p class="font-body text-lg font-semibold mb-2 text-gray-900">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                            <p class="text-sm text-gray-600">Body: 18px, Bold (600), line-height 1.4</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typography in Use Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8">Typography in Use</h2>
+            <p class="font-body text-lg text-gray-700 mb-8">
+                One font stack for everything: system UI (ui-sans-serif, system-ui, sans-serif + emoji fallbacks) with line-height 1.4. Use weight 400 for body text and 600 for headings and emphasis.
+            </p>
+            
+            <div class="card p-8">
+                <h1 class="font-heading text-4xl font-semibold text-navy mb-4">Heading Example</h1>
+                <p class="font-body text-lg text-gray-700 mb-4">
+                    Headings and body both use the system UI font stack. Line height is 1.4 throughout for consistent, readable typography across all Regenfass materials.
+                </p>
+                <h2 class="font-heading text-2xl font-semibold text-navy mb-3">Subheading Example</h2>
+                <p class="font-body text-base text-gray-700">
+                    Keep hierarchy clear with bold (600) for headings and regular (400) for body. Same stack, same line-height—simple and on-brand.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usage Examples Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8">Usage Examples</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- CSS Example -->
+                <div class="card-aqua">
+                    <h3 class="font-heading text-xl font-bold text-navy mb-4">CSS Variables</h3>
+                    <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm font-mono"><code>/* System UI stack – no @import or link required */
+--font-heading: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+--font-body: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+--line-height-body: 1.4;
+
+body {
+  font-family: var(--font-body);
+  line-height: var(--line-height-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.4;
+}</code></pre>
+                </div>
+                
+                <div class="card-aqua">
+                    <h3 class="font-heading text-xl font-bold text-navy mb-4">Font stack reference</h3>
+                    <p class="font-body text-gray-700 mb-2">Headings and body use the same stack:</p>
+                    <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto text-sm font-mono"><code>ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"</code></pre>
+                </div>
+            </div>
+            
+            <div class="card-aqua mt-8">
+                <h3 class="font-heading text-xl font-bold text-navy mb-4">Optional: custom fonts</h3>
+                <p class="font-body text-gray-700 mb-4">
+                    The brand site uses the system UI stack (no download). For projects that need custom font files, see the release assets or <a href="{{repoBaseUrl}}/FONT_LICENSES.md" class="hover:text-aqua">FONT_LICENSES.md</a>.
+                </p>
+                <div id="fonts-download-section">
+                    <a href="https://github.com/kieksme/regenfass.brand/releases/latest" 
+                       id="download-fonts-btn"
+                       class="bg-aqua text-navy px-6 py-3 rounded-lg font-heading font-bold hover:bg-opacity-90 transition-colors inline-flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                        </svg>
+                        <span>Download Fonts ZIP</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Font Licenses Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8">Font stack &amp; licenses</h2>
+            <p class="font-body text-lg text-gray-700 mb-8">
+                The primary brand typography uses the <strong>system UI font stack</strong> (no license required). Optional font packages may be included in releases; see <a href="{{repoBaseUrl}}/FONT_LICENSES.md" class="hover:text-aqua">FONT_LICENSES.md</a> for third-party licenses.
+            </p>
+            
+            <div class="mb-8">
+                <div class="card-aqua">
+                    <h3 class="font-heading text-xl font-bold text-navy mb-4">Primary: system UI stack</h3>
+                    <div class="font-body text-gray-700 space-y-2">
+                        <p><strong>Stack:</strong> ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"</p>
+                        <p><strong>Usage:</strong> Headings and body in <code>app/styles.css</code> (<code>--font-heading</code>, <code>--font-body</code>).</p>
+                        <p>No external font loading or license required.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-aqua">
+                <h3 class="font-heading text-xl font-bold text-navy mb-4">Optional fonts &amp; license information</h3>
+                <p class="font-body text-gray-700 mb-4">
+                    For optional font files and detailed license information, see:
+                </p>
+                <p class="font-body">
+                    <a href="{{repoBaseUrl}}/FONT_LICENSES.md" class="font-semibold hover:text-aqua">FONT_LICENSES.md</a>
+                </p>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- include: fundamentals-grid -->
+
+    <!-- include: footer -->
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+            });
+        }
+
+        // Load latest release and update download link
+        async function loadFontsDownload() {
+            try {
+                const response = await fetch('https://api.github.com/repos/kieksme/regenfass.brand/releases/latest');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch release');
+                }
+                const release = await response.json();
+                
+                const allZipAssets = release.assets.filter(asset => asset.name.endsWith('.zip'));
+                const fontsZip = allZipAssets.find(asset => 
+                    asset.name.toLowerCase().includes('font') || 
+                    asset.name.toLowerCase().match(/regenfass-fonts/)
+                );
+                
+                const downloadBtn = document.getElementById('download-fonts-btn');
+                if (downloadBtn && fontsZip) {
+                    downloadBtn.href = fontsZip.browser_download_url;
+                    downloadBtn.innerHTML = `
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                        </svg>
+                        <span>Download Fonts ZIP</span>
+                        <span class="text-sm font-normal">(${(fontsZip.size / 1024 / 1024).toFixed(2)} MB)</span>
+                    `;
+                }
+            } catch (error) {
+                console.error('Error loading fonts download:', error);
+            }
+        }
+        
+        // Load download link on page load
+        loadFontsDownload();
+    </script>
+    <!-- include: analytics -->
+</body>
+</html>

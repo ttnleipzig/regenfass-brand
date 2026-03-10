@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{basePath}}favicon.svg" />
+    <link
+      rel="alternate icon"
+      href="{{basePath}}logos/solo/regenfass-solo-light.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="{{basePath}}logos/solo/regenfass-solo-light.png"
+    />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="{{basePath}}manifest.json" />
+    <meta name="theme-color" content="#1E2A45" />
+
+    <meta
+      name="description"
+      content="Regenfass Avatars - Square avatar graphics with cut-out portraits and Abstract 5 background"
+    />
+    <meta
+      name="keywords"
+      content="Regenfass, avatars, portraits, team avatars, Abstract 5, graphics"
+    />
+    <meta name="author" content="Regenfass" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="German" />
+    <title>Avatars - Regenfass</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://brand.regenfass.digital/implementations/avatars.html"
+    />
+    <meta property="og:title" content="Avatars - Regenfass" />
+    <meta
+      property="og:description"
+      content="Square avatar graphics with cut-out portraits and Abstract 5 background for Regenfass team members"
+    />
+    <meta
+      property="og:image"
+      content="{{repoBaseUrl}}/assets/banner/opengraph/avatars.svg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/svg+xml" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="Regenfass" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:url"
+      content="https://brand.regenfass.digital/implementations/avatars.html"
+    />
+    <meta name="twitter:title" content="Avatars - Regenfass" />
+    <meta
+      name="twitter:description"
+      content="Square avatar graphics with cut-out portraits and Abstract 5 background"
+    />
+    <meta
+      name="twitter:image"
+      content="{{repoBaseUrl}}/assets/banner/opengraph/avatars.svg"
+    />
+
+    <!-- Canonical URL -->
+    <link
+      rel="canonical"
+      href="https://brand.regenfass.digital/implementations/avatars.html"
+    />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Avatars - Regenfass",
+        "description": "Square avatar graphics with cut-out portraits and Abstract 5 background for Regenfass team members",
+        "url": "https://brand.regenfass.digital/implementations/avatars.html",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Regenfass Corporate Identity",
+          "url": "https://brand.regenfass.digital/"
+        },
+        "about": {
+          "@type": "Thing",
+          "name": "Avatars",
+          "description": "Design guidelines and generator for square avatar graphics with Abstract 5 background"
+        }
+      }
+    </script>
+
+    <!-- Tabler Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+
+    <!-- Prism.js for Syntax Highlighting -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+    <!-- Custom Styles (imported via main.js) -->
+    <script type="module" src="../main.js"></script>
+
+    <style>
+      /* Code block styling */
+      pre[class*="language-"] {
+        background: #1e2a45 !important;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        overflow-x: auto;
+        margin: 1.5rem 0;
+      }
+
+      code[class*="language-"] {
+        font-family: "Source Code Pro", "Monaco", "Courier New", monospace;
+        font-size: 0.875rem;
+        line-height: 1.6;
+      }
+
+      .code-example {
+        position: relative;
+      }
+
+      .code-example pre {
+        margin-top: 0;
+      }
+
+      .avatar-example {
+        display: inline-block;
+        margin: 0.25rem 0.5rem;
+        text-align: center;
+      }
+
+      .avatar-example img {
+        border: 2px solid #e5e7eb;
+        display: block;
+        margin: 0 auto 0.25rem;
+      }
+
+      /* Standard border-radius nur wenn nicht rounded-full oder rounded-lg */
+      .avatar-example img:not(.rounded-full):not(.rounded-lg) {
+        border-radius: 0.5rem;
+      }
+
+      .avatar-example img.rounded {
+        border-radius: 1rem;
+      }
+
+      .avatar-example img.circular,
+      .avatar-example img.rounded-full {
+        border-radius: 50% !important;
+      }
+
+      .avatar-example-label {
+        font-size: 0.75rem;
+        color: #666;
+        font-family: var(--font-body);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- include: navigation -->
+    
+
+    <!-- include: hero -->
+
+    <main role="main">
+      <!-- Design Guidelines Section -->
+      <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+          <h2
+            class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8"
+          >
+            Design Guidelines
+          </h2>
+
+          <div class="prose max-w-none mb-8">
+            <p class="font-body text-lg text-gray-700 mb-6">
+              Avatars für Regenfass Team-Mitglieder sind quadratische Grafiken,
+              die freigestellte Portraits mit dem Hintergrundbild <strong>Abstract 5</strong>
+              kombinieren. Diese Richtlinien beschreiben, wie Avatare erstellt werden,
+              um der Corporate Identity zu entsprechen.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="card">
+              <h3 class="font-heading text-xl font-bold text-navy mb-4">
+                Format-Spezifikationen
+              </h3>
+              <ul
+                class="font-body text-gray-700 space-y-2 list-disc list-inside mb-4"
+              >
+                <li><strong>Format:</strong> Quadratisch (1:1 Seitenverhältnis)</li>
+                <li><strong>Standard-Größen:</strong> 256x256px, 512x512px</li>
+                <li><strong>Ausgabeformat:</strong> PNG (mit Transparenz)</li>
+                <li><strong>Auflösung:</strong> Mindestens 72 DPI für Web</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3 class="font-heading text-xl font-bold text-navy mb-4">
+                Portrait-Anforderungen
+              </h3>
+              <ul
+                class="font-body text-gray-700 space-y-2 list-disc list-inside mb-4"
+              >
+                <li><strong>Format:</strong> PNG mit transparentem Hintergrund</li>
+                <li><strong>Freistellung:</strong> Portrait muss freigestellt sein</li>
+                <li><strong>Zentrierung:</strong> Portrait wird zentriert platziert</li>
+                <li><strong>Größe:</strong> Füllt das Quadrat (mit Zuschnitt bei Bedarf)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card mb-8">
+            <h3 class="font-heading text-xl font-bold text-navy mb-4">
+              Hintergrund: Abstract 5
+            </h3>
+            <p class="font-body text-gray-700 mb-4">
+              Der Avatar-Hintergrund ist fest auf das Bild <strong>Abstract 5</strong> gesetzt
+              (<code class="bg-gray-200 px-2 py-1 rounded">assets/backgrounds/5.svg</code>).
+              Es wird auf die gewünschte Avatar-Größe skaliert; das Portrait wird zentriert darüber gelegt.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Examples Section -->
+      <section class="py-8 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+          <h2
+            class="font-heading text-3xl md:text-4xl font-bold text-navy mb-4 text-center"
+          >
+            Beispiele
+          </h2>
+          <p class="font-body text-lg text-gray-700 mb-6 text-center max-w-3xl mx-auto">
+            Avatare in verschiedenen Größen mit Abstract-5-Hintergrund.
+            Die Portraits werden zentriert platziert und füllen das Quadrat.
+          </p>
+
+          <!-- 512px & 256px in one row -->
+          <div class="mb-6">
+            <h3 class="font-heading text-xl font-bold text-navy mb-3">
+              Standard (512px · 256px)
+            </h3>
+            <div class="flex flex-wrap justify-center items-end gap-6">
+              <div class="avatar-example">
+                <img
+                  src="{{basePath}}examples/avatars/avatar-regenfass-avatar-alademann-512.png"
+                  alt="Avatar mit Abstract-5-Hintergrund (512x512px)"
+                  class="w-40 h-40 rounded-lg object-cover"
+                />
+                <p class="avatar-example-label">512px</p>
+              </div>
+              <div class="avatar-example">
+                <img
+                  src="{{basePath}}examples/avatars/avatar-regenfass-avatar-alademann-256.png"
+                  alt="Avatar mit Abstract-5-Hintergrund (256x256px)"
+                  class="w-24 h-24 rounded-lg object-cover"
+                />
+                <p class="avatar-example-label">256px</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grayscale Variants -->
+          <div class="mb-6">
+            <h3 class="font-heading text-xl font-bold text-navy mb-3">
+              Graustufen-Avatare
+            </h3>
+            <p class="font-body text-sm text-gray-700 mb-3 text-center max-w-3xl mx-auto">
+              Portrait in Graustufen, farbiger Abstract-5-Hintergrund.
+            </p>
+            <div class="flex flex-wrap justify-center items-end gap-6">
+              <div class="avatar-example">
+                <img
+                  src="{{basePath}}examples/avatars/avatar-regenfass-avatar-alademann-512-grayscale.png"
+                  alt="Avatar Graustufen-Portrait mit Abstract-5-Hintergrund (512x512px)"
+                  class="w-40 h-40 rounded-lg object-cover"
+                />
+                <p class="avatar-example-label">512px Graustufen</p>
+              </div>
+              <div class="avatar-example">
+                <img
+                  src="{{basePath}}examples/avatars/avatar-regenfass-avatar-alademann-256-grayscale.png"
+                  alt="Avatar Graustufen-Portrait mit Abstract-5-Hintergrund (256x256px)"
+                  class="w-24 h-24 rounded-lg object-cover"
+                />
+                <p class="avatar-example-label">256px Graustufen</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rounded and Circular Examples -->
+          <div class="mb-6">
+            <h3 class="font-heading text-xl font-bold text-navy mb-3">
+              Abgerundet & kreisförmig (CSS)
+            </h3>
+            <p class="font-body text-sm text-gray-700 mb-4 text-center max-w-3xl mx-auto">
+              Mit <code class="bg-gray-200 px-1 rounded">rounded-lg</code> oder <code class="bg-gray-200 px-1 rounded">rounded-full</code>; Originaldatei bleibt quadratisch.
+            </p>
+
+            <div class="flex flex-wrap justify-center items-end gap-6 mb-4">
+              <div class="avatar-example">
+                <img
+                  src="{{basePath}}examples/avatars/avatar-regenfass-avatar-alademann-256.png"
+                  alt="Avatar mit Abstract-5-Hintergrund, abgerundet"
+                  class="w-24 h-24 rounded-lg object-cover"
+                />
+                <p class="avatar-example-label">256px · rounded-lg</p>
+              </div>
+              <div class="avatar-example">
+                <img
+                  src="{{basePath}}examples/avatars/avatar-regenfass-avatar-alademann-512.png"
+                  alt="Avatar mit Abstract-5-Hintergrund, abgerundet"
+                  class="w-24 h-24 rounded-lg object-cover"
+                />
+                <p class="avatar-example-label">512px · rounded-lg</p>
+              </div>
+              <div class="avatar-example">
+                <img
+                  src="{{basePath}}examples/avatars/avatar-regenfass-avatar-alademann-256.png"
+                  alt="Avatar mit Abstract-5-Hintergrund, kreisförmig"
+                  class="w-24 h-24 rounded-full object-cover"
+                />
+                <p class="avatar-example-label">256px · rounded-full</p>
+              </div>
+              <div class="avatar-example">
+                <img
+                  src="{{basePath}}examples/avatars/avatar-regenfass-avatar-alademann-512.png"
+                  alt="Avatar mit Abstract-5-Hintergrund, kreisförmig"
+                  class="w-24 h-24 rounded-full object-cover"
+                />
+                <p class="avatar-example-label">512px · rounded-full</p>
+              </div>
+              <div class="avatar-example">
+                <img
+                  src="{{basePath}}examples/avatars/avatar-regenfass-avatar-alademann-256-grayscale.png"
+                  alt="Avatar Graustufen mit Abstract-5-Hintergrund, kreisförmig"
+                  class="w-24 h-24 rounded-full object-cover"
+                />
+                <p class="avatar-example-label">256px Grau · rounded-full</p>
+              </div>
+            </div>
+
+            <!-- Code Example -->
+            <div class="card">
+              <h4 class="font-heading text-lg font-bold text-navy mb-4">
+                CSS-Beispiele
+              </h4>
+              <div class="code-example">
+                <pre
+                  class="language-html"
+                ><code>&lt;!-- Abgerundete Ecken --&gt;
+&lt;img 
+  src="avatar.png" 
+  alt="Avatar" 
+  class="w-32 h-32 rounded-lg object-cover"
+/&gt;
+
+&lt;!-- Kreisrund --&gt;
+&lt;img 
+  src="avatar.png" 
+  alt="Avatar" 
+  class="w-32 h-32 rounded-full object-cover"
+/&gt;
+
+&lt;!-- Mit Tailwind CSS --&gt;
+&lt;img 
+  src="avatar.png" 
+  alt="Avatar" 
+  class="w-32 h-32 rounded-lg object-cover border-2 border-gray-200"
+/&gt;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Generator Script Section -->
+      <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+          <h2
+            class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8"
+          >
+            Avatar Generator
+          </h2>
+          <p class="font-body text-lg text-gray-700 mb-8">
+            Verwende das Avatar Generator Script, um Avatare automatisch aus
+            freigestellten Portraits zu erstellen. Das Script kombiniert das
+            Portrait mit dem Hintergrundbild <strong>Abstract 5</strong>.
+          </p>
+
+          <div class="card mb-8">
+            <h3 class="font-heading text-xl font-bold text-navy mb-4">
+              Installation & Voraussetzungen
+            </h3>
+            <p class="font-body text-gray-700 mb-4">
+              Das Script verwendet <code class="bg-gray-200 px-2 py-1 rounded">sharp</code> für
+              die Bildverarbeitung. Alle Dependencies sind bereits im Projekt
+              installiert.
+            </p>
+          </div>
+
+          <div class="mb-12">
+            <h3 class="font-heading text-2xl font-bold text-navy mb-6">
+              Verwendung
+            </h3>
+            <p class="font-body text-gray-700 mb-4">
+              Das Avatar Generator Script kann auf zwei Arten verwendet werden:
+            </p>
+            <ul class="font-body text-gray-700 space-y-2 list-disc list-inside mb-6">
+              <li><strong>Interaktiver Modus:</strong> Startet ohne Argumente - führt durch alle Schritte</li>
+              <li><strong>CLI-Modus:</strong> Alle Parameter werden als Kommandozeilen-Argumente übergeben</li>
+            </ul>
+
+            <h4 class="font-heading text-xl font-bold text-navy mb-4">
+              Interaktiver Modus (empfohlen)
+            </h4>
+            <div class="code-example mb-8">
+              <pre
+                class="language-bash"
+              ><code># Startet den interaktiven Modus
+pnpm run generate:avatar
+
+# Der interaktive Modus führt Sie durch:
+# - Auswahl des Portrait-Bildes
+# - Auswahl der Größe
+# - Auswahl des Ausgabepfads
+# - Option für Mehrfach-Generierung (verschiedene Größen)</code></pre>
+            </div>
+
+            <h4 class="font-heading text-xl font-bold text-navy mb-4">
+              CLI-Modus
+            </h4>
+            <div class="code-example mb-8">
+              <pre
+                class="language-bash"
+              ><code># 512x512px Avatar (Abstract-5-Hintergrund)
+pnpm run generate:avatar \
+  --portrait path/to/cut-out-portrait.png \
+  --size 512 \
+  --output output/avatars/avatar-512.png
+
+# 256x256px Avatar
+pnpm run generate:avatar \
+  --portrait path/to/cut-out-portrait.png \
+  --size 256 \
+  --output output/avatars/avatar-256.png
+
+# Interaktiver Modus (empfohlen)
+pnpm run generate:avatar</code></pre>
+            </div>
+          </div>
+
+          <div class="card mb-8">
+            <h3 class="font-heading text-xl font-bold text-navy mb-4">
+              Parameter
+            </h3>
+            <ul
+              class="font-body text-gray-700 space-y-2 list-disc list-inside mb-4"
+            >
+              <li>
+                <strong>--portrait &lt;path&gt;</strong>: Pfad zum freigestellten
+                Portrait (PNG mit Transparenz) [erforderlich]
+              </li>
+              <li>
+                <strong>--size &lt;pixels&gt;</strong>: Ausgabegröße in Pixeln
+                (Standard: 512)
+              </li>
+              <li>
+                <strong>--output &lt;path&gt;</strong>: Ausgabedatei-Pfad
+                [erforderlich im CLI-Modus, Standard: output/avatars/]
+              </li>
+            </ul>
+          </div>
+
+          <div class="card mb-8">
+            <h3 class="font-heading text-xl font-bold text-navy mb-4">
+              Hilfe
+            </h3>
+            <p class="font-body text-gray-700 mb-4">
+              Zeige die Hilfe mit:
+            </p>
+            <div class="code-example">
+              <pre
+                class="language-bash"
+              ><code>pnpm run generate:avatar --help</code></pre>
+            </div>
+          </div>
+
+          <div class="bg-aqua/10 p-6 rounded-lg border-2 border-aqua">
+            <h3 class="font-heading text-xl font-bold text-navy mb-4">
+              Beispiel-Avatare generieren
+            </h3>
+            <p class="font-body text-gray-700 mb-4">
+              Um Beispiel-Avatare mit Abstract-5-Hintergrund automatisch zu generieren,
+              verwenden Sie das Beispiel-Generator-Skript:
+            </p>
+            <div class="code-example mb-4">
+              <pre
+                class="language-bash"
+              ><code># Generiere Beispiel-Avatare für alle Portraits in source/avatars
+pnpm run generate:avatar:samples</code></pre>
+            </div>
+            <p class="font-body text-sm text-gray-600 mb-4">
+              Das Skript generiert automatisch Avatare mit:
+            </p>
+            <ul class="font-body text-sm text-gray-700 space-y-1 list-disc list-inside mb-4">
+              <li>Hintergrund: Abstract 5</li>
+              <li>Zwei Standard-Größen (256px, 512px)</li>
+              <li>Farbige Avatare + Graustufen-Varianten (Portrait Grau, Hintergrund Farbe)</li>
+            </ul>
+            <p class="font-body text-sm text-gray-600">
+              Die generierten Avatare werden im Verzeichnis <code class="bg-gray-200 px-2 py-1 rounded">examples/avatars</code> gespeichert.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Usage Guidelines Section -->
+      <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+          <h2
+            class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8"
+          >
+            Verwendungshinweise
+          </h2>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="card-aqua">
+              <h3 class="font-heading text-xl font-bold text-navy mb-4">
+                Hintergrund
+              </h3>
+              <p class="font-body text-gray-700 mb-4">
+                Alle Avatare verwenden einheitlich das Bild <strong>Abstract 5</strong> als Hintergrund.
+                Es wird in der gewünschten Größe skaliert; das Portrait wird zentriert darüber gelegt.
+              </p>
+            </div>
+
+            <div class="card-aqua">
+              <h3 class="font-heading text-xl font-bold text-navy mb-4">
+                Portrait-Vorbereitung
+              </h3>
+              <ul
+                class="font-body text-gray-700 space-y-2 list-disc list-inside mb-4"
+              >
+                <li>
+                  Portrait muss freigestellt sein (transparenter Hintergrund)
+                </li>
+                <li>
+                  PNG-Format mit Alpha-Kanal für Transparenz
+                </li>
+                <li>
+                  Gute Qualität (mindestens 512x512px empfohlen)
+                </li>
+                <li>
+                  Portrait sollte zentriert und gut ausgeleuchtet sein
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card-aqua">
+            <h3 class="font-heading text-xl font-bold text-navy mb-4">
+              Dateinamen-Konvention
+            </h3>
+            <p class="font-body text-gray-700 mb-4">
+              Empfohlene Namenskonvention für Avatar-Dateien:
+            </p>
+            <div class="code-example">
+              <pre
+                class="language-bash"
+              ><code>avatar-&lt;name&gt;-&lt;color&gt;-&lt;size&gt;.png
+
+Beispiele:
+  avatar-max-mustermann-aqua-512.png
+  avatar-jane-doe-navy-256.png
+  avatar-team-member-fuchsia-512.png</code></pre>
+            </div>
+          </div>
+
+          <div class="card-aqua mt-8">
+            <h3 class="font-heading text-xl font-bold text-navy mb-4">
+              Verwendungszwecke
+            </h3>
+            <ul
+              class="font-body text-gray-700 space-y-2 list-disc list-inside mb-4"
+            >
+              <li>Team-Verzeichnisse und Organigramme</li>
+              <li>Profilbilder in internen Systemen</li>
+              <li>Präsentationen und Dokumentationen</li>
+              <li>Website-Team-Seiten</li>
+              <li>E-Mail-Signaturen (in Kombination mit Email Footer)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- include: implementations-grid -->
+
+    <!-- include: footer -->
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (mobileMenuToggle && mobileMenu) {
+        mobileMenuToggle.addEventListener("click", () => {
+          mobileMenu.classList.toggle("open");
+        });
+      }
+    </script>
+    <!-- include: analytics -->
+  </body>
+</html>

@@ -1,0 +1,250 @@
+{
+  "selection": {
+    "darkBlue": {
+      "hex": "#0B2649",
+      "rgb": { "r": 11, "g": 38, "b": 73 },
+      "pantone": "533 C",
+      "usage": "Primary dark; trust, professionalism",
+      "shades": {
+        "lighter": { "hex": "#206FD6", "rgb": { "r": 32, "g": 111, "b": 214 } },
+        "medium": { "hex": "#174E96", "rgb": { "r": 23, "g": 78, "b": 150 } },
+        "darker": { "hex": "#0D2D57", "rgb": { "r": 13, "g": 45, "b": 87 } },
+        "darkest": { "hex": "#081A33", "rgb": { "r": 8, "g": 26, "b": 51 } }
+      }
+    },
+    "orange": {
+      "hex": "#FF5722",
+      "rgb": { "r": 255, "g": 87, "b": 34 },
+      "pantone": "1505 C",
+      "usage": "Accent; energy, call-to-action",
+      "shades": {
+        "darker": { "hex": "#E64C1E", "rgb": { "r": 230, "g": 76, "b": 30 } },
+        "medium": { "hex": "#BF4019", "rgb": { "r": 191, "g": 64, "b": 25 } },
+        "dark": { "hex": "#802A11", "rgb": { "r": 128, "g": 42, "b": 17 } },
+        "darkest": { "hex": "#401508", "rgb": { "r": 64, "g": 21, "b": 8 } }
+      }
+    },
+    "turquoise": {
+      "hex": "#00BCD4",
+      "rgb": { "r": 0, "g": 188, "b": 212 },
+      "pantone": "319 C",
+      "usage": "Accent; clarity, innovation",
+      "shades": {
+        "lighter": { "hex": "#00C6E0", "rgb": { "r": 0, "g": 198, "b": 224 } },
+        "slightlyDarker": { "hex": "#00B6CF", "rgb": { "r": 0, "g": 182, "b": 207 } },
+        "darker": { "hex": "#00A4BA", "rgb": { "r": 0, "g": 164, "b": 186 } },
+        "darkest": { "hex": "#004A54", "rgb": { "r": 0, "g": 74, "b": 84 } }
+      }
+    },
+    "aqua": {
+      "hex": "#00FFDC",
+      "rgb": {
+        "r": 0,
+        "g": 255,
+        "b": 220
+      },
+      "cmyk": {
+        "c": 100,
+        "m": 0,
+        "y": 14,
+        "k": 0
+      },
+      "usage": "Bright turquoise/aqua selection color",
+      "shades": {
+        "medium": {
+          "hex": "#00BFA5",
+          "rgb": {
+            "r": 0,
+            "g": 191,
+            "b": 165
+          },
+          "cmyk": {
+            "c": 100,
+            "m": 0,
+            "y": 14,
+            "k": 25
+          },
+          "usage": "Medium aqua shade for better contrast"
+        },
+        "dark": {
+          "hex": "#006B5F",
+          "rgb": {
+            "r": 0,
+            "g": 107,
+            "b": 95
+          },
+          "cmyk": {
+            "c": 100,
+            "m": 0,
+            "y": 11,
+            "k": 58
+          },
+          "usage": "Dark aqua shade for links on white background (WCAG AA compliant)"
+        }
+      }
+    },
+    "navy": {
+      "hex": "#1E2A45",
+      "rgb": {
+        "r": 30,
+        "g": 42,
+        "b": 69
+      },
+      "cmyk": {
+        "c": 100,
+        "m": 60,
+        "y": 0,
+        "k": 73
+      },
+      "usage": "Dark blue/navy selection color",
+      "shades": {
+        "medium": {
+          "hex": "#2F4169",
+          "rgb": {
+            "r": 47,
+            "g": 65,
+            "b": 105
+          },
+          "cmyk": {
+            "c": 100,
+            "m": 60,
+            "y": 0,
+            "k": 59
+          },
+          "usage": "Medium navy shade"
+        },
+        "light": {
+          "hex": "#5A6B8C",
+          "rgb": {
+            "r": 90,
+            "g": 107,
+            "b": 140
+          },
+          "cmyk": {
+            "c": 100,
+            "m": 60,
+            "y": 0,
+            "k": 45
+          },
+          "usage": "Light navy shade for better readability"
+        }
+      }
+    },
+    "fuchsia": {
+      "hex": "#FF008F",
+      "rgb": {
+        "r": 255,
+        "g": 0,
+        "b": 143
+      },
+      "cmyk": {
+        "c": 0,
+        "m": 100,
+        "y": 44,
+        "k": 0
+      },
+      "usage": "Vibrant pink/fuchsia selection color",
+      "shades": {
+        "medium": {
+          "hex": "#BF006B",
+          "rgb": {
+            "r": 191,
+            "g": 0,
+            "b": 107
+          },
+          "cmyk": {
+            "c": 0,
+            "m": 100,
+            "y": 44,
+            "k": 25
+          },
+          "usage": "Medium fuchsia shade"
+        },
+        "light": {
+          "hex": "#800047",
+          "rgb": {
+            "r": 128,
+            "g": 0,
+            "b": 71
+          },
+          "cmyk": {
+            "c": 0,
+            "m": 100,
+            "y": 44,
+            "k": 50
+          },
+          "usage": "Light fuchsia shade"
+        }
+      }
+    }
+  },
+  "primary": {
+    "hex": "#0B2649",
+    "rgb": { "r": 11, "g": 38, "b": 73 },
+    "pantone": "533 C",
+    "cmyk": { "c": 100, "m": 60, "y": 0, "k": 73 },
+    "usage": "Primary brand color (Dark Blue); headers, key brand elements"
+  },
+  "secondary": {
+    "hex": "#FFFFFF",
+    "rgb": {
+      "r": 255,
+      "g": 255,
+      "b": 255
+    },
+    "cmyk": {
+      "c": 0,
+      "m": 0,
+      "y": 0,
+      "k": 0
+    },
+    "usage": "Backgrounds, complementary elements"
+  },
+  "neutral": {
+    "darkGray": {
+      "hex": "#333333",
+      "rgb": {
+        "r": 51,
+        "g": 51,
+        "b": 51
+      },
+      "cmyk": {
+        "c": 0,
+        "m": 0,
+        "y": 0,
+        "k": 80
+      },
+      "usage": "Body text, dark UI elements"
+    },
+    "mediumGray": {
+      "hex": "#666666",
+      "rgb": {
+        "r": 102,
+        "g": 102,
+        "b": 102
+      },
+      "cmyk": {
+        "c": 0,
+        "m": 0,
+        "y": 0,
+        "k": 60
+      },
+      "usage": "Secondary text, borders"
+    },
+    "lightGray": {
+      "hex": "#CCCCCC",
+      "rgb": {
+        "r": 204,
+        "g": 204,
+        "b": 204
+      },
+      "cmyk": {
+        "c": 0,
+        "m": 0,
+        "y": 0,
+        "k": 20
+      },
+      "usage": "Backgrounds, dividers, subtle elements"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visitenkarte Rückseite - {{name}}</title>
+  <link rel="stylesheet" href="business-card-styles.css">
+</head>
+<body class="back-page">
+  <div class="business-card-back">
+    <div class="qr-container">
+      <div class="qr-code">
+        <img src="{{qrCodeDataUri}}" alt="QR Code">
+      </div>
+    </div>
+    
+    <div class="qr-info">
+      <p class="qr-title">Kontaktdaten scannen</p>
+      <p class="qr-description">Scannen Sie den QR-Code mit Ihrer Kamera-App, um die Kontaktdaten automatisch zu speichern.</p>
+    </div>
+  </div>
+</body>
+</html>

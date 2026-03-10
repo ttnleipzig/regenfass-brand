@@ -1,0 +1,63 @@
+# {{REPO_NAME}}
+
+{{DESCRIPTION}}
+
+## Download Assets
+
+**Download the latest release:**
+
+[![Download Latest Release](https://img.shields.io/github/v/release/{{ORG}}/{{REPO_NAME}}?label=Download%20Latest%20Release&style=for-the-badge&logo=github&logoColor=white&color=0B2649)](https://github.com/{{ORG}}/{{REPO_NAME}}/releases/latest)
+
+Visit the [Releases](https://github.com/{{ORG}}/{{REPO_NAME}}/releases) page to download the latest version.
+
+## Purpose
+
+{{PURPOSE}}
+
+## Installation
+
+{{INSTALLATION}}
+
+## Usage
+
+{{USAGE}}
+
+## Features
+
+{{FEATURES}}
+
+## Contributing
+
+To propose changes:
+
+1. Fork this repository
+2. Create a feature branch
+3. Make your proposed changes
+4. Submit a pull request with detailed explanation
+5. Wait for approval from authorized maintainers (see CODEOWNERS)
+
+**Note:** Only authorized maintainers can approve and merge changes.
+
+## Documentation
+
+{{DOCUMENTATION}}
+
+## Contact
+
+For questions or requests, please contact the designated maintainers listed in the CODEOWNERS file.
+
+## License
+
+This repository is licensed under the {{LICENSE}} - see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+
+**Part of the [Regenfass](https://kieks.me) ecosystem**
+
+[![Regenfass](https://img.shields.io/badge/Regenfass-Corporate%20Identity-0B2649?style=for-the-badge)](https://github.com/kieksme/regenfass.brand)
+
+Made with ❤️ by [Regenfass](https://kieks.me)
+
+</div>

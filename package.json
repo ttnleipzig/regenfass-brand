@@ -1,0 +1,48 @@
+{
+  "name": "regenfass-brand",
+  "version": "0.3.0",
+  "description": "Corporate Identity & Corporate Design assets and tools for Regenfass",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "vite preview",
+    "generate:card": "node scripts/generate-card.mjs",
+    "generate:card:samples": "node scripts/generate-card-samples.mjs",
+    "generate:avatar": "node scripts/generate-avatar.mjs",
+    "generate:avatar:samples": "node scripts/generate-avatar-samples.mjs",
+    "generate:image:linkedin": "node scripts/generate-image-linkedin.mjs",
+    "generate:image:linkedin:samples": "node scripts/generate-image-linkedin-samples.mjs",
+    "generate:og-banners": "node scripts/generate-og-banners.mjs",
+    "generate:social-preview": "node scripts/generate-social-preview.mjs",
+    "generate:readme-header": "node scripts/generate-readme-header.mjs",
+    "generate:readme-header:samples": "node scripts/generate-readme-header-samples.mjs",
+    "test": "node tests/scripts/run-all-tests.mjs"
+  },
+  "keywords": [
+    "brand",
+    "corporate-identity",
+    "business-cards"
+  ],
+  "author": "Regenfass",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "boxen": "^8.0.1",
+    "chalk": "^5.6.2"
+  },
+  "devDependencies": {
+    "@pdf-lib/fontkit": "^1.1.1",
+    "@tailwindcss/vite": "^4.2.1",
+    "inquirer": "^13.3.0",
+    "pdf-lib": "^1.17.1",
+    "puppeteer": "^24.38.0",
+    "qrcode": "^1.5.4",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4.2.1",
+    "vite": "^7.3.1"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "packageManager": "pnpm@10.30.3"
+}

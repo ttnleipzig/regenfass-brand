@@ -1,0 +1,512 @@
+@import "tailwindcss";
+
+@theme {
+    /* Brand Colors - Base = 500. Shades follow Adobe Color (same hue, varying lightness/saturation). */
+    /* See https://color.adobe.com/create/color-wheel – Turquoise, Dark Blue, Orange. */
+    --color-aqua: #00BCD4;
+    --color-aqua-500: #00BCD4;
+    --color-navy: #0B2649;
+    --color-navy-500: #0B2649;
+    --color-fuchsia: #FF5722;
+    --color-fuchsia-500: #FF5722;
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-gray-dark: #333333;
+    --color-gray-medium: #666666;
+    --color-gray-light: #CCCCCC;
+
+    /* Turquoise (#00BCD4) – shades from lightest (50) to darkest (700), same hue */
+    --color-aqua-50: #E0F7FA;
+    --color-aqua-100: #B2EBF2;
+    --color-aqua-tint: #E0F7FA;
+    --color-aqua-500: #00BCD4;
+    --color-aqua-600: #00ACC1;
+    --color-aqua-700: #0097A7;
+
+    /* Dark Blue (#0B2649) – tints and darker shades */
+    --color-navy-50: #E8EEF7;
+    --color-navy-100: #174E96;
+    --color-navy-tint: #E8EEF7;
+    --color-navy-300: #0D2D57;
+    --color-navy-400: #081A33;
+    --color-navy-500: #0B2649;
+    --color-navy-900: #0F172A; /* rgb(15, 23, 42) – header & footer background */
+
+    /* Orange (#FF5722) – tints and darker shades */
+    --color-fuchsia-50: #FFCCBC;
+    --color-fuchsia-100: #FFAB91;
+    --color-fuchsia-500: #FF5722;
+    --color-fuchsia-600: #E64C1E;
+    --color-fuchsia-700: #BF4019;
+
+    /* Accessible on dark backgrounds (WCAG AA) */
+    --color-aqua-on-dark: #4DD0E1;
+    --color-fuchsia-on-dark: #FF8A65;
+    
+    /* Fonts – headings and body: system UI stack */
+    --font-heading: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-body: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --line-height-body: 1.4;
+
+    /* Install-style page: inset shadows (navy tint for depth, matches install.regenfass.eu) */
+    --shadow-page-inset-light: inset 0 -4px 50px rgba(11, 38, 73, 0.06);
+    --shadow-page-inset-dark: inset 0 -4px 144px rgba(11, 38, 73, 0.25);
+}
+
+/* Component/UI variables (cards, alerts, dialogs, ESP Web Tools compatibility) */
+:root {
+    --alert-error-color-bg: #faefeb;
+    --alert-error-color: #d93025;
+    --alert-info-color-bg: #e6eef5;
+    --alert-info-color: #00539f;
+    --alert-standard-color-bg: #e6e6e6;
+    --alert-standard-color: #666;
+    --alert-success-color-bg: #edf7ee;
+    --alert-success-color: #4caf50;
+    --alert-warning-color-bg: #fff5e6;
+    --alert-warning-color: #ff9800;
+    --card-background-color: #fafafa;
+    --esphome-background-header: #e0e0e0;
+    --md-dialog-container-shape-end-end: 0;
+    --md-dialog-container-shape-end-start: 0;
+    --md-dialog-container-shape-start-end: 0;
+    --md-dialog-container-shape-start-start: 0;
+    --md-dialog-container-shape: 0;
+    --md-dialog-headline-color: red;
+    --md-sys-color-on-surface: blue;
+    --md-sys-color-surface-container-high: #aaa;
+    --md-sys-color-surface-container-highest: #ddd;
+    --mdc-dialog-content-ink-color: #212121;
+    --mdc-dialog-heading-ink-color: #212121;
+    --mdc-dialog-z-index: 998;
+    --mdc-theme-on-primary-no-attention: #fff;
+    --mdc-theme-on-primary: #fff;
+    --mdc-theme-primary-no-attention: #444;
+    --mdc-theme-primary: #03a9f4;
+    --primary-bg-color: #fafafa;
+    --primary-footer-bg-color: #212121;
+    --primary-text-color: #212121;
+    --status-connected: #444;
+    --status-imported: #4caf50;
+    --status-new: orange;
+    --text-color: #189;
+    --update-available-color: #2e3dd4;
+    --esp-tools-button-border-radius: 0px !important;
+    --esp-tools-button-text-color: #189 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --card-background-color: #282828;
+        --card-text-color: #e1e1e1;
+        --esphome-background-header: #282828;
+        --mdc-dialog-content-ink-color: #e1e1e1;
+        --mdc-dialog-heading-ink-color: #e1e1e1;
+        --mdc-ripple-color: #bebebe;
+        --mdc-text-field-fill-color: #3d3d3d;
+        --mdc-text-field-ink-color: #e1e1e1;
+        --mdc-text-field-label-ink-color: #e1e1e1;
+        --mdc-theme-on-primary-no-attention: #222;
+        --mdc-theme-on-surface: #e1e1e1;
+        --mdc-theme-primary-no-attention: #cecece;
+        --mdc-theme-surface: #282828;
+        --mdc-theme-text-primary-on-background: #e1e1e1;
+        --mdc-theme-text-secondary-on-background: #e1e1e1;
+        --primary-bg-color: #000;
+        --primary-footer-bg-color: #101e24;
+        --primary-text-color: #e1e1e1;
+        --status-connected: #cecece;
+        --update-available-color: #5f7eeb;
+    }
+}
+
+@layer base {
+    body {
+        @apply font-body text-gray-dark bg-navy;
+        line-height: var(--line-height-body);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-heading;
+        line-height: var(--line-height-body);
+    }
+}
+
+@layer components {
+    /* Base card component */
+    .card {
+        @apply bg-gray-50 p-6 rounded-md border border-gray-200 hover:bg-white transition-all;
+    }
+    
+    /* Card variants with different hover border colors */
+    .card-aqua {
+        @apply bg-gray-50 p-6 rounded-md border border-gray-200 hover:bg-white hover:border-aqua transition-all;
+    }
+    
+    .card-fuchsia {
+        @apply bg-gray-50 p-6 rounded-md border border-gray-200 hover:bg-white hover:border-fuchsia transition-all;
+    }
+    
+    .card-navy {
+        @apply bg-gray-50 p-6 rounded-md border border-gray-200 hover:bg-white hover:border-navy transition-all;
+    }
+    
+    /* Link card variant - remove underlines */
+    a.card {
+        @apply no-underline;
+    }
+    
+    a.card * {
+        @apply no-underline;
+    }
+    
+    a.card-aqua {
+        @apply no-underline;
+    }
+    
+    a.card-aqua h3,
+    a.card-aqua h4,
+    a.card-aqua i,
+    a.card-aqua .ti {
+        @apply no-underline;
+    }
+    
+    a.card-fuchsia {
+        @apply no-underline;
+    }
+    
+    a.card-fuchsia h3,
+    a.card-fuchsia h4,
+    a.card-fuchsia i,
+    a.card-fuchsia .ti {
+        @apply no-underline;
+    }
+    
+    a.card-navy {
+        @apply no-underline;
+    }
+    
+    a.card-navy h3,
+    a.card-navy h4,
+    a.card-navy i,
+    a.card-navy .ti {
+        @apply no-underline;
+    }
+
+    /* Install-style components (aligned with install.regenfass.eu, Regenfass palette) */
+    .gradient-text-title {
+        @apply bg-gradient-to-br from-navy to-aqua-tint bg-clip-text text-transparent font-heading font-bold;
+    }
+
+    .gradient-text-accent {
+        @apply bg-gradient-to-br from-aqua-600 to-aqua bg-clip-text text-transparent;
+    }
+
+    .section-indicator {
+        @apply relative inline-flex w-3 h-3 rounded-full bg-aqua;
+    }
+
+    .section-indicator-ping {
+        @apply absolute inline-flex w-full h-full rounded-full bg-aqua opacity-75 animate-ping;
+    }
+
+    .card-install,
+    .details-card {
+        @apply rounded-lg shadow-lg border border-gray-200 bg-aqua-tint transition-all duration-300 ease-in-out;
+        box-shadow: 0 10px 15px -3px rgba(11, 38, 73, 0.12), 0 4px 6px -4px rgba(11, 38, 73, 0.08);
+    }
+
+    .card-install[open],
+    .details-card[open] {
+        @apply bg-gray-50;
+    }
+
+    .card-install:hover,
+    .details-card:hover {
+        box-shadow: 0 10px 15px -3px rgba(11, 38, 73, 0.19), 0 4px 6px -4px rgba(11, 38, 73, 0.1);
+    }
+
+    .btn-install,
+    .btn-gradient-primary {
+        @apply px-8 py-4 text-lg font-medium font-heading rounded-lg shrink-0 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-aqua-600/50;
+        background-image: linear-gradient(to bottom right, var(--color-aqua-600), var(--color-aqua));
+        color: var(--color-navy);
+    }
+
+    .btn-install:hover,
+    .btn-gradient-primary:hover {
+        background-image: linear-gradient(to bottom right, var(--color-aqua-700), var(--color-aqua-600));
+    }
+
+    .install-style-page {
+        @apply min-h-full max-w-screen-lg mx-auto px-3 py-6;
+        box-shadow: var(--shadow-page-inset-light);
+    }
+
+    .install-style-page.light {
+        @apply bg-navy-tint text-gray-dark;
+    }
+
+    .install-style-page.dark {
+        @apply bg-navy text-white;
+        box-shadow: var(--shadow-page-inset-dark);
+    }
+
+    /* Install-style details: chevron rotation (matches install.regenfass.eu) */
+    details.card-install summary svg,
+    details.details-card summary svg {
+        transition: transform 0.3s ease;
+        transform: rotate(90deg);
+    }
+
+    details.card-install[open] summary svg,
+    details.details-card[open] summary svg {
+        transform: rotate(-90deg);
+    }
+}
+
+@layer utilities {
+    /* Links - Default to Aqua Dark for better contrast on light backgrounds */
+    /* Apply default color only if no explicit text color class is set */
+    /* Exclude card links (bg-gray-50, bg-white, card classes) from default underline */
+    a:not(.nav-link):not(.active):not([class*="text-"]):not(.bg-gray-50):not(.bg-white):not(.card):not(.card-aqua):not(.card-fuchsia):not(.card-navy) {
+        @apply text-aqua-700 underline;
+    }
+
+    a:not(.nav-link):not(.active):not([class*="text-"]):not(.bg-gray-50):not(.bg-white):not(.card):not(.card-aqua):not(.card-fuchsia):not(.card-navy):hover {
+        @apply text-aqua underline;
+    }
+
+    /* Links on dark backgrounds (footer, header, dark sections) use normal Aqua */
+    .bg-navy a:not(.nav-link):not(.active):not([class*="text-"]),
+    .bg-gray-900 a:not(.nav-link):not(.active):not([class*="text-"]),
+    footer a:not(.nav-link):not(.active):not([class*="text-"]),
+    nav a:not(.nav-link):not(.active):not([class*="text-"]) {
+        @apply text-aqua underline;
+    }
+
+    .bg-navy a:not(.nav-link):not(.active):not([class*="text-"]):hover,
+    .bg-gray-900 a:not(.nav-link):not(.active):not([class*="text-"]):hover,
+    footer a:not(.nav-link):not(.active):not([class*="text-"]):hover,
+    nav a:not(.nav-link):not(.active):not([class*="text-"]):hover {
+        @apply text-aqua opacity-90 underline;
+    }
+
+    /* Ensure links with hover classes but no base color get a default color */
+    /* Exclude card links from default underline */
+    a:not(.nav-link):not(.active)[class*="hover:text-"]:not([class*="text-"]):not(.bg-gray-50):not(.bg-white):not(.card):not(.card-aqua):not(.card-fuchsia):not(.card-navy) {
+        @apply text-aqua-700 underline;
+    }
+
+    /* Remove underline from card links (icons and headlines should not be underlined) */
+    a.bg-white,
+    a.bg-gray-50 {
+        @apply no-underline;
+    }
+
+    a.bg-white:hover,
+    a.bg-gray-50:hover {
+        @apply no-underline;
+    }
+
+    /* Remove underline from all elements inside card links */
+    a.bg-white *,
+    a.bg-gray-50 *,
+    a.bg-white h3,
+    a.bg-white .text-4xl,
+    a.bg-white .text-center > div:first-child,
+    a.bg-gray-50 h3,
+    a.bg-gray-50 i,
+    a.bg-gray-50 .ti {
+        @apply no-underline;
+    }
+
+    .markdown-content a {
+        @apply text-aqua-700 underline;
+    }
+
+    .markdown-content a:hover {
+        @apply text-aqua;
+    }
+
+    /* Fuchsia link utility class */
+    .link-fuchsia {
+        @apply text-fuchsia-600 underline;
+    }
+
+    .link-fuchsia:hover {
+        @apply text-fuchsia underline;
+    }
+
+    /* Fuchsia links on dark backgrounds */
+    .bg-navy .link-fuchsia,
+    .bg-gray-900 .link-fuchsia,
+    footer .link-fuchsia,
+    nav .link-fuchsia {
+        @apply text-fuchsia;
+    }
+
+    .bg-navy .link-fuchsia:hover,
+    .bg-gray-900 .link-fuchsia:hover,
+    footer .link-fuchsia:hover,
+    nav .link-fuchsia:hover {
+        @apply text-fuchsia opacity-90;
+    }
+
+    /* Accessibility: Override text colors on dark backgrounds for WCAG AA compliance */
+    .bg-navy .text-aqua,
+    .bg-gray-900 .text-aqua,
+    footer .text-aqua,
+    nav .text-aqua {
+        color: var(--color-aqua-on-dark) !important;
+    }
+
+    .bg-navy .text-fuchsia,
+    .bg-gray-900 .text-fuchsia,
+    footer .text-fuchsia,
+    nav .text-fuchsia {
+        color: var(--color-fuchsia-on-dark) !important;
+    }
+
+    /* Navigation */
+    nav.bg-navy.sticky {
+        @apply transition-all duration-300 ease-in-out;
+    }
+
+    nav.bg-navy.sticky.header-transparent {
+        @apply bg-transparent;
+    }
+
+    .nav-link {
+        @apply transition-colors duration-200;
+    }
+
+    .nav-link:hover {
+        @apply text-aqua;
+    }
+
+    .nav-link.active {
+        @apply text-aqua;
+    }
+
+    /* Navigation link variations - Fuchsia for alternate sections */
+    .nav-link.active.implementations {
+        @apply text-fuchsia;
+    }
+
+    .nav-link:hover.implementations {
+        @apply text-fuchsia;
+    }
+
+    .nav-link.active.colors {
+        @apply text-fuchsia;
+    }
+
+    .nav-link:hover.colors {
+        @apply text-fuchsia;
+    }
+
+    /* Hero Section Styling */
+    .hero-section {
+        @apply relative overflow-hidden;
+    }
+
+    .hero-section p {
+        @apply text-white;
+    }
+
+    .hero-accent-line {
+        @apply w-[200px] h-1 bg-aqua mt-4;
+    }
+
+    .hero-accent-line-fuchsia {
+        @apply w-[200px] h-1 bg-fuchsia mt-4;
+    }
+
+    /* Hero variant: gradient title (install-style, use on hero section when desired) */
+    .hero-section.hero-gradient-title h1 {
+        @apply bg-gradient-to-br from-navy to-aqua-tint bg-clip-text text-transparent font-heading font-bold;
+    }
+
+    /* Two-tone headings: wrap the second part in <span class="heading-accent"> */
+    .heading-accent {
+        @apply text-aqua-50;
+    }
+
+    .bg-navy-900 .heading-accent,
+    .bg-navy .heading-accent,
+    .hero-section .heading-accent {
+        color: var(--color-aqua-on-dark);
+    }
+
+    /* Release Section */
+    .release-content {
+        @apply transition-all duration-300 ease-in-out overflow-hidden;
+    }
+
+    .release-content.hidden {
+        @apply hidden;
+    }
+
+    /* Markdown styling */
+    .markdown-content h1,
+    .markdown-content h2,
+    .markdown-content h3,
+    .markdown-content h4 {
+        @apply font-heading;
+        margin-top: 1.5em;
+        margin-bottom: 0.5em;
+    }
+
+    .markdown-content p {
+        @apply mb-4;
+    }
+
+    .markdown-content ul,
+    .markdown-content ol {
+        @apply ml-6 mb-4;
+    }
+
+    .markdown-content code {
+        @apply bg-black/10 rounded text-[0.9em];
+        padding: 0.2em 0.4em;
+    }
+
+    /* Mobile Navigation Menu */
+    @media (max-width: 768px) {
+        .nav-menu {
+            @apply hidden;
+        }
+        
+        .nav-menu.open {
+            @apply flex flex-col absolute top-full left-0 right-0 bg-navy p-4;
+            z-index: 1000;
+        }
+    }
+
+    /* Animated SVG Objects */
+    object[type="image/svg+xml"] {
+        @apply block pointer-events-none;
+    }
+
+    object[type="image/svg+xml"] svg {
+        @apply block w-full h-full;
+    }
+
+    /* PDF Viewer Styles */
+    .pdf-viewer {
+        @apply w-full min-h-[300px] flex items-center justify-center bg-[#f5f5f5] rounded-lg overflow-hidden relative;
+    }
+
+    .pdf-viewer canvas {
+        @apply max-w-full h-auto block;
+    }
+
+    .pdf-loading {
+        @apply text-gray-medium font-body p-8 text-center;
+    }
+
+    .pdf-error {
+        @apply text-fuchsia font-body p-8 text-center;
+    }
+}

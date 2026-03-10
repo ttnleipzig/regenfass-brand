@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{basePath}}favicon.svg">
+    <link rel="alternate icon" href="{{basePath}}logos/solo/regenfass-solo-light.png">
+    <link rel="apple-touch-icon" href="{{basePath}}logos/solo/regenfass-solo-light.png">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="{{basePath}}manifest.json">
+    <meta name="theme-color" content="#1E2A45">
+    
+    <meta name="description" content="Regenfass Business Cards - Professional business cards with QR code integration">
+    <meta name="keywords" content="Regenfass, business cards, visitenkarten, QR code, vCard">
+    <meta name="author" content="Regenfass">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="German">
+    <title>Business Cards - Regenfass</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://brand.regenfass.digital/implementations/business-cards.html">
+    <meta property="og:title" content="Business Cards - Regenfass">
+    <meta property="og:description" content="Professional business cards with QR code integration following Regenfass brand guidelines">
+        <meta property="og:image" content="{{repoBaseUrl}}/assets/banner/opengraph/business-cards.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/svg+xml">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="Regenfass">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://brand.regenfass.digital/implementations/business-cards.html">
+    <meta name="twitter:title" content="Business Cards - Regenfass">
+    <meta name="twitter:description" content="Professional business cards with QR code integration">
+        <meta name="twitter:image" content="{{repoBaseUrl}}/assets/banner/opengraph/business-cards.svg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://brand.regenfass.digital/implementations/business-cards.html">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Business Cards - Regenfass",
+      "description": "Professional business cards with QR code integration following Regenfass brand guidelines",
+      "url": "https://brand.regenfass.digital/implementations/business-cards.html",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Regenfass Corporate Identity",
+        "url": "https://brand.regenfass.digital/"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "Business Cards",
+        "description": "Professional business cards implementing Regenfass brand fundamentals"
+      }
+    }
+    </script>
+    
+    <!-- Preconnect to external origins for performance optimization -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Tabler Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+    
+        <!-- Custom Styles (imported via main.js) -->
+        <script type="module" src="../main.js"></script>
+        
+        <!-- PDF.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+        
+        <style>
+        .business-card-preview {
+            width: 336px;
+            height: 212px;
+            transform: scale(0.8);
+            transform-origin: top left;
+            margin-bottom: -42px;
+        }
+        @media (min-width: 768px) {
+            .business-card-preview {
+                transform: scale(1);
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- include: navigation -->
+    
+    <!-- include: hero -->
+
+    <main role="main">
+    <!-- Overview Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8">Overview</h2>
+            <p class="font-body text-lg text-gray-700 mb-8">
+                Our business cards are designed following Regenfass brand fundamentals, ensuring consistency across all brand touchpoints. Each card features our brand colors, typography, and logo, combined with modern QR code technology for seamless contact sharing.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="card">
+                    <h3 class="font-heading text-xl font-bold text-navy mb-4">Front Side</h3>
+                    <ul class="font-body text-gray-700 space-y-2 list-disc list-inside">
+                        <li>Brand logo (Regenfass single circle variant)</li>
+                        <li>Contact information (name, position, email, phone)</li>
+                        <li>Company name (Regenfass)</li>
+                        <li>Navy background with aqua accents</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 class="font-heading text-xl font-bold text-navy mb-4">Back Side</h3>
+                    <ul class="font-body text-gray-700 space-y-2 list-disc list-inside">
+                        <li>QR code containing vCard (VCF) data</li>
+                        <li>Scannable contact information</li>
+                        <li>Direct import into contact apps</li>
+                        <li>Clean, minimal design</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Example Business Cards Section -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8 text-center">Example Business Cards</h2>
+            <p class="font-body text-lg text-gray-700 mb-12 text-center max-w-3xl mx-auto">
+                Below are example business cards showcasing different configurations and use cases. Each card demonstrates our brand identity applied to real-world contact information.
+            </p>
+
+            <!-- Max Mustermann -->
+            <div class="mb-16">
+                <h3 class="font-heading text-2xl font-bold text-navy mb-6 text-center">Max Mustermann</h3>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="card-aqua">
+                        <h4 class="font-heading text-lg font-semibold text-navy mb-4 text-center">Front Side</h4>
+                        <div class="pdf-viewer" id="max-mustermann-front">
+                            <div class="pdf-loading">Loading PDF...</div>
+                        </div>
+                        <div class="text-center mt-2">
+                            <a href="https://cdn.jsdelivr.net/gh/kieksme/regenfass.brand@main/examples/sample-business-cards/Max-Mustermann-front.pdf" 
+                               target="_blank" 
+                               class="text-aqua hover:underline text-sm">
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-aqua">
+                        <h4 class="font-heading text-lg font-semibold text-navy mb-4 text-center">Back Side</h4>
+                        <div class="pdf-viewer" id="max-mustermann-back">
+                            <div class="pdf-loading">Loading PDF...</div>
+                        </div>
+                        <div class="text-center mt-2">
+                            <a href="https://cdn.jsdelivr.net/gh/kieksme/regenfass.brand@main/examples/sample-business-cards/Max-Mustermann-back.pdf" 
+                               target="_blank" 
+                               class="text-aqua hover:underline text-sm">
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anna Schmidt -->
+            <div class="mb-16">
+                <h3 class="font-heading text-2xl font-bold text-navy mb-6 text-center">Anna Schmidt</h3>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="card-aqua">
+                        <h4 class="font-heading text-lg font-semibold text-navy mb-4 text-center">Front Side</h4>
+                        <div class="pdf-viewer" id="anna-schmidt-front">
+                            <div class="pdf-loading">Loading PDF...</div>
+                        </div>
+                        <div class="text-center mt-2">
+                            <a href="https://cdn.jsdelivr.net/gh/kieksme/regenfass.brand@main/examples/sample-business-cards/Anna-Schmidt-front.pdf" 
+                               target="_blank" 
+                               class="text-aqua hover:underline text-sm">
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-aqua">
+                        <h4 class="font-heading text-lg font-semibold text-navy mb-4 text-center">Back Side</h4>
+                        <div class="pdf-viewer" id="anna-schmidt-back">
+                            <div class="pdf-loading">Loading PDF...</div>
+                        </div>
+                        <div class="text-center mt-2">
+                            <a href="https://cdn.jsdelivr.net/gh/kieksme/regenfass.brand@main/examples/sample-business-cards/Anna-Schmidt-back.pdf" 
+                               target="_blank" 
+                               class="text-aqua hover:underline text-sm">
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tom Weber -->
+            <div class="mb-16">
+                <h3 class="font-heading text-2xl font-bold text-navy mb-6 text-center">Tom Weber</h3>
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="card-aqua">
+                        <h4 class="font-heading text-lg font-semibold text-navy mb-4 text-center">Front Side</h4>
+                        <div class="pdf-viewer" id="tom-weber-front">
+                            <div class="pdf-loading">Loading PDF...</div>
+                        </div>
+                        <div class="text-center mt-2">
+                            <a href="https://cdn.jsdelivr.net/gh/kieksme/regenfass.brand@main/examples/sample-business-cards/Tom-Weber-front.pdf" 
+                               target="_blank" 
+                               class="text-aqua hover:underline text-sm">
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-aqua">
+                        <h4 class="font-heading text-lg font-semibold text-navy mb-4 text-center">Back Side</h4>
+                        <div class="pdf-viewer" id="tom-weber-back">
+                            <div class="pdf-loading">Loading PDF...</div>
+                        </div>
+                        <div class="text-center mt-2">
+                            <a href="https://cdn.jsdelivr.net/gh/kieksme/regenfass.brand@main/examples/sample-business-cards/Tom-Weber-back.pdf" 
+                               target="_blank" 
+                               class="text-aqua hover:underline text-sm">
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Features Section -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8">Design Features</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-aqua">
+                    <h3 class="font-heading text-xl font-bold text-navy mb-4">Brand Colors</h3>
+                    <p class="font-body text-gray-700">
+                        Uses our official brand colors: Navy background (#1E2A45) with Aqua accents (#0B2649) for optimal contrast and brand recognition.
+                    </p>
+                </div>
+                
+                <div class="card-aqua">
+                    <h3 class="font-heading text-xl font-bold text-navy mb-4">Typography</h3>
+                    <p class="font-body text-gray-700">
+                        Follows brand typography guidelines: system UI font stack with line-height 1.4, ensuring readability and consistency.
+                    </p>
+                </div>
+                
+                <div class="card-aqua">
+                    <h3 class="font-heading text-xl font-bold text-navy mb-4">Standard Format</h3>
+                    <p class="font-body text-gray-700">
+                        Standard business card size: 85mm × 55mm (ISO/IEC 7810 ID-1 format), compatible with standard card holders and printing services.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Details Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8">Technical Details</h2>
+            
+            <div class="card p-8">
+                <h3 class="font-heading text-xl font-bold text-navy mb-4">QR Code Integration</h3>
+                <p class="font-body text-lg text-gray-700 mb-4">
+                    Each business card includes a QR code on the back that contains vCard (VCF) formatted contact data. When scanned, the QR code allows users to:
+                </p>
+                <ul class="font-body text-gray-700 space-y-2 list-disc list-inside mb-6">
+                    <li>Import contact information directly into their phone's contacts</li>
+                    <li>Access contact details without manual data entry</li>
+                    <li>Share contact information digitally</li>
+                </ul>
+                
+                <h3 class="font-heading text-xl font-bold text-navy mb-4 mt-8">Template System</h3>
+                <p class="font-body text-lg text-gray-700 mb-4">
+                    Business cards are generated using HTML/CSS templates that follow our brand guidelines. The templates support:
+                </p>
+                <ul class="font-body text-gray-700 space-y-2 list-disc list-inside">
+                    <li>Dynamic content insertion</li>
+                    <li>Conditional rendering of optional fields</li>
+                    <li>PDF generation via Puppeteer</li>
+                    <li>Consistent brand styling</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- include: implementations-grid -->
+
+    <!-- include: footer -->
+
+    <script>
+        // Wait for PDF.js to be loaded
+        function initPDFViewer() {
+            // Check if pdfjsLib is available
+            if (typeof pdfjsLib === 'undefined') {
+                console.error('PDF.js library not loaded, retrying...');
+                // Retry after a short delay
+                setTimeout(initPDFViewer, 200);
+                return;
+            }
+
+            // Configure PDF.js worker
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+            // Function to render PDF
+            async function renderPDF(pdfUrl, containerId) {
+                const container = document.getElementById(containerId);
+                if (!container) {
+                    console.error('Container not found:', containerId);
+                    return;
+                }
+
+                try {
+                    container.innerHTML = '<div class="pdf-loading">Loading PDF...</div>';
+                    
+                    // Wait a bit to ensure container has dimensions
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                    
+                    // Load the PDF with CORS handling
+                    const loadingTask = pdfjsLib.getDocument({
+                        url: pdfUrl,
+                        withCredentials: false,
+                        httpHeaders: {}
+                    });
+                    const pdf = await loadingTask.promise;
+
+                    // Get the first page
+                    const page = await pdf.getPage(1);
+
+                    // Calculate scale to fit container (accounting for landscape format)
+                    const viewport = page.getViewport({ scale: 1.0 });
+                    
+                    // Ensure container has dimensions, use fallback if not
+                    let containerWidth = container.clientWidth;
+                    let containerHeight = container.clientHeight;
+                    
+                    // If container has no dimensions yet, use a default size
+                    if (containerWidth === 0 || containerHeight === 0) {
+                        containerWidth = 336; // Default business card width in pixels
+                        containerHeight = 212; // Default business card height in pixels
+                    }
+                    
+                    // Account for padding
+                    const padding = 20;
+                    const availableWidth = containerWidth - padding;
+                    const availableHeight = containerHeight - padding;
+                    
+                    // For landscape PDFs, scale based on available space
+                    const scale = Math.min(
+                        availableWidth / viewport.width, 
+                        availableHeight / viewport.height,
+                        2.0 // Max scale to prevent too large rendering
+                    );
+                    
+                    const scaledViewport = page.getViewport({ scale: scale });
+
+                    // Create canvas
+                    const canvas = document.createElement('canvas');
+                    const context = canvas.getContext('2d');
+                    canvas.height = scaledViewport.height;
+                    canvas.width = scaledViewport.width;
+                    canvas.className = 'business-card-preview';
+
+                    // Render PDF page into canvas
+                    const renderContext = {
+                        canvasContext: context,
+                        viewport: scaledViewport
+                    };
+
+                    await page.render(renderContext).promise;
+
+                    // Clear container and add canvas
+                    container.innerHTML = '';
+                    container.appendChild(canvas);
+                } catch (error) {
+                    console.error('Error loading PDF:', error, 'URL:', pdfUrl);
+                    if (typeof swetrix !== 'undefined') {
+                        swetrix.trackError({
+                            name: error.name || 'Error',
+                            message: error.message || 'Failed to load PDF',
+                            stackTrace: error.stack,
+                            meta: {
+                                pdfUrl: pdfUrl,
+                            },
+                        });
+                    }
+                    container.innerHTML = '<div class="pdf-error">Error loading PDF: ' + error.message + '. <a href="' + pdfUrl + '" target="_blank" class="text-aqua hover:underline">Download instead</a></div>';
+                }
+            }
+
+            // Load all PDFs from GitHub-hosted sample-business-cards directory
+            const baseUrl = 'https://cdn.jsdelivr.net/gh/kieksme/regenfass.brand@main/examples/sample-business-cards/';
+            const pdfs = [
+                { url: baseUrl + 'Max-Mustermann-front.pdf', id: 'max-mustermann-front' },
+                { url: baseUrl + 'Max-Mustermann-back.pdf', id: 'max-mustermann-back' },
+                { url: baseUrl + 'Anna-Schmidt-front.pdf', id: 'anna-schmidt-front' },
+                { url: baseUrl + 'Anna-Schmidt-back.pdf', id: 'anna-schmidt-back' },
+                { url: baseUrl + 'Tom-Weber-front.pdf', id: 'tom-weber-front' },
+                { url: baseUrl + 'Tom-Weber-back.pdf', id: 'tom-weber-back' }
+            ];
+
+            // Wait for page to be fully rendered before loading PDFs
+            if (document.readyState === 'complete') {
+                // Small delay to ensure layout is complete
+                setTimeout(() => {
+                    pdfs.forEach(pdf => {
+                        renderPDF(pdf.url, pdf.id);
+                    });
+                }, 100);
+            } else {
+                window.addEventListener('load', () => {
+                        setTimeout(() => {
+                            pdfs.forEach(pdf => {
+                                renderPDF(pdf.url, pdf.id);
+                            });
+                        }, 100);
+                });
+            }
+        }
+
+        // Load PDFs when page is ready and PDF.js is loaded
+        function startPDFViewer() {
+            function checkAndInit() {
+                if (typeof pdfjsLib !== 'undefined') {
+                    initPDFViewer();
+                    return true;
+                }
+                return false;
+            }
+
+            // If DOM is already loaded
+            if (document.readyState !== 'loading') {
+                if (!checkAndInit()) {
+                    // Poll for PDF.js
+                    const checkInterval = setInterval(function() {
+                        if (checkAndInit()) {
+                            clearInterval(checkInterval);
+                        }
+                    }, 100);
+                    // Timeout after 10 seconds
+                    setTimeout(function() {
+                        clearInterval(checkInterval);
+                        if (typeof pdfjsLib === 'undefined') {
+                            console.error('PDF.js library failed to load');
+                            document.querySelectorAll('.pdf-viewer').forEach(container => {
+                                container.innerHTML = '<div class="pdf-error">PDF.js library failed to load. Please refresh the page.</div>';
+                            });
+                        }
+                    }, 10000);
+                }
+            } else {
+                // Wait for DOM to be ready
+                document.addEventListener('DOMContentLoaded', function() {
+                    if (!checkAndInit()) {
+                        // Poll for PDF.js
+                        const checkInterval = setInterval(function() {
+                            if (checkAndInit()) {
+                                clearInterval(checkInterval);
+                            }
+                        }, 100);
+                        // Timeout after 10 seconds
+                        setTimeout(function() {
+                            clearInterval(checkInterval);
+                            if (typeof pdfjsLib === 'undefined') {
+                                console.error('PDF.js library failed to load');
+                                document.querySelectorAll('.pdf-viewer').forEach(container => {
+                                    container.innerHTML = '<div class="pdf-error">PDF.js library failed to load. Please refresh the page.</div>';
+                                });
+                            }
+                        }, 10000);
+                    }
+                });
+            }
+        }
+        
+        startPDFViewer();
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+            });
+        }
+    </script>
+    <!-- include: analytics -->
+</body>
+</html>

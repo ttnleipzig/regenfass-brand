@@ -1,0 +1,69 @@
+name: Wiki Guidelines Sync
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'guidelines/**'
+
+permissions:
+  contents: write
+
+jobs:
+  sync-wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.19.0'
+
+      - name: Prepare wiki content
+        run: node scripts/sync-wiki.mjs
+
+      - name: Check if wiki repository exists
+        id: wiki_check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          WIKI_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.wiki.git"
+          if git ls-remote "$WIKI_URL" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+            echo "Wiki repository not found. Skipping wiki sync."
+          fi
+
+      - name: Checkout wiki
+        if: steps.wiki_check.outputs.exists == 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository }}.wiki
+          path: wiki-repo
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Sync to wiki
+        if: steps.wiki_check.outputs.exists == 'true'
+        run: |
+          cp -r wiki-output/* wiki-repo/
+          cd wiki-repo
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to push"
+          else
+            git commit -m "chore(wiki): sync guidelines from main repository"
+            git push
+          fi
+
+      - name: Wiki sync skipped
+        if: steps.wiki_check.outputs.exists != 'true'
+        run: |
+          echo "Skipping wiki sync because ${GITHUB_REPOSITORY}.wiki is not available."
+          echo "Enable the Wiki feature in repository settings if wiki sync is required."

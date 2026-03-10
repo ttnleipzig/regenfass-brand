@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{basePath}}favicon.svg">
+    <link rel="alternate icon" href="{{basePath}}logos/solo/regenfass-solo-light.png">
+    <link rel="apple-touch-icon" href="{{basePath}}logos/solo/regenfass-solo-light.png">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="{{basePath}}manifest.json">
+    <meta name="theme-color" content="#1E2A45">
+    
+    <meta name="description" content="Regenfass Email Footer - Professional email footer templates following brand guidelines">
+    <meta name="keywords" content="Regenfass, email footer, email signature, email template, brand guidelines">
+    <meta name="author" content="Regenfass">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="German">
+    <title>Email Footer - Regenfass</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://brand.regenfass.digital/implementations/email-footer.html">
+    <meta property="og:title" content="Email Footer - Regenfass">
+    <meta property="og:description" content="Professional email footer templates following Regenfass brand guidelines">
+    <meta property="og:image" content="{{repoBaseUrl}}/assets/banner/opengraph/implementations.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/svg+xml">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="Regenfass">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://brand.regenfass.digital/implementations/email-footer.html">
+    <meta name="twitter:title" content="Email Footer - Regenfass">
+    <meta name="twitter:description" content="Professional email footer templates following brand guidelines">
+    <meta name="twitter:image" content="{{repoBaseUrl}}/assets/banner/opengraph/implementations.svg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://brand.regenfass.digital/implementations/email-footer.html">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Email Footer - Regenfass",
+      "description": "Professional email footer templates following Regenfass brand guidelines",
+      "url": "https://brand.regenfass.digital/implementations/email-footer.html",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Regenfass Corporate Identity",
+        "url": "https://brand.regenfass.digital/"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "Email Footer",
+        "description": "Email footer templates implementing Regenfass brand fundamentals"
+      }
+    }
+    </script>
+    
+    <!-- Tabler Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+    
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    
+    <!-- Custom Styles (imported via main.js) -->
+    <script type="module" src="../main.js"></script>
+    
+    <style>
+        .email-footer-preview {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #f9fafb;
+            margin: 2rem 0;
+        }
+        
+        .email-footer-preview iframe {
+            width: 100%;
+            border: none;
+            display: block;
+        }
+        
+        .code-block {
+            margin: 1rem 0;
+        }
+        
+        .code-block pre[class*="language-"] {
+            background: #1e2a45 !important;
+            border-radius: 8px;
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin: 0;
+        }
+        
+        .code-block code[class*="language-"] {
+            font-family: "Source Code Pro", "Monaco", "Courier New", monospace;
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+        
+        .copy-button {
+            background-color: #1E2A45;
+            color: #f9fafb;
+            border: 2px solid #0B2649;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            transition: all 0.2s;
+            margin-top: 0.5rem;
+        }
+        
+        .copy-button:hover {
+            background-color: #0B2649;
+            color: #f9fafb;
+        }
+        
+        .copy-button.copied {
+            background-color: #0B2649;
+            color: #f9fafb;
+        }
+    </style>
+</head>
+<body>
+    <!-- include: navigation -->
+    
+
+    <!-- include: hero -->
+
+    <main role="main">
+    <!-- Overview Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8">Overview</h2>
+            <p class="font-body text-lg text-gray-700 mb-8">
+                Our email footer templates are designed to follow Regenfass brand fundamentals, ensuring consistency across all email communications. Each footer features our brand colors, typography, and logo, optimized for maximum compatibility with email clients.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="card">
+                    <h3 class="font-heading text-xl font-bold text-navy mb-4">Design Features</h3>
+                    <ul class="font-body text-gray-700 space-y-2 list-disc list-inside">
+                        <li>Brand logo (Regenfass horizontal variant)</li>
+                        <li>Contact information (email, phone, website)</li>
+                        <li>Company name and legal information</li>
+                        <li>Social media links (optional)</li>
+                        <li>Navy and aqua color scheme</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 class="font-heading text-xl font-bold text-navy mb-4">Technical Features</h3>
+                    <ul class="font-body text-gray-700 space-y-2 list-disc list-inside">
+                        <li>Table-based layout for email compatibility</li>
+                        <li>Inline CSS styles (no external stylesheets)</li>
+                        <li>Responsive design for mobile devices</li>
+                        <li>WCAG AA compliant color contrast</li>
+                        <li>Compatible with major email clients</li>
+                        <li>Plain text variant available (no HTML required)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Email Footer Examples Section -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8 text-center">Email Footer Examples</h2>
+            <p class="font-body text-lg text-gray-700 mb-12 text-center max-w-3xl mx-auto">
+                Below are example email footers showcasing different configurations. Each footer demonstrates our brand identity applied to email communications.
+            </p>
+
+            <!-- Standard Footer -->
+            <div class="mb-16">
+                <h3 class="font-heading text-2xl font-bold text-navy mb-6">Standard Footer</h3>
+                <p class="font-body text-gray-700 mb-4">
+                    A clean, professional footer with logo, contact information, and company details.
+                </p>
+                
+                <div class="email-footer-preview">
+                    <iframe id="standard-footer-preview" src="about:blank" style="height: 300px;"></iframe>
+                </div>
+                
+                <div class="mt-4">
+                    <h4 class="font-heading text-lg font-semibold text-navy mb-2">HTML Code:</h4>
+                    <div class="code-block" id="standard-footer-code">
+                        <pre class="language-html"><code class="language-html" id="standard-footer-code-content"></code></pre>
+                    </div>
+                    <button class="copy-button" onclick="copyToClipboard('standard-footer-code-content', this)">Copy Code</button>
+                </div>
+            </div>
+
+            <!-- Minimal Footer -->
+            <div class="mb-16">
+                <h3 class="font-heading text-2xl font-bold text-navy mb-6">Minimal Footer</h3>
+                <p class="font-body text-gray-700 mb-4">
+                    A simplified footer with essential information only.
+                </p>
+                
+                <div class="email-footer-preview">
+                    <iframe id="minimal-footer-preview" src="about:blank" style="height: 200px;"></iframe>
+                </div>
+                
+                <div class="mt-4">
+                    <h4 class="font-heading text-lg font-semibold text-navy mb-2">HTML Code:</h4>
+                    <div class="code-block" id="minimal-footer-code">
+                        <pre class="language-html"><code class="language-html" id="minimal-footer-code-content"></code></pre>
+                    </div>
+                    <button class="copy-button" onclick="copyToClipboard('minimal-footer-code-content', this)">Copy Code</button>
+                </div>
+            </div>
+
+            <!-- Extended Footer -->
+            <div class="mb-16">
+                <h3 class="font-heading text-2xl font-bold text-navy mb-6">Extended Footer</h3>
+                <p class="font-body text-gray-700 mb-4">
+                    A comprehensive footer with social media links and additional information.
+                </p>
+                
+                <div class="email-footer-preview">
+                    <iframe id="extended-footer-preview" src="about:blank" style="height: 400px;"></iframe>
+                </div>
+                
+                <div class="mt-4">
+                    <h4 class="font-heading text-lg font-semibold text-navy mb-2">HTML Code:</h4>
+                    <div class="code-block" id="extended-footer-code">
+                        <pre class="language-html"><code class="language-html" id="extended-footer-code-content"></code></pre>
+                    </div>
+                    <button class="copy-button" onclick="copyToClipboard('extended-footer-code-content', this)">Copy Code</button>
+                </div>
+            </div>
+
+            <!-- Plain Text Footer -->
+            <div class="mb-16">
+                <h3 class="font-heading text-2xl font-bold text-navy mb-6">Plain Text Footer</h3>
+                <p class="font-body text-gray-700 mb-4">
+                    A simple text-only footer without HTML. Perfect for plain text emails or when HTML is not supported.
+                </p>
+                
+                <div class="card mb-4">
+                    <pre id="plain-text-footer-preview" class="font-body text-sm text-gray-700 whitespace-pre-wrap" style="font-family: 'Source Sans 3', Arial, sans-serif; margin: 0; line-height: 1.6;"></pre>
+                </div>
+                
+                <div class="mt-4">
+                    <h4 class="font-heading text-lg font-semibold text-navy mb-2">Plain Text Code:</h4>
+                    <div class="code-block" id="plain-text-footer-code">
+                        <pre class="language-plaintext"><code class="language-plaintext" id="plain-text-footer-code-content"></code></pre>
+                    </div>
+                    <button class="copy-button" onclick="copyToClipboard('plain-text-footer-code-content', this)">Copy Code</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Features Section -->
+    <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8">Design Features</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card border border-gray-200 hover:border-aqua hover:bg-white transition-all">
+                    <h3 class="font-heading text-xl font-bold text-navy mb-4">Brand Colors</h3>
+                    <p class="font-body text-gray-700">
+                        Uses our official brand colors: Navy (#1E2A45) with Aqua accents (#0B2649) for optimal contrast and brand recognition in email clients.
+                    </p>
+                </div>
+                
+                <div class="card border border-gray-200 hover:border-aqua hover:bg-white transition-all">
+                    <h3 class="font-heading text-xl font-bold text-navy mb-4">Typography</h3>
+                    <p class="font-body text-gray-700">
+                        Follows brand typography guidelines: Hanken Grotesk for headings and Source Sans 3 for body text, with web-safe fallbacks for email compatibility.
+                    </p>
+                </div>
+                
+                <div class="card border border-gray-200 hover:border-aqua hover:bg-white transition-all">
+                    <h3 class="font-heading text-xl font-bold text-navy mb-4">Email Compatibility</h3>
+                    <p class="font-body text-gray-700">
+                        Built with table-based layouts and inline styles for maximum compatibility with Gmail, Outlook, Apple Mail, and other major email clients.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Details Section -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8">Technical Details</h2>
+            
+            <div class="card-aqua p-8">
+                <h3 class="font-heading text-xl font-bold text-navy mb-4">Email Client Compatibility</h3>
+                <p class="font-body text-lg text-gray-700 mb-4">
+                    Our email footer templates are designed to work across all major email clients:
+                </p>
+                <ul class="font-body text-gray-700 space-y-2 list-disc list-inside mb-6">
+                    <li>Gmail (Web, iOS, Android)</li>
+                    <li>Outlook (Windows, Mac, Web)</li>
+                    <li>Apple Mail (macOS, iOS)</li>
+                    <li>Yahoo Mail</li>
+                    <li>Thunderbird</li>
+                    <li>And many more...</li>
+                </ul>
+                
+                <h3 class="font-heading text-xl font-bold text-navy mb-4 mt-8">Best Practices</h3>
+                <p class="font-body text-lg text-gray-700 mb-4">
+                    When using these email footer templates:
+                </p>
+                <ul class="font-body text-gray-700 space-y-2 list-disc list-inside">
+                    <li>Always use inline styles (no external CSS files)</li>
+                    <li>Use table-based layouts for structure</li>
+                    <li>Test in multiple email clients before sending</li>
+                    <li>Keep image file sizes small for faster loading</li>
+                    <li>Use absolute URLs for images and links</li>
+                    <li>Ensure all text has sufficient color contrast (WCAG AA)</li>
+                    <li>For plain text emails, use the plain text variant (no HTML)</li>
+                    <li>Plain text footers work in all email clients and are accessible</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- include: implementations-grid -->
+
+    <!-- include: footer -->
+
+    <script>
+        // Email footer templates
+        const emailFooters = {
+            standard: `<!-- Standard Email Footer -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: 'Source Sans 3', Arial, sans-serif; background-color: #ffffff; border-top: 3px solid #0B2649; padding: 30px 20px;">
+    <tr>
+        <td align="center">
+            <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px;">
+                <!-- Logo -->
+                <tr>
+                    <td align="left" style="padding-bottom: 20px;">
+                        <img src="{{basePath}}logos/horizontal/regenfass-horizontal-dark.svg" alt="Regenfass Logo" width="128" height="32" style="display: block; height: 32px; width: auto;">
+                    </td>
+                </tr>
+                <!-- Contact Information -->
+                <tr>
+                    <td align="left" style="padding-bottom: 15px;">
+                        <table cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td style="font-size: 14px; line-height: 1.6; color: #1E2A45;">
+                                    <strong style="color: #1E2A45; font-family: 'Hanken Grotesk', Arial, sans-serif;">André Lademann</strong><br>
+                                    <span style="color: #666666;">Team Zero</span><br>
+                                    <span style="color: #666666;">Regenfass</span><br>
+                                    <span style="color: #666666;">Arnsburger Strasse 74, 60385 Frankfurt am Main</span><br>
+                                    <span style="color: #666666;">Phone: <a href="tel:+4915126512786" style="color: #006B5F; text-decoration: none;">+49 151 26512786</a></span><br>
+                                    <span style="color: #666666;">E-mail: <a href="mailto:alademann@regenfass.digital" style="color: #006B5F; text-decoration: none;">alademann@regenfass.digital</a></span><br>
+                                    <span style="color: #666666;"><a href="https://www.regenfass.digital" style="color: #006B5F; text-decoration: none;">www.regenfass.digital</a></span><br>
+                                    <span style="color: #666666;">Get to know us via social media: <a href="https://www.linkedin.com/company/regenfass" style="color: #006B5F; text-decoration: none;">LinkedIn</a> | <a href="https://www.instagram.com/regenfass" style="color: #006B5F; text-decoration: none;">Instagram</a> | <a href="https://www.youtube.com/regenfass" style="color: #006B5F; text-decoration: none;">Youtube</a></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- Divider / Legal -->
+                <tr>
+                    <td style="border-top: 1px solid #CCCCCC; padding-top: 15px; padding-bottom: 15px;">
+                        <p style="margin: 0; font-size: 12px; color: #666666; line-height: 1.5;">
+                            Regenfass – Arnsburger Straße 74 – 60385 Frankfurt am Main – Germany<br>
+                            Handelsregister: HRB129804 Amtsgericht Frankfurt<br>
+                            Geschäftsführung: Henning Breyer, Tobias Drechsel, Dominik Fries<br>
+                            VAT-ID/USt-IdNr: DE310746560<br>
+                            Please THINK before you PRINT.<br>
+                            Unsere Hinweise zur Verarbeitung Ihrer personenbezogenen Daten finden Sie unter <a href="https://regenfass.digital/legal-notice/" style="color: #006B5F; text-decoration: none;">https://regenfass.digital/legal-notice/</a>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>`,
+            minimal: `<!-- Minimal Email Footer -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: 'Source Sans 3', Arial, sans-serif; background-color: #ffffff; padding: 20px;">
+    <tr>
+        <td align="center">
+            <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px;">
+                <tr>
+                    <td align="left" style="font-size: 12px; color: #666666; line-height: 1.6;">
+                        <strong style="color: #1E2A45; font-family: 'Hanken Grotesk', Arial, sans-serif;">André Lademann</strong> · Team Zero · Regenfass | 
+                        <a href="mailto:alademann@regenfass.digital" style="color: #006B5F; text-decoration: none;">alademann@regenfass.digital</a> | 
+                        <a href="tel:+4915126512786" style="color: #006B5F; text-decoration: none;">+49 151 26512786</a> | 
+                        <a href="https://www.regenfass.digital" style="color: #006B5F; text-decoration: none;">www.regenfass.digital</a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>`,
+            extended: `<!-- Extended Email Footer -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: 'Source Sans 3', Arial, sans-serif; background-color: #1E2A45; padding: 40px 20px;">
+    <tr>
+        <td align="center">
+            <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px;">
+                <!-- Logo -->
+                <tr>
+                    <td align="left" style="padding-bottom: 25px;">
+                        <img src="{{basePath}}logos/horizontal/regenfass-horizontal-dark.svg" alt="Regenfass Logo" width="128" height="32" style="display: block; height: 32px; width: auto; filter: brightness(0) invert(1);">
+                    </td>
+                </tr>
+                <!-- Content Grid -->
+                <tr>
+                    <td>
+                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td width="50%" valign="top" style="padding-right: 20px;">
+                                    <p style="margin: 0 0 15px 0; font-size: 14px; line-height: 1.6; color: #FFFFFF;">
+                                        <strong style="font-family: 'Hanken Grotesk', Arial, sans-serif; color: #0B2649;">André Lademann</strong><br>
+                                        <span style="color: #CCCCCC;">Team Zero</span><br>
+                                        <span style="color: #CCCCCC;">Regenfass</span><br>
+                                        <span style="color: #CCCCCC;">Arnsburger Strasse 74, 60385 Frankfurt am Main</span><br>
+                                        <span style="color: #CCCCCC;">Phone: <a href="tel:+4915126512786" style="color: #0B2649; text-decoration: none;">+49 151 26512786</a></span><br>
+                                        <span style="color: #CCCCCC;">E-mail: <a href="mailto:alademann@regenfass.digital" style="color: #0B2649; text-decoration: none;">alademann@regenfass.digital</a></span><br>
+                                        <span style="color: #CCCCCC;"><a href="https://www.regenfass.digital" style="color: #0B2649; text-decoration: none;">www.regenfass.digital</a></span>
+                                    </p>
+                                </td>
+                                <td width="50%" valign="top" style="padding-left: 20px;">
+                                    <p style="margin: 0 0 15px 0; font-size: 14px; line-height: 1.6; color: #FFFFFF;">
+                                        <strong style="font-family: 'Hanken Grotesk', Arial, sans-serif; color: #0B2649;">Get to know us via social media</strong><br>
+                                        <a href="https://www.linkedin.com/company/regenfass" style="color: #0B2649; text-decoration: none; font-size: 14px;">LinkedIn</a><br>
+                                        <a href="https://www.instagram.com/regenfass" style="color: #0B2649; text-decoration: none; font-size: 14px;">Instagram</a><br>
+                                        <a href="https://www.youtube.com/regenfass" style="color: #0B2649; text-decoration: none; font-size: 14px;">Youtube</a>
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- Divider / Legal -->
+                <tr>
+                    <td style="border-top: 1px solid #5A6B8C; padding-top: 20px; padding-bottom: 15px;">
+                        <p style="margin: 0; font-size: 12px; color: #CCCCCC; line-height: 1.5;">
+                            Regenfass – Arnsburger Straße 74 – 60385 Frankfurt am Main – Germany<br>
+                            Handelsregister: HRB129804 Amtsgericht Frankfurt<br>
+                            Geschäftsführung: Henning Breyer, Tobias Drechsel, Dominik Fries<br>
+                            VAT-ID/USt-IdNr: DE310746560<br>
+                            Please THINK before you PRINT.<br>
+                            Unsere Hinweise zur Verarbeitung Ihrer personenbezogenen Daten finden Sie unter <a href="https://regenfass.digital/legal-notice/" style="color: #0B2649; text-decoration: none;">https://regenfass.digital/legal-notice/</a>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>`,
+            plainText: `--
+André Lademann
+Team Zero
+Regenfass
+Arnsburger Strasse 74, 60385 Frankfurt am Main
+Phone: +49 151 26512786
+E-mail: alademann@regenfass.digital
+www.regenfass.digital
+
+Get to know us via social media:
+LinkedIn | Instagram | Youtube
+
+Regenfass - Arnsburger Straße 74 - 60385 Frankfurt am Main - Germany
+Handelsregister: HRB129804 Amtsgericht Frankfurt
+Geschäftsführung: Henning Breyer, Tobias Drechsel, Dominik Fries
+VAT-ID/USt-IdNr: DE310746560
+Please THINK before you PRINT.
+Unsere Hinweise zur Verarbeitung Ihrer personenbezogenen Daten finden Sie unter https://regenfass.digital/legal-notice/
+`
+        };
+
+        // Load email footer previews
+        function loadEmailFooterPreviews() {
+            const htmlPreviews = [
+                { id: 'standard-footer-preview', template: emailFooters.standard },
+                { id: 'minimal-footer-preview', template: emailFooters.minimal },
+                { id: 'extended-footer-preview', template: emailFooters.extended }
+            ];
+
+            // Load HTML footer previews
+            htmlPreviews.forEach(preview => {
+                const iframe = document.getElementById(preview.id);
+                const codeElement = document.getElementById(preview.id.replace('-preview', '-code-content'));
+                
+                if (iframe && codeElement) {
+                    // Set code content (textContent so HTML is shown as source, not rendered)
+                    codeElement.textContent = preview.template;
+                    if (typeof Prism !== 'undefined') {
+                        Prism.highlightElement(codeElement);
+                    }
+                    
+                    // Create preview document
+                    const doc = iframe.contentDocument || iframe.contentWindow.document;
+                    doc.open();
+                    doc.write(`
+                        <!DOCTYPE html>
+                        <html>
+                        <head>
+                            <meta charset="UTF-8">
+                            <style>
+                                body { margin: 0; padding: 0; background-color: #f5f5f5; }
+                            </style>
+                        </head>
+                        <body>
+                            ${preview.template}
+                        </body>
+                        </html>
+                    `);
+                    doc.close();
+                }
+            });
+
+            // Load plain text footer preview
+            const plainTextPreview = document.getElementById('plain-text-footer-preview');
+            const plainTextCode = document.getElementById('plain-text-footer-code-content');
+            
+            if (plainTextPreview && plainTextCode) {
+                plainTextPreview.textContent = emailFooters.plainText;
+                plainTextCode.textContent = emailFooters.plainText;
+                if (typeof Prism !== 'undefined') {
+                    Prism.highlightElement(plainTextCode);
+                }
+            }
+        }
+
+        // Copy to clipboard function
+        function copyToClipboard(elementId, button) {
+            const codeElement = document.getElementById(elementId);
+            if (!codeElement) return;
+
+            const text = codeElement.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                button.textContent = 'Copied!';
+                button.classList.add('copied');
+                setTimeout(() => {
+                    button.textContent = 'Copy Code';
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                if (typeof swetrix !== 'undefined') {
+                    swetrix.trackError({
+                        name: err.name || 'Error',
+                        message: err.message || 'Failed to copy to clipboard',
+                        stackTrace: err.stack,
+                    });
+                }
+                // Fallback for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.opacity = '0';
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                    button.textContent = 'Copied!';
+                    button.classList.add('copied');
+                    setTimeout(() => {
+                        button.textContent = 'Copy Code';
+                        button.classList.remove('copied');
+                    }, 2000);
+                } catch (err) {
+                    console.error('Fallback copy failed:', err);
+                    if (typeof swetrix !== 'undefined') {
+                        swetrix.trackError({
+                            name: err.name || 'Error',
+                            message: err.message || 'Fallback copy failed',
+                            stackTrace: err.stack,
+                        });
+                    }
+                }
+                document.body.removeChild(textarea);
+            });
+        }
+
+        // Initialize on page load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadEmailFooterPreviews);
+        } else {
+            loadEmailFooterPreviews();
+        }
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuToggle && mobileMenu) {
+            mobileMenuToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+            });
+        }
+    </script>
+    <!-- include: analytics -->
+</body>
+</html>

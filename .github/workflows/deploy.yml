@@ -1,0 +1,81 @@
+name: Deploy to GitHub Pages
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+  workflow_run:
+    workflows: ["Create Release Assets"]
+    types:
+      - completed
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # Run on merged PRs, successful release workflow runs, and manual dispatches
+    if: >
+      (github.event_name == 'pull_request' && github.event.pull_request.merged == true) ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') ||
+      github.event_name == 'workflow_dispatch'
+    steps:
+      - name: Checkout (release workflow run)
+        if: github.event_name == 'workflow_run'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+
+      - name: Checkout
+        if: github.event_name != 'workflow_run'
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.30.3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.19.0'
+          cache: 'pnpm'
+
+      - name: Clean pnpm artifacts
+        run: rm -rf node_modules package-lock.json
+        # Ensures a clean install so @tailwindcss/oxide native bindings are installed for this runner (Linux)
+
+      - name: Install dependencies
+        run: pnpm install
+        # No --frozen-lockfile: @tailwindcss/oxide needs platform-specific optional deps (Linux in CI)
+
+      - name: Build
+        env:
+          VITE_BASE_PATH: ${{ format('/{0}/', github.event.repository.name) }}
+        run: pnpm build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

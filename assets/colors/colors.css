@@ -1,0 +1,93 @@
+/* Regenfass Brand Colors */
+
+:root {
+  /* Primary Brand Colors */
+  --color-dark-blue: #0B2649;
+  --color-orange: #FF5722;
+  --color-turquoise: #00BCD4;
+  
+  /* Shaded Colors - Tailwind-like numbering (50=lightest, 900=darkest) */
+  /* Dark Blue */
+  --color-dark-blue-50: #206FD6;
+  --color-dark-blue-100: #174E96;
+  --color-dark-blue-500: #0B2649;
+  --color-dark-blue-600: #0D2D57;
+  --color-dark-blue-700: #081A33;
+  
+  /* Orange */
+  --color-orange-50: #FF5722;
+  --color-orange-100: #E64C1E;
+  --color-orange-500: #BF4019;
+  --color-orange-600: #802A11;
+  --color-orange-700: #401508;
+  
+  /* Turquoise */
+  --color-turquoise-50: #00C6E0;
+  --color-turquoise-100: #00BCD4;
+  --color-turquoise-500: #00B6CF;
+  --color-turquoise-600: #00A4BA;
+  --color-turquoise-700: #004A54;
+  
+  /* Text Colors */
+  --color-white: #FFFFFF;
+  --color-gray-dark: #333333;
+  
+  
+  /* Neutral Colors */
+  --color-gray-medium: #666666;
+  --color-gray-light: #CCCCCC;
+  
+  /* RGB Values (for use with opacity) */
+  --color-dark-blue-rgb: 11, 38, 73;
+  --color-orange-rgb: 255, 87, 34;
+  --color-turquoise-rgb: 0, 188, 212;
+  --color-white-rgb: 255, 255, 255;
+  --color-gray-dark-rgb: 51, 51, 51;
+  --color-gray-medium-rgb: 102, 102, 102;
+  --color-gray-light-rgb: 204, 204, 204;
+  
+  /* RGB Values for Color Shades */
+  --color-dark-blue-50-rgb: 32, 111, 214;
+  --color-dark-blue-100-rgb: 23, 78, 150;
+  --color-dark-blue-500-rgb: 11, 38, 73;
+  --color-dark-blue-600-rgb: 13, 45, 87;
+  --color-dark-blue-700-rgb: 8, 26, 51;
+  --color-orange-50-rgb: 255, 87, 34;
+  --color-orange-100-rgb: 230, 76, 30;
+  --color-orange-500-rgb: 191, 64, 25;
+  --color-orange-600-rgb: 128, 42, 17;
+  --color-orange-700-rgb: 64, 21, 8;
+  --color-turquoise-50-rgb: 0, 198, 224;
+  --color-turquoise-100-rgb: 0, 188, 212;
+  --color-turquoise-500-rgb: 0, 182, 207;
+  --color-turquoise-600-rgb: 0, 164, 186;
+  --color-turquoise-700-rgb: 0, 74, 84;
+  
+}
+
+/* Usage Examples:
+.button-primary {
+  background-color: var(--color-dark-blue);
+  color: var(--color-secondary, var(--color-white));
+}
+
+.button-accent {
+  background-color: var(--color-orange);
+  color: var(--color-white);
+}
+
+.text-link {
+  color: var(--color-turquoise-600);
+}
+
+.text-link:hover {
+  color: var(--color-turquoise-50);
+}
+
+.with-opacity {
+  background-color: rgba(var(--color-turquoise-rgb), 0.8);
+}
+
+/* Tailwind classes available (examples): bg-dark-blue-50, bg-dark-blue-100, bg-dark-blue-500, bg-dark-blue-600, bg-dark-blue-700 */
+/* Same pattern for orange and turquoise */
+*/
