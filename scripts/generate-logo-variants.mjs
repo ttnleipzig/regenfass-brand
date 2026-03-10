@@ -115,7 +115,7 @@ async function generateSoloCardSolidPng() {
 }
 
 /**
- * Horizontal logo SVG: icon + "Regenfass" text. Dark = light text on dark bg, Light = dark text (transparent bg).
+ * Horizontal logo SVG: icon + "Regenfass" text. Dark = light text, Light = dark text; both have transparent background.
  */
 async function generateHorizontalSvgs(sourceBuffer) {
   ensureDir(HORIZONTAL_DIR);
@@ -132,7 +132,6 @@ async function generateHorizontalSvgs(sourceBuffer) {
 
   const darkSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${svgWidth}" height="${svgHeight}" viewBox="0 0 ${svgWidth} ${svgHeight}">
-  <rect width="${svgWidth}" height="${svgHeight}" fill="${NAVY}"/>
   <image x="0" y="0" width="${iconWidth}" height="${iconHeight}" href="data:image/png;base64,${base64}" preserveAspectRatio="xMidYMid meet"/>
   <text x="${textX}" y="${fontSize + 4}" font-family="system-ui, sans-serif" font-size="${fontSize}" font-weight="600" fill="${WHITE}">Regenfass</text>
 </svg>

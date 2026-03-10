@@ -349,9 +349,9 @@ function renderFrontSide(page, data, fonts, images) {
   });
   
   // Logo positioning
-  // Logo: centered in the first quarter of the card horizontally, vertically centered; max 26×32mm; offset 1cm up
-  const logoWidth = mmToPt(26);
-  const logoHeight = mmToPt(32);
+  // Logo: centered in the first quarter of the card horizontally, vertically centered; max 34×40mm; offset 6mm up
+  const logoWidth = mmToPt(34);
+  const logoHeight = mmToPt(40);
   const logoOffsetUpMm = 6;
   let soloLogoBottomY = null;
   let finalLogoWidth = logoWidth;
