@@ -109,6 +109,26 @@
     </image:image>
   </url>
   
+  <!-- Backgrounds Page -->
+  <url>
+    <loc>https://brand.regenfass.digital/fundamentals/backgrounds.html</loc>
+    <lastmod>2026-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>{{repoBaseUrl}}/assets/banner/opengraph/backgrounds.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>{{repoBaseUrl}}/assets/backgrounds/5.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>{{repoBaseUrl}}/assets/backgrounds/5-orange.svg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>{{repoBaseUrl}}/assets/backgrounds/5-turquoise.svg</image:loc>
+    </image:image>
+  </url>
+  
   <!-- Fonts Page -->
   <url>
     <loc>https://brand.regenfass.digital/fundamentals/fonts.html</loc>
