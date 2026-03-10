@@ -145,6 +145,20 @@
         padding: 2rem;
         margin-bottom: 1.5rem;
       }
+
+      .sample-app-preview {
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #f9fafb;
+        margin-bottom: 1.5rem;
+      }
+      .sample-app-preview iframe {
+        width: 100%;
+        height: 360px;
+        border: none;
+        display: block;
+      }
     </style>
   </head>
   <body>
@@ -154,6 +168,46 @@
     <!-- include: hero -->
 
     <main role="main">
+      <!-- Wendungsbeispiel: Sample App Light & Dark Mode -->
+      <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+          <h2
+            class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8"
+          >
+            Wendungsbeispiel
+          </h2>
+          <p class="font-body text-lg text-gray-700 mb-8">
+            Die Beispielanwendung zeigt die Regenfass-Brand in einer Web-App in
+            Light- und Dark-Mode. Beide Varianten nutzen dieselbe Komponentenstruktur
+            und Brand-Farben.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h3 class="font-heading text-xl font-bold text-navy mb-2">
+                Light Mode
+              </h3>
+              <div class="sample-app-preview">
+                <iframe
+                  src="{{basePath}}examples/web-app/sample-app.html"
+                  title="Beispielanwendung Light Mode"
+                ></iframe>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-heading text-xl font-bold text-navy mb-2">
+                Dark Mode
+              </h3>
+              <div class="sample-app-preview">
+                <iframe
+                  src="{{basePath}}examples/web-app/sample-app.html?theme=dark"
+                  title="Beispielanwendung Dark Mode"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Setup Section -->
       <section class="py-16 px-4 bg-white">
         <div class="max-w-6xl mx-auto">
