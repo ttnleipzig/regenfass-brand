@@ -242,9 +242,8 @@ async function loadFonts(pdfDoc) {
     const sourceSans3ItalicPath = resolveFontPath('source-sans-3', 400, 'italic');
     const sourceSans3BoldPath = resolveFontPath('source-sans-3', 700, 'regular');
 
-    // Check if font files exist (TTF/OTF required; WOFF2 is for web only)
+    // Brand uses system UI font stack; without optional TTF/OTF we use PDF standard fonts (Helvetica)
     if (!hankenGroteskRegularPath || !sourceSans3RegularPath) {
-      console.warn('⚠️  Custom fonts not found (need TTF/OTF in assets/fonts/…), falling back to standard fonts');
       const helvetica = await pdfDoc.embedFont('Helvetica');
       const helveticaBold = await pdfDoc.embedFont('Helvetica-Bold');
       return {
@@ -290,11 +289,7 @@ async function loadFonts(pdfDoc) {
       headingItalic: hankenGroteskItalic,
     };
   } catch (error) {
-    const hint = /unknown font format|invalid|unsupported/i.test(error.message)
-      ? ' (PDF needs TTF/OTF in assets/fonts/…; see assets/fonts/README.md)'
-      : '';
-    console.warn(`⚠️  Error loading custom fonts: ${error.message}${hint}, falling back to standard fonts`);
-    // Fallback to standard fonts
+    // Use brand typography (standard PDF fonts) if optional font files fail to load
     const helvetica = await pdfDoc.embedFont('Helvetica');
     const helveticaBold = await pdfDoc.embedFont('Helvetica-Bold');
     return {
@@ -876,7 +871,7 @@ export async function generateBusinessCardWithPdfLib(contactData, outputDir) {
   
   // Load and convert logos. The secondary lockup is optional because
   // older asset paths may be absent in newer brand packages.
-  const logoPath = join(projectRoot, 'assets', 'logos', 'solo', 'regenfass-solo-light-card-solid.svg');
+  const logoPath = join(projectRoot, 'assets', 'logos', 'solo', 'regenfass-solo-light.svg');
   cardProgress('Lade Logo …', 'generating');
   const logoPngBuffer = await svgToPng(logoPath, 1000, 1000);
   const venitusCandidates = [
@@ -886,9 +881,8 @@ export async function generateBusinessCardWithPdfLib(contactData, outputDir) {
   let venitusPngBuffer = null;
   if (venitusPath) {
     venitusPngBuffer = await svgToPng(venitusPath, 548, 447);
-  } else {
-    warn('Optional secondary logo not found. Continuing without the small sub-logo on the front side.');
   }
+  // Optional: no secondary logo (a-venitus-company) – front side is rendered without sub-logo
   cardProgress('Logo geladen', 'done');
   
   // Create PDF document
