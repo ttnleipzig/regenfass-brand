@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/ttnleipzig/regenfass-brand/compare/v1.0.0...v1.0.1) (2026-03-10)
+
+
+### Bug Fixes
+
+* **assets:** update avatar image sources in avatars.html to new designs and add sample app section with Light and Dark mode previews in web-applications.html ([0f50321](https://github.com/ttnleipzig/regenfass-brand/commit/0f503218818d25188d366e48df14fde9336b97b9))
+
 ## 1.0.0 (2026-03-10)
 
 
