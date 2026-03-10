@@ -24,6 +24,8 @@ This directory contains official Regenfass logos in various formats, organised b
 | File | Format | Use |
 |------|--------|-----|
 | `regenfass-horizontal-dark.svg` | SVG | Dark backgrounds |
+| `regenfass-horizontal-dark-200x50.png` | PNG | Fixed size (e.g. 200×50) |
+| `regenfass-horizontal-dark-hr.png` | PNG | High resolution |
 | `regenfass-horizontal-light.svg` | SVG | Light backgrounds |
 | `regenfass-horizontal-light-200x50.png` | PNG | Fixed size (e.g. 200×50) |
 | `regenfass-horizontal-light-hr.png` | PNG | High resolution |
@@ -37,6 +39,7 @@ Use **dark** on dark backgrounds and **light** on light backgrounds.
 | `regenfass-logo.png` | PNG | Source asset (500×500); do not use directly for deliverables |
 | `regenfass-solo-light.svg` | SVG | Icon-only, light (references PNG) |
 | `regenfass-solo-light-card-solid.svg` | SVG | Icon on solid navy (#1E2A45); e.g. cards |
+| `regenfass-solo-light-card-solid.png` | PNG | Card-solid at 512×512 |
 | `regenfass-solo-light.png` | PNG | Icon-only, light (500×500) |
 | `regenfass-solo-light-100.png` | PNG | 100×100 (e.g. email signature) |
 | `regenfass-solo-light-192.png` | PNG | 192×192 (PWA / manifest) |

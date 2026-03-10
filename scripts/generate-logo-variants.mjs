@@ -2,7 +2,7 @@
 /**
  * Logo Variants Generator
  * Generates all logo variants from a single source PNG (assets/logos/solo/regenfass-logo.png).
- * Output: solo (PNG sizes + SVG with embedded image, card-solid), horizontal (SVG + PNGs).
+ * Output: solo (PNG sizes + SVG with embedded image, card-solid SVG + PNG), horizontal (dark/light SVG + PNGs each: 200x50, hr).
  */
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync, copyFileSync } from 'fs';
