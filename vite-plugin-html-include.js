@@ -331,7 +331,7 @@ const HERO_CONTENT_MAP = {
   'fundamentals/fonts.html': {
     heroTitle: 'Typography',
     heroSubtitle: 'Brand fonts and typography guidelines - type that conveys personality and brings content to life',
-    heroExtras: heroExtrasTags('<span class="text-fuchsia">Hanken Grotesk</span> • <span class="text-aqua">Source Sans 3</span>'),
+    heroExtras: heroExtrasTags('<span class="text-aqua">System UI font stack</span>'),
   },
   'fundamentals/icons.html': {
     heroTitle: 'Icons',

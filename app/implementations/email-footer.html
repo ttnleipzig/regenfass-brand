@@ -25,10 +25,10 @@
     <meta property="og:url" content="https://brand.regenfass.digital/implementations/email-footer.html">
     <meta property="og:title" content="Email Footer - Regenfass">
     <meta property="og:description" content="Professional email footer templates following Regenfass brand guidelines">
-    <meta property="og:image" content="{{repoBaseUrl}}/assets/banner/opengraph/implementations.svg">
+    <meta property="og:image" content="{{repoBaseUrl}}/assets/banner/opengraph/implementations.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:type" content="image/svg+xml">
+    <meta property="og:image:type" content="image/png">
     <meta property="og:locale" content="de_DE">
     <meta property="og:site_name" content="Regenfass">
     
@@ -37,7 +37,7 @@
     <meta name="twitter:url" content="https://brand.regenfass.digital/implementations/email-footer.html">
     <meta name="twitter:title" content="Email Footer - Regenfass">
     <meta name="twitter:description" content="Professional email footer templates following brand guidelines">
-    <meta name="twitter:image" content="{{repoBaseUrl}}/assets/banner/opengraph/implementations.svg">
+    <meta name="twitter:image" content="{{repoBaseUrl}}/assets/banner/opengraph/implementations.png">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://brand.regenfass.digital/implementations/email-footer.html">
@@ -250,7 +250,7 @@
                 </p>
                 
                 <div class="card mb-4">
-                    <pre id="plain-text-footer-preview" class="font-body text-sm text-gray-700 whitespace-pre-wrap" style="font-family: 'Source Sans 3', Arial, sans-serif; margin: 0; line-height: 1.6;"></pre>
+                    <pre id="plain-text-footer-preview" class="font-body text-sm text-gray-700 whitespace-pre-wrap" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; margin: 0; line-height: 1.6;"></pre>
                 </div>
                 
                 <div class="mt-4">
@@ -280,7 +280,7 @@
                 <div class="card border border-gray-200 hover:border-aqua hover:bg-white transition-all">
                     <h3 class="font-heading text-xl font-bold text-navy mb-4">Typography</h3>
                     <p class="font-body text-gray-700">
-                        Follows brand typography guidelines: Hanken Grotesk for headings and Source Sans 3 for body text, with web-safe fallbacks for email compatibility.
+                        Follows brand typography guidelines: system UI font stack (system-ui, Arial, sans-serif) for headings and body, with web-safe fallbacks for email compatibility.
                     </p>
                 </div>
                 
@@ -340,7 +340,7 @@
         // Email footer templates
         const emailFooters = {
             standard: `<!-- Standard Email Footer -->
-<table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: 'Source Sans 3', Arial, sans-serif; background-color: #ffffff; border-top: 3px solid #0B2649; padding: 30px 20px;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background-color: #ffffff; border-top: 3px solid #0B2649; padding: 30px 20px;">
     <tr>
         <td align="center">
             <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px;">
@@ -356,7 +356,7 @@
                         <table cellpadding="0" cellspacing="0" border="0">
                             <tr>
                                 <td style="font-size: 14px; line-height: 1.6; color: #1E2A45;">
-                                    <strong style="color: #1E2A45; font-family: 'Hanken Grotesk', Arial, sans-serif;">André Lademann</strong><br>
+                                    <strong style="color: #1E2A45; font-family: system-ui, Arial, sans-serif;">André Lademann</strong><br>
                                     <span style="color: #666666;">Team Zero</span><br>
                                     <span style="color: #666666;">Regenfass</span><br>
                                     <span style="color: #666666;">Arnsburger Strasse 74, 60385 Frankfurt am Main</span><br>
@@ -387,13 +387,13 @@
     </tr>
 </table>`,
             minimal: `<!-- Minimal Email Footer -->
-<table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: 'Source Sans 3', Arial, sans-serif; background-color: #ffffff; padding: 20px;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background-color: #ffffff; padding: 20px;">
     <tr>
         <td align="center">
             <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px;">
                 <tr>
                     <td align="left" style="font-size: 12px; color: #666666; line-height: 1.6;">
-                        <strong style="color: #1E2A45; font-family: 'Hanken Grotesk', Arial, sans-serif;">André Lademann</strong> · Team Zero · Regenfass | 
+                        <strong style="color: #1E2A45; font-family: system-ui, Arial, sans-serif;">André Lademann</strong> · Team Zero · Regenfass | 
                         <a href="mailto:alademann@regenfass.digital" style="color: #006B5F; text-decoration: none;">alademann@regenfass.digital</a> | 
                         <a href="tel:+4915126512786" style="color: #006B5F; text-decoration: none;">+49 151 26512786</a> | 
                         <a href="https://www.regenfass.digital" style="color: #006B5F; text-decoration: none;">www.regenfass.digital</a>
@@ -404,7 +404,7 @@
     </tr>
 </table>`,
             extended: `<!-- Extended Email Footer -->
-<table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: 'Source Sans 3', Arial, sans-serif; background-color: #1E2A45; padding: 40px 20px;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background-color: #1E2A45; padding: 40px 20px;">
     <tr>
         <td align="center">
             <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px;">
@@ -421,7 +421,7 @@
                             <tr>
                                 <td width="50%" valign="top" style="padding-right: 20px;">
                                     <p style="margin: 0 0 15px 0; font-size: 14px; line-height: 1.6; color: #FFFFFF;">
-                                        <strong style="font-family: 'Hanken Grotesk', Arial, sans-serif; color: #0B2649;">André Lademann</strong><br>
+                                        <strong style="font-family: system-ui, Arial, sans-serif; color: #0B2649;">André Lademann</strong><br>
                                         <span style="color: #CCCCCC;">Team Zero</span><br>
                                         <span style="color: #CCCCCC;">Regenfass</span><br>
                                         <span style="color: #CCCCCC;">Arnsburger Strasse 74, 60385 Frankfurt am Main</span><br>
@@ -432,7 +432,7 @@
                                 </td>
                                 <td width="50%" valign="top" style="padding-left: 20px;">
                                     <p style="margin: 0 0 15px 0; font-size: 14px; line-height: 1.6; color: #FFFFFF;">
-                                        <strong style="font-family: 'Hanken Grotesk', Arial, sans-serif; color: #0B2649;">Get to know us via social media</strong><br>
+                                        <strong style="font-family: system-ui, Arial, sans-serif; color: #0B2649;">Get to know us via social media</strong><br>
                                         <a href="https://www.linkedin.com/company/regenfass" style="color: #0B2649; text-decoration: none; font-size: 14px;">LinkedIn</a><br>
                                         <a href="https://www.instagram.com/regenfass" style="color: #0B2649; text-decoration: none; font-size: 14px;">Instagram</a><br>
                                         <a href="https://www.youtube.com/regenfass" style="color: #0B2649; text-decoration: none; font-size: 14px;">Youtube</a>

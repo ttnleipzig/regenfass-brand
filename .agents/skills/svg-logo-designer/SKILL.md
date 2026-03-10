@@ -10,6 +10,7 @@ This skill creates professional, scalable vector graphic (SVG) logos from design
 ## When to Use This Skill
 
 Activate this skill when the user requests:
+
 - Create a logo from a description or specification
 - Design a brand identity or visual mark
 - Generate logo variations and concepts
@@ -77,6 +78,7 @@ Create multiple logo concepts based on requirements:
 Develop the main design direction:
 
 **Design Thinking:**
+
 - Research visual metaphors related to brand
 - Consider negative space opportunities
 - Ensure memorability and uniqueness
@@ -84,6 +86,7 @@ Develop the main design direction:
 - Consider cultural appropriateness
 
 **SVG Structure:**
+
 ```xml
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
   <defs>
@@ -108,6 +111,7 @@ Develop the main design direction:
 #### Concept 2-5: Alternative Directions
 
 Create variations exploring different visual approaches:
+
 - Different visual metaphors
 - Different style treatments
 - Different layouts and compositions
@@ -118,26 +122,31 @@ Create variations exploring different visual approaches:
 For each concept, create multiple layout options:
 
 #### Layout A: Horizontal Lockup
+
 - Icon on left, text on right
 - Best for website headers, business cards
 - Wider aspect ratio
 
 #### Layout B: Vertical Lockup
+
 - Icon on top, text below
 - Best for social media profiles, app icons
 - Taller aspect ratio
 
 #### Layout C: Square/Centered
+
 - Icon and text centered
 - Best for favicon, app icon, profile picture
 - 1:1 aspect ratio
 
 #### Layout D: Icon Only
+
 - Symbol without text
 - Best for small sizes, watermarks
 - Compact, recognizable
 
 #### Layout E: Text Only
+
 - Wordmark without icon
 - Best for minimal applications
 - Typography-focused
@@ -149,6 +158,7 @@ Create professional, optimized SVG code:
 **Best Practices:**
 
 1. **Clean, Semantic Code**
+
 ```xml
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60">
   <!-- Use groups for organization -->
@@ -161,13 +171,14 @@ Create professional, optimized SVG code:
 </svg>
 ```
 
-2. **Scalable Design**
+1. **Scalable Design**
    - Use viewBox for scalability
    - Avoid pixel-specific sizes
    - Use relative units
    - Design at multiple sizes to test
 
-3. **Color Management**
+2. **Color Management**
+
 ```xml
 <!-- Define colors once, reuse throughout -->
 <defs>
@@ -181,14 +192,15 @@ Create professional, optimized SVG code:
 <rect class="primary" x="0" y="0" width="100" height="100" />
 ```
 
-4. **Optimization**
+1. **Optimization**
    - Remove unnecessary attributes
    - Combine paths where possible
    - Use symbols for repeated elements
    - Minimize decimal precision
    - Remove invisible elements
 
-5. **Accessibility**
+2. **Accessibility**
+
 ```xml
 <svg role="img" aria-labelledby="logo-title logo-desc">
   <title id="logo-title">Company Name Logo</title>
@@ -218,6 +230,7 @@ Present logos in an organized, professional manner:
 **Dimensions:** 200×60px (scalable)
 
 ### Vertical Layout
+
 ```xml
 <svg><!-- SVG code here --></svg>
 ```
@@ -226,6 +239,7 @@ Present logos in an organized, professional manner:
 **Dimensions:** 100×120px (scalable)
 
 ### Icon Only
+
 ```xml
 <svg><!-- SVG code here --></svg>
 ```
@@ -236,16 +250,20 @@ Present logos in an organized, professional manner:
 ### Color Variations
 
 **Full Color:**
+
 - Primary: #4F46E5 (Indigo)
 - Secondary: #10B981 (Emerald)
 
 **Monochrome (Dark):**
+
 - Single color: #1F2937 (Gray-900)
 
 **Monochrome (Light):**
+
 - Single color: #FFFFFF (White)
 
 **Reversed:**
+
 - For dark backgrounds
 
 ---
@@ -253,6 +271,7 @@ Present logos in an organized, professional manner:
 ## Concept 2: [Concept Name/Theme]
 
 [Repeat structure for additional concepts]
+
 ```
 
 ### Phase 6: File Generation
@@ -269,6 +288,7 @@ company-name-logo-concept2-horizontal.svg
 ```
 
 Use the Write tool to save each variation:
+
 ```javascript
 // Example
 Write({
@@ -300,17 +320,20 @@ inkscape logo.svg --export-png=logo.png --export-width=1000
 ```
 
 **Option 2: Using ImageMagick**
+
 ```bash
 convert -background none logo.svg logo.png
 ```
 
 **Option 3: Online Converter**
-- Visit: https://cloudconvert.com/svg-to-png
+
+- Visit: <https://cloudconvert.com/svg-to-png>
 - Upload SVG, download PNG
 
 ## Clear Space
 
 Maintain minimum clear space around logo:
+
 - Distance = Height of logo symbol
 - No text or graphics in clear space
 
@@ -322,6 +345,7 @@ Maintain minimum clear space around logo:
 ## Color Usage
 
 ### Primary Color Palette
+
 - Use full color on white/light backgrounds
 - Use monochrome white on dark backgrounds
 - Use monochrome dark on light backgrounds
@@ -329,14 +353,17 @@ Maintain minimum clear space around logo:
 ### Color Variations by Context
 
 **Website Headers:**
+
 - Full color version preferred
 - Ensure 4.5:1 contrast with background
 
 **Social Media:**
+
 - Use square/circular crops
 - Provide background color if needed
 
 **Print Materials:**
+
 - Full color for color printing
 - Monochrome black for B&W printing
 - Consider spot color for cost-effective printing
@@ -344,6 +371,7 @@ Maintain minimum clear space around logo:
 ## Incorrect Usage
 
 ❌ Do Not:
+
 - Stretch or distort the logo
 - Change colors outside approved palette
 - Add effects (shadows, glows, etc.)
@@ -371,6 +399,7 @@ logos/
 ## Technical Specifications
 
 ### Web Usage
+
 ```html
 <!-- Inline SVG (Recommended for control) -->
 <svg><!-- SVG code --></svg>
@@ -386,6 +415,7 @@ logos/
 ```
 
 ### Responsive Implementation
+
 ```css
 .logo {
   width: 100%;
@@ -400,6 +430,7 @@ logos/
   }
 }
 ```
+
 ```
 
 ## Design Patterns & Examples
@@ -490,30 +521,37 @@ logos/
 Help users choose appropriate colors:
 
 **Blue** (#0066CC, #4F46E5)
+
 - Trust, professionalism, stability
 - Industries: Finance, technology, healthcare
 
 **Green** (#10B981, #059669)
+
 - Growth, health, eco-friendly
 - Industries: Environment, wellness, finance
 
 **Red** (#DC2626, #EF4444)
+
 - Energy, passion, urgency
 - Industries: Food, entertainment, retail
 
 **Purple** (#7C3AED, #8B5CF6)
+
 - Creativity, luxury, spirituality
 - Industries: Beauty, tech, creative
 
 **Orange** (#F97316, #FB923C)
+
 - Friendly, energetic, affordable
 - Industries: Retail, food, entertainment
 
 **Yellow** (#FBBF24, #FCD34D)
+
 - Optimism, clarity, warmth
 - Industries: Food, children, energy
 
 **Black/Gray** (#1F2937, #6B7280)
+
 - Sophisticated, modern, classic
 - Industries: Luxury, fashion, technology
 

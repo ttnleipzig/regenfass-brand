@@ -107,7 +107,7 @@ After pushing, verify the preview appears:
 
 ## Per-page Open Graph banners
 
-The site uses page-specific OG images in `assets/banner/opengraph/` (1200×630px SVG). Each banner shares:
+The site uses page-specific OG images in `assets/banner/opengraph/` (1200×630px PNG). Each banner shares:
 
 - **Background:** Abstract background image from `assets/backgrounds/5.svg` (scaled to cover 1200×630).
 - **Logo:** Regenfass logo at the top.

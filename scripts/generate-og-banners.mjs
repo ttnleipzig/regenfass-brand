@@ -68,8 +68,8 @@ function getPageGraphic(key) {
     case "fonts":
       return `
   <!-- Typography sample -->
-  <text x="900" y="200" font-family="HankenGrotesk, 'Hanken Grotesk', sans-serif" font-size="120" font-weight="700" fill="#00BCD4" opacity="0.2">Aa</text>
-  <text x="900" y="400" font-family="SourceSans3, 'Source Sans 3', sans-serif" font-size="80" font-weight="400" fill="#FF5722" opacity="0.2">Aa</text>`;
+  <text x="900" y="200" font-family="${FONT_STACK}" font-size="120" font-weight="700" fill="#00BCD4" opacity="0.2">Aa</text>
+  <text x="900" y="400" font-family="${FONT_STACK}" font-size="80" font-weight="400" fill="#FF5722" opacity="0.2">Aa</text>`;
     case "avatars":
       return `
   <!-- Avatar examples -->
@@ -120,7 +120,7 @@ const PAGES = [
     title: "Typography",
     titleLine2: null,
     subtitle: "Brand fonts and typography guidelines",
-    tag: "Hanken Grotesk • Source Sans 3",
+    tag: "System UI font stack",
     accentColor: "#00BCD4",
   },
   {
