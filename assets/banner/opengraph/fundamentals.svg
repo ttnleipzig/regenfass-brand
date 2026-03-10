@@ -1,98 +1,19 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <style>
-  @keyframes rotate1 { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-  @keyframes rotate2 { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
-  @keyframes colorShift {
-    0% { fill-opacity: 0.2; }
-    25% { fill-opacity: 0.8; }
-    50% { fill-opacity: 0.2; }
-    75% { fill-opacity: 0.8; }
-    100% { fill-opacity: 0.2; }
-  }
-  @keyframes zoom {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-  }
-  /* Gruppe 1 - Startet sofort */
-  .polygon-1 { animation: rotate1 270s linear infinite, colorShift 36s ease-in-out infinite, zoom 54s ease-in-out infinite; transform-origin: center; }
-  .polygon-2 { animation: rotate2 270s linear infinite, colorShift 36s ease-in-out infinite, zoom 54s ease-in-out infinite; transform-origin: center; animation-delay: 3s; }
-  .polygon-3 { animation: rotate1 270s linear infinite, colorShift 36s ease-in-out infinite, zoom 54s ease-in-out infinite; transform-origin: center; animation-delay: 6s; }
-  
-  /* Gruppe 2 - Startet nach 2s */
-  .polygon-4 { animation: rotate2 270s linear infinite, colorShift 36s ease-in-out infinite, zoom 54s ease-in-out infinite; transform-origin: center; animation-delay: 9s; }
-  .polygon-5 { animation: rotate1 270s linear infinite, colorShift 36s ease-in-out infinite, zoom 54s ease-in-out infinite; transform-origin: center; animation-delay: 12s; }
-  .polygon-6 { animation: rotate2 270s linear infinite, colorShift 36s ease-in-out infinite, zoom 54s ease-in-out infinite; transform-origin: center; animation-delay: 15s; }
-  
-  /* Gruppe 3 - Startet nach 4s */
-  .polygon-7 { animation: rotate1 270s linear infinite, colorShift 36s ease-in-out infinite, zoom 54s ease-in-out infinite; transform-origin: center; animation-delay: 18s; }
-  .polygon-8 { animation: rotate2 270s linear infinite, colorShift 36s ease-in-out infinite, zoom 54s ease-in-out infinite; transform-origin: center; animation-delay: 21s; }
-  .polygon-9 { animation: rotate1 270s linear infinite, colorShift 36s ease-in-out infinite, zoom 54s ease-in-out infinite; transform-origin: center; animation-delay: 24s; }
-  
-  /* Gruppe 4 - Startet nach 6s */
-  .polygon-10 { animation: rotate2 270s linear infinite, colorShift 36s ease-in-out infinite, zoom 54s ease-in-out infinite; transform-origin: center; animation-delay: 27s; }
-  .polygon-11 { animation: rotate1 270s linear infinite, colorShift 36s ease-in-out infinite, zoom 54s ease-in-out infinite; transform-origin: center; animation-delay: 30s; }
-  .polygon-12 { animation: rotate2 270s linear infinite, colorShift 36s ease-in-out infinite, zoom 54s ease-in-out infinite; transform-origin: center; animation-delay: 33s; }
-</style>
-    <style>
-      @font-face {
-        font-family: HankenGrotesk;
-        src: url("../fonts/hanken-grotesk/500/regular.ttf") format("truetype");
-        font-weight: 500 700;
-      }
-      @font-face {
-        font-family: SourceSans3;
-        src: url("../fonts/source-sans-3/400/regular.ttf") format("truetype");
-        font-weight: 400;
-      }
-      @font-face {
-        font-family: SourceSans3;
-        src: url("../fonts/source-sans-3/700/regular.ttf") format("truetype");
-        font-weight: 700;
-      }
-    </style>
-    <linearGradient id="contentOverlay" x1="0" x2="1" y1="0" y2="0" gradientUnits="objectBoundingBox">
-      <stop offset="0" stop-color="#0B2649" stop-opacity="0.72"/>
-      <stop offset="0.5" stop-color="#0B2649" stop-opacity="0.5"/>
-      <stop offset="1" stop-color="#0B2649" stop-opacity="0"/>
-    </linearGradient>
+    
   </defs>
-  <!-- Background: embedded 5.svg -->
-  <g transform="translate(600,315) scale(1.171875) translate(-512,-512)"><rect x="0" y="0" width="1024" height="1024" fill="#1ea1b9" />
-<g transform="scale(4.000000) translate(0.5 0.5)">
-<polygon class="polygon-1" fill="#57c8b9" fill-opacity="0.501961" points="0,0 268,-15 0,148" />
-<polygon class="polygon-2" fill="#0077b4" fill-opacity="0.501961" points="257,271 260,56 54,251" />
-<polygon class="polygon-3" fill="#00c4d1" fill-opacity="0.501961" points="-16,271 8,62 162,237" />
-<polygon class="polygon-4" fill="#3f82a3" fill-opacity="0.501961" points="245,167 105,10 271,-16" />
-<polygon class="polygon-5" fill="#36cbc0" fill-opacity="0.501961" points="-16,152 108,127 4,-16" />
-<polygon class="polygon-6" fill="#0081b5" fill-opacity="0.501961" points="87,246 271,263 249,122" />
-<polygon class="polygon-7" fill="#53c3bb" fill-opacity="0.501961" points="163,11 -9,61 4,-16" />
-<polygon class="polygon-8" fill="#009ec3" fill-opacity="0.501961" points="174,127 162,271 13,247" />
-<polygon class="polygon-9" fill="#369db2" fill-opacity="0.501961" points="162,-16 195,113 94,92" />
-<polygon class="polygon-10" fill="#16b6bf" fill-opacity="0.501961" points="130,165 -16,166 79,71" />
-<polygon class="polygon-11" fill="#02c0d2" fill-opacity="0.501961" points="74,266 5,137 -16,254" />
-<polygon class="polygon-12" fill="#4484a4" fill-opacity="0.501961" points="271,77 187,21 252,-16" />
-</g></g>
-  <!-- Dark overlay for contrast (logo + text) -->
-  <rect width="1200" height="630" fill="url(#contentOverlay)"/>
+  <!-- Background: solid dark blue (dunkelblau) -->
+  <rect width="1200" height="630" fill="#0B2649"/>
 
-  <!-- Regenfass logo -->
-  <g transform="translate(100, 80)">
-    <svg width="380" height="72" viewBox="0 0 1479 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#FFFFFF" d="M820.1 162.6l-46.4-61.2-.2-.2h-7.3v78h8.9v-61.4l46.2 61.2.1.2h7.6v-78h-8.9zM683.6 101.2h9.1v78h-9.1zM601.1 134.1H564v-32.9h-9.1v78h9.1v-35.9h37.1v35.9h9.1v-78h-9.1zM434.1 110.4h19.3v68.8h9.2v-68.8h18.9v-9.2h-47.4zM960.1 101.2H948l-36.5 36.7v-36.7h-9.1v78h9.1v-38.6l35.9 38.5.1.1h12.8l-38.1-40.1zM1346.6 142.1c1.9-1.4 3.6-3 4.9-4.9 1.3-1.9 2.4-4 3.2-6.2.8-2.3 1.2-4.7 1.2-7.1 0-3.1-.6-6.1-1.8-8.8-1.2-2.7-2.8-5.1-4.8-7.1s-4.4-3.6-7.1-4.8c-2.7-1.2-5.7-1.8-8.7-1.8h-29.2v78h9.1v-32.9h17.4l18 32.9h10.3l-18-34.1c1.9-.9 3.8-1.9 5.5-3.2zm.2-18.3c0 1.8-.4 3.6-1.1 5.2-.7 1.6-1.7 3-2.9 4.2-1.2 1.2-2.6 2.2-4.2 2.9-1.6.7-3.4 1.1-5.2 1.1h-20.1v-26.8h20.1c1.8 0 3.6.4 5.2 1.1 1.6.7 3.1 1.7 4.3 2.9 1.2 1.2 2.2 2.6 2.9 4.2.6 1.7 1 3.4 1 5.2zM1432.1 101.2v9.2h19.3v68.8h9.2v-68.8h18.9v-9.2zM1221.7 112.3c-3-3.6-6.9-6.6-11.4-8.8-4.6-2.2-9.9-3.3-15.9-3.3s-11.3 1.1-15.8 3.3c-4.5 2.2-8.3 5.1-11.3 8.8-3 3.6-5.3 7.9-6.9 12.6-1.5 4.7-2.3 9.7-2.3 14.9 0 5.2.8 10.2 2.3 15 1.5 4.8 3.8 9.1 6.9 12.8 3 3.7 6.8 6.7 11.3 8.9 4.5 2.2 9.8 3.4 15.8 3.4s11.3-1.1 15.9-3.4c4.6-2.2 8.4-5.2 11.4-8.9s5.3-8 6.9-12.8c1.5-4.8 2.3-9.8 2.3-15 0-5.2-.8-10.2-2.3-14.9-1.6-4.7-3.9-9-6.9-12.6zm-.1 27.6c0 4.2-.6 8.2-1.7 11.9-1.1 3.7-2.9 7-5.1 9.8-2.3 2.8-5.1 5-8.5 6.6s-7.4 2.4-11.9 2.4c-4.4 0-8.4-.8-11.7-2.5-3.3-1.6-6.2-3.9-8.4-6.7-2.3-2.8-4-6.1-5.1-9.8-1.2-3.7-1.7-7.7-1.7-11.8s.6-8.1 1.7-11.8c1.1-3.7 2.9-7 5.1-9.7 2.3-2.8 5.1-5 8.4-6.6 3.3-1.6 7.3-2.4 11.7-2.4 4.5 0 8.5.8 11.9 2.5 3.4 1.6 6.2 3.9 8.5 6.6 2.3 2.8 4 6 5.1 9.7 1.1 3.7 1.7 7.7 1.7 11.8zM1078.1 107.9c-2-2-4.4-3.6-7.1-4.8-2.7-1.2-5.7-1.8-8.7-1.8H1033v78h9.1v-32.9h20.1c3.1 0 6-.6 8.7-1.7s5.1-2.8 7.1-4.8 3.6-4.4 4.8-7.1c1.2-2.7 1.8-5.7 1.8-8.8s-.6-6.1-1.8-8.8c-1.1-2.9-2.7-5.3-4.7-7.3zm-2.5 15.9c0 1.8-.4 3.6-1.1 5.2-.7 1.6-1.7 3-2.9 4.2-1.2 1.2-2.6 2.2-4.2 2.9-1.6.7-3.4 1.1-5.2 1.1h-20.1v-26.8h20.1c1.8 0 3.6.4 5.2 1.1 1.6.7 3.1 1.7 4.3 2.9 1.2 1.2 2.2 2.6 2.9 4.2.6 1.7 1 3.4 1 5.2z"/>
-      <path fill="none" d="M158.9 71h-14.1l-2 29.6h16.1zM157.8 224.2c1.4-22.2 5.5-29.7 5.5-43.2 0-13.5-6.4-19.8-6.4-30.6 0-7.9 2.8-12.6 3.7-22.6.3-2.7-.3-7.4-1.7-13.9h-20.5l-9.9 139.8c7.2-2.8 16.7-5.5 28.6-7.1-.1-6.2.2-13.7.7-22.4z"/>
-      <path fill="#1eb8d1" d="M130.9 220.1v-.4.4z"/>
-      <path fill="#ea592d" d="M133.6 59.4h6.9c17.1-27.7 32.2 0 32.2 0h6.1v10.8L246 53c-19-31.8-53.7-53-93.3-53-36.2 0-68.3 17.8-88.1 45.1l-62.2-11L0 47.2l133.6 23.5V59.4z"/>
-      <path fill="#1eb8d1" d="M184.6 100.3v13.4H181l7.4 103.4c39.3-12.9 68.8-47.5 74.3-89.6l53.2 9.4 2.3-13.1-133.6-23.5zM124.7 218.5l7.9-105.3H129v-12.5L44.9 113c0 50.2 33.7 92.6 79.8 105.5z"/>
-      <path fill="#1a2846" d="M223.9 263.4c-.2-.9-3.4-1.9-5.2-1.9-8 .2-14.3-2-19.2-7.2-2.2-2.4-4.7-4.7-8.9-4.2l-9.7-136.4h3.6v-13.4h-8l-1.9-30.1h4.1V59.4h-6.1s-15.1-27.7-32.2 0h-6.9v11.3h4.8l-2.5 30H129v12.5h3.7l-10.8 143.6c-1.1.5-2.1 1-3 1.5-2.4 1.1-7.3 4.1-12.7 7.3-4.2 2.4-8.3 5.1-12.5 7.8-2.4 1.5-4.5 2.8-5.7 3.6l.3.9c24.5-.3 44.5-9.7 66.2-14.6-7.8 4.3-15.6 8.6-24.6 13.7 2.3-.3 3-.2 3.6-.4 16-4 32.5-6.7 49.1-6.1 10.1.3 19.9 2.7 29.7 4.9 9.9 2.2 19.8 3.3 29.9 4.5.3-.6.5-1.2.8-1.7-10.9-1.6-17.4-6.3-19.1-14.8zM144.8 71h14.1v29.5h-16.1l2-29.5zm13 153.2c-.6 8.7-.8 16.1-.7 22.5-11.9 1.6-21.4 4.3-28.6 7.1l9.9-139.8h20.5c1.4 6.5 1.9 11.2 1.7 13.9-.9 10-3.7 14.7-3.7 22.6 0 10.8 6.4 17.1 6.4 30.6s-4 20.9-5.5 43.1z"/>
-
-    </svg>
+  <!-- Regenfass logo (from assets/logos/horizontal/regenfass-horizontal-dark.svg) -->
+  <g transform="translate(100, 80) scale(1.5)">
+    <svg width="244" height="48" viewBox="0 0 244 48" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><image x="0" y="0" width="48" height="48" href="data:image/png;base64,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" preserveAspectRatio="xMidYMid meet"/>
+  <text x="64" y="32" font-family="Hanken Grotesk, Montserrat, sans-serif" font-size="28" font-weight="600" fill="#FFFFFF">Regenfass</text></svg>
   </g>
   <!-- Title (below logo) -->
-  <text x="100" y="320" font-family="HankenGrotesk, 'Hanken Grotesk', sans-serif" font-size="72" font-weight="700" fill="#FFFFFF">Fundamentals</text>
+  <text x="100" y="320" font-family="ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="72" font-weight="700" fill="#FFFFFF">Fundamentals</text>
   <!-- Subtitle -->
-  <text x="100" y="380" font-family="SourceSans3, 'Source Sans 3', sans-serif" font-size="28" font-weight="400" fill="#E8E8E8">Logos, colors, typography, icons, and backgrounds</text>
+  <text x="100" y="380" font-family="ui-sans-serif, system-ui, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;, &quot;Noto Color Emoji&quot;" font-size="28" font-weight="400" fill="#E8E8E8">Logos, colors, typography, icons, and backgrounds</text>
   <!-- Accent line -->
   <rect x="100" y="440" width="200" height="4" fill="#00BCD4"/>
 </svg>
