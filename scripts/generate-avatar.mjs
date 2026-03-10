@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Avatar Generator
- * Generates square avatar images from cut-out portraits with Abstract 5 as background
+ * Generates square avatar images from cut-out portraits with a repeating Tabler raindrop wallpaper background
  */
 
 import { fileURLToPath } from 'url';
