@@ -2,11 +2,11 @@
 /**
  * Generates Open Graph banner PNGs for all pages (1200×630).
  * SVG is not displayed by many platforms; output is PNG only.
- * Template: solid dark blue background (#0B2649), Regenfass logo,
- * brand typography (system UI stack), title/subtitle/tag, page-specific graphic.
+ * Template: background from assets/backgrounds/5-dark.svg (or solid #0B2649 fallback),
+ * Regenfass logo, brand typography (system UI stack), title/subtitle/tag, page-specific graphic.
  */
 
-import { writeFileSync, mkdirSync, readFileSync } from "fs";
+import { writeFileSync, mkdirSync, readFileSync, existsSync } from "fs";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
@@ -14,11 +14,7 @@ import sharp from "sharp";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "assets", "banner", "opengraph");
 const LOGO_SVG_PATH = join(__dirname, "..", "assets", "logos", "horizontal", "regenfass-horizontal-dark.svg");
-
-/** Brand dark blue (dunkelblau) – used as full background. */
-const BG_DARK_BLUE = "#0B2649";
-const bgStyle = "";
-const bgGraphic = `<rect width="1200" height="630" fill="${BG_DARK_BLUE}"/>`;
+const BACKGROUND_SVG_PATH = join(__dirname, "..", "assets", "backgrounds", "5-dark.svg");
 
 /** Brand typography: system UI stack (see app/styles.css, guidelines/TYPOGRAPHY.md). Quotes escaped for SVG attributes. */
 const FONT_STACK =
@@ -26,6 +22,9 @@ const FONT_STACK =
 
 /** Logo height in banner (px). Original asset is 48px tall; 2.2× scale. */
 const LOGO_HEIGHT = Math.round(144);
+
+const OG_WIDTH = 1200;
+const OG_HEIGHT = 630;
 
 /**
  * Load Regenfass logo from assets/logos/horizontal/regenfass-horizontal-dark.svg.
@@ -46,11 +45,25 @@ function getRegenfassLogoEmbed() {
   </g>`;
 }
 
+/**
+ * Render background SVG to PNG (1200×630 cover). Returns buffer for compositing.
+ */
+async function getBackgroundPngBuffer() {
+  const svgBuffer = readFileSync(BACKGROUND_SVG_PATH);
+  return sharp(svgBuffer)
+    .resize(OG_WIDTH, OG_HEIGHT, { fit: "cover" })
+    .png()
+    .toBuffer();
+}
+
 let LOGO_EMBED;
 try {
+  if (!existsSync(BACKGROUND_SVG_PATH)) {
+    throw new Error(`Background SVG not found: ${BACKGROUND_SVG_PATH}`);
+  }
   LOGO_EMBED = getRegenfassLogoEmbed();
 } catch (err) {
-  console.error("Failed to load Regenfass logo from", LOGO_SVG_PATH, err.message);
+  console.error("Failed to load assets:", err.message);
   process.exit(1);
 }
 
@@ -165,7 +178,8 @@ const PAGES = [
   },
 ];
 
-function buildSvg(page) {
+/** Build SVG for foreground only (logo, text, graphic) with transparent background for compositing. */
+function buildForegroundSvg(page) {
   const graphic = getPageGraphic(page.key);
   const subtitleY = page.titleLine2 ? 450 : 380;
   const tagY = page.titleLine2 ? 450 : 440;
@@ -185,14 +199,18 @@ function buildSvg(page) {
     `<text x="100" y="${tagY}" font-family="${FONT_STACK}" font-size="24" font-weight="400" fill="#00BCD4">${page.tag}</text>`;
   const accentEl = `<rect x="100" y="${accentY}" width="200" height="4" fill="${page.accentColor}"/>`;
 
-  return `<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    ${bgStyle}
-  </defs>
-  <!-- Background: solid dark blue (dunkelblau) -->
-  ${bgGraphic}
+  const textBoxX = 80;
+  const textBoxY = 60;
+  const textBoxWidth = 720;
+  const textBoxHeight = accentY + 24 - textBoxY;
+  const textBoxRx = 16;
+  const textBackground = `<rect x="${textBoxX}" y="${textBoxY}" width="${textBoxWidth}" height="${textBoxHeight}" rx="${textBoxRx}" ry="${textBoxRx}" fill="#0B2649" fill-opacity="0.82"/>`;
+
+  return `<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 ${graphic}
-  <!-- Regenfass logo (from assets/logos/horizontal/regenfass-horizontal-dark.svg) -->
+  <!-- Semi-transparent text background for readability -->
+  ${textBackground}
+  <!-- Regenfass logo (on top of background) -->
   ${LOGO_EMBED}
   <!-- Title (below logo) -->
   ${titleBlock}
@@ -204,17 +222,33 @@ ${tagEl ? `  ${tagEl}\n` : ""}  <!-- Accent line -->
 `;
 }
 
-const OG_WIDTH = 1200;
-const OG_HEIGHT = 630;
-
 async function main() {
   mkdirSync(OUT_DIR, { recursive: true });
+  let backgroundPng;
+  try {
+    backgroundPng = await getBackgroundPngBuffer();
+  } catch (e) {
+    console.error("Background render failed:", e.message, "- using solid fill.");
+    backgroundPng = await sharp({
+      create: {
+        width: OG_WIDTH,
+        height: OG_HEIGHT,
+        channels: 3,
+        background: { r: 11, g: 38, b: 73 },
+      },
+    })
+      .png()
+      .toBuffer();
+  }
   for (const page of PAGES) {
-    const svgContent = buildSvg(page);
+    const foregroundSvg = buildForegroundSvg(page);
+    const foregroundPng = await sharp(Buffer.from(foregroundSvg))
+      .resize(OG_WIDTH, OG_HEIGHT, { fit: "fill", background: { r: 0, g: 0, b: 0, alpha: 0 } })
+      .png()
+      .toBuffer();
     const pngPath = join(OUT_DIR, `${page.key}.png`);
-    const svgBuffer = Buffer.from(svgContent);
-    await sharp(svgBuffer)
-      .resize(OG_WIDTH, OG_HEIGHT, { fit: "fill" })
+    await sharp(backgroundPng)
+      .composite([{ input: foregroundPng, top: 0, left: 0 }])
       .png()
       .toFile(pngPath);
     console.log("Wrote", pngPath);
@@ -224,5 +258,6 @@ async function main() {
 
 main().catch((err) => {
   console.error("generate-og-banners error:", err.message);
+  if (err.stack) console.error(err.stack);
   process.exit(1);
 });
