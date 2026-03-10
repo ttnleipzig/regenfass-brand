@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" role="img" aria-labelledby="regenfass-title">
+  <title id="regenfass-title">Regenfass</title>
+  <desc>Regenfass logo: barrel with water droplet (Tabler Icons concept 1, light variant for dark backgrounds)</desc>
+  <g stroke="#00BCD4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Barrel (Tabler: barrel) -->
+    <path d="M7.278 4h9.444a2 2 0 0 1 1.841 1.22c.958 2.26 1.437 4.52 1.437 6.78c0 2.26 -.479 4.52 -1.437 6.78a2 2 0 0 1 -1.841 1.22h-9.444a2 2 0 0 1 -1.841 -1.22c-.958 -2.26 -1.437 -4.52 -1.437 -6.78c0 -2.26 .479 -4.52 1.437 -6.78a2 2 0 0 1 1.841 -1.22" />
+    <path d="M14 4c.667 2.667 1 5.333 1 8s-.333 5.333 -1 8" />
+    <path d="M10 4c-.667 2.667 -1 5.333 -1 8s.333 5.333 1 8" />
+    <path d="M4.5 16h15" />
+    <path d="M19.5 8h-15" />
+    <!-- Droplet above barrel (Tabler: droplet), scaled and positioned -->
+    <g transform="translate(7, 1.5) scale(0.38)">
+      <path d="M7.502 19.423c2.602 2.105 6.395 2.105 8.996 0c2.602 -2.105 3.262 -5.708 1.566 -8.546l-4.89 -7.26c-.42 -.625 -1.287 -.803 -1.936 -.397a1.376 1.376 0 0 0 -.41 .397l-4.893 7.26c-1.695 2.838 -1.035 6.441 1.567 8.546" />
+    </g>
+  </g>
+</svg>

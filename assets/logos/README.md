@@ -8,6 +8,7 @@ This directory contains official Regenfass logos in various formats, organised b
 |-----------|-------------|
 | `horizontal/` | Logo with Regenfass text adjacent to icon (horizontal layout); light and dark for different backgrounds |
 | `solo/` | Icon only (no wordmark); light and card-solid variants; PNG sizes for web/manifest |
+| `tabler/` | Vector icon-only logos built from Tabler Icons; light and dark per concept |
 | `venitus/` | Regenfass with Venitus wordmark (on request); light and dark |
 | `a-venitus-company/` | “A Venitus Company” lockup (horizontal); light and dark |
 
@@ -44,6 +45,21 @@ Use **dark** on dark backgrounds and **light** on light backgrounds.
 
 Solo **dark** (for light backgrounds) is available on request.
 
+### Tabler icon logos (`tabler/`)
+
+Vector SVG logos composed from [Tabler Icons](https://tabler.io/icons) (MIT). Use when a scalable, icon-library-consistent mark is preferred (e.g. favicons, small UI icons, or design systems that already use Tabler).
+
+| File | Description |
+|------|-------------|
+| `regenfass-tabler-concept1-icon-light.svg` | Barrel + droplet (light: turquoise `#00BCD4` for dark backgrounds) |
+| `regenfass-tabler-concept1-icon-dark.svg` | Barrel + droplet (dark: `#0B2649` for light backgrounds) |
+| `regenfass-tabler-concept2-icon-light.svg` | Bucket-droplet (light) |
+| `regenfass-tabler-concept2-icon-dark.svg` | Bucket-droplet (dark) |
+| `regenfass-tabler-concept3-icon-light.svg` | Cloud-rain + barrel (light) |
+| `regenfass-tabler-concept3-icon-dark.svg` | Cloud-rain + barrel (dark) |
+
+Use **light** on dark backgrounds and **dark** on light backgrounds. All icons use a 24×24 viewBox and scale with CSS or `width`/`height`.
+
 ### Venitus (`venitus/`)
 
 Regenfass-specific Venitus wordmark lockups (light/dark, SVG/PNG) are available on request. Contact the brand team.
@@ -66,5 +82,6 @@ Assets are served from the `assets` folder (e.g. Vite `publicDir: 'assets'`). In
 
 - `logos/horizontal/regenfass-horizontal-dark.svg`, `regenfass-horizontal-light.svg`
 - `logos/solo/regenfass-solo-light.svg`, `regenfass-solo-light.png`, `regenfass-solo-light-192.png`, `regenfass-solo-light-512.png`, `regenfass-solo-light-card-solid.svg`
+- `logos/tabler/regenfass-tabler-concept1-icon-light.svg`, `regenfass-tabler-concept1-icon-dark.svg`, and concept2/concept3 variants
 
 (and similarly for other files in the subdirectories.)
