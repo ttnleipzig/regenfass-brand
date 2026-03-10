@@ -214,7 +214,7 @@ function createTextOverlay(text, width, height, options = {}) {
     x = width / 2,
     y = height / 2,
     textAnchor = 'middle',
-    fontFamily = 'Hanken Grotesk, sans-serif',
+    fontFamily = 'system-ui, sans-serif',
     fontWeight = '700',
     // Regenfass brand colors only (from config)
     textFill = CONFIG.brand.colors.white,

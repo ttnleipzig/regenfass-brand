@@ -111,7 +111,7 @@ The site uses page-specific OG images in `assets/banner/opengraph/` (1200×630px
 
 - **Background:** Abstract background image from `assets/backgrounds/5.svg` (scaled to cover 1200×630).
 - **Logo:** Regenfass logo at the top.
-- **Typography:** Hanken Grotesk (headings) and Source Sans 3 (body), embedded via `@font-face` for consistent rendering where supported.
+- **Typography:** System UI font stack (`ui-sans-serif`, `system-ui`, `sans-serif`, plus emoji fallbacks). No external font loading required.
 - **Content:** Page title, subtitle, optional tag line, and a page-specific graphic (e.g. color swatches for Colors, “Aa” sample for Typography, avatar squares for Avatars).
 
 To regenerate all OG banners from the shared template, run `node scripts/generate-og-banners.mjs` (see script for page list and customization).
@@ -248,8 +248,7 @@ The social preview SVG includes:
 
 ### Fonts
 
-- **Hanken Grotesk** (Bold, 700) for repository name
-- **Source Sans 3** (Regular, 400) for description
+- **System UI stack** (Bold, 700 for headings; Regular, 400 for body) for repository name and description
 - Fonts are referenced but may fall back to system fonts
 
 ### Colors

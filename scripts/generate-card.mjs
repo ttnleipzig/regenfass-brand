@@ -192,7 +192,7 @@ function dataUriToBuffer(dataUri) {
 
 /**
  * Load fonts for pdf-lib
- * Loads custom fonts (Hanken Grotesk, Source Sans 3) from assets/fonts/
+ * Loads optional custom fonts from assets/fonts/ (e.g. for PDF). Brand uses system UI stack by default.
  * @param {PDFDocument} pdfDoc - PDF document
  * @returns {Promise<Object>} Font objects
  */
@@ -232,11 +232,11 @@ async function loadFonts(pdfDoc) {
       return null;
     };
 
-    // Load Hanken Grotesk (heading font) with weight 500 (Medium) for larger text
+    // Load optional heading font (e.g. Hanken Grotesk) with weight 500 (Medium) for larger text
     const hankenGroteskRegularPath = resolveFontPath('hanken-grotesk', 500, 'regular');
     const hankenGroteskItalicPath = resolveFontPath('hanken-grotesk', 500, 'italic');
 
-    // Load Source Sans 3 (body font) with weight 400 (Regular) and 700 (Bold)
+    // Load optional body font (e.g. Source Sans 3) with weight 400 (Regular) and 700 (Bold)
     const sourceSans3RegularPath = resolveFontPath('source-sans-3', 400, 'regular');
     const sourceSans3ItalicPath = resolveFontPath('source-sans-3', 400, 'italic');
     const sourceSans3BoldPath = resolveFontPath('source-sans-3', 700, 'regular');
@@ -273,18 +273,18 @@ async function loadFonts(pdfDoc) {
     const hankenGroteskRegular = await pdfDoc.embedFont(hankenGroteskRegularBytes);
     const hankenGroteskItalic = await pdfDoc.embedFont(hankenGroteskItalicBytes);
     
-    // Embed Source Sans 3 with weight 400 (Regular) and 700 (Bold) for body text
+    // Embed body font with weight 400 (Regular) and 700 (Bold) for body text
     const sourceSans3Regular = await pdfDoc.embedFont(sourceSans3RegularBytes);
     const sourceSans3Italic = await pdfDoc.embedFont(sourceSans3ItalicBytes);
     const sourceSans3Bold = await pdfDoc.embedFont(sourceSans3BoldBytes);
     
     return {
-      // Body fonts (Source Sans 3) - weight 400 (Regular) and 700 (Bold)
+      // Body fonts (optional) - weight 400 (Regular) and 700 (Bold)
       body: sourceSans3Regular,
       bodyBold: sourceSans3Bold,
       bodyItalic: sourceSans3Italic,
       
-      // Heading fonts (Hanken Grotesk) - using weight 500 (Medium) for larger text
+      // Heading fonts (optional) - using weight 500 (Medium) for larger text
       heading: hankenGroteskRegular,
       headingItalic: hankenGroteskItalic,
     };
@@ -417,7 +417,7 @@ function renderFrontSide(page, data, fonts, images) {
   // Contact info starts at 48mm, so available width = 89 - 48 - 4.5 = 36.5mm
   const maxContactWidth = mmToPt(36.5);
   
-  // Name (Hanken Grotesk Bold/700, 12pt, white)
+  // Name (heading font Bold/700, 12pt, white)
   if (data.name) {
     page.drawText(data.name, {
       x: contactX,
@@ -429,7 +429,7 @@ function renderFrontSide(page, data, fonts, images) {
     currentY -= 10; // position very close under name
   }
   
-  // Job title / position (Source Sans 3 Italic, 7.5pt, turquoise) – close under name
+  // Job title / position (body Italic, 7.5pt, turquoise) – close under name
   const positionText = String(data.position ?? data.jobTitle ?? '').trim();
   if (positionText) {
     page.drawText(positionText, {
@@ -442,7 +442,7 @@ function renderFrontSide(page, data, fonts, images) {
   }
   currentY -= 14; // more space before company name
 
-  // Company name only in bold (Source Sans 3 Bold/700, 7pt, light gray)
+  // Company name only in bold (body Bold/700, 7pt, light gray)
   const companyName = data.companyName || 'Regenfass';
   page.drawText(companyName, {
     x: contactX,
@@ -453,7 +453,7 @@ function renderFrontSide(page, data, fonts, images) {
   });
   currentY -= 12; // 3mm spacing
   
-  // Contact details (Source Sans 3, 7pt, white)
+  // Contact details (body, 7pt, white)
   const contactDetails = [];
   
   if (data.email) {
@@ -545,7 +545,7 @@ function renderBackSide(page, data, fonts, images) {
   const qrCenterY = qrY + qrSize / 2;
   const textY = qrCenterY; // Start from QR center, will adjust for text
   
-  // Title (Hanken Grotesk Bold, 9pt, white) - two lines
+  // Title (heading Bold, 9pt, white) - two lines
   // Position title so it's above center, accounting for text height
   const titleLine1 = 'Kontaktdaten';
   const titleLine2 = 'scannen';
@@ -570,7 +570,7 @@ function renderBackSide(page, data, fonts, images) {
     font: fonts.heading,
   });
   
-  // Description (Source Sans 3, 7pt, white)
+  // Description (body, 7pt, white)
   const description = 'Scannen Sie den QR-Code mit Ihrer Kamera-App, um die Kontaktdaten automatisch zu speichern.';
   // Calculate max width: card width - text start position - right margin (safe offset + padding)
   // Minimal safety margin to maximize text box width

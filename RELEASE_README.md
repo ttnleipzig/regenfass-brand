@@ -46,7 +46,7 @@ Need only specific assets? Download individual packages:
 
 - **[regenfass-logos-v${VERSION}.zip](https://github.com/kieksme/regenfass.brand/releases/download/v${VERSION}/regenfass-logos-v${VERSION}.zip)** - Logos only (all logo variants in SVG and PNG formats, including favicon)
 - **[regenfass-colors-v${VERSION}.zip](https://github.com/kieksme/regenfass.brand/releases/download/v${VERSION}/regenfass-colors-v${VERSION}.zip)** - Colors only (CSS variables, JSON definitions, and color swatches)
-- **[regenfass-fonts-v${VERSION}.zip](https://github.com/kieksme/regenfass.brand/releases/download/v${VERSION}/regenfass-fonts-v${VERSION}.zip)** - Fonts only (Hanken Grotesk and Source Sans 3 font files)
+- **Optional:** If a fonts package is included in the release, see [FONT_LICENSES.md](FONT_LICENSES.md) for third-party font license information. The brand site uses the system UI font stack (no download required).
 
 ${CHANGELOG_SECTION}
 

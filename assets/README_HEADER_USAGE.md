@@ -168,7 +168,7 @@ The SVG includes:
 ### Fonts
 
 The SVG uses:
-- **Hanken Grotesk** (Bold, 700) for the title
+- **System UI font stack** (Bold, 700) for the title
 - Fonts are referenced but may fall back to system fonts if not available
 
 ### Colors

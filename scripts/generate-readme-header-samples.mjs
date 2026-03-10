@@ -2,7 +2,7 @@
 /**
  * README Header Sample Banner Generator
  * Generates sample README header banners (1200×200) in Regenfass brand:
- * embedded 5.svg background, dark overlay, Regenfass logo, Hanken Grotesk title.
+ * embedded 5.svg background, dark overlay, Regenfass logo, system UI font stack title.
  */
 
 import { fileURLToPath } from 'url';
@@ -69,8 +69,8 @@ function buildReadmeHeaderSvg(title) {
   <!-- Regenfass logo (scale to 48px height, flat paths for GitHub/social renderers) -->
   <g transform="translate(40, 20) scale(${logoScale})" fill="none">${LOGO_PATHS}
   </g>
-  <!-- Title (Hanken Grotesk) -->
-  <text x="40" y="130" font-family="'Hanken Grotesk', sans-serif" font-size="32" font-weight="700" fill="#FFFFFF">${title}</text>
+  <!-- Title (system UI stack) -->
+  <text x="40" y="130" font-family="system-ui, sans-serif" font-size="32" font-weight="700" fill="#FFFFFF">${title}</text>
 </svg>
 `;
 }
@@ -98,7 +98,7 @@ async function generateSampleBanners() {
     mkdirSync(outputDir, { recursive: true });
   }
 
-  info('Generating sample README header banners (Regenfass brand: 5.svg, logo, Hanken Grotesk)...');
+  info('Generating sample README header banners (Regenfass brand: 5.svg, logo, system UI stack)...');
   info(`Output directory: ${outputDir}`);
 
   // Update default template used by generate-readme-header.mjs
@@ -133,7 +133,7 @@ async function generateSampleBanners() {
 
 async function main() {
   try {
-    console.log(header('README Header Sample Banner Generator', 'Regenfass brand: background 5.svg, logo, Hanken Grotesk'));
+    console.log(header('README Header Sample Banner Generator', 'Regenfass brand: background 5.svg, logo, system UI stack'));
     await generateSampleBanners();
     success('Sample banner generation completed!');
     info(`Generated ${EXAMPLE_REPOSITORIES.length} sample banners in examples/github/`);

@@ -1,10 +1,21 @@
 # Font Licenses
 
-This document contains license information for fonts that may be used in Regenfass projects.
+This document describes typography and font licensing for Regenfass projects.
 
-**Primary typography (brand site):** The Regenfass brand site uses the **system UI font stack** (`ui-sans-serif, system-ui, sans-serif`, plus emoji fallbacks). No external fonts or licenses are required for standard web use.
+## Primary typography (brand)
 
-The sections below apply only to **optional** font files (e.g. for PDF generation or legacy templates) if included in assets or releases.
+The Regenfass brand uses the **system UI font stack** for all headings and body text:
+
+- **Stack:** `ui-sans-serif, system-ui, sans-serif`, plus emoji fallbacks (`"Apple Color Emoji"`, `"Segoe UI Emoji"`, `"Segoe UI Symbol"`, `"Noto Color Emoji"`).
+- **No external font files** are required; no font license is required for standard web, print, or email use of the brand site and templates when using this stack.
+
+See `app/styles.css` and [guidelines/TYPOGRAPHY.md](guidelines/TYPOGRAPHY.md) for usage.
+
+---
+
+## Optional font files (third-party licenses)
+
+The sections below apply **only** if optional font files (e.g. for PDF generation or legacy assets) are included in `assets/fonts/` or in a release. The brand does not ship or require these by default.
 
 ---
 

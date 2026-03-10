@@ -101,8 +101,8 @@ module.exports = {
 
 ```html
 <!-- Font families -->
-<h1 class="font-heading">Heading with Hanken Grotesk</h1>
-<p class="font-body">Body text with Source Sans 3</p>
+<h1 class="font-heading">Heading (system UI stack)</h1>
+<p class="font-body">Body text (system UI stack)</p>
 
 <!-- Font weights -->
 <div class="font-heading-light">Light (300)</div>
@@ -158,8 +158,8 @@ module.exports = {
 ## Available Font Classes
 
 ### Font Families
-- `font-heading` - Hanken Grotesk (for headings)
-- `font-body` - Source Sans 3 (for body text)
+- `font-heading` - System UI stack (for headings)
+- `font-body` - System UI stack (for body text)
 - `font-hanken-grotesk` - Direct font family name
 - `font-source-sans-3` - Direct font family name
 

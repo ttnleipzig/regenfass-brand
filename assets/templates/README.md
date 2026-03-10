@@ -60,7 +60,7 @@ Use `{{#if variable}}...{{/if}}` to conditionally render content:
 
 The templates follow Regenfass brand guidelines:
 - Colors from `assets/colors/colors.json`
-- Typography: Hanken Grotesk (headings), Source Sans 3 (body)
+- Typography: System UI font stack (headings and body)
 - Logo: Regenfass and Venitus solid card variants (`regenfass-solo-light-card-solid.svg`, `regenfass-venitus-light-card-solid.svg`) for opaque print
 
 ## Dependencies
