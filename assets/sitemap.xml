@@ -215,7 +215,18 @@
       <image:loc>{{repoBaseUrl}}/assets/banner/opengraph/implementations.png</image:loc>
     </image:image>
   </url>
-  
+
+  <!-- PWA Page -->
+  <url>
+    <loc>https://raw.githubusercontent.com/kieksme/regenfass.brand/implementations/pwa.html</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>{{repoBaseUrl}}/assets/banner/opengraph/implementations.png</image:loc>
+    </image:image>
+  </url>
+
   <!-- Impressum Page -->
   <url>
     <loc>https://raw.githubusercontent.com/kieksme/regenfass.brand/impressum.html</loc>

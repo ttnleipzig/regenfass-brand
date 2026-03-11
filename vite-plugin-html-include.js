@@ -201,6 +201,7 @@ function determineActiveStates(filePath) {
     activeImplementations: false,
     activeBusinessCards: false,
     activeWebApplications: false,
+    activePwa: false,
     activeEmailFooter: false,
     activeAvatars: false,
     activeGithub: false,
