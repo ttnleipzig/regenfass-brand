@@ -8,6 +8,8 @@ The Regenfass colour palette consists of primary brand colours (Dark Blue, Orang
 
 ### Dark Blue
 
+![Dark Blue](../assets/colors/swatches/dark-blue.svg)
+
 ```text
 Name: Dark Blue
 HEX: #0B2649
@@ -19,6 +21,8 @@ Pantone: 533 C
 
 ### Orange
 
+![Orange](../assets/colors/swatches/orange.svg)
+
 ```text
 Name: Orange
 HEX: #FF5722
@@ -29,6 +33,8 @@ Pantone: 1505 C
 **Usage**: Energy, call-to-action; accents, highlights, interactive elements
 
 ### Turquoise
+
+![Turquoise](../assets/colors/swatches/turquoise.svg)
 
 ```text
 Name: Turquoise
@@ -96,6 +102,8 @@ For consistent reproduction in print and industrial applications, use the Panton
 ## Neutral Colours
 
 ### Dark Grey
+
+![Dark Grey](../assets/colors/swatches/dark-gray.svg)
 
 ```text
 Name: Dark Grey
@@ -186,7 +194,10 @@ Colour palette files are available in multiple formats:
 - **ASE** (Adobe Swatch Exchange): `assets/colors/regenfass-palette.ase` (if available)
 - **CSS Variables**: `assets/colors/colors.css` for web projects
 - **JSON**: `assets/colors/colors.json` for developers and applications
-- **Colour Swatches**: SVG files in the `colors/` directory
+- **Colour Swatches**: SVG files in `assets/colors/swatches/` directory:
+  - Primary colours: `dark-blue.svg`, `orange.svg`, `turquoise.svg`
+  - Neutral colours: `white.svg`, `dark-gray.svg`
+  - Extended palette: `aqua.svg`, `navy.svg`, `fuchsia.svg` and their variants (see [assets/colors/README.md](../assets/colors/README.md) for complete list)
 
 ---
 
