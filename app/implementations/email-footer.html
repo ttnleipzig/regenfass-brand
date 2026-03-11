@@ -206,11 +206,11 @@
             <div class="mb-16">
                 <h3 class="font-heading text-2xl font-bold text-navy mb-6">Standard Footer (Light)</h3>
                 <p class="font-body text-gray-700 mb-4">
-                    Light background with dark logo. A clean, professional footer with logo, contact information, and company details.
+                    Light background with dark logo and the Regenfass waterline as a decorative top element. A clean, professional footer with logo, contact information, and company details.
                 </p>
                 
                 <div class="email-footer-preview">
-                    <iframe id="standard-footer-preview" src="about:blank" style="height: 300px;"></iframe>
+                    <iframe id="standard-footer-preview" src="about:blank" style="height: 340px;"></iframe>
                 </div>
                 
                 <div class="mt-4">
@@ -340,10 +340,16 @@
         // Email footer templates
         const emailFooters = {
             standard: `<!-- Standard Email Footer -->
-<table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background-color: #ffffff; border-top: 3px solid #0B2649; padding: 30px 20px;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background-color: #ffffff; padding: 30px 20px;">
     <tr>
         <td align="center">
             <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px;">
+                <!-- Waterline -->
+                <tr>
+                    <td align="center" style="padding-bottom: 16px;">
+                        <img src="{{basePath}}backgrounds/waterline-strip.svg" alt="" width="600" height="56" style="display: block; width: 100%; max-width: 600px; height: auto; border: 0; line-height: 0; font-size: 0;">
+                    </td>
+                </tr>
                 <!-- Logo -->
                 <tr>
                     <td align="left" style="padding-bottom: 20px;">
