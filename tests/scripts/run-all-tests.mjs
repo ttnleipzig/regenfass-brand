@@ -14,6 +14,7 @@ const testsDir = __dirname;
 const testFiles = [
   'sample-data.test.mjs',
   'generate-card.test.mjs',
+  'waterline-strip.test.mjs',
 ];
 
 async function runTest(file) {

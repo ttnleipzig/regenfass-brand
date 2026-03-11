@@ -206,7 +206,7 @@
             <div class="mb-16">
                 <h3 class="font-heading text-2xl font-bold text-navy mb-6">Standard Footer (Light)</h3>
                 <p class="font-body text-gray-700 mb-4">
-                    Light background with dark logo and the Regenfass waterline as a decorative top element. A clean, professional footer with logo, contact information, and company details.
+                    Light background with dark logo and the Regenfass waterline at the bottom (repeating horizontally, transparent). A clean, professional footer with logo, contact information, and company details.
                 </p>
                 
                 <div class="email-footer-preview">
@@ -340,16 +340,10 @@
         // Email footer templates
         const emailFooters = {
             standard: `<!-- Standard Email Footer -->
-<table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background-color: #ffffff; padding: 30px 20px;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background-color: #ffffff; padding: 30px 0 0 0;">
     <tr>
-        <td align="center">
+        <td align="center" style="padding: 0 20px;">
             <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px;">
-                <!-- Waterline -->
-                <tr>
-                    <td align="center" style="padding-bottom: 16px;">
-                        <img src="{{basePath}}backgrounds/waterline-strip.svg" alt="" width="600" height="56" style="display: block; width: 100%; max-width: 600px; height: auto; border: 0; line-height: 0; font-size: 0;">
-                    </td>
-                </tr>
                 <!-- Logo -->
                 <tr>
                     <td align="left" style="padding-bottom: 20px;">
@@ -362,7 +356,7 @@
                         <table cellpadding="0" cellspacing="0" border="0">
                             <tr>
                                 <td style="font-size: 14px; line-height: 1.6; color: #1E2A45;">
-                                    <strong style="color: #1E2A45; font-family: system-ui, Arial, sans-serif;">Contact</strong><br>
+                                    <strong style="color: #1E2A45; font-family: system-ui, Arial, sans-serif;">Kontakt</strong><br>
                                     <span style="color: #666666;">Hardenbergstraße 48</span><br>
                                     <span style="color: #666666;">04275 Leipzig, Deutschland</span><br>
                                     <span style="color: #666666;">E-Mail: <a href="mailto:kontakt@ttn-leipzig.de" style="color: #006B5F; text-decoration: none;">kontakt@ttn-leipzig.de</a></span><br>
@@ -372,9 +366,9 @@
                         </table>
                     </td>
                 </tr>
-                <!-- Divider / Legal -->
+                <!-- Legal (above waterline) -->
                 <tr>
-                    <td style="border-top: 1px solid #CCCCCC; padding-top: 15px; padding-bottom: 15px;">
+                    <td style="border-top: 1px solid #CCCCCC; padding-top: 15px; padding-bottom: 20px;">
                         <p style="margin: 0; font-size: 12px; color: #666666; line-height: 1.5;">
                             Vertreten durch André Lademann
                         </p>
@@ -382,6 +376,12 @@
                 </tr>
             </table>
         </td>
+    </tr>
+</table>
+<!-- Waterline as background image, white background (outside footer table, full width) -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="margin: 0; padding: 0;">
+    <tr>
+        <td style="width: 100%; height: 56px; background-color: #ffffff; line-height: 0; font-size: 0;"><img src="{{basePath}}backgrounds/waterline-strip-wide.svg" alt="" width="3072" height="56" style="display: block; width: 100%; height: 56px; border: 0; line-height: 0; font-size: 0;" /></td>
     </tr>
 </table>`,
             minimal: `<!-- Minimal Email Footer -->
@@ -391,7 +391,7 @@
             <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px;">
                 <tr>
                     <td align="left" style="font-size: 12px; color: #666666; line-height: 1.6;">
-                        <strong style="color: #1E2A45; font-family: system-ui, Arial, sans-serif;">Contact</strong> · Hardenbergstraße 48 · 04275 Leipzig, Deutschland | 
+                        <strong style="color: #1E2A45; font-family: system-ui, Arial, sans-serif;">Kontakt</strong> · Hardenbergstraße 48 · 04275 Leipzig, Deutschland | 
                         <a href="mailto:kontakt@ttn-leipzig.de" style="color: #006B5F; text-decoration: none;">kontakt@ttn-leipzig.de</a> | 
                         <a href="tel:+491707353067" style="color: #006B5F; text-decoration: none;">+49 170 7353 067</a> | 
                         Vertreten durch André Lademann
@@ -419,7 +419,7 @@
                             <tr>
                                 <td width="50%" valign="top" style="padding-right: 20px;">
                                     <p style="margin: 0 0 15px 0; font-size: 14px; line-height: 1.6; color: #FFFFFF;">
-                                        <strong style="font-family: system-ui, Arial, sans-serif; color: #FFFFFF;">Contact</strong><br>
+                                        <strong style="font-family: system-ui, Arial, sans-serif; color: #FFFFFF;">Kontakt</strong><br>
                                         <span style="color: #FFFFFF;">Hardenbergstraße 48</span><br>
                                         <span style="color: #FFFFFF;">04275 Leipzig, Deutschland</span><br>
                                         <span style="color: #FFFFFF;">E-Mail: <a href="mailto:kontakt@ttn-leipzig.de" style="color: #FFFFFF; text-decoration: underline;">kontakt@ttn-leipzig.de</a></span><br>
@@ -448,7 +448,7 @@
     </tr>
 </table>`,
             plainText: `--
-Contact
+Kontakt
 Hardenbergstraße 48
 04275 Leipzig, Deutschland
 E-Mail: kontakt@ttn-leipzig.de
@@ -478,7 +478,9 @@ Vertreten durch André Lademann
                         Prism.highlightElement(codeElement);
                     }
                     
-                    // Create preview document
+                    // Create preview document (replace {{basePath}} so images/backgrounds load)
+                    const basePath = window.location.pathname.includes('/implementations/') ? '../../' : '../';
+                    const templateForPreview = preview.template.replace(/\{\{basePath\}\}/g, basePath);
                     const doc = iframe.contentDocument || iframe.contentWindow.document;
                     doc.open();
                     doc.write(`
@@ -491,7 +493,7 @@ Vertreten durch André Lademann
                             </style>
                         </head>
                         <body>
-                            ${preview.template}
+                            ${templateForPreview}
                         </body>
                         </html>
                     `);
