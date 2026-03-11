@@ -36,6 +36,9 @@ const DEFAULT_BACKGROUND_PATH = join(projectRoot, 'assets', 'backgrounds', '5-da
 /** Minimum contrast ratio for logo on background (WCAG 2.1 Level AA for large graphics). */
 const MIN_LOGO_CONTRAST = 3;
 
+/** Luminance above which we use black instead of dark blue for logo (better contrast on light BG). */
+const LUMINANCE_USE_BLACK_THRESHOLD = 0.3;
+
 /** LinkedIn background palette: Regenfass primary colors only (config.linkedin.colors). */
 function getLinkedInColors() {
   const c = CONFIG.linkedin?.colors || CONFIG.brand.colors;
@@ -93,52 +96,64 @@ function getContrastRatio(hex1, hex2) {
 }
 
 /**
- * Pick logo color (white or darkBlue) that meets minimum contrast on the given background.
- * Uses only Regenfass brand colors; ensures logo is always readable.
+ * Pick logo color (white, black, or darkBlue) for best contrast on the given background.
+ * On light backgrounds (e.g. green, turquoise) uses black for stronger contrast than dark blue.
  * @param {string} backgroundHex - Background color hex
- * @returns {string} Hex for logo contrast (white or darkBlue)
+ * @returns {string} Hex for logo contrast (white, black, or darkBlue)
  */
 function getLogoContrastColor(backgroundHex) {
   const brand = CONFIG.brand.colors;
   const linkedin = getLinkedInColors();
+  const bgLuminance = hexToLuminance(backgroundHex);
   const whiteRatio = getContrastRatio(backgroundHex, brand.white);
-  const darkRatio = getContrastRatio(backgroundHex, linkedin.darkBlue);
+  const darkBlueRatio = getContrastRatio(backgroundHex, linkedin.darkBlue);
+  const blackRatio = getContrastRatio(backgroundHex, brand.black || '#000000');
+  const darkColor = bgLuminance > LUMINANCE_USE_BLACK_THRESHOLD && blackRatio > darkBlueRatio
+    ? (brand.black || '#000000')
+    : linkedin.darkBlue;
+  const darkRatio = darkColor === (brand.black || '#000000') ? blackRatio : darkBlueRatio;
   const useWhite = whiteRatio >= darkRatio;
   const ratio = useWhite ? whiteRatio : darkRatio;
   if (ratio < MIN_LOGO_CONTRAST) {
     warn(`Logo contrast is ${ratio.toFixed(2)}:1 (target ≥${MIN_LOGO_CONTRAST}:1). Consider a different background.`);
   }
-  return useWhite ? brand.white : linkedin.darkBlue;
+  return useWhite ? brand.white : darkColor;
 }
 
 /**
  * Modify SVG logo colors based on background (Regenfass brand, contrast-safe).
- * Solo logo uses #0B2649 (dark blue) – replace with high-contrast color.
+ * Solo (Tabler) logo: replace fill #0B2649 and strokes #00BCD4, #22C55E so the icon
+ * is always high-contrast (white on dark blue, dark blue on green/turquoise).
  */
 function modifySoloLogoColors(svgContent, backgroundColor) {
   const linkedin = getLinkedInColors();
   const backgroundHex = linkedin[backgroundColor] || linkedin.darkBlue;
   const contrastColor = getLogoContrastColor(backgroundHex);
-  const darkFillHex = '#0B2649';
-  return svgContent.replace(
-    new RegExp(`fill="${darkFillHex}"`, 'gi'),
-    `fill="${contrastColor}"`
-  );
+  let out = svgContent
+    .replace(/fill="#0B2649"/gi, `fill="${contrastColor}"`)
+    .replace(/stroke="#0B2649"/gi, `stroke="${contrastColor}"`)
+    .replace(/stroke="#00BCD4"/gi, `stroke="${contrastColor}"`)
+    .replace(/stroke="#22C55E"/gi, `stroke="${contrastColor}"`);
+  return out;
 }
 
 /**
  * Modify horizontal (wordmark) logo colors; ensures contrast-rich logo on background.
+ * Replaces all brand-colored fills (dark blue, turquoise, green, orange) and #0B2649
+ * so the wordmark is always readable (white on dark blue, dark blue on green/turquoise).
  */
 function modifyHorizontalLogoColors(svgContent, backgroundColor) {
   const linkedin = getLinkedInColors();
   const backgroundHex = linkedin[backgroundColor] || linkedin.darkBlue;
   const textColor = getLogoContrastColor(backgroundHex);
   let modified = svgContent
-    .replace(/fill:#1a2846/g, `fill:${textColor}`)
-    .replace(/fill:#1eb8d1/g, `fill:${textColor}`)
-    .replace(/fill="#1a2846"/g, `fill="${textColor}"`)
-    .replace(/fill="#1eb8d1"/g, `fill="${textColor}"`)
-    .replace(/fill="#ea592d"/g, `fill="${textColor}"`);
+    .replace(/fill:#1a2846/gi, `fill:${textColor}`)
+    .replace(/fill:#1eb8d1/gi, `fill:${textColor}`)
+    .replace(/fill="#1a2846"/gi, `fill="${textColor}"`)
+    .replace(/fill="#1eb8d1"/gi, `fill="${textColor}"`)
+    .replace(/fill="#ea592d"/gi, `fill="${textColor}"`)
+    .replace(/fill="#0B2649"/gi, `fill="${textColor}"`)
+    .replace(/fill:#0b2649/gi, `fill:${textColor}`);
   return modified;
 }
 
