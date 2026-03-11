@@ -14,13 +14,34 @@ This directory contains the official Regenfass brand colour palette, including d
 
 ### Colour Swatches
 
+**Primary Brand Colours:**
+
 | File Name                   | Format | Colour                  | Download                                                                                              |
 |-----------------------------|--------|------------------------|--------------------------------------------------------------------------------------------------------|
 | `swatches/dark-blue.svg`    | SVG    | Dark Blue (#0B2649)    | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/dark-blue.svg)       |
 | `swatches/orange.svg`       | SVG    | Orange (#FF5722)       | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/orange.svg)          |
 | `swatches/turquoise.svg`    | SVG    | Turquoise (#00BCD4)    | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/turquoise.svg)        |
+
+**Neutral Colours:**
+
+| File Name                   | Format | Colour                  | Download                                                                                              |
+|-----------------------------|--------|------------------------|--------------------------------------------------------------------------------------------------------|
 | `swatches/white.svg`        | SVG    | White (#FFFFFF)        | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/white.svg)            |
 | `swatches/dark-gray.svg`    | SVG    | Dark Grey (#333333)    | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/dark-gray.svg)        |
+
+**Extended Palette (Legacy/Selection Colours):**
+
+| File Name                   | Format | Colour                  | Download                                                                                              |
+|-----------------------------|--------|------------------------|--------------------------------------------------------------------------------------------------------|
+| `swatches/aqua.svg`         | SVG    | Aqua (#00FFDC)         | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/aqua.svg)            |
+| `swatches/aqua-medium.svg`  | SVG    | Aqua Medium (#00BFA5)  | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/aqua-medium.svg)     |
+| `swatches/aqua-dark.svg`    | SVG    | Aqua Dark (#006B5F)    | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/aqua-dark.svg)       |
+| `swatches/navy.svg`         | SVG    | Navy (#1E2A45)         | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/navy.svg)            |
+| `swatches/navy-medium.svg`  | SVG    | Navy Medium (#2F4169) | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/navy-medium.svg)      |
+| `swatches/navy-light.svg`   | SVG    | Navy Light (#5A6B8C)  | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/navy-light.svg)      |
+| `swatches/fuchsia.svg`      | SVG    | Fuchsia (#FF008F)      | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/fuchsia.svg)         |
+| `swatches/fuchsia-medium.svg` | SVG | Fuchsia Medium (#BF006B) | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/fuchsia-medium.svg)  |
+| `swatches/fuchsia-light.svg` | SVG  | Fuchsia Light (#800047)  | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/fuchsia-light.svg)    |
 
 ## Primary Brand Colours
 
