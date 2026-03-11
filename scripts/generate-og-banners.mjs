@@ -75,9 +75,9 @@ function getPageGraphic(key) {
     case "colors":
       return `
   <!-- Color swatches (primary palette) -->
-  <rect x="850" y="150" width="100" height="100" rx="16" fill="#0B2649"/>
-  <rect x="970" y="150" width="100" height="100" rx="16" fill="#FF5722"/>
-  <rect x="1090" y="150" width="100" height="100" rx="16" fill="#00BCD4"/>`;
+  <rect x="120" y="165" width="300" height="300" rx="48" fill="#0B2649"/>
+  <rect x="450" y="165" width="300" height="300" rx="48" fill="#FF5722"/>
+  <rect x="780" y="165" width="300" height="300" rx="48" fill="#00BCD4"/>`;
     case "fonts":
       return `
   <!-- Typography sample -->

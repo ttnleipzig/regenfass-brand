@@ -8,7 +8,7 @@ The Regenfass colour palette consists of primary brand colours (Dark Blue, Orang
 
 ### Dark Blue
 
-![Dark Blue](../assets/colors/swatches/dark-blue.svg)
+<img src="../assets/colors/swatches/dark-blue.svg" alt="Dark Blue" width="60" height="36">
 
 ```text
 Name: Dark Blue
@@ -21,7 +21,7 @@ Pantone: 533 C
 
 ### Orange
 
-![Orange](../assets/colors/swatches/orange.svg)
+<img src="../assets/colors/swatches/orange.svg" alt="Orange" width="60" height="36">
 
 ```text
 Name: Orange
@@ -34,7 +34,7 @@ Pantone: 1505 C
 
 ### Turquoise
 
-![Turquoise](../assets/colors/swatches/turquoise.svg)
+<img src="../assets/colors/swatches/turquoise.svg" alt="Turquoise" width="60" height="36">
 
 ```text
 Name: Turquoise
@@ -103,7 +103,7 @@ For consistent reproduction in print and industrial applications, use the Panton
 
 ### Dark Grey
 
-![Dark Grey](../assets/colors/swatches/dark-gray.svg)
+<img src="../assets/colors/swatches/dark-gray.svg" alt="Dark Grey" width="60" height="36">
 
 ```text
 Name: Dark Grey
