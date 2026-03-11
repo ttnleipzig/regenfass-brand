@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/ttnleipzig/regenfass-brand/compare/v1.2.0...v1.3.0) (2026-03-11)
+
+
+### Features
+
+* update README header assets with new raindrop wallpaper pattern ([12d817d](https://github.com/ttnleipzig/regenfass-brand/commit/12d817d3c4f70668a6edf7a51ffe46659edcd2da))
+
 ## [1.2.0](https://github.com/ttnleipzig/regenfass-brand/compare/v1.1.0...v1.2.0) (2026-03-11)
 
 
