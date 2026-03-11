@@ -116,6 +116,8 @@ CMYK: C:0 M:0 Y:0 K:80
 
 ### Medium Grey
 
+<img src="../assets/colors/swatches/medium-gray.svg" alt="Medium Grey" width="60" height="36">
+
 ```text
 Name: Medium Grey
 HEX: #666666
@@ -127,6 +129,8 @@ CMYK: C:0 M:0 Y:0 K:60
 
 ### Light Grey
 
+<img src="../assets/colors/swatches/light-gray.svg" alt="Light Grey" width="60" height="36">
+
 ```text
 Name: Light Grey
 HEX: #CCCCCC
@@ -135,6 +139,131 @@ CMYK: C:0 M:0 Y:0 K:20
 ```
 
 **Usage**: Backgrounds, dividers, subtle elements
+
+### White
+
+<img src="../assets/colors/swatches/white.svg" alt="White" width="60" height="36" style="border: 1px solid #ddd;">
+
+```text
+Name: White
+HEX: #FFFFFF
+RGB: rgb(255, 255, 255)
+CMYK: C:0 M:0 Y:0 K:0
+```
+
+**Usage**: Backgrounds, text on dark backgrounds, complementary elements
+
+## Extended Palette (Aqua, Navy, Fuchsia)
+
+Legacy and selection colours for complementary use.
+
+### Aqua
+
+<img src="../assets/colors/swatches/aqua.svg" alt="Aqua" width="60" height="36">
+
+```text
+Name: Aqua
+HEX: #00FFDC
+RGB: 0 255 220
+```
+
+**Usage**: Bright turquoise/aqua selection colour
+
+### Aqua Medium
+
+<img src="../assets/colors/swatches/aqua-medium.svg" alt="Aqua Medium" width="60" height="36">
+
+```text
+Name: Aqua Medium
+HEX: #00BFA5
+RGB: 0 191 165
+```
+
+**Usage**: Medium aqua shade for better contrast
+
+### Aqua Dark
+
+<img src="../assets/colors/swatches/aqua-dark.svg" alt="Aqua Dark" width="60" height="36">
+
+```text
+Name: Aqua Dark
+HEX: #006B5F
+RGB: 0 107 95
+```
+
+**Usage**: Dark aqua shade for links on white background (WCAG AA compliant)
+
+### Navy
+
+<img src="../assets/colors/swatches/navy.svg" alt="Navy" width="60" height="36">
+
+```text
+Name: Navy
+HEX: #1E2A45
+RGB: 30 42 69
+```
+
+**Usage**: Dark blue/navy selection colour
+
+### Navy Medium
+
+<img src="../assets/colors/swatches/navy-medium.svg" alt="Navy Medium" width="60" height="36">
+
+```text
+Name: Navy Medium
+HEX: #2F4169
+RGB: 47 65 105
+```
+
+**Usage**: Medium navy shade
+
+### Navy Light
+
+<img src="../assets/colors/swatches/navy-light.svg" alt="Navy Light" width="60" height="36">
+
+```text
+Name: Navy Light
+HEX: #5A6B8C
+RGB: 90 107 140
+```
+
+**Usage**: Light navy shade for better readability
+
+### Fuchsia
+
+<img src="../assets/colors/swatches/fuchsia.svg" alt="Fuchsia" width="60" height="36">
+
+```text
+Name: Fuchsia
+HEX: #FF008F
+RGB: 255 0 143
+```
+
+**Usage**: Vibrant pink/fuchsia selection colour
+
+### Fuchsia Medium
+
+<img src="../assets/colors/swatches/fuchsia-medium.svg" alt="Fuchsia Medium" width="60" height="36">
+
+```text
+Name: Fuchsia Medium
+HEX: #BF006B
+RGB: 191 0 107
+```
+
+**Usage**: Medium fuchsia shade
+
+### Fuchsia Light
+
+<img src="../assets/colors/swatches/fuchsia-light.svg" alt="Fuchsia Light" width="60" height="36">
+
+```text
+Name: Fuchsia Light
+HEX: #800047
+RGB: 128 0 71
+```
+
+**Usage**: Light fuchsia shade
 
 ## Colour Usage Guidelines
 
@@ -195,9 +324,9 @@ Colour palette files are available in multiple formats:
 - **CSS Variables**: `assets/colors/colors.css` for web projects
 - **JSON**: `assets/colors/colors.json` for developers and applications
 - **Colour Swatches**: SVG files in `assets/colors/swatches/` directory:
-  - Primary colours: `dark-blue.svg`, `orange.svg`, `turquoise.svg`
-  - Neutral colours: `white.svg`, `dark-gray.svg`
-  - Extended palette: `aqua.svg`, `navy.svg`, `fuchsia.svg` and their variants (see [assets/colors/README.md](../assets/colors/README.md) for complete list)
+  - Primary: `dark-blue.svg`, `orange.svg`, `turquoise.svg`
+  - Neutral: `white.svg`, `dark-gray.svg`, `medium-gray.svg`, `light-gray.svg`
+  - Extended: `aqua.svg`, `aqua-medium.svg`, `aqua-dark.svg`, `navy.svg`, `navy-medium.svg`, `navy-light.svg`, `fuchsia.svg`, `fuchsia-medium.svg`, `fuchsia-light.svg` (see [assets/colors/README.md](../assets/colors/README.md))
 
 ---
 
