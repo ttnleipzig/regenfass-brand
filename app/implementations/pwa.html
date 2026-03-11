@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{basePath}}favicon.svg" />
+    <link
+      rel="alternate icon"
+      href="{{basePath}}logos/solo/regenfass-solo-light.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="{{basePath}}logos/solo/regenfass-solo-light.png"
+    />
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="{{basePath}}manifest.json" />
+    <meta name="theme-color" content="#1E2A45" />
+
+    <meta
+      name="description"
+      content="Regenfass PWA – Progressive Web App: Manifest, Icons und Theme für installierbare Apps"
+    />
+    <meta
+      name="keywords"
+      content="Regenfass, PWA, progressive web app, manifest, app icons, theme-color, installable"
+    />
+    <meta name="author" content="Regenfass" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="German" />
+    <title>PWA - Regenfass</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://brand.regenfass.eu/implementations/pwa.html"
+    />
+    <meta property="og:title" content="PWA - Regenfass" />
+    <meta
+      property="og:description"
+      content="Progressive Web App – Manifest und Icons für installierbare Regenfass-Apps"
+    />
+    <meta
+      property="og:image"
+      content="{{repoBaseUrl}}/assets/banner/opengraph/implementations.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="Regenfass" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:url"
+      content="https://brand.regenfass.eu/implementations/pwa.html"
+    />
+    <meta name="twitter:title" content="PWA - Regenfass" />
+    <meta
+      name="twitter:description"
+      content="Progressive Web App – Manifest und Icons für installierbare Apps"
+    />
+    <meta
+      name="twitter:image"
+      content="{{repoBaseUrl}}/assets/banner/opengraph/implementations.png"
+    />
+
+    <!-- Canonical URL -->
+    <link
+      rel="canonical"
+      href="https://brand.regenfass.eu/implementations/pwa.html"
+    />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "PWA - Regenfass",
+        "description": "Progressive Web App – Manifest und Icons für installierbare Regenfass-Apps",
+        "url": "https://brand.regenfass.eu/implementations/pwa.html",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Regenfass Corporate Identity",
+          "url": "https://brand.regenfass.eu/"
+        },
+        "about": {
+          "@type": "Thing",
+          "name": "PWA",
+          "description": "Web App Manifest and icon assets for Progressive Web Apps"
+        }
+      }
+    </script>
+
+    <!-- Tabler Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+
+    <!-- Prism.js for Syntax Highlighting -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+    <!-- Custom Styles (imported via main.js) -->
+    <script type="module" src="../main.js"></script>
+
+    <style>
+      pre[class*="language-"] {
+        background: #1e2a45 !important;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        overflow-x: auto;
+        margin: 1.5rem 0;
+      }
+      code[class*="language-"] {
+        font-family: "Source Code Pro", "Monaco", "Courier New", monospace;
+        font-size: 0.875rem;
+        line-height: 1.6;
+      }
+      .code-example { position: relative; }
+      .code-example pre { margin-top: 0; }
+    </style>
+  </head>
+  <body>
+    <!-- include: navigation -->
+
+    <!-- include: hero -->
+
+    <main role="main">
+      <!-- Intro -->
+      <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8">
+            Was ist eine PWA?
+          </h2>
+          <p class="font-body text-lg text-gray-700 mb-6">
+            Progressive Web Apps (PWA) sind Webanwendungen, die sich wie native Apps installieren lassen
+            und Offline-Funktionen sowie ein einheitliches Erscheinungsbild (Theme-Farbe, Splash-Screen)
+            nutzen. Mit einem <strong>Web App Manifest</strong> und den passenden Icons kann jede
+            Regenfass-Webapp als PWA angeboten werden – mit Installierbarkeit, Brand-Farben und
+            konsistenten App-Icons.
+          </p>
+          <p class="font-body text-gray-700 mb-8">
+            Im Folgenden findest du ein Beispiel-Manifest, die nötigen HTML-Snippets und alle
+            Grafiken zum Download. Das komplette PWA-Bundle (Manifest + Icons) ist zudem in jedem
+            Release als ZIP verfügbar.
+          </p>
+        </div>
+      </section>
+
+      <!-- Example manifest.json -->
+      <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8">
+            Beispiel <code class="bg-gray-200 px-2 py-1 rounded">manifest.json</code>
+          </h2>
+          <p class="font-body text-lg text-gray-700 mb-6">
+            Das Web App Manifest definiert Name, Start-URL, Anzeigemodus, Theme- und Hintergrundfarbe
+            sowie die App-Icons. Passe <code class="bg-gray-200 px-1 rounded">start_url</code> und
+            ggf. <code class="bg-gray-200 px-1 rounded">name</code> / <code class="bg-gray-200 px-1 rounded">short_name</code>
+            an deine App an. Die Icon-Pfade sollten zu den unten verlinkten Assets passen (z. B. im
+            Root oder unter <code class="bg-gray-200 px-1 rounded">logos/solo/</code>).
+          </p>
+          <div class="code-example">
+            <pre class="language-json"><code>{
+  "name": "Regenfass - Corporate Identity & Corporate Design",
+  "short_name": "Regenfass CI/CD",
+  "description": "Brand assets, logos, colors, fonts, and guidelines for Regenfass",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#1E2A45",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/logos/solo/regenfass-solo-light-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logos/solo/regenfass-solo-light-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "design", "productivity"],
+  "lang": "de",
+  "dir": "ltr"
+}</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- HTML integration -->
+      <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8">
+            Integration im HTML
+          </h2>
+          <p class="font-body text-lg text-gray-700 mb-6">
+            Binde das Manifest und die Meta-Angaben im <code class="bg-gray-200 px-1 rounded">&lt;head&gt;</code>
+            deiner App ein. Ersetze <code class="bg-gray-200 px-1 rounded">/</code> bzw. den Base-Pfad
+            durch deinen tatsächlichen Pfad (z. B. <code class="bg-gray-200 px-1 rounded">{{basePath}}</code>).
+          </p>
+          <div class="code-example">
+            <pre class="language-html"><code>&lt;!-- Web App Manifest --&gt;
+&lt;link rel="manifest" href="/manifest.json" /&gt;
+&lt;meta name="theme-color" content="#1E2A45" /&gt;
+
+&lt;!-- Favicon und App-Icons --&gt;
+&lt;link rel="icon" type="image/svg+xml" href="/favicon.svg" /&gt;
+&lt;link rel="apple-touch-icon" href="/logos/solo/regenfass-solo-light.png" /&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Graphics for download -->
+      <section class="py-16 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-8">
+            Grafiken zum Download
+          </h2>
+          <p class="font-body text-lg text-gray-700 mb-6">
+            Diese Assets kannst du direkt verwenden oder im PWA-Bundle (ZIP) herunterladen.
+          </p>
+          <div class="overflow-x-auto">
+            <table class="min-w-full font-body border border-gray-200 rounded-lg overflow-hidden">
+              <thead class="bg-gray-100">
+                <tr>
+                  <th class="text-left px-4 py-3 text-navy">Asset</th>
+                  <th class="text-left px-4 py-3 text-navy">Format</th>
+                  <th class="text-left px-4 py-3 text-navy">Größe / Verwendung</th>
+                  <th class="text-left px-4 py-3 text-navy">Download</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-700">
+                <tr class="border-t border-gray-200">
+                  <td class="px-4 py-3">Favicon</td>
+                  <td class="px-4 py-3">SVG</td>
+                  <td class="px-4 py-3">Skalierbar, Browser-Tab / PWA</td>
+                  <td class="px-4 py-3">
+                    <a href="{{basePath}}favicon.svg" download class="text-aqua hover:underline font-medium">favicon.svg</a>
+                  </td>
+                </tr>
+                <tr class="border-t border-gray-200">
+                  <td class="px-4 py-3">PWA-Icon</td>
+                  <td class="px-4 py-3">PNG</td>
+                  <td class="px-4 py-3">192×192 (Manifest, Android)</td>
+                  <td class="px-4 py-3">
+                    <a href="{{basePath}}logos/solo/regenfass-solo-light-192.png" download class="text-aqua hover:underline font-medium">regenfass-solo-light-192.png</a>
+                  </td>
+                </tr>
+                <tr class="border-t border-gray-200">
+                  <td class="px-4 py-3">PWA-Icon</td>
+                  <td class="px-4 py-3">PNG</td>
+                  <td class="px-4 py-3">512×512 (Manifest, Splash, maskable)</td>
+                  <td class="px-4 py-3">
+                    <a href="{{basePath}}logos/solo/regenfass-solo-light-512.png" download class="text-aqua hover:underline font-medium">regenfass-solo-light-512.png</a>
+                  </td>
+                </tr>
+                <tr class="border-t border-gray-200">
+                  <td class="px-4 py-3">Apple Touch Icon</td>
+                  <td class="px-4 py-3">PNG</td>
+                  <td class="px-4 py-3">Allgemein (iOS / Homescreen)</td>
+                  <td class="px-4 py-3">
+                    <a href="{{basePath}}logos/solo/regenfass-solo-light.png" download class="text-aqua hover:underline font-medium">regenfass-solo-light.png</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Download PWA Bundle -->
+      <section class="py-16 px-4 bg-gray-50">
+        <div class="max-w-6xl mx-auto">
+          <div class="p-4 rounded-lg border border-gray-200" style="border-left: 4px solid #1E2A45;">
+            <h3 class="font-heading text-xl font-bold mb-4 text-navy">PWA-Bundle herunterladen</h3>
+            <p class="font-body text-gray-700 mb-4">
+              Das PWA-Paket enthält <code class="bg-gray-200 px-1 rounded">manifest.json</code>,
+              <code class="bg-gray-200 px-1 rounded">favicon.svg</code> und die App-Icons (192×192,
+              512×512) und ist in jedem Release als ZIP verfügbar.
+            </p>
+            <div id="pwa-download-section">
+              <a href="https://github.com/kieksme/regenfass.brand/releases/latest"
+                 id="download-pwa-btn"
+                 class="px-6 py-3 rounded-lg font-heading font-bold transition-colors inline-flex items-center justify-center gap-2 text-white hover:opacity-90 bg-navy">
+                <i class="ti ti-download text-xl" aria-hidden="true"></i>
+                <span>Download PWA ZIP</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- include: implementations-grid -->
+
+    <!-- include: footer -->
+
+    <script>
+      const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenuToggle && mobileMenu) {
+        mobileMenuToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+      }
+
+      async function loadPwaDownload() {
+        try {
+          const response = await fetch('https://api.github.com/repos/kieksme/regenfass.brand/releases/latest');
+          if (!response.ok) throw new Error('Failed to fetch release');
+          const release = await response.json();
+          const allZipAssets = release.assets.filter(asset => asset.name.endsWith('.zip'));
+          const pwaZip = allZipAssets.find(asset => asset.name.toLowerCase().includes('pwa'));
+
+          const downloadBtn = document.getElementById('download-pwa-btn');
+          if (downloadBtn && pwaZip) {
+            downloadBtn.href = pwaZip.browser_download_url;
+            const sizeMB = (pwaZip.size / 1024).toFixed(2);
+            downloadBtn.innerHTML = `
+              <i class="ti ti-download text-xl" aria-hidden="true"></i>
+              <span>Download PWA ZIP</span>
+              <span class="text-sm font-normal">(${sizeMB} KB)</span>
+            `;
+          }
+        } catch (error) {
+          console.error('Error loading PWA download:', error);
+        }
+      }
+      loadPwaDownload();
+    </script>
+    <!-- include: analytics -->
+  </body>
+</html>

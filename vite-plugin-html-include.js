@@ -251,6 +251,8 @@ function determineActiveStates(filePath) {
       states.activeBusinessCards = true;
     } else if (normalizedPath.includes('web-applications.html')) {
       states.activeWebApplications = true;
+    } else if (normalizedPath.includes('pwa.html')) {
+      states.activePwa = true;
     } else if (normalizedPath.includes('email-footer.html')) {
       states.activeEmailFooter = true;
     } else if (normalizedPath.includes('avatars.html')) {
@@ -377,6 +379,11 @@ const HERO_CONTENT_MAP = {
     heroTitle: 'Web Applications',
     heroSubtitle: 'Tailwind CSS und Vite Anleitungen für moderne Webanwendungen',
     heroExtras: heroExtrasTags('<span class="text-aqua">Tailwind CSS</span> • <span class="text-fuchsia">Vite</span> • <span class="text-aqua">Components</span>'),
+  },
+  'implementations/pwa.html': {
+    heroTitle: 'PWA',
+    heroSubtitle: 'Progressive Web App – Manifest und Icons für installierbare Apps',
+    heroExtras: heroExtrasTags('<span class="text-aqua">Manifest</span> • <span class="text-fuchsia">Icons</span> • <span class="text-aqua">Theme Color</span>'),
   },
 };
 

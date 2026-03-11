@@ -138,6 +138,7 @@ export default defineConfig({
         'implementations/index': resolve(__dirname, 'app/implementations/index.html'),
         'implementations/business-cards': resolve(__dirname, 'app/implementations/business-cards.html'),
         'implementations/web-applications': resolve(__dirname, 'app/implementations/web-applications.html'),
+        'implementations/pwa': resolve(__dirname, 'app/implementations/pwa.html'),
         'implementations/email-footer': resolve(__dirname, 'app/implementations/email-footer.html'),
         'implementations/avatars': resolve(__dirname, 'app/implementations/avatars.html'),
         'implementations/github': resolve(__dirname, 'app/implementations/github.html'),

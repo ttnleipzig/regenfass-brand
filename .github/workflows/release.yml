@@ -75,6 +75,16 @@ jobs:
           fi
           cd ..
 
+          # Create PWA-only ZIP (manifest + favicon + app icons)
+          mkdir -p release-assets-pwa/logos/solo
+          cp assets/manifest.json release-assets-pwa/
+          cp assets/favicon.svg release-assets-pwa/
+          cp assets/logos/solo/regenfass-solo-light-192.png release-assets-pwa/logos/solo/
+          cp assets/logos/solo/regenfass-solo-light-512.png release-assets-pwa/logos/solo/
+          cd release-assets-pwa
+          zip -r ../kieks-me-pwa-v${VERSION}.zip .
+          cd ..
+
       - name: Generate Release README
         id: readme
         run: |
@@ -200,6 +210,16 @@ jobs:
           asset_name: kieks-me-icons-v${{ steps.version.outputs.version }}.zip
           asset_content_type: application/zip
         continue-on-error: true
+
+      - name: Upload PWA ZIP to release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./kieks-me-pwa-v${{ steps.version.outputs.version }}.zip
+          asset_name: kieks-me-pwa-v${{ steps.version.outputs.version }}.zip
+          asset_content_type: application/zip
 
       - name: Update Release Notes
         run: |
