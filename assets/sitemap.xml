@@ -4,7 +4,7 @@
   
   <!-- Homepage -->
   <url>
-    <loc>https://raw.githubusercontent.com/kieksme/regenfass.brand/</loc>
+    <loc>https://raw.githubusercontent.com/ttnleipzig/regenfass-brand/</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -21,7 +21,7 @@
   
   <!-- Fundamentals Overview -->
   <url>
-    <loc>https://raw.githubusercontent.com/kieksme/regenfass.brand/fundamentals/</loc>
+    <loc>https://raw.githubusercontent.com/ttnleipzig/regenfass-brand/fundamentals/</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -32,7 +32,7 @@
   
   <!-- Logos Page -->
   <url>
-    <loc>https://raw.githubusercontent.com/kieksme/regenfass.brand/fundamentals/logos.html</loc>
+    <loc>https://raw.githubusercontent.com/ttnleipzig/regenfass-brand/fundamentals/logos.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -129,7 +129,7 @@
   
   <!-- Colors Page -->
   <url>
-    <loc>https://raw.githubusercontent.com/kieksme/regenfass.brand/fundamentals/colors.html</loc>
+    <loc>https://raw.githubusercontent.com/ttnleipzig/regenfass-brand/fundamentals/colors.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -174,7 +174,7 @@
   
   <!-- Fonts Page -->
   <url>
-    <loc>https://raw.githubusercontent.com/kieksme/regenfass.brand/fundamentals/fonts.html</loc>
+    <loc>https://raw.githubusercontent.com/ttnleipzig/regenfass-brand/fundamentals/fonts.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -185,7 +185,7 @@
   
   <!-- Implementations Overview -->
   <url>
-    <loc>https://raw.githubusercontent.com/kieksme/regenfass.brand/implementations/</loc>
+    <loc>https://raw.githubusercontent.com/ttnleipzig/regenfass-brand/implementations/</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -196,7 +196,7 @@
   
   <!-- Business Cards Page -->
   <url>
-    <loc>https://raw.githubusercontent.com/kieksme/regenfass.brand/implementations/business-cards.html</loc>
+    <loc>https://raw.githubusercontent.com/ttnleipzig/regenfass-brand/implementations/business-cards.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -207,7 +207,7 @@
   
   <!-- Web Applications Page -->
   <url>
-    <loc>https://raw.githubusercontent.com/kieksme/regenfass.brand/implementations/web-applications.html</loc>
+    <loc>https://raw.githubusercontent.com/ttnleipzig/regenfass-brand/implementations/web-applications.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -218,7 +218,7 @@
 
   <!-- PWA Page -->
   <url>
-    <loc>https://raw.githubusercontent.com/kieksme/regenfass.brand/implementations/pwa.html</loc>
+    <loc>https://raw.githubusercontent.com/ttnleipzig/regenfass-brand/implementations/pwa.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -229,7 +229,7 @@
 
   <!-- Impressum Page -->
   <url>
-    <loc>https://raw.githubusercontent.com/kieksme/regenfass.brand/impressum.html</loc>
+    <loc>https://raw.githubusercontent.com/ttnleipzig/regenfass-brand/impressum.html</loc>
     <lastmod>2026-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

@@ -6,7 +6,7 @@ This directory contains the complete Tailwind CSS theme configuration for Regenf
 
 | File Name            | Description                                          | Location                                                                    |
 |----------------------|------------------------------------------------------|-----------------------------------------------------------------------------|
-| `tailwind.config.js` | Complete Tailwind CSS config (colors + fonts)       | [View](https://github.com/kieksme/regenfass.brand/blob/main/assets/tailwind.config.js) |
+| `tailwind.config.js` | Complete Tailwind CSS config (colors + fonts)       | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/tailwind.config.js) |
 | Colors only          | Colors-only Tailwind config                         | [View](../colors/tailwind.config.js)                                        |
 | Fonts only           | Fonts-only Tailwind config                          | [View](../fonts/tailwind.config.js)                                         |
 
@@ -214,4 +214,4 @@ For more detailed information:
 
 ---
 
-*Part of the [Regenfass Corporate Identity](https://github.com/kieksme/regenfass.brand) assets*
+*Part of the [Regenfass Corporate Identity](https://github.com/ttnleipzig/regenfass-brand) assets*

@@ -56,7 +56,7 @@ This repository is licensed under the {{LICENSE}} - see the [LICENSE](LICENSE) f
 
 **Part of the [Regenfass](https://kieks.me) ecosystem**
 
-[![Regenfass](https://img.shields.io/badge/Regenfass-Corporate%20Identity-0B2649?style=for-the-badge)](https://github.com/kieksme/regenfass.brand)
+[![Regenfass](https://img.shields.io/badge/Regenfass-Corporate%20Identity-0B2649?style=for-the-badge)](https://github.com/ttnleipzig/regenfass-brand)
 
 Made with ❤️ by [Regenfass](https://kieks.me)
 

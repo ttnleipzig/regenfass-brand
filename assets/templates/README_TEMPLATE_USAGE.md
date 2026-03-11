@@ -186,7 +186,7 @@ This repository is licensed under the GPL-3.0 - see the [LICENSE](LICENSE) file 
 
 **Part of the [Regenfass](https://kieks.me) ecosystem**
 
-[![Regenfass](https://img.shields.io/badge/Regenfass-Corporate%20Identity-0B2649?style=for-the-badge)](https://github.com/kieksme/regenfass.brand)
+[![Regenfass](https://img.shields.io/badge/Regenfass-Corporate%20Identity-0B2649?style=for-the-badge)](https://github.com/ttnleipzig/regenfass-brand)
 
 Made with ❤️ by [Regenfass](https://kieks.me)
 
@@ -203,4 +203,4 @@ Made with ❤️ by [Regenfass](https://kieks.me)
 
 ## Questions?
 
-If you have questions about using the template or need help customizing it, please contact the designated maintainers or refer to the main [regenfass.brand](https://github.com/kieksme/regenfass.brand) repository.
+If you have questions about using the template or need help customizing it, please contact the designated maintainers or refer to the main [regenfass.brand](https://github.com/ttnleipzig/regenfass-brand) repository.

@@ -32,21 +32,21 @@ This release contains all official Corporate Identity and Corporate Design mater
 
 ## 📥 Download
 
-[![Version](https://img.shields.io/badge/version-v${VERSION}-blue.svg)](https://github.com/kieksme/regenfass.brand/releases/download/v${VERSION}/regenfass-assets-v${VERSION}.zip)
+[![Version](https://img.shields.io/badge/version-v${VERSION}-blue.svg)](https://github.com/ttnleipzig/regenfass-brand/releases/download/v${VERSION}/regenfass-assets-v${VERSION}.zip)
 
 ### Complete Package
 
 Download all assets in one convenient ZIP file:
 
-- **[regenfass-assets-v${VERSION}.zip](https://github.com/kieksme/regenfass.brand/releases/download/v${VERSION}/regenfass-assets-v${VERSION}.zip)** - Complete asset package (includes logos, colors, fonts, templates, and guidelines)
+- **[regenfass-assets-v${VERSION}.zip](https://github.com/ttnleipzig/regenfass-brand/releases/download/v${VERSION}/regenfass-assets-v${VERSION}.zip)** - Complete asset package (includes logos, colors, fonts, templates, and guidelines)
 
 ### Individual Asset Packages
 
 Need only specific assets? Download individual packages:
 
-- **[regenfass-logos-v${VERSION}.zip](https://github.com/kieksme/regenfass.brand/releases/download/v${VERSION}/regenfass-logos-v${VERSION}.zip)** - Logos only (all logo variants in SVG and PNG formats, including favicon)
-- **[regenfass-colors-v${VERSION}.zip](https://github.com/kieksme/regenfass.brand/releases/download/v${VERSION}/regenfass-colors-v${VERSION}.zip)** - Colors only (CSS variables, JSON definitions, and color swatches)
-- **PWA:** [regenfass-pwa-v${VERSION}.zip](https://github.com/kieksme/regenfass.brand/releases/download/v${VERSION}/regenfass-pwa-v${VERSION}.zip) – Manifest and app icons for Progressive Web Apps
+- **[regenfass-logos-v${VERSION}.zip](https://github.com/ttnleipzig/regenfass-brand/releases/download/v${VERSION}/regenfass-logos-v${VERSION}.zip)** - Logos only (all logo variants in SVG and PNG formats, including favicon)
+- **[regenfass-colors-v${VERSION}.zip](https://github.com/ttnleipzig/regenfass-brand/releases/download/v${VERSION}/regenfass-colors-v${VERSION}.zip)** - Colors only (CSS variables, JSON definitions, and color swatches)
+- **PWA:** [regenfass-pwa-v${VERSION}.zip](https://github.com/ttnleipzig/regenfass-brand/releases/download/v${VERSION}/regenfass-pwa-v${VERSION}.zip) – Manifest and app icons for Progressive Web Apps
 - **Optional:** If a fonts package is included in the release, see [FONT_LICENSES.md](FONT_LICENSES.md) for third-party font license information. The brand site uses the system UI font stack (no download required).
 
 ${CHANGELOG_SECTION}
@@ -116,7 +116,7 @@ All company members are allowed to use these materials for:
 
 ## 🔗 Repository
 
-Source repository: [Regenfass Corporate Identity](https://github.com/kieksme/regenfass.brand)
+Source repository: [Regenfass Corporate Identity](https://github.com/ttnleipzig/regenfass-brand)
 
 ## 📄 License
 

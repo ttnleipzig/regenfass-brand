@@ -8,7 +8,7 @@ import { htmlInclude } from './vite-plugin-html-include.js'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
 /** Base URL for raw GitHub repo assets (og:image, sitemaps, links). Change repo/branch here. */
-const REPO_BASE_URL = 'https://raw.githubusercontent.com/kieksme/regenfass.brand/main'
+const REPO_BASE_URL = 'https://raw.githubusercontent.com/ttnleipzig/regenfass-brand/main'
 /** Base path for app assets/routing. Override via VITE_BASE_PATH in CI for GitHub Pages repo deployments. */
 const APP_BASE_PATH = process.env.VITE_BASE_PATH || '/'
 

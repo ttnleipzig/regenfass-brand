@@ -83,7 +83,7 @@
                     <p class="font-body text-gray-700 mb-6">
                         Richtlinien für die korrekte Verwendung unserer Logos in verschiedenen Kontexten und Medien.
                     </p>
-                    <a href="https://github.com/kieksme/regenfass.brand/blob/main/guidelines/LOGO_USAGE.md" 
+                    <a href="https://github.com/ttnleipzig/regenfass-brand/blob/main/guidelines/LOGO_USAGE.md" 
                        target="_blank"
                        class="inline-block bg-aqua text-navy px-6 py-3 rounded-lg font-heading font-bold hover:bg-opacity-90 transition-colors">
                         Logo Usage Guidelines →
@@ -101,7 +101,7 @@
                     <p class="font-body text-gray-700 mb-6">
                         Offizielle Farbpalette mit HEX, RGB und CMYK-Werten für konsistente Farbverwendung.
                     </p>
-                    <a href="https://github.com/kieksme/regenfass.brand/blob/main/guidelines/COLOR_PALETTE.md" 
+                    <a href="https://github.com/ttnleipzig/regenfass-brand/blob/main/guidelines/COLOR_PALETTE.md" 
                        target="_blank"
                        class="inline-block bg-fuchsia text-white px-6 py-3 rounded-lg font-heading font-bold hover:bg-fuchsia-600 transition-colors">
                         Color Palette Guidelines →
@@ -115,7 +115,7 @@
                     <p class="font-body text-gray-700 mb-6">
                         Typografie-Spezifikationen, Schriftarten und Hierarchie für alle Kommunikationsmaterialien.
                     </p>
-                    <a href="https://github.com/kieksme/regenfass.brand/blob/main/guidelines/TYPOGRAPHY.md" 
+                    <a href="https://github.com/ttnleipzig/regenfass-brand/blob/main/guidelines/TYPOGRAPHY.md" 
                        target="_blank"
                        class="inline-block bg-aqua text-navy px-6 py-3 rounded-lg font-heading font-bold hover:bg-opacity-90 transition-colors">
                         Typography Guidelines →
@@ -144,7 +144,7 @@
         <div class="max-w-6xl mx-auto">
             <h2 class="font-heading text-3xl md:text-4xl font-bold text-navy mb-4">Install-style UI patterns</h2>
             <p class="font-body text-gray-700 mb-8">
-                Use these classes for installer, docs, or sub-pages that should match <a href="https://install.regenfass.eu/" target="_blank" rel="noopener" class="text-aqua-700 underline hover:text-aqua">install.regenfass.eu</a>. See <a href="https://github.com/kieksme/regenfass.brand/blob/main/guidelines/DESIGN_ELEMENTS.md#install-page-style" target="_blank" rel="noopener" class="text-aqua-700 underline hover:text-aqua">DESIGN_ELEMENTS.md</a> for full reference.
+                Use these classes for installer, docs, or sub-pages that should match <a href="https://install.regenfass.eu/" target="_blank" rel="noopener" class="text-aqua-700 underline hover:text-aqua">install.regenfass.eu</a>. See <a href="https://github.com/ttnleipzig/regenfass-brand/blob/main/guidelines/DESIGN_ELEMENTS.md#install-page-style" target="_blank" rel="noopener" class="text-aqua-700 underline hover:text-aqua">DESIGN_ELEMENTS.md</a> for full reference.
             </p>
             <div class="space-y-8">
                 <div>
@@ -273,7 +273,7 @@
                     Download the complete brand package including all logos, colors, fonts, icons, and guidelines documentation.
                 </p>
                 <div id="guidelines-download-section">
-                    <a href="https://github.com/kieksme/regenfass.brand/releases/latest" 
+                    <a href="https://github.com/ttnleipzig/regenfass-brand/releases/latest" 
                        id="download-complete-btn"
                        class="bg-aqua text-navy px-6 py-3 rounded-lg font-heading font-bold hover:bg-opacity-90 transition-colors inline-flex items-center justify-center gap-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -295,7 +295,7 @@
         // Load latest release and update download link
         async function loadCompleteDownload() {
             try {
-                const response = await fetch('https://api.github.com/repos/kieksme/regenfass.brand/releases/latest');
+                const response = await fetch('https://api.github.com/repos/ttnleipzig/regenfass-brand/releases/latest');
                 if (!response.ok) {
                     throw new Error('Failed to fetch release');
                 }

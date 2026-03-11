@@ -75,7 +75,7 @@ function main() {
 - [Brand History](Brand-History)
 
 ---
-[Source Repository](https://github.com/kieksme/regenfass.brand)
+[Source Repository](https://github.com/ttnleipzig/regenfass-brand)
 `;
 
   const header = `# Regenfass Brand Guidelines
@@ -84,7 +84,7 @@ Corporate Identity & Corporate Design für Regenfass
 `;
 
   const footer = `---
-*Guidelines werden automatisch aus dem [regenfass.brand](https://github.com/kieksme/regenfass.brand) Repository gespiegelt.*
+*Guidelines werden automatisch aus dem [regenfass.brand](https://github.com/ttnleipzig/regenfass-brand) Repository gespiegelt.*
 `;
 
   const home = `# Regenfass Brand Guidelines
@@ -106,7 +106,7 @@ This wiki contains the brand guidelines for Regenfass. Use these guidelines to e
 
 ## Source
 
-The guidelines are automatically synced from the [regenfass.brand](https://github.com/kieksme/regenfass.brand) repository.
+The guidelines are automatically synced from the [regenfass.brand](https://github.com/ttnleipzig/regenfass-brand) repository.
 `;
 
   writeFileSync(join(OUTPUT_DIR, '_Sidebar.md'), sidebar, 'utf-8');

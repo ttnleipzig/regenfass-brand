@@ -8,9 +8,9 @@ Repository to hold and share Corporate Identity and Corporate Design of Regenfas
 
 **Download the latest release of brand assets:**
 
-[![Download Latest Release](https://img.shields.io/github/v/release/kieksme/regenfass.brand?label=Download%20Latest%20Release&style=for-the-badge&logo=github&logoColor=white&color=0B2649)](https://github.com/kieksme/regenfass.brand/releases/latest)
+[![Download Latest Release](https://img.shields.io/github/v/release/ttnleipzig/regenfass-brand?label=Download%20Latest%20Release&style=for-the-badge&logo=github&logoColor=white&color=0B2649)](https://github.com/ttnleipzig/regenfass-brand/releases/latest)
 
-Visit the [Releases](https://github.com/kieksme/regenfass.brand/releases) page to download the latest version of all brand assets as a complete package.
+Visit the [Releases](https://github.com/ttnleipzig/regenfass-brand/releases) page to download the latest version of all brand assets as a complete package.
 
 ## Purpose
 
@@ -68,7 +68,7 @@ Detailed documentation for each aspect of the brand identity:
 - [Templates and Resources](guidelines/TEMPLATES_AND_RESOURCES.md) - Slide Master, Geschäftsbrief DIN 5008, company intro
 - [Brand History](guidelines/BRAND_HISTORY.md) - Policy changes (e.g. 2020 colour, 2021 logo)
 
-The same guidelines are also available in the [Wiki](https://github.com/kieksme/regenfass.brand/wiki) (synced automatically from this repository).
+The same guidelines are also available in the [Wiki](https://github.com/ttnleipzig/regenfass-brand/wiki) (synced automatically from this repository).
 
 ## Usage
 
@@ -77,7 +77,7 @@ The same guidelines are also available in the [Wiki](https://github.com/kieksme/
 If you need to integrate assets directly into your project, you can clone this repository:
 
 ```bash
-git clone https://github.com/kieksme/regenfass.brand.git
+git clone https://github.com/ttnleipzig/regenfass-brand.git
 ```
 
 ### For Designers & Marketing
