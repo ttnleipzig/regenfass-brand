@@ -113,8 +113,12 @@ async function generateSoloCardSolidPng() {
   console.log('  regenfass-solo-light-card-solid.png');
 }
 
+/** Wordmark text (lowercase) and horizontal logo layout. */
+const WORDMARK = 'regenfass';
+const HORIZONTAL_TEXT_WIDTH = 120; /* less space to the right */
+
 /**
- * Horizontal logo SVG: icon + "Regenfass" text. Dark = light text, Light = dark text; both have transparent background.
+ * Horizontal logo SVG: icon + wordmark text. Dark = light text, Light = dark text; both have transparent background.
  */
 async function generateHorizontalSvgs(sourceBuffer) {
   ensureDir(HORIZONTAL_DIR);
@@ -124,21 +128,22 @@ async function generateHorizontalSvgs(sourceBuffer) {
   const base64 = sourceBuffer.toString('base64');
   const iconHeight = 48;
   const iconWidth = (iw / ih) * iconHeight;
-  const textX = iconWidth + 16;
+  const textX = iconWidth + 12;
   const fontSize = 28;
-  const svgWidth = Math.ceil(iconWidth + 16 + 180);
+  const rightPaddingEm = 1; /* 1em inner spacing on the right */
+  const svgWidth = Math.ceil(iconWidth + 12 + HORIZONTAL_TEXT_WIDTH) + fontSize * rightPaddingEm;
   const svgHeight = iconHeight;
 
   const darkSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${svgWidth}" height="${svgHeight}" viewBox="0 0 ${svgWidth} ${svgHeight}">
   <image x="0" y="0" width="${iconWidth}" height="${iconHeight}" href="data:image/png;base64,${base64}" preserveAspectRatio="xMidYMid meet"/>
-  <text x="${textX}" y="${fontSize + 4}" font-family="system-ui, sans-serif" font-size="${fontSize}" font-weight="600" fill="${WHITE}">Regenfass</text>
+  <text x="${textX}" y="${fontSize + 4}" font-family="system-ui, sans-serif" font-size="${fontSize}" font-weight="200" fill="${WHITE}">${WORDMARK}</text>
 </svg>
 `;
   const lightSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${svgWidth}" height="${svgHeight}" viewBox="0 0 ${svgWidth} ${svgHeight}">
   <image x="0" y="0" width="${iconWidth}" height="${iconHeight}" href="data:image/png;base64,${base64}" preserveAspectRatio="xMidYMid meet"/>
-  <text x="${textX}" y="${fontSize + 4}" font-family="system-ui, sans-serif" font-size="${fontSize}" font-weight="600" fill="${NAVY}">Regenfass</text>
+  <text x="${textX}" y="${fontSize + 4}" font-family="system-ui, sans-serif" font-size="${fontSize}" font-weight="200" fill="${NAVY}">${WORDMARK}</text>
 </svg>
 `;
 
