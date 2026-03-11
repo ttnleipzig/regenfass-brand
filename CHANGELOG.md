@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.1.0](https://github.com/ttnleipzig/regenfass-brand/compare/v1.0.2...v1.1.0) (2026-03-11)
+
+
+### Features
+
+* add primary color swatches and integrate them in guidelines ([96b08f7](https://github.com/ttnleipzig/regenfass-brand/commit/96b08f7d3c0294b0a19e840a31a4bce16ec11fde))
+* **assets:** redesign README header SVG with new raindrop pattern and ambient glow effects for enhanced visual appeal ([29d26e6](https://github.com/ttnleipzig/regenfass-brand/commit/29d26e6c874240225c82c549df1845985c782f25))
+* **assets:** update logo references site-wide to use new Tabler icon design for improved consistency ([67e99b2](https://github.com/ttnleipzig/regenfass-brand/commit/67e99b28952d88b1d9015c1dae207326f553f928))
+* **assets:** update README header SVGs and PNGs with new design elements and patterns for improved aesthetics ([4af73d1](https://github.com/ttnleipzig/regenfass-brand/commit/4af73d18654744f45f15182d22f20b9cfdea51e8))
+* copy swatch images to wiki output during sync ([f72893d](https://github.com/ttnleipzig/regenfass-brand/commit/f72893deb532127c3a98cd6154b38ce49f095d8c))
+* enhance color swatch display and guidelines ([9898251](https://github.com/ttnleipzig/regenfass-brand/commit/98982517225847f14d7e0134e2fab72d141b39b9))
+* expand color palette with new shades and usage guidelines ([e391269](https://github.com/ttnleipzig/regenfass-brand/commit/e391269ae585f5890ebf53a4a0b319779a4cb092))
+* **pwa:** add PWA implementation page and update navigation, sitemap, and release workflow ([accf6c5](https://github.com/ttnleipzig/regenfass-brand/commit/accf6c58baa8a59b9eaef32f8b14cf214ab22edb))
+* **release:** add PWA download link to RELEASE_README and include PWA page in sitemap ([31ef05a](https://github.com/ttnleipzig/regenfass-brand/commit/31ef05ab8bf74186c4921420cbd7bb10b317688d))
+
+
+### Bug Fixes
+
+* **docs:** standardize spelling of "colour" across all documentation files ([3b7d641](https://github.com/ttnleipzig/regenfass-brand/commit/3b7d641c719b7b9144207c2366852cb6b55a6a74))
+* **release:** correct asset references in release workflow and update README for consistency ([d3c2f2b](https://github.com/ttnleipzig/regenfass-brand/commit/d3c2f2bcceb153d13de11d4185d1a44b9fd77682))
+* **release:** update asset names in release workflow and README to use 'regenfass' prefix ([e87feca](https://github.com/ttnleipzig/regenfass-brand/commit/e87feca80d94a83cc4b3da37e967c3b80b330c7e))
+
 ## [1.0.2](https://github.com/ttnleipzig/regenfass-brand/compare/v1.0.1...v1.0.2) (2026-03-11)
 
 
