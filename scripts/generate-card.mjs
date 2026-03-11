@@ -145,7 +145,8 @@ const COLORS = {
   darkGray: createColor(CONFIG.brand.colors.darkGray),
   mediumGray: createColor(CONFIG.brand.colors.mediumGray),
   black: createColor(CONFIG.brand.colors.black),
-  // Accent green for back side background (see assets/colors/colors.json)
+  /** Turquoise for back side background */
+  turquoise: createColor(CONFIG.linkedin?.colors?.turquoise ?? '#00BCD4'),
   green: createColor('#22C55E'),
 };
 
@@ -163,14 +164,15 @@ function mmToPt(mm) {
  * @param {string} svgPath - Path to SVG file
  * @param {number} width - Target width in pixels
  * @param {number} height - Target height in pixels
+ * @param {'contain'|'cover'} fit - Resize mode: contain (default) or cover
  * @returns {Promise<Buffer>} PNG buffer
  */
-async function svgToPng(svgPath, width = 1000, height = 1000) {
+async function svgToPng(svgPath, width = 1000, height = 1000, fit = 'contain') {
   try {
     const svgBuffer = readFileSync(svgPath);
     const pngBuffer = await sharp(svgBuffer)
       .resize(width, height, {
-        fit: 'contain',
+        fit,
         background: { r: 0, g: 0, b: 0, alpha: 0 },
       })
       .png()
@@ -334,75 +336,104 @@ function renderFrontSide(page, data, fonts, images) {
   const pageHeight = mmToPt(CARD_HEIGHT_MM);
   const safeOffset = mmToPt(SAFE_AREA_OFFSET_MM);
   
-  // Background
-  page.drawRectangle({
-    x: 0,
-    y: 0,
-    width: pageWidth,
-    height: pageHeight,
-    color: COLORS.darkBlue,
-  });
+  // Background: raindrop wallpaper (5-dark) or solid dark blue
+  if (images.frontBackground) {
+    page.drawImage(images.frontBackground, {
+      x: 0,
+      y: 0,
+      width: pageWidth,
+      height: pageHeight,
+    });
+  } else {
+    page.drawRectangle({
+      x: 0,
+      y: 0,
+      width: pageWidth,
+      height: pageHeight,
+      color: COLORS.darkBlue,
+    });
+  }
 
-  // Waterline at bottom (full width)
+  // Waterline: full-width band along bottom edge, no gap below (y=0)
   const waterlineHeightMm = 8;
-  if (images.waterline) {
+  const waterlineHeightPt = mmToPt(waterlineHeightMm);
+  // If we have a dedicated waterline-strip image, draw it. When the front background
+  // already contains the OG-style waterline (waterline.svg), this image can be omitted.
+  if (images.waterline && !images.frontBackground) {
     page.drawImage(images.waterline, {
       x: 0,
       y: 0,
       width: pageWidth,
-      height: mmToPt(waterlineHeightMm),
+      height: waterlineHeightPt,
     });
   }
-  
-  // Logo positioning
-  // Logo: centered in the first quarter of the card horizontally, vertically centered; max 34×40mm; offset 6mm up
-  const logoWidth = mmToPt(34);
-  const logoHeight = mmToPt(40);
-  const logoOffsetUpMm = 6;
+
+  // Logo: fill left side (0–56mm), deutlich größer; venitus darunter
+  const leftSideWidthMm = 56;
+  const logoTopMarginMm = 3;
+  const logoBottomMarginMm = 5;
+  const venitusGapMm = 2;
+  const venitusAspect = 44.65 / 54.82;
+  const contentHeightMm = CARD_HEIGHT_MM - waterlineHeightMm - logoTopMarginMm - logoBottomMarginMm;
   let soloLogoBottomY = null;
-  let finalLogoWidth = logoWidth;
-  let finalLogoHeight = logoHeight;
+  let finalLogoWidth = mmToPt(leftSideWidthMm);
+  let finalLogoHeight = mmToPt(leftSideWidthMm / (208 / 48));
 
   if (images.logo) {
-    // Calculate logo dimensions maintaining aspect ratio
     const logoDims = images.logo.scale(1);
     const logoAspectRatio = logoDims.width / logoDims.height;
-    finalLogoWidth = logoWidth;
-    finalLogoHeight = logoWidth / logoAspectRatio;
+    const venitusHeightMm = (leftSideWidthMm / 5) * 2 * venitusAspect;
 
-    if (finalLogoHeight > logoHeight) {
-      finalLogoHeight = logoHeight;
-      finalLogoWidth = logoHeight * logoAspectRatio;
+    // Start from logo that füllt die linke Seite in der Breite …
+    const baseLogoHeightMm = leftSideWidthMm / logoAspectRatio;
+    // … und skaliere sie ca. 7×, aber nur soweit es in die verfügbare Höhe passt.
+    const maxLogoHeightForContentMm = Math.max(
+      10,
+      contentHeightMm - venitusGapMm - venitusHeightMm
+    );
+    const scaledLogoHeightMm = Math.min(baseLogoHeightMm * 7, maxLogoHeightForContentMm);
+
+    let actualLogoHeightMm = Math.max(10, scaledLogoHeightMm);
+    let actualLogoWidthMm = actualLogoHeightMm * logoAspectRatio;
+    // Logo darf optisch links bleiben – begrenze Breite auf die linke Seite
+    if (actualLogoWidthMm > leftSideWidthMm) {
+      actualLogoWidthMm = leftSideWidthMm;
+      actualLogoHeightMm = actualLogoWidthMm / logoAspectRatio;
     }
 
-    // Center logo in the left half of the card (left half center = pageWidth/4)
-    const logoXCentered = pageWidth / 4 - finalLogoWidth / 2;
-    // Vertically center the logo container, then shift 1cm up
-    const logoContainerY = (pageHeight - logoHeight) / 2 + mmToPt(logoOffsetUpMm);
-    const logoYCentered = logoContainerY + (logoHeight - finalLogoHeight) / 2;
-    soloLogoBottomY = logoYCentered;
+    finalLogoWidth = mmToPt(actualLogoWidthMm);
+    finalLogoHeight = mmToPt(actualLogoHeightMm);
+    // Block (Venitus + Gap + Logo) vertikal im verfügbaren Bereich zentrieren
+    const availableBottomMm = waterlineHeightMm + logoBottomMarginMm;
+    const availableTopMm = CARD_HEIGHT_MM - logoTopMarginMm;
+    const availableHeightMm = availableTopMm - availableBottomMm;
+    const totalBlockMm = venitusHeightMm + venitusGapMm + actualLogoHeightMm;
+    const blockOffsetMm = Math.max(0, (availableHeightMm - totalBlockMm) / 2);
+    const blockBottomMm = availableBottomMm + blockOffsetMm;
+    const logoBottomMm = blockBottomMm + venitusHeightMm + venitusGapMm;
+
+    const logoY = mmToPt(logoBottomMm);
+    const logoX = mmToPt(leftSideWidthMm / 2) - finalLogoWidth / 2;
+    soloLogoBottomY = logoY;
 
     page.drawImage(images.logo, {
-      x: logoXCentered,
-      y: logoYCentered,
+      x: logoX,
+      y: logoY,
       width: finalLogoWidth,
       height: finalLogoHeight,
     });
   }
 
-  // "a venitus company" line: 2/5 the size of Regenfass logo, 80% opacity, below it with gap (no overlap)
-  const venitusGapMm = 2;
-  const venitusAspect = 44.65 / 54.82;
+  // "a venitus company": below logo, centered on left side, 2/5 logo width, 80% opacity
   const venitusWidth = (finalLogoWidth / 5) * 2;
   const venitusHeight = venitusWidth * venitusAspect;
-  const minBottomMarginMm = 5;
-  const minVenitusY = mmToPt(minBottomMarginMm);
+  const minVenitusY = mmToPt(waterlineHeightMm + logoBottomMarginMm);
   if (images.logoVenitus) {
-    const venitusX = pageWidth / 4 - venitusWidth / 2;
-    const venitusYRaw = soloLogoBottomY !== null
-      ? soloLogoBottomY - mmToPt(venitusGapMm) - venitusHeight
-      : (pageHeight - venitusHeight) / 2;
-    const venitusY = Math.max(venitusYRaw, minVenitusY);
+    const venitusX = mmToPt(leftSideWidthMm / 2) - venitusWidth / 2;
+    const venitusY = Math.max(
+      soloLogoBottomY !== null ? soloLogoBottomY - mmToPt(venitusGapMm) - venitusHeight : minVenitusY,
+      minVenitusY
+    );
     page.drawImage(images.logoVenitus, {
       x: venitusX,
       y: venitusY,
@@ -413,16 +444,16 @@ function renderFrontSide(page, data, fonts, images) {
   }
   
   // Contact info positioning
-  // Contact info: left 48mm, top 15.5mm
+  // Contact info: left 52mm, top 15.5mm
   // Right margin: 4.5mm (minimal margin for safe area)
-  const contactX = mmToPt(48);
+  const contactX = mmToPt(52);
   const contactY = pageHeight - mmToPt(15.5);
   let currentY = contactY;
   
   // Calculate available width for contact info
   // Card width: 89mm (with bleed), right margin: 4.5mm
-  // Contact info starts at 48mm, so available width = 89 - 48 - 4.5 = 36.5mm
-  const maxContactWidth = mmToPt(36.5);
+  // Contact info starts at 52mm, so available width = 89 - 52 - 4.5 = 32.5mm
+  const maxContactWidth = mmToPt(32.5);
   
   // Name (heading font Bold/700, 12pt, white)
   if (data.name) {
@@ -520,27 +551,40 @@ function renderBackSide(page, data, fonts, images) {
   const pageHeight = mmToPt(CARD_HEIGHT_MM);
   const safeOffset = mmToPt(SAFE_AREA_OFFSET_MM);
   const padding = mmToPt(5); // 5mm padding inside safe area
-  
-  // Background (solid dark blue brand background)
-  page.drawRectangle({
-    x: 0,
-    y: 0,
-    width: pageWidth,
-    height: pageHeight,
-    color: COLORS.darkBlue,
-  });
 
-  // Waterline at bottom (full width)
+  // Background: if available, use the same OG-style waterline wallpaper as the front;
+  // otherwise fall back to solid brand green.
+  if (images.backBackground) {
+    page.drawImage(images.backBackground, {
+      x: 0,
+      y: 0,
+      width: pageWidth,
+      height: pageHeight,
+    });
+  } else {
+    page.drawRectangle({
+      x: 0,
+      y: 0,
+      width: pageWidth,
+      height: pageHeight,
+      color: COLORS.green,
+    });
+  }
+
+  // Waterline: full-width band along bottom edge, no gap below (y=0)
   const waterlineHeightMm = 8;
-  if (images.waterline) {
+  const waterlineHeightPt = mmToPt(waterlineHeightMm);
+  // Only draw the separate waterline strip when we don't already have the OG waterline
+  // as part of the background image (to keep front and back visually consistent).
+  if (images.waterline && !images.backBackground) {
     page.drawImage(images.waterline, {
       x: 0,
       y: 0,
       width: pageWidth,
-      height: mmToPt(waterlineHeightMm),
+      height: waterlineHeightPt,
     });
   }
-  
+
   // QR Code container: left 8.5mm (3.5mm offset + 5mm padding), 50mm x 50mm
   // Vertically centered
   const qrX = safeOffset + padding;
@@ -891,10 +935,10 @@ export async function generateBusinessCardWithPdfLib(contactData, outputDir) {
   const qrCodeBuffer = await generateQRCodeBuffer(vCardData);
   cardProgress('QR-Code generiert', 'done');
   
-  // Load and convert logos. Horizontal logo (light variant for dark background).
-  const logoPath = join(projectRoot, 'assets', 'logos', 'horizontal', 'regenfass-horizontal-light.svg');
+  // Load and convert logos. Vertical dark logo for card front.
+  const logoPath = join(projectRoot, 'assets', 'logos', 'vertical', 'regenfass-vertical-dark.svg');
   cardProgress('Lade Logo …', 'generating');
-  const logoPngBuffer = await svgToPng(logoPath, 1000, 250);
+  const logoPngBuffer = await svgToPng(logoPath, 800, 800);
   const venitusCandidates = [
     join(projectRoot, 'assets', 'logos', 'a-venitus-company', 'regenfass-a-venitus-company-horizontal-light.svg'),
   ];
@@ -905,15 +949,29 @@ export async function generateBusinessCardWithPdfLib(contactData, outputDir) {
   }
   cardProgress('Logo geladen', 'done');
 
-  // Load waterline strip for bottom of card (front and back)
-  const waterlinePath = join(projectRoot, 'assets', 'backgrounds', 'waterline-strip-wide.svg');
+  // Load waterline strip (single tile) for tiling along bottom of card
+  const waterlinePath = join(projectRoot, 'assets', 'backgrounds', 'waterline-strip.svg');
+  const waterlineTileAspectNum = 1064 / 288;
   let waterlinePngBuffer = null;
   if (existsSync(waterlinePath)) {
     cardProgress('Lade Wasserlinie …', 'generating');
-    waterlinePngBuffer = await svgToPng(waterlinePath, 1000, 80);
+    const waterlinePxHeight = 80;
+    const waterlinePxWidth = Math.round(waterlinePxHeight * waterlineTileAspectNum);
+    waterlinePngBuffer = await svgToPng(waterlinePath, waterlinePxWidth, waterlinePxHeight);
     cardProgress('Wasserlinie geladen', 'done');
   }
-  
+
+  // Load OG-style waterline background (waterline.svg) for front side
+  const raindropBackgroundPath = join(projectRoot, 'assets', 'backgrounds', 'waterline.svg');
+  let raindropPngBuffer = null;
+  if (existsSync(raindropBackgroundPath)) {
+    cardProgress('Lade Regentropfen-Tapete …', 'generating');
+    const cardPxWidth = Math.round((CARD_WIDTH_MM / 25.4) * 300);
+    const cardPxHeight = Math.round((CARD_HEIGHT_MM / 25.4) * 300);
+    raindropPngBuffer = await svgToPng(raindropBackgroundPath, cardPxWidth, cardPxHeight, 'cover');
+    cardProgress('Tapete geladen', 'done');
+  }
+
   // Create PDF document
   cardProgress('Erstelle PDF-Dokument …', 'generating');
   const pdfDoc = await PDFDocument.create();
@@ -926,12 +984,14 @@ export async function generateBusinessCardWithPdfLib(contactData, outputDir) {
   const venitusImage = venitusPngBuffer ? await pdfDoc.embedPng(venitusPngBuffer) : null;
   const qrCodeImage = await pdfDoc.embedPng(qrCodeBuffer);
   const waterlineImage = waterlinePngBuffer ? await pdfDoc.embedPng(waterlinePngBuffer) : null;
-  
+  const frontBackgroundImage = raindropPngBuffer ? await pdfDoc.embedPng(raindropPngBuffer) : null;
+
   const images = {
     logo: logoImage,
     logoVenitus: venitusImage,
     qrCode: qrCodeImage,
     waterline: waterlineImage,
+    frontBackground: frontBackgroundImage,
   };
   
   // Prepare template data (ensure position/jobTitle is passed for front-side job title line)
@@ -970,10 +1030,12 @@ export async function generateBusinessCardWithPdfLib(contactData, outputDir) {
     mmToPt(CARD_HEIGHT_MM),
   ]);
   const backWaterlineImage = waterlinePngBuffer ? await backPdfDoc.embedPng(waterlinePngBuffer) : null;
+  const backBackgroundImage = raindropPngBuffer ? await backPdfDoc.embedPng(raindropPngBuffer) : null;
   renderBackSide(backPage, templateData, backFonts, {
     logo: null,
     qrCode: backQrCodeImage,
     waterline: backWaterlineImage,
+    backBackground: backBackgroundImage,
   });
   
   const backOutputPath = join(outputDir, `${contactData.name.replace(/\s+/g, '-')}-back.pdf`);

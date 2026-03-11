@@ -2,7 +2,10 @@
 /**
  * Logo Variants Generator
  * Generates all logo variants from the main logo SVG (assets/logos/tabler/regenfass-tabler-concept2-icon-light.svg).
- * Output: solo (PNG sizes + SVG with embedded image, card-solid SVG + PNG), horizontal (dark/light SVG + PNGs each: 200x50, hr).
+ * Output:
+ * - solo: PNG sizes + SVG with embedded image, card-solid SVG + PNG
+ * - horizontal: dark/light SVG + PNGs each: 200x50, hr
+ * - vertical: dark/light SVG (icon above wordmark)
  */
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
@@ -17,6 +20,7 @@ const projectRoot = resolve(__dirname, '..');
 const SOURCE_SVG = join(projectRoot, 'assets', 'logos', 'tabler', 'regenfass-tabler-concept2-icon-light.svg');
 const SOLO_DIR = join(projectRoot, 'assets', 'logos', 'solo');
 const HORIZONTAL_DIR = join(projectRoot, 'assets', 'logos', 'horizontal');
+const VERTICAL_DIR = join(projectRoot, 'assets', 'logos', 'vertical');
 
 /** Rendered icon size used as source for solo/horizontal (square). */
 const SOURCE_RENDER_SIZE = 512;
@@ -184,6 +188,49 @@ async function generateHorizontalPngs() {
   await exportHorizontalSvgToPng(join(HORIZONTAL_DIR, 'regenfass-horizontal-light.svg'), 'regenfass-horizontal-light');
 }
 
+/**
+ * Vertical logo SVGs: icon above wordmark text (stacked). Dark = white text, Light = navy text.
+ */
+async function generateVerticalSvgs(sourceBuffer) {
+  ensureDir(VERTICAL_DIR);
+  const meta = await sharp(sourceBuffer).metadata();
+  const iw = meta.width || 512;
+  const ih = meta.height || 512;
+  const base64 = sourceBuffer.toString('base64');
+
+  const iconHeight = 144;
+  const iconWidth = (iw / ih) * iconHeight;
+  const textFontSize = 16;
+  const verticalSpacing = 8;
+
+  const svgWidth = Math.ceil(Math.max(iconWidth + 24, HORIZONTAL_TEXT_WIDTH));
+  const svgHeight = Math.ceil(iconHeight + verticalSpacing + textFontSize + 12);
+
+  const iconX = (svgWidth - iconWidth) / 2;
+  const iconY = 4;
+  const textX = 18; // text further left
+  const textY = iconHeight + verticalSpacing + textFontSize / 2;
+
+  const verticalDarkSvg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${svgWidth}" height="${svgHeight}" viewBox="0 0 ${svgWidth} ${svgHeight}">
+  <image x="${iconX}" y="${iconY}" width="${iconWidth}" height="${iconHeight}" href="data:image/png;base64,${base64}" preserveAspectRatio="xMidYMid meet"/>
+  <text x="${textX}" y="${textY}" font-family="system-ui, sans-serif" font-size="${textFontSize}" font-weight="200" text-anchor="start" fill="${WHITE}">${WORDMARK}</text>
+</svg>
+`;
+
+  const verticalLightSvg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${svgWidth}" height="${svgHeight}" viewBox="0 0 ${svgWidth} ${svgHeight}">
+  <image x="${iconX}" y="${iconY}" width="${iconWidth}" height="${iconHeight}" href="data:image/png;base64,${base64}" preserveAspectRatio="xMidYMid meet"/>
+  <text x="${textX}" y="${textY}" font-family="system-ui, sans-serif" font-size="${textFontSize}" font-weight="200" text-anchor="start" fill="${NAVY}">${WORDMARK}</text>
+</svg>
+`;
+
+  writeFileSync(join(VERTICAL_DIR, 'regenfass-vertical-dark.svg'), verticalDarkSvg.trim(), 'utf8');
+  writeFileSync(join(VERTICAL_DIR, 'regenfass-vertical-light.svg'), verticalLightSvg.trim(), 'utf8');
+  console.log('  regenfass-vertical-dark.svg');
+  console.log('  regenfass-vertical-light.svg');
+}
+
 async function main() {
   if (!existsSync(SOURCE_SVG)) {
     throw new Error(`Source not found: ${SOURCE_SVG}`);
@@ -206,6 +253,8 @@ async function main() {
   console.log('Generating horizontal variants...');
   await generateHorizontalSvgs(sourceBuffer);
   await generateHorizontalPngs();
+  console.log('Generating vertical variants...');
+  await generateVerticalSvgs(sourceBuffer);
   console.log('Done.');
 }
 
