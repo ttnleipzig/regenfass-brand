@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.0](https://github.com/ttnleipzig/regenfass-brand/compare/v1.1.0...v1.2.0) (2026-03-11)
+
+
+### Features
+
+* update assets to use waterline background across documentation and scripts ([f9bb65f](https://github.com/ttnleipzig/regenfass-brand/commit/f9bb65f5b5d10ba81dd09a7f40342a31fd137c71))
+* update avatar implementation to use waterline background ([d466928](https://github.com/ttnleipzig/regenfass-brand/commit/d466928062f3efdd3d2924d08abb18ad945ac9d9))
+* update brand colors and assets to reflect new green accent ([f01b44d](https://github.com/ttnleipzig/regenfass-brand/commit/f01b44d6c6c0ee4a5b879b41830de3a35ad55a8d))
+* update brand history document with new identity milestones and asset changes ([d825955](https://github.com/ttnleipzig/regenfass-brand/commit/d8259552f32901cb6e14971438597503ec28b4bd))
+
 ## [1.1.0](https://github.com/ttnleipzig/regenfass-brand/compare/v1.0.2...v1.1.0) (2026-03-11)
 
 
