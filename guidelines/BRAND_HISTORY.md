@@ -1,14 +1,28 @@
 # Brand policy history
 
-Important changes to Regenfass’s visual identity. Use current guidelines and assets; avoid deprecated options.
+The Regenfass brand identity is established in **March 2026**. This document summarises important changes to the visual identity; the canonical record is the [CHANGELOG.md](../CHANGELOG.md) in the repository root. Use current guidelines and assets; avoid deprecated options.
 
-## 2020 – Colour policy
+## 2026-03-10 – v1.0.0 (Initial release)
 
-**Early 2020:** Regenfass’s colour policy was updated. The former **pastel colour palette is discontinued**. Use only the current primary colours (Dark Blue `#0B2649`, Green `#22C55E`, Turquoise `#00BCD4`, Complement `#E11D48`) and the palettes defined in [COLOR_PALETTE.md](COLOR_PALETTE.md). Do not use old pastel variants for new materials.
+- **Brand fundamentals:** Logo generation script, new logo variants, and usage guidelines.
+- **Fundamentals:** Backgrounds page added; sitemap updated with new URLs and image references.
+- **Cleanup:** Unused font files removed; image references updated from SVG to PNG where applicable.
 
-## 2021 – Logo update
+## 2026-03-10 – v1.0.1
 
-**End of 2021:** The logo was updated: the **sharp peak of the lighthouse base** (bottom left) was removed. Only the current logo files in this repository or the official OneDrive source are approved. Older logo versions are deprecated (see [LOGO_USAGE.md](LOGO_USAGE.md)#old-logos).
+- **Assets:** Avatar image sources updated in avatars page; sample app section added with Light and Dark mode previews.
+
+## 2026-03-11 – v1.0.2
+
+- **Navigation:** Logo source updated to dark variant for improved visibility on dark background.
+
+## 2026-03-11 – v1.1.0
+
+- **Colour:** Primary colour swatches added and integrated in guidelines; palette expanded with new shades and usage guidelines.
+- **Assets:** README header SVG redesigned with new raindrop pattern and ambient glow; logo references updated site-wide to Tabler icon design; README header SVGs/PNGs updated.
+- **Docs:** Spelling standardised to “colour” across documentation; swatch images included in wiki sync output.
+- **PWA:** PWA implementation page added; navigation, sitemap, and release workflow updated; PWA download link added to release notes.
+- **Release:** Asset references and workflow corrected; asset names updated to use “regenfass” prefix.
 
 ---
 
