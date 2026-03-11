@@ -26,16 +26,20 @@ const README_HEADER_SPECS = { width: 1200, height: 200 };
 const TEMPLATE_SVG_PATH = join(projectRoot, 'assets', 'readme-header.svg');
 const HORIZONTAL_LOGO_PATH = join(projectRoot, 'assets', 'logos', 'horizontal', 'regenfass-horizontal-dark.svg');
 
+/** Logo href used in template (relative to assets/). Samples in examples/github/ need a different path. */
+const LOGO_HREF_TEMPLATE = 'logos/horizontal/regenfass-horizontal-dark.svg';
+const LOGO_HREF_FOR_SAMPLES = '../../assets/logos/horizontal/regenfass-horizontal-dark.svg';
+
 function extractTemplateParts() {
   if (existsSync(TEMPLATE_SVG_PATH)) {
     const raw = readFileSync(TEMPLATE_SVG_PATH, 'utf8');
     const defs = raw.match(/<defs>[\s\S]*?<\/defs>/)?.[0] ?? '';
-    const background = raw.match(/<!-- Background:[\s\S]*?-->\s*([\s\S]*?)\s*<!-- Dark overlay/)?.[1]?.trim() ?? '';
-    const overlay = raw.match(/<!-- Dark overlay[\s\S]*?-->\s*([\s\S]*?)\s*<!-- .*logo/i)?.[1]?.trim() ?? '';
+    const background = raw.match(/<!-- Background:[\s\S]*?-->\s*([\s\S]*?)\s*<!-- Regenfass logo/)?.[1]?.trim() ?? '';
+    const overlay = raw.match(/<!-- Dark overlay[\s\S]*?-->\s*([\s\S]*?)\s*<!-- Regenfass logo/i)?.[1]?.trim() ?? '';
     const logo = raw.match(/<!-- Regenfass logo[\s\S]*?-->\s*([\s\S]*?)\s*<!-- Title/)?.[1]?.trim() ?? '';
 
-    if (defs && background && overlay && logo) {
-      return { defs, background, overlay, logo };
+    if (defs && background && logo) {
+      return { defs, background, overlay: overlay || '', logo };
     }
   }
 
@@ -63,22 +67,28 @@ function extractTemplateParts() {
 }
 
 /**
- * Build full README header SVG (1200×200) with Regenfass brand: 5.svg background, overlay, logo, title.
+ * Build full README header SVG (1200×200) with Regenfass brand: background, overlay, logo, title.
  * @param {string} title - Title text (HTML-escape before passing)
+ * @param {{ fixLogoHrefForSamples?: boolean }} [opts] - If true, logo href is set for SVGs in examples/github/
  * @returns {string} SVG string
  */
-function buildReadmeHeaderSvg(title) {
+function buildReadmeHeaderSvg(title, opts = {}) {
   const { defs, background, overlay, logo } = extractTemplateParts();
+  let logoBlock = logo;
+  if (opts.fixLogoHrefForSamples && logo.includes(LOGO_HREF_TEMPLATE)) {
+    logoBlock = logo.replace(new RegExp(LOGO_HREF_TEMPLATE.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), LOGO_HREF_FOR_SAMPLES);
+  }
+  const overlayBlock = overlay ? `  <!-- Dark overlay for contrast -->\n  ${overlay}\n  ` : '';
   return `<svg width="1200" height="200" viewBox="0 0 1200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
   ${defs}
   <!-- Background: current README header template -->
   ${background}
-  <!-- Dark overlay for contrast -->
-  ${overlay}
-  <!-- Regenfass logo -->
-  ${logo}
+${overlayBlock}  <!-- Regenfass logo -->
+  ${logoBlock}
   <!-- Title (system UI stack) -->
   <text x="40" y="130" font-family="system-ui, sans-serif" font-size="32" font-weight="700" fill="#FFFFFF">${title}</text>
+  <!-- Accent line (brand accent as in OG) -->
+  <rect x="40" y="148" width="200" height="4" fill="#00BCD4"/>
 </svg>
 `;
 }
@@ -117,7 +127,7 @@ async function generateSampleBanners() {
 
   for (const repo of EXAMPLE_REPOSITORIES) {
     try {
-      const svgContent = buildReadmeHeaderSvg(escapeXml(repo.title));
+      const svgContent = buildReadmeHeaderSvg(escapeXml(repo.title), { fixLogoHrefForSamples: true });
       const svgPath = join(outputDir, `sample-readme-header-${repo.id}.svg`);
       writeFileSync(svgPath, svgContent, 'utf8');
       success(`Generated SVG: ${svgPath}`);

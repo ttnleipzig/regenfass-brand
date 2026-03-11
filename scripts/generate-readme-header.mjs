@@ -34,9 +34,17 @@ const README_HEADER_SPECS = {
  * @param {number} height - Target height in pixels
  * @returns {Promise<Buffer>} PNG buffer
  */
+/** Logo href in template (relative to assets/). For PNG generation we use path relative to project root so sharp/librsvg can load the image when run from project root. */
+const LOGO_HREF_IN_SVG = 'logos/horizontal/regenfass-horizontal-dark.svg';
+const LOGO_HREF_FOR_PNG = 'assets/logos/horizontal/regenfass-horizontal-dark.svg';
+
 async function svgToPng(svgPath, width, height) {
   try {
-    const svgBuffer = readFileSync(svgPath);
+    let svgContent = readFileSync(svgPath, 'utf8');
+    if (svgContent.includes(LOGO_HREF_IN_SVG)) {
+      svgContent = svgContent.replace(new RegExp(LOGO_HREF_IN_SVG.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), LOGO_HREF_FOR_PNG);
+    }
+    const svgBuffer = Buffer.from(svgContent, 'utf8');
     const pngBuffer = await sharp(svgBuffer)
       .resize(width, height, {
         fit: 'contain',
