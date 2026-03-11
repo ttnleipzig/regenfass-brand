@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.5.0](https://github.com/ttnleipzig/regenfass-brand/compare/v1.4.0...v1.5.0) (2026-03-11)
+
+
+### Features
+
+* add waterline element to business card design ([87f4e66](https://github.com/ttnleipzig/regenfass-brand/commit/87f4e6688f025a4166a2b2788b491423b850db5c))
+* enhance logo presentation and add vertical variants ([30fbb14](https://github.com/ttnleipzig/regenfass-brand/commit/30fbb146f8f4bd6914b53b03a69e688f30fa9dff))
+* update business card designs and logo handling ([59ca806](https://github.com/ttnleipzig/regenfass-brand/commit/59ca806ac77e05d208e6cf1f788e6f9fd92200af))
+* update business card PDF assets for Anna Schmidt, Max Mustermann, Sarah Klein, and Tom Weber ([7f2c693](https://github.com/ttnleipzig/regenfass-brand/commit/7f2c69348451e834f073ebb74181e7e3376625c1))
+* update LinkedIn image assets and enhance logo contrast handling ([3c92105](https://github.com/ttnleipzig/regenfass-brand/commit/3c9210524947eb678949bed23d393a049679dda3))
+
 ## [1.4.0](https://github.com/ttnleipzig/regenfass-brand/compare/v1.3.0...v1.4.0) (2026-03-11)
 
 
