@@ -342,6 +342,17 @@ function renderFrontSide(page, data, fonts, images) {
     height: pageHeight,
     color: COLORS.darkBlue,
   });
+
+  // Waterline at bottom (full width)
+  const waterlineHeightMm = 8;
+  if (images.waterline) {
+    page.drawImage(images.waterline, {
+      x: 0,
+      y: 0,
+      width: pageWidth,
+      height: mmToPt(waterlineHeightMm),
+    });
+  }
   
   // Logo positioning
   // Logo: centered in the first quarter of the card horizontally, vertically centered; max 34×40mm; offset 6mm up
@@ -518,6 +529,17 @@ function renderBackSide(page, data, fonts, images) {
     height: pageHeight,
     color: COLORS.darkBlue,
   });
+
+  // Waterline at bottom (full width)
+  const waterlineHeightMm = 8;
+  if (images.waterline) {
+    page.drawImage(images.waterline, {
+      x: 0,
+      y: 0,
+      width: pageWidth,
+      height: mmToPt(waterlineHeightMm),
+    });
+  }
   
   // QR Code container: left 8.5mm (3.5mm offset + 5mm padding), 50mm x 50mm
   // Vertically centered
@@ -869,11 +891,10 @@ export async function generateBusinessCardWithPdfLib(contactData, outputDir) {
   const qrCodeBuffer = await generateQRCodeBuffer(vCardData);
   cardProgress('QR-Code generiert', 'done');
   
-  // Load and convert logos. The secondary lockup is optional because
-  // older asset paths may be absent in newer brand packages.
-  const logoPath = join(projectRoot, 'assets', 'logos', 'tabler', 'regenfass-tabler-concept2-icon-light.svg');
+  // Load and convert logos. Horizontal logo (light variant for dark background).
+  const logoPath = join(projectRoot, 'assets', 'logos', 'horizontal', 'regenfass-horizontal-light.svg');
   cardProgress('Lade Logo …', 'generating');
-  const logoPngBuffer = await svgToPng(logoPath, 1000, 1000);
+  const logoPngBuffer = await svgToPng(logoPath, 1000, 250);
   const venitusCandidates = [
     join(projectRoot, 'assets', 'logos', 'a-venitus-company', 'regenfass-a-venitus-company-horizontal-light.svg'),
   ];
@@ -882,8 +903,16 @@ export async function generateBusinessCardWithPdfLib(contactData, outputDir) {
   if (venitusPath) {
     venitusPngBuffer = await svgToPng(venitusPath, 548, 447);
   }
-  // Optional: no secondary logo (a-venitus-company) – front side is rendered without sub-logo
   cardProgress('Logo geladen', 'done');
+
+  // Load waterline strip for bottom of card (front and back)
+  const waterlinePath = join(projectRoot, 'assets', 'backgrounds', 'waterline-strip-wide.svg');
+  let waterlinePngBuffer = null;
+  if (existsSync(waterlinePath)) {
+    cardProgress('Lade Wasserlinie …', 'generating');
+    waterlinePngBuffer = await svgToPng(waterlinePath, 1000, 80);
+    cardProgress('Wasserlinie geladen', 'done');
+  }
   
   // Create PDF document
   cardProgress('Erstelle PDF-Dokument …', 'generating');
@@ -896,11 +925,13 @@ export async function generateBusinessCardWithPdfLib(contactData, outputDir) {
   const logoImage = await pdfDoc.embedPng(logoPngBuffer);
   const venitusImage = venitusPngBuffer ? await pdfDoc.embedPng(venitusPngBuffer) : null;
   const qrCodeImage = await pdfDoc.embedPng(qrCodeBuffer);
+  const waterlineImage = waterlinePngBuffer ? await pdfDoc.embedPng(waterlinePngBuffer) : null;
   
   const images = {
     logo: logoImage,
     logoVenitus: venitusImage,
     qrCode: qrCodeImage,
+    waterline: waterlineImage,
   };
   
   // Prepare template data (ensure position/jobTitle is passed for front-side job title line)
@@ -938,9 +969,11 @@ export async function generateBusinessCardWithPdfLib(contactData, outputDir) {
     mmToPt(CARD_WIDTH_MM),
     mmToPt(CARD_HEIGHT_MM),
   ]);
+  const backWaterlineImage = waterlinePngBuffer ? await backPdfDoc.embedPng(waterlinePngBuffer) : null;
   renderBackSide(backPage, templateData, backFonts, {
     logo: null,
     qrCode: backQrCodeImage,
+    waterline: backWaterlineImage,
   });
   
   const backOutputPath = join(outputDir, `${contactData.name.replace(/\s+/g, '-')}-back.pdf`);
