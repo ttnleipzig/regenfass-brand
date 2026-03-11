@@ -41,7 +41,7 @@ jobs:
           
           # Create complete package ZIP
           cd release-assets
-          zip -r ../kieks-me-assets-v${VERSION}.zip .
+          zip -r ../regenfass-assets-v${VERSION}.zip .
           cd ..
           
           # Create logos-only ZIP
@@ -49,21 +49,21 @@ jobs:
           cp -r assets/logos release-assets-logos/logos
           cp assets/favicon.svg release-assets-logos/ 2>/dev/null || true
           cd release-assets-logos
-          zip -r ../kieks-me-logos-v${VERSION}.zip .
+          zip -r ../regenfass-logos-v${VERSION}.zip .
           cd ..
           
           # Create colors-only ZIP
           mkdir -p release-assets-colors
           cp -r assets/colors release-assets-colors/colors
           cd release-assets-colors
-          zip -r ../kieks-me-colors-v${VERSION}.zip .
+          zip -r ../regenfass-colors-v${VERSION}.zip .
           cd ..
           
           # Create fonts-only ZIP
           mkdir -p release-assets-fonts
           cp -r assets/fonts release-assets-fonts/fonts
           cd release-assets-fonts
-          zip -r ../kieks-me-fonts-v${VERSION}.zip .
+          zip -r ../regenfass-fonts-v${VERSION}.zip .
           cd ..
           
           # Create icons-only ZIP
@@ -71,7 +71,7 @@ jobs:
           cp -r assets/icons release-assets-icons/icons 2>/dev/null || true
           cd release-assets-icons
           if [ -d icons ] && [ "$(ls -A icons)" ]; then
-            zip -r ../kieks-me-icons-v${VERSION}.zip .
+            zip -r ../regenfass-icons-v${VERSION}.zip .
           fi
           cd ..
 
@@ -82,7 +82,7 @@ jobs:
           cp assets/logos/solo/regenfass-solo-light-192.png release-assets-pwa/logos/solo/
           cp assets/logos/solo/regenfass-solo-light-512.png release-assets-pwa/logos/solo/
           cd release-assets-pwa
-          zip -r ../kieks-me-pwa-v${VERSION}.zip .
+          zip -r ../regenfass-pwa-v${VERSION}.zip .
           cd ..
 
       - name: Generate Release README
@@ -166,8 +166,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./kieks-me-assets-v${{ steps.version.outputs.version }}.zip
-          asset_name: kieks-me-assets-v${{ steps.version.outputs.version }}.zip
+          asset_path: ./regenfass-assets-v${{ steps.version.outputs.version }}.zip
+          asset_name: regenfass-assets-v${{ steps.version.outputs.version }}.zip
           asset_content_type: application/zip
 
       - name: Upload logos ZIP to release
@@ -176,8 +176,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./kieks-me-logos-v${{ steps.version.outputs.version }}.zip
-          asset_name: kieks-me-logos-v${{ steps.version.outputs.version }}.zip
+          asset_path: ./regenfass-logos-v${{ steps.version.outputs.version }}.zip
+          asset_name: regenfass-logos-v${{ steps.version.outputs.version }}.zip
           asset_content_type: application/zip
 
       - name: Upload colors ZIP to release
@@ -186,8 +186,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./kieks-me-colors-v${{ steps.version.outputs.version }}.zip
-          asset_name: kieks-me-colors-v${{ steps.version.outputs.version }}.zip
+          asset_path: ./regenfass-colors-v${{ steps.version.outputs.version }}.zip
+          asset_name: regenfass-colors-v${{ steps.version.outputs.version }}.zip
           asset_content_type: application/zip
 
       - name: Upload fonts ZIP to release
@@ -196,8 +196,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./kieks-me-fonts-v${{ steps.version.outputs.version }}.zip
-          asset_name: kieks-me-fonts-v${{ steps.version.outputs.version }}.zip
+          asset_path: ./regenfass-fonts-v${{ steps.version.outputs.version }}.zip
+          asset_name: regenfass-fonts-v${{ steps.version.outputs.version }}.zip
           asset_content_type: application/zip
 
       - name: Upload icons ZIP to release
@@ -206,8 +206,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./kieks-me-icons-v${{ steps.version.outputs.version }}.zip
-          asset_name: kieks-me-icons-v${{ steps.version.outputs.version }}.zip
+          asset_path: ./regenfass-icons-v${{ steps.version.outputs.version }}.zip
+          asset_name: regenfass-icons-v${{ steps.version.outputs.version }}.zip
           asset_content_type: application/zip
         continue-on-error: true
 
@@ -217,8 +217,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./kieks-me-pwa-v${{ steps.version.outputs.version }}.zip
-          asset_name: kieks-me-pwa-v${{ steps.version.outputs.version }}.zip
+          asset_path: ./regenfass-pwa-v${{ steps.version.outputs.version }}.zip
+          asset_name: regenfass-pwa-v${{ steps.version.outputs.version }}.zip
           asset_content_type: application/zip
 
       - name: Update Release Notes
