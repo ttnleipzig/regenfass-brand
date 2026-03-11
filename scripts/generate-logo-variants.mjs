@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /**
  * Logo Variants Generator
- * Generates all logo variants from a single source PNG (assets/logos/solo/regenfass-logo.png).
+ * Generates all logo variants from the main logo SVG (assets/logos/tabler/regenfass-tabler-concept2-icon-light.svg).
  * Output: solo (PNG sizes + SVG with embedded image, card-solid SVG + PNG), horizontal (dark/light SVG + PNGs each: 200x50, hr).
  */
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync, copyFileSync } from 'fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'fs';
 import { dirname, join, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import sharp from 'sharp';
@@ -14,9 +14,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const projectRoot = resolve(__dirname, '..');
 
-const SOURCE_PNG = join(projectRoot, 'assets', 'logos', 'solo', 'regenfass-logo.png');
+const SOURCE_SVG = join(projectRoot, 'assets', 'logos', 'tabler', 'regenfass-tabler-concept2-icon-light.svg');
 const SOLO_DIR = join(projectRoot, 'assets', 'logos', 'solo');
 const HORIZONTAL_DIR = join(projectRoot, 'assets', 'logos', 'horizontal');
+
+/** Rendered icon size used as source for solo/horizontal (square). */
+const SOURCE_RENDER_SIZE = 512;
 
 const NAVY = '#0B2649';
 const NAVY_THEME = '#1E2A45';
@@ -47,11 +50,7 @@ async function generateSoloPngs(sourceBuffer) {
   for (const spec of SOLO_SIZES) {
     const outPath = join(SOLO_DIR, spec.name);
     if (spec.width == null) {
-      if (spec.name === 'regenfass-solo-light.png') {
-        copyFileSync(SOURCE_PNG, outPath);
-      } else {
-        await sharp(sourceBuffer).png().toFile(outPath);
-      }
+      await sharp(sourceBuffer).png().toFile(outPath);
       console.log(`  ${spec.name} (original size)`);
     } else {
       await sharp(sourceBuffer)
@@ -181,10 +180,19 @@ async function generateHorizontalPngs() {
 }
 
 async function main() {
-  if (!existsSync(SOURCE_PNG)) {
-    throw new Error(`Source not found: ${SOURCE_PNG}`);
+  if (!existsSync(SOURCE_SVG)) {
+    throw new Error(`Source not found: ${SOURCE_SVG}`);
   }
-  const sourceBuffer = readFileSync(SOURCE_PNG);
+  const svgBuffer = readFileSync(SOURCE_SVG);
+  let sourceBuffer;
+  try {
+    sourceBuffer = await sharp(svgBuffer)
+      .resize(SOURCE_RENDER_SIZE, SOURCE_RENDER_SIZE, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
+      .png()
+      .toBuffer();
+  } catch (err) {
+    throw new Error(`Failed to render SVG to PNG (Sharp/libvips may need SVG support): ${err.message}`);
+  }
   console.log('Generating solo variants...');
   await generateSoloPngs(sourceBuffer);
   await generateSoloLightSvg(sourceBuffer);
@@ -198,5 +206,6 @@ async function main() {
 
 main().catch((err) => {
   console.error('Error:', err.message || err);
+  if (err.stack) console.error(err.stack);
   process.exitCode = 1;
 });

@@ -23,9 +23,10 @@ These correspond to the horizontal, solo, and venitus variants in this repositor
 
 ### Solo / icon (`solo/` and `tabler/`)
 
-- **Primary icon (web/app):** `logos/tabler/regenfass-tabler-concept2-icon-light.svg` – Tabler bucket-droplet icon (turquoise); used for favicon, footer, manifest, and alternate/apple-touch icons across the brand site.
-- **Solo** (`regenfass-solo-light.svg`) – Icon-only, light; suitable for app icons, avatars, and small placements. PNG sizes in `solo/`: `regenfass-solo-light.png` (500×500), `regenfass-solo-light-100.png`, `regenfass-solo-light-192.png`, `regenfass-solo-light-512.png` (PWA/manifest), `regenfass-solo-light-hr.png` (high resolution).
-- **Card-solid** (`regenfass-solo-light-card-solid.svg`) – Icon on solid navy (#1E2A45) for cards and similar uses.
+- **Main logo (web/app):** `logos/tabler/regenfass-tabler-concept2-icon-light.svg` – Single Tabler bucket-droplet icon: bucket turquoise (#00BCD4), **droplet brand green (#22C55E)**. Used for favicon, footer, manifest, and alternate/apple-touch icons. **Source for all generated solo and horizontal assets** (see `scripts/generate-logo-variants.mjs`; run `pnpm run generate:logos`).
+- **Solo** (`regenfass-solo-light.svg` and PNGs in `solo/`) – Generated from the main logo; icon-only for app icons, PWA, email signature.
+- **Card-solid** (`regenfass-solo-light-card-solid.svg`) – Icon on solid navy (#1E2A45) for cards and similar uses; generated from main logo.
+- **Horizontal** (`horizontal/`) – Icon + “Regenfass” wordmark; generated from main logo.
 - Solo **dark** (for light backgrounds) is available on request.
 
 ### Venitus (`venitus/`)
@@ -88,7 +89,7 @@ These correspond to the horizontal, solo, and venitus variants in this repositor
 
 ## Colour Specifications
 
-See [COLOR_PALETTE.md](COLOR_PALETTE.md) for colour specifications relevant to logo usage.
+See [COLOR_PALETTE.md](COLOR_PALETTE.md) for colour specifications relevant to logo usage. **Primary icon:** bucket turquoise (#00BCD4), droplet brand green (#22C55E).
 
 ## Logo history
 

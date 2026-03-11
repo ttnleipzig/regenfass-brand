@@ -8,11 +8,11 @@
     <link rel="icon" type="image/svg+xml" href="{{basePath}}favicon.svg" />
     <link
       rel="alternate icon"
-      href="{{basePath}}logos/solo/regenfass-solo-light.png"
+      href="{{basePath}}logos/tabler/regenfass-tabler-concept2-icon-light.svg"
     />
     <link
       rel="apple-touch-icon"
-      href="{{basePath}}logos/solo/regenfass-solo-light.png"
+      href="{{basePath}}logos/tabler/regenfass-tabler-concept2-icon-light.svg"
     />
 
     <!-- Web App Manifest -->
@@ -165,8 +165,8 @@
             Das Web App Manifest definiert Name, Start-URL, Anzeigemodus, Theme- und Hintergrundfarbe
             sowie die App-Icons. Passe <code class="bg-gray-200 px-1 rounded">start_url</code> und
             ggf. <code class="bg-gray-200 px-1 rounded">name</code> / <code class="bg-gray-200 px-1 rounded">short_name</code>
-            an deine App an. Die Icon-Pfade sollten zu den unten verlinkten Assets passen (z. B. im
-            Root oder unter <code class="bg-gray-200 px-1 rounded">logos/solo/</code>).
+            an deine App an.             Die Icon-Pfade sollten zu den unten verlinkten Assets passen (z. B. im
+            Root oder unter <code class="bg-gray-200 px-1 rounded">logos/tabler/</code>). Für 192×192 und 512×512 PNGs das primäre Icon-SVG exportieren oder die Legacy-PNGs nutzen.
           </p>
           <div class="code-example">
             <pre class="language-json"><code>{
@@ -181,6 +181,12 @@
   "icons": [
     {
       "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/logos/tabler/regenfass-tabler-concept2-icon-light.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
@@ -224,7 +230,7 @@
 
 &lt;!-- Favicon und App-Icons --&gt;
 &lt;link rel="icon" type="image/svg+xml" href="/favicon.svg" /&gt;
-&lt;link rel="apple-touch-icon" href="/logos/solo/regenfass-solo-light.png" /&gt;</code></pre>
+&lt;link rel="apple-touch-icon" href="/logos/tabler/regenfass-tabler-concept2-icon-light.svg" /&gt;</code></pre>
           </div>
         </div>
       </section>
@@ -236,7 +242,7 @@
             Grafiken zum Download
           </h2>
           <p class="font-body text-lg text-gray-700 mb-6">
-            Diese Assets kannst du direkt verwenden oder im PWA-Bundle (ZIP) herunterladen.
+            Primäres Icon: Tabler bucket-droplet (Tropfen in Markenfarbe Grün). SVG für Favicon und Apple Touch; für Manifest 192×512 PNGs aus dem SVG exportieren oder Legacy-PNGs nutzen.
           </p>
           <div class="overflow-x-auto">
             <table class="min-w-full font-body border border-gray-200 rounded-lg overflow-hidden">
@@ -258,7 +264,15 @@
                   </td>
                 </tr>
                 <tr class="border-t border-gray-200">
-                  <td class="px-4 py-3">PWA-Icon</td>
+                  <td class="px-4 py-3">Primäres Icon</td>
+                  <td class="px-4 py-3">SVG</td>
+                  <td class="px-4 py-3">Favicon, Apple Touch, Manifest (any)</td>
+                  <td class="px-4 py-3">
+                    <a href="{{basePath}}logos/tabler/regenfass-tabler-concept2-icon-light.svg" download class="text-aqua hover:underline font-medium">regenfass-tabler-concept2-icon-light.svg</a>
+                  </td>
+                </tr>
+                <tr class="border-t border-gray-200">
+                  <td class="px-4 py-3">PWA-Icon (Legacy)</td>
                   <td class="px-4 py-3">PNG</td>
                   <td class="px-4 py-3">192×192 (Manifest, Android)</td>
                   <td class="px-4 py-3">
@@ -266,7 +280,7 @@
                   </td>
                 </tr>
                 <tr class="border-t border-gray-200">
-                  <td class="px-4 py-3">PWA-Icon</td>
+                  <td class="px-4 py-3">PWA-Icon (Legacy)</td>
                   <td class="px-4 py-3">PNG</td>
                   <td class="px-4 py-3">512×512 (Manifest, Splash, maskable)</td>
                   <td class="px-4 py-3">
@@ -274,9 +288,9 @@
                   </td>
                 </tr>
                 <tr class="border-t border-gray-200">
-                  <td class="px-4 py-3">Apple Touch Icon</td>
+                  <td class="px-4 py-3">Apple Touch (Legacy PNG)</td>
                   <td class="px-4 py-3">PNG</td>
-                  <td class="px-4 py-3">Allgemein (iOS / Homescreen)</td>
+                  <td class="px-4 py-3">Fallback (bevorzuge SVG)</td>
                   <td class="px-4 py-3">
                     <a href="{{basePath}}logos/solo/regenfass-solo-light.png" download class="text-aqua hover:underline font-medium">regenfass-solo-light.png</a>
                   </td>
