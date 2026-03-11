@@ -368,34 +368,25 @@ function renderFrontSide(page, data, fonts, images) {
     });
   }
 
-  // Logo: fill left side (0–56mm), deutlich größer; venitus darunter
-  const leftSideWidthMm = 56;
-  const logoTopMarginMm = 3;
-  const logoBottomMarginMm = 5;
-  const venitusGapMm = 2;
-  const venitusAspect = 44.65 / 54.82;
+  // Logo: maximale Größe, weiter unten (kein Venitus-Logo mehr)
+  const leftSideWidthMm = 60;
+  const logoTopMarginMm = 0;
+  const logoBottomMarginMm = 0;
+  /** Horizontal center of logo (mm from left); smaller = more to the left */
+  const logoCenterXMm = 24;
+  /** Vertical: 0 = logo at bottom above waterline */
+  const logoBlockOffsetFromBottomMm = 0;
   const contentHeightMm = CARD_HEIGHT_MM - waterlineHeightMm - logoTopMarginMm - logoBottomMarginMm;
-  let soloLogoBottomY = null;
+  const maxLogoHeightMm = Math.max(16, contentHeightMm);
   let finalLogoWidth = mmToPt(leftSideWidthMm);
   let finalLogoHeight = mmToPt(leftSideWidthMm / (208 / 48));
 
   if (images.logo) {
     const logoDims = images.logo.scale(1);
     const logoAspectRatio = logoDims.width / logoDims.height;
-    const venitusHeightMm = (leftSideWidthMm / 5) * 2 * venitusAspect;
 
-    // Start from logo that füllt die linke Seite in der Breite …
-    const baseLogoHeightMm = leftSideWidthMm / logoAspectRatio;
-    // … und skaliere sie ca. 7×, aber nur soweit es in die verfügbare Höhe passt.
-    const maxLogoHeightForContentMm = Math.max(
-      10,
-      contentHeightMm - venitusGapMm - venitusHeightMm
-    );
-    const scaledLogoHeightMm = Math.min(baseLogoHeightMm * 7, maxLogoHeightForContentMm);
-
-    let actualLogoHeightMm = Math.max(10, scaledLogoHeightMm);
+    let actualLogoHeightMm = maxLogoHeightMm;
     let actualLogoWidthMm = actualLogoHeightMm * logoAspectRatio;
-    // Logo darf optisch links bleiben – begrenze Breite auf die linke Seite
     if (actualLogoWidthMm > leftSideWidthMm) {
       actualLogoWidthMm = leftSideWidthMm;
       actualLogoHeightMm = actualLogoWidthMm / logoAspectRatio;
@@ -403,18 +394,14 @@ function renderFrontSide(page, data, fonts, images) {
 
     finalLogoWidth = mmToPt(actualLogoWidthMm);
     finalLogoHeight = mmToPt(actualLogoHeightMm);
-    // Block (Venitus + Gap + Logo) vertikal im verfügbaren Bereich zentrieren
     const availableBottomMm = waterlineHeightMm + logoBottomMarginMm;
     const availableTopMm = CARD_HEIGHT_MM - logoTopMarginMm;
     const availableHeightMm = availableTopMm - availableBottomMm;
-    const totalBlockMm = venitusHeightMm + venitusGapMm + actualLogoHeightMm;
-    const blockOffsetMm = Math.max(0, (availableHeightMm - totalBlockMm) / 2);
-    const blockBottomMm = availableBottomMm + blockOffsetMm;
-    const logoBottomMm = blockBottomMm + venitusHeightMm + venitusGapMm;
+    const blockOffsetMm = Math.max(0, Math.min(logoBlockOffsetFromBottomMm, availableHeightMm - actualLogoHeightMm));
+    const logoBottomMm = availableBottomMm + blockOffsetMm;
 
     const logoY = mmToPt(logoBottomMm);
-    const logoX = mmToPt(leftSideWidthMm / 2) - finalLogoWidth / 2;
-    soloLogoBottomY = logoY;
+    const logoX = Math.max(0, mmToPt(logoCenterXMm) - finalLogoWidth / 2);
 
     page.drawImage(images.logo, {
       x: logoX,
@@ -424,36 +411,15 @@ function renderFrontSide(page, data, fonts, images) {
     });
   }
 
-  // "a venitus company": below logo, centered on left side, 2/5 logo width, 80% opacity
-  const venitusWidth = (finalLogoWidth / 5) * 2;
-  const venitusHeight = venitusWidth * venitusAspect;
-  const minVenitusY = mmToPt(waterlineHeightMm + logoBottomMarginMm);
-  if (images.logoVenitus) {
-    const venitusX = mmToPt(leftSideWidthMm / 2) - venitusWidth / 2;
-    const venitusY = Math.max(
-      soloLogoBottomY !== null ? soloLogoBottomY - mmToPt(venitusGapMm) - venitusHeight : minVenitusY,
-      minVenitusY
-    );
-    page.drawImage(images.logoVenitus, {
-      x: venitusX,
-      y: venitusY,
-      width: venitusWidth,
-      height: venitusHeight,
-      opacity: 0.8,
-    });
-  }
-  
-  // Contact info positioning
-  // Contact info: left 52mm, top 15.5mm
+  // Contact info positioning (weiter links)
+  // Contact info: left 48mm, top 15.5mm
   // Right margin: 4.5mm (minimal margin for safe area)
-  const contactX = mmToPt(52);
+  const contactX = mmToPt(48);
   const contactY = pageHeight - mmToPt(15.5);
   let currentY = contactY;
   
-  // Calculate available width for contact info
-  // Card width: 89mm (with bleed), right margin: 4.5mm
-  // Contact info starts at 52mm, so available width = 89 - 52 - 4.5 = 32.5mm
-  const maxContactWidth = mmToPt(32.5);
+  // Available width: 89 - 48 - 4.5 = 36.5mm
+  const maxContactWidth = mmToPt(36.5);
   
   // Name (heading font Bold/700, 12pt, white)
   if (data.name) {
@@ -939,14 +905,6 @@ export async function generateBusinessCardWithPdfLib(contactData, outputDir) {
   const logoPath = join(projectRoot, 'assets', 'logos', 'vertical', 'regenfass-vertical-dark.svg');
   cardProgress('Lade Logo …', 'generating');
   const logoPngBuffer = await svgToPng(logoPath, 800, 800);
-  const venitusCandidates = [
-    join(projectRoot, 'assets', 'logos', 'a-venitus-company', 'regenfass-a-venitus-company-horizontal-light.svg'),
-  ];
-  const venitusPath = venitusCandidates.find((candidate) => existsSync(candidate));
-  let venitusPngBuffer = null;
-  if (venitusPath) {
-    venitusPngBuffer = await svgToPng(venitusPath, 548, 447);
-  }
   cardProgress('Logo geladen', 'done');
 
   // Load waterline strip (single tile) for tiling along bottom of card
@@ -981,14 +939,12 @@ export async function generateBusinessCardWithPdfLib(contactData, outputDir) {
   
   // Embed images
   const logoImage = await pdfDoc.embedPng(logoPngBuffer);
-  const venitusImage = venitusPngBuffer ? await pdfDoc.embedPng(venitusPngBuffer) : null;
   const qrCodeImage = await pdfDoc.embedPng(qrCodeBuffer);
   const waterlineImage = waterlinePngBuffer ? await pdfDoc.embedPng(waterlinePngBuffer) : null;
   const frontBackgroundImage = raindropPngBuffer ? await pdfDoc.embedPng(raindropPngBuffer) : null;
 
   const images = {
     logo: logoImage,
-    logoVenitus: venitusImage,
     qrCode: qrCodeImage,
     waterline: waterlineImage,
     frontBackground: frontBackgroundImage,

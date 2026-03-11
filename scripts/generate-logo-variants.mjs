@@ -198,7 +198,7 @@ async function generateVerticalSvgs(sourceBuffer) {
   const ih = meta.height || 512;
   const base64 = sourceBuffer.toString('base64');
 
-  const iconHeight = 144;
+  const iconHeight = 214;
   const iconWidth = (iw / ih) * iconHeight;
   const textFontSize = 16;
   const verticalSpacing = 8;
