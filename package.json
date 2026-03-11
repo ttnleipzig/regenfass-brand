@@ -18,7 +18,7 @@
     "generate:social-preview": "node scripts/generate-social-preview.mjs",
     "generate:readme-header": "node scripts/generate-readme-header.mjs",
     "generate:readme-header:samples": "node scripts/generate-readme-header-samples.mjs",
-    "generate:waterline-strip-png": "node scripts/generate-waterline-strip-png.mjs",
+    "generate:waterline-strip": "node scripts/generate-waterline-strip-png.mjs",
     "test": "node tests/scripts/run-all-tests.mjs"
   },
   "keywords": [

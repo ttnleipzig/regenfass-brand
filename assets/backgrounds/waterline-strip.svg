@@ -1,4 +1,4 @@
-<svg width="1024" height="56" viewBox="-20 730 1064 294" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="1024" height="56" viewBox="-20 736 1064 288" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <!-- Water fill (bottom strip) - transparent background, tileable in x -->
     <linearGradient id="water-fill-strip" x1="0" y1="760" x2="0" y2="1024" gradientUnits="userSpaceOnUse">

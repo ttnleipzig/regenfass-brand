@@ -402,9 +402,9 @@
     </tr>
 </table>`,
             extended: `<!-- Extended Email Footer -->
-<table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background-color: #1E2A45; padding: 40px 20px;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background-color: #1E2A45; padding: 40px 0 0 0;">
     <tr>
-        <td align="center">
+        <td align="center" style="padding: 0 20px;">
             <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width: 600px;">
                 <!-- Logo -->
                 <tr>
@@ -412,32 +412,21 @@
                         <img src="{{basePath}}logos/horizontal/regenfass-horizontal-dark.svg" alt="Regenfass Logo" width="128" height="32" style="display: block; height: 32px; width: auto;">
                     </td>
                 </tr>
-                <!-- Content Grid -->
+                <!-- Contact -->
                 <tr>
-                    <td>
-                        <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                            <tr>
-                                <td width="50%" valign="top" style="padding-right: 20px;">
-                                    <p style="margin: 0 0 15px 0; font-size: 14px; line-height: 1.6; color: #FFFFFF;">
-                                        <strong style="font-family: system-ui, Arial, sans-serif; color: #FFFFFF;">Kontakt</strong><br>
-                                        <span style="color: #FFFFFF;">Hardenbergstraße 48</span><br>
-                                        <span style="color: #FFFFFF;">04275 Leipzig, Deutschland</span><br>
-                                        <span style="color: #FFFFFF;">E-Mail: <a href="mailto:kontakt@ttn-leipzig.de" style="color: #FFFFFF; text-decoration: underline;">kontakt@ttn-leipzig.de</a></span><br>
-                                        <span style="color: #FFFFFF;">Tel: <a href="tel:+491707353067" style="color: #FFFFFF; text-decoration: underline;">+49 170 7353 067</a></span>
-                                    </p>
-                                </td>
-                                <td width="50%" valign="top" style="padding-left: 20px;">
-                                    <p style="margin: 0 0 15px 0; font-size: 14px; line-height: 1.6; color: #FFFFFF;">
-                                        <strong style="font-family: system-ui, Arial, sans-serif; color: #FFFFFF;">Vertreten durch André Lademann</strong>
-                                    </p>
-                                </td>
-                            </tr>
-                        </table>
+                    <td align="left" style="padding-bottom: 15px;">
+                        <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #FFFFFF;">
+                            <strong style="font-family: system-ui, Arial, sans-serif; color: #FFFFFF;">Kontakt</strong><br>
+                            <span style="color: #FFFFFF;">Hardenbergstraße 48</span><br>
+                            <span style="color: #FFFFFF;">04275 Leipzig, Deutschland</span><br>
+                            <span style="color: #FFFFFF;">E-Mail: <a href="mailto:kontakt@ttn-leipzig.de" style="color: #FFFFFF; text-decoration: underline;">kontakt@ttn-leipzig.de</a></span><br>
+                            <span style="color: #FFFFFF;">Tel: <a href="tel:+491707353067" style="color: #FFFFFF; text-decoration: underline;">+49 170 7353 067</a></span>
+                        </p>
                     </td>
                 </tr>
                 <!-- Divider / Legal -->
                 <tr>
-                    <td style="border-top: 1px solid #5A6B8C; padding-top: 20px; padding-bottom: 15px;">
+                    <td style="border-top: 1px solid #5A6B8C; padding-top: 20px; padding-bottom: 20px;">
                         <p style="margin: 0; font-size: 12px; color: #FFFFFF; line-height: 1.5;">
                             Vertreten durch André Lademann
                         </p>
@@ -445,6 +434,12 @@
                 </tr>
             </table>
         </td>
+    </tr>
+</table>
+<!-- Waterline at bottom (same as standard footer) -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="margin: 0; padding: 0;">
+    <tr>
+        <td style="width: 100%; height: 56px; background-color: #1E2A45; line-height: 0; font-size: 0;"><img src="{{basePath}}backgrounds/waterline-strip-wide.svg" alt="" width="3072" height="56" style="display: block; width: 100%; height: 56px; border: 0; line-height: 0; font-size: 0;" /></td>
     </tr>
 </table>`,
             plainText: `--
