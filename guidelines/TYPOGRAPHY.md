@@ -90,11 +90,11 @@ Headings and body: 1.4 (--line-height-body)
 ## Accessibility
 
 - Minimum font size: 16px for body text
-- Ensure sufficient color contrast (see Color Palette)
+- Ensure sufficient colour contrast (see Colour palette)
 - Use relative units (rem, em) for better scaling
 - Test readability with screen readers
 - Maintain clear visual hierarchy
 
 ## Optional font files
 
-Optional font files (e.g. for PDF or print) may be stored in `assets/fonts/`. The brand site does not load them by default. See [FONT_LICENSES.md](../FONT_LICENSES.md) for any third-party font licenses.
+Optional font files (e.g. for PDF or print) may be stored in `assets/fonts/`. The brand site does not load them by default. See [FONT_LICENSES.md](../FONT_LICENSES.md) for any third-party font licences.

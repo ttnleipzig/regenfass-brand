@@ -54,9 +54,9 @@ Use this overlay so imagery keeps a consistent CI look (e.g. on the Regenfass we
 
 ## Two-tone headings (zweifarbige Überschriften)
 
-For headings where the first part uses the base color and the second part uses an accent (e.g. white + aqua on dark background):
+For headings where the first part uses the base colour and the second part uses an accent (e.g. white + aqua on dark background):
 
-- Use a normal heading (e.g. `h2`) with the section’s text color (e.g. `text-white` on dark).
+- Use a normal heading (e.g. `h2`) with the section’s text colour (e.g. `text-white` on dark).
 - Wrap the part that should stand out in `<span class="heading-accent">…</span>`.
 
 **Example (dark background):**
@@ -74,7 +74,7 @@ On dark backgrounds (e.g. `bg-navy-900`, hero), `.heading-accent` uses the acces
 For dividers or framed content:
 
 - **Thickness:** 4pt.
-- **Colors:** `#FF5722` (Orange) or `#00BCD4` (Turquoise).
+- **Colours:** `#FF5722` (Orange) or `#00BCD4` (Turquoise).
 
 Use one of these two colours only; avoid other border colours for brand elements.
 
@@ -115,7 +115,7 @@ Used on [install.regenfass.eu](https://install.regenfass.eu/) and available for 
 - `--shadow-page-inset-light`: Inset shadow for light install-style pages (navy tint).
 - `--shadow-page-inset-dark`: Inset shadow for dark install-style pages.
 
-Defined in the brand app’s `app/styles.css` (`@theme` and `@layer components`). Typography uses the system UI stack; color and layout patterns are aligned with the install page.
+Defined in the brand app’s `app/styles.css` (`@theme` and `@layer components`). Typography uses the system UI stack; colour and layout patterns are aligned with the install page.
 
 ## Related
 

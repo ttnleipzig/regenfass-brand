@@ -1,10 +1,10 @@
 # Color Palette
 
-## Brand Colors
+## Brand Colours
 
-The Regenfass color palette consists of primary brand colors (Dark Blue, Orange, Turquoise) that work together for a consistent visual identity across all marketing and sales channels.
+The Regenfass colour palette consists of primary brand colours (Dark Blue, Orange, Turquoise) that work together for a consistent visual identity across all marketing and sales channels.
 
-## Primary Colors
+## Primary Colours
 
 ### Dark Blue
 
@@ -39,13 +39,13 @@ Pantone: 319 C
 
 **Usage**: Clarity, innovation; secondary accents, links, supporting visuals
 
-## Color Harmony and Shades
+## Colour Harmony and Shades
 
-Color shades and harmony rules provide additional variations for contrast and visual hierarchy. Use the [Adobe Color Wheel](https://color.adobe.com/create/color-wheel) with a base color in HEX (Cyan/Turquoise, Orange, or Dark Blue) to explore harmony rules.
+Colour shades and harmony rules provide additional variations for contrast and visual hierarchy. Use the [Adobe Color Wheel](https://color.adobe.com/create/color-wheel) with a base colour in HEX (Cyan/Turquoise, Orange, or Dark Blue) to explore harmony rules.
 
 ### Analogous Harmony (Cyan #00BCD4)
 
-Related harmony colors for Turquoise/Cyan:
+Related harmony colours for Turquoise/Cyan:
 
 - **#00BCD4** – Base Turquoise
 - **#51F07F** – Light green
@@ -93,12 +93,12 @@ For consistent reproduction in print and industrial applications, use the Panton
 - **Orange:** Pantone 1505 C
 - **Turquoise:** Pantone 319 C
 
-## Neutral Colors
+## Neutral Colours
 
-### Dark Gray
+### Dark Grey
 
 ```text
-Name: Dark Gray
+Name: Dark Grey
 HEX: #333333
 RGB: rgb(51, 51, 51)
 CMYK: C:0 M:0 Y:0 K:80
@@ -106,10 +106,10 @@ CMYK: C:0 M:0 Y:0 K:80
 
 **Usage**: Body text, dark UI elements
 
-### Medium Gray
+### Medium Grey
 
 ```text
-Name: Medium Gray
+Name: Medium Grey
 HEX: #666666
 RGB: rgb(102, 102, 102)
 CMYK: C:0 M:0 Y:0 K:60
@@ -117,10 +117,10 @@ CMYK: C:0 M:0 Y:0 K:60
 
 **Usage**: Secondary text, borders
 
-### Light Gray
+### Light Grey
 
 ```text
-Name: Light Gray
+Name: Light Grey
 HEX: #CCCCCC
 RGB: rgb(204, 204, 204)
 CMYK: C:0 M:0 Y:0 K:20
@@ -128,65 +128,65 @@ CMYK: C:0 M:0 Y:0 K:20
 
 **Usage**: Backgrounds, dividers, subtle elements
 
-## Color Usage Guidelines
+## Colour Usage Guidelines
 
 ### Backgrounds
 
-- **Light Backgrounds**: Use Dark Blue or dark gray for text and primary elements
+- **Light Backgrounds**: Use Dark Blue or dark grey for text and primary elements
 - **Dark Backgrounds**: Use white or Turquoise/Orange for text and accents (e.g. Dark Blue #0B2649 as background)
 - Ensure WCAG AA contrast ratios (4.5:1 for normal text, 3:1 for large text)
 
 ### Text
 
-- **Headings**: Dark Blue (#0B2649) or dark gray
-- **Body Text**: Dark gray (#333333)
+- **Headings**: Dark Blue (#0B2649) or dark grey
+- **Body Text**: Dark grey (#333333)
 - **Links**: Use Turquoise (#00BCD4) or darker shade (#00A4BA) on white backgrounds; check contrast for WCAG AA
 - **Link Hover**: Slightly lighter or darker Turquoise/Orange as appropriate
-- **Disabled Text**: Medium gray (#666666)
+- **Disabled Text**: Medium grey (#666666)
 
 ### Buttons and Interactive Elements
 
 - **Primary Actions**: Orange (#FF5722) or Turquoise (#00BCD4) on light backgrounds; white text on Dark Blue
 - **Secondary Actions**: Outlined with Dark Blue or Turquoise; neutral backgrounds
 - **Hover States**: Use shading variants (e.g. #E64C1E for Orange, #00A4BA for Turquoise)
-- **Disabled State**: Light gray with reduced opacity
+- **Disabled State**: Light grey with reduced opacity
 
 ## Accessibility
 
-All color combinations must meet WCAG 2.1 Level AA standards for accessibility:
+All colour combinations must meet WCAG 2.1 Level AA standards for accessibility:
 
 - Normal text: Minimum contrast ratio of 4.5:1
 - Large text (18pt+): Minimum contrast ratio of 3:1
 - UI components: Minimum contrast ratio of 3:1
 
-## Color Combinations to Avoid
+## Colour Combinations to Avoid
 
 - Low contrast combinations that fail accessibility standards
-- Primary colors on primary colors without sufficient contrast
-- Colors that vibrate when placed together
+- Primary colours on primary colours without sufficient contrast
+- Colours that vibrate when placed together
 
-## Digital Color Management
+## Digital Colour Management
 
 ### Web/Digital
 
 - Use HEX or RGB values
-- Test colors on different displays for consistency
+- Test colours on different displays for consistency
 - Consider dark mode variations if applicable
 
 ### Print
 
 - Use Pantone (533 C, 1505 C, 319 C) or CMYK values where defined
-- Request color proofs before final printing
-- Be aware that colors may vary between digital and print media
+- Request colour proofs before final printing
+- Be aware that colours may vary between digital and print media
 
-## Color Files
+## Colour Files
 
-Color palette files are available in multiple formats:
+Colour palette files are available in multiple formats:
 
 - **ASE** (Adobe Swatch Exchange): `assets/colors/regenfass-palette.ase` (if available)
 - **CSS Variables**: `assets/colors/colors.css` for web projects
 - **JSON**: `assets/colors/colors.json` for developers and applications
-- **Color Swatches**: SVG files in the `colors/` directory
+- **Colour Swatches**: SVG files in the `colors/` directory
 
 ---
 

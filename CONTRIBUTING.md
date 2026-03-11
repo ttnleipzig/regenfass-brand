@@ -20,7 +20,7 @@ You may propose changes in the following situations:
 
 1. **New Brand Assets** - Adding new approved logos, templates, or materials
 2. **Updates to Guidelines** - Correcting or clarifying brand guidelines
-3. **Technical Improvements** - Improving file formats, organization, or documentation
+3. **Technical Improvements** - Improving file formats, organisation, or documentation
 4. **Corrections** - Fixing errors in existing materials
 
 ## How to Propose Changes
@@ -44,7 +44,7 @@ You may propose changes in the following situations:
    - Keep changes minimal and focused
    - Follow existing file naming conventions (see below)
    - Update documentation as needed
-   - Maintain file organization structure
+   - Maintain file organisation structure
    - Test files before committing
 
 5. **Commit Your Changes**
@@ -80,8 +80,8 @@ When contributing, please follow the established directory structure:
 regenfass.brand/
 ├── assets/                    # ALL assets (included in release ZIP)
 │   ├── logos/                 # Logo files in various formats
-│   ├── colors/                # Color palette definitions
-│   │   ├── swatches/         # SVG color swatches
+│   ├── colors/                # Colour palette definitions
+│   │   ├── swatches/         # SVG colour swatches
 │   │   ├── colors.css        # CSS variables
 │   │   ├── colors.json       # JSON definitions
 │   │   └── README.md         # Color documentation
@@ -108,27 +108,27 @@ Use consistent, descriptive names:
 ### Logo Files
 
 - ✓ Vector formats (SVG, AI, EPS) required
-- ✓ Multiple variations (color, monochrome, white, black)
+- ✓ Multiple variations (colour, monochrome, white, black)
 - ✓ Proper transparent backgrounds for PNG
 - ✓ Minimum 300 DPI for print raster files
 
-### Color Files
+### Colour Files
 
-- ✓ Color definitions in multiple formats (ASE, CSS, JSON)
+- ✓ Colour definitions in multiple formats (ASE, CSS, JSON)
 - ✓ Include HEX, RGB, and CMYK values
 - ✓ Verify accessibility contrast ratios
-- ✓ Test colors in both digital and print contexts
+- ✓ Test colours in both digital and print contexts
 
 ### Font Files
 
-- ✓ Include license information
+- ✓ Include licence information
 - ✓ Provide multiple formats (WOFF2, WOFF, TTF, OTF)
 - ✓ Include all necessary weights and styles
 - ✓ Create specimen sheets for reference
 
 ### Templates
 
-- ✓ Use brand-approved colors and fonts
+- ✓ Use brand-approved colours and fonts
 - ✓ Follow layout and spacing guidelines
 - ✓ Include placeholder content
 - ✓ Test templates before submitting
@@ -160,7 +160,7 @@ All submissions will be reviewed for:
 
 1. **Quality**: Files meet professional standards
 2. **Compliance**: Assets follow brand guidelines
-3. **Organization**: Proper directory and naming
+3. **Organisation**: Proper directory and naming
 4. **Documentation**: Adequate explanations provided
 5. **Licensing**: Proper rights and permissions
 

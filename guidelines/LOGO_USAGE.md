@@ -76,7 +76,7 @@ These correspond to the horizontal, solo, and venitus variants in this repositor
 
 - Do not stretch, compress, or distort the logo.
 - Do not rotate the logo.
-- Do not change colors (use the approved dark/light variants).
+- Do not change colours (use the approved dark/light variants).
 - Do not add effects (e.g. drop shadows, extra gradients).
 - Do not place on busy or low-contrast backgrounds.
 - Do not recreate or modify the logo.
@@ -84,11 +84,11 @@ These correspond to the horizontal, solo, and venitus variants in this repositor
 ## Background Guidelines
 
 - **Preferred**: White or very light backgrounds for the light logo; solid dark backgrounds for the dark logo.
-- **Avoid**: Busy patterns, low-contrast colors, or gradients unless specifically designed for.
+- **Avoid**: Busy patterns, low-contrast colours, or gradients unless specifically designed for.
 
-## Color Specifications
+## Colour Specifications
 
-See [COLOR_PALETTE.md](COLOR_PALETTE.md) for color specifications relevant to logo usage.
+See [COLOR_PALETTE.md](COLOR_PALETTE.md) for colour specifications relevant to logo usage.
 
 ## Logo history
 

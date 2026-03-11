@@ -29,21 +29,21 @@ This repository serves as the central source of truth for all Corporate Identity
 
 **All company members are allowed and encouraged to use these materials within the company context:**
 
-- Use logos, colors, fonts, and templates for company projects
+- Use logos, colours, fonts, and templates for company projects
 - Reference brand guidelines for consistent communications
 - Download and utilize assets for internal and external company materials
 - Share materials with partners and vendors when representing Regenfass
 
 ## What's Included
 
-This repository contains all the visual identity assets and brand guidelines for Regenfass, organized into two main categories:
+This repository contains all the visual identity assets and brand guidelines for Regenfass, organised into two main categories:
 
 ### Fundamentals
 
 The foundational brand elements that form the core of our corporate identity:
 
 - [**Logos**](assets/logos/) – Various logo versions (full, icon, wordmark) in multiple formats
-- [**Colors**](assets/colors/) – Brand color palette with color codes (HEX, RGB, CMYK)
+- [**Colors**](assets/colors/) – Brand colour palette with colour codes (HEX, RGB, CMYK)
 - [**Typography**](assets/fonts/) – Font specifications and typeface files
 
 ### Implementations
@@ -62,7 +62,7 @@ Products and applications built from our brand fundamentals:
 Detailed documentation for each aspect of the brand identity:
 
 - [Logo Usage](guidelines/LOGO_USAGE.md) - How to properly use logos
-- [Color Palette](guidelines/COLOR_PALETTE.md) - Official color definitions
+- [Color Palette](guidelines/COLOR_PALETTE.md) - Official colour definitions
 - [Typography](guidelines/TYPOGRAPHY.md) - Font usage and hierarchy
 - [Design Elements & Webdesign](guidelines/DESIGN_ELEMENTS.md) - Buttons, overlays, borders, Photoshop
 - [Templates and Resources](guidelines/TEMPLATES_AND_RESOURCES.md) - Slide Master, Geschäftsbrief DIN 5008, company intro
@@ -139,7 +139,7 @@ The generator creates PDFs compliant with print shop specifications:
 - PDF size with bleed: 89mm × 59mm (2mm bleed on all sides)
 - Safe area: 82mm × 52mm (content 1.5mm from edge)
 - Resolution: 300 DPI minimum
-- Color mode: CMYK with "PSO Uncoated ISO12647 (Fogra 47L)" profile
+- Colour mode: CMYK with "PSO Uncoated ISO12647 (Fogra 47L)" profile
 - Page order: Front = Page 1, Back = Page 2
 - Fonts: Converted to paths (if Ghostscript is installed)
 
@@ -167,4 +167,4 @@ This repository is licensed under the GNU General Public License v3.0 - see the 
 
 ### Font Licenses
 
-The brand site uses the **system UI font stack** (no external font files or license required). If optional font packages are included in releases, see [FONT_LICENSES.md](FONT_LICENSES.md) for third-party license information.
+The brand site uses the **system UI font stack** (no external font files or licence required). If optional font packages are included in releases, see [FONT_LICENSES.md](FONT_LICENSES.md) for third-party licence information.

@@ -69,13 +69,13 @@ To maintain brand consistency:
 
 - **Use Official Assets Only**
   - Always use assets from this repository
-  - Do not recreate logos or modify brand colors
+  - Do not recreate logos or modify brand colours
   - Do not use outdated versions of materials
 
 - **Follow Guidelines**
   - Read and follow the brand guidelines documentation
   - Maintain proper logo spacing and sizing
-  - Use approved color combinations
+  - Use approved colour combinations
   - Follow typography rules
 
 - **Quality Standards**
@@ -90,8 +90,8 @@ To maintain brand consistency:
 **Q: Can I modify the logo for my specific project?**
 A: No. Logos must be used exactly as provided. Contact maintainers if you need a specific variation.
 
-**Q: Can I change the brand colors to match my design?**
-A: No. Brand colors are fixed. Use the approved palette only.
+**Q: Can I change the brand colours to match my design?**
+A: No. Brand colours are fixed. Use the approved palette only.
 
 **Q: Can I share these materials with external vendors?**
 A: Yes, if the vendor is working on an authorized Regenfass project.

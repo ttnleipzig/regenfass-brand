@@ -1,8 +1,8 @@
-# Brand Colors
+# Brand Colours
 
-This directory contains the official Regenfass brand color palette, including developer files and visual swatches.
+This directory contains the official Regenfass brand colour palette, including developer files and visual swatches.
 
-**Note**: Assets are distributed as ZIP archives only. Individual files are not available for download. Download the complete color assets as part of the [latest release ZIP](https://github.com/ttnleipzig/regenfass-brand/releases).
+**Note**: Assets are distributed as ZIP archives only. Individual files are not available for download. Download the complete colour assets as part of the [latest release ZIP](https://github.com/ttnleipzig/regenfass-brand/releases).
 
 ## Available Files
 
@@ -10,25 +10,25 @@ This directory contains the official Regenfass brand color palette, including de
 |------------------------|--------|--------------------------------------------------------------|-------------------------------------------------------------------------------------------------|
 | `colors.css`           | CSS    | CSS variables for web projects                               | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/colors.css)             |
 | `colors.json`          | JSON   | HEX, RGB, and CMYK values for JavaScript/TypeScript projects | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/colors.json)            |
-| `tailwind.config.js`   | JS     | Tailwind CSS theme configuration for colors                 | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/tailwind.config.js)     |
+| `tailwind.config.js`   | JS     | Tailwind CSS theme configuration for colours                 | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/tailwind.config.js)     |
 
-### Color Swatches
+### Colour Swatches
 
-| File Name                   | Format | Color                  | Download                                                                                              |
+| File Name                   | Format | Colour                  | Download                                                                                              |
 |-----------------------------|--------|------------------------|--------------------------------------------------------------------------------------------------------|
 | `swatches/dark-blue.svg`    | SVG    | Dark Blue (#0B2649)    | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/dark-blue.svg)       |
 | `swatches/orange.svg`       | SVG    | Orange (#FF5722)       | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/orange.svg)          |
 | `swatches/turquoise.svg`    | SVG    | Turquoise (#00BCD4)    | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/turquoise.svg)        |
 | `swatches/white.svg`        | SVG    | White (#FFFFFF)        | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/white.svg)            |
-| `swatches/dark-gray.svg`    | SVG    | Dark Gray (#333333)    | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/dark-gray.svg)        |
+| `swatches/dark-gray.svg`    | SVG    | Dark Grey (#333333)    | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/dark-gray.svg)        |
 
-## Primary Brand Colors
+## Primary Brand Colours
 
-The Regenfass brand uses three primary colors for a consistent visual identity: Dark Blue, Orange, and Turquoise (with Pantone 533 C, 1505 C, 319 C for print).
+The Regenfass brand uses three primary colours for a consistent visual identity: Dark Blue, Orange, and Turquoise (with Pantone 533 C, 1505 C, 319 C for print).
 
-### Primary Colors
+### Primary Colours
 
-| Color    | Hex       | RGB                | Description                          |
+| Colour    | Hex       | RGB                | Description                          |
 |----------|-----------|--------------------|--------------------------------------|
 | Dark Blue | `#0B2649` | `rgb(11, 38, 73)`  | Primary dark; trust, professionalism |
 | Orange   | `#FF5722` | `rgb(255, 87, 34)` | Accent; energy, call-to-action       |
@@ -36,12 +36,12 @@ The Regenfass brand uses three primary colors for a consistent visual identity: 
 
 **JSON keys** (in `colors.json`): `selection.darkBlue`, `selection.orange`, `selection.turquoise` (each with `hex`, `rgb`, `pantone`, `usage`, `shades`). The `primary` object is set to Dark Blue (#0B2649). Legacy keys `selection.aqua`, `selection.navy`, `selection.fuchsia` remain for backwards compatibility. For Tailwind, extend your theme with e.g. `darkBlue: '#0B2649'`, `orange: '#FF5722'`, `turquoise: '#00BCD4'` when consuming this palette.
 
-### Text Colors
+### Text colours
 
-| Color                                          | Hex       | RGB                  | Usage                          |
+| Colour                                          | Hex       | RGB                  | Usage                          |
 |------------------------------------------------|-----------|----------------------|--------------------------------|
-| ![White](swatches/white.svg) White             | `#FFFFFF` | `rgb(255, 255, 255)` | Text color on white background |
-| ![Dark Gray](swatches/dark-gray.svg) Dark Gray | `#333333` | `rgb(51, 51, 51)`    | Text color on white background |
+| ![White](swatches/white.svg) White             | `#FFFFFF` | `rgb(255, 255, 255)` | Text colour on white background |
+| ![Dark Grey](swatches/dark-gray.svg) Dark Grey | `#333333` | `rgb(51, 51, 51)`    | Text colour on white background |
 
 ## Usage
 
@@ -91,10 +91,10 @@ module.exports = {
 };
 ```
 
-**Usage in HTML/Tailwind classes** (use primary brand color utilities when available):
+**Usage in HTML/Tailwind classes** (use primary brand colour utilities when available):
 
 ```html
-<!-- Primary brand colors (Dark Blue, Orange, Turquoise) -->
+<!-- Primary brand colours (Dark Blue, Orange, Turquoise) -->
 <div class="bg-primary text-secondary">Primary background</div>
 <div class="bg-secondary text-primary">Secondary background</div>
 
@@ -103,10 +103,10 @@ module.exports = {
 <div style="background-color: #FF5722; color: white;">Orange accent</div>
 <div style="background-color: #00BCD4; color: white;">Turquoise accent</div>
 
-<!-- Neutral colors -->
-<div class="text-gray-dark">Dark gray text</div>
-<div class="text-gray-medium">Medium gray text</div>
-<div class="bg-gray-light">Light gray background</div>
+<!-- Neutral colours -->
+<div class="text-gray-dark">Dark grey text</div>
+<div class="text-gray-medium">Medium grey text</div>
+<div class="bg-gray-light">Light grey background</div>
 ```
 
 ### For Designers
