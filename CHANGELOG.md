@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.4.0](https://github.com/ttnleipzig/regenfass-brand/compare/v1.3.0...v1.4.0) (2026-03-11)
+
+
+### Features
+
+* add waterline strip generation script and update email footer design ([58fad0f](https://github.com/ttnleipzig/regenfass-brand/commit/58fad0f0277c291cbed18f216d9cc4dee878c8d5))
+* enhance color and logo documentation for clarity and consistency ([8ed4e19](https://github.com/ttnleipzig/regenfass-brand/commit/8ed4e191e490037d0ea8ca5b03852cf5bd03b54f))
+* enhance email footer design with new waterline element ([1af1f8d](https://github.com/ttnleipzig/regenfass-brand/commit/1af1f8d854ee8920491feb6ea52870ebbc7558d9))
+* update logo assets and documentation for improved clarity and consistency ([1f174be](https://github.com/ttnleipzig/regenfass-brand/commit/1f174bef3dc84149c3ba903c2350dd5584c61794))
+* update logo assets and SVG files for improved design consistency ([306229e](https://github.com/ttnleipzig/regenfass-brand/commit/306229e27b7ab40122c281ac1ff9a87d34b8a71c))
+* update logo assets and text for consistency and clarity ([557a01e](https://github.com/ttnleipzig/regenfass-brand/commit/557a01efe9a79c9f7f1a03e39b29e454cd37bf83))
+* update OpenGraph avatar and background assets for improved design consistency ([2f18fd5](https://github.com/ttnleipzig/regenfass-brand/commit/2f18fd5a42dcb2cc078da832fbbb610aeb9334ec))
+
 ## [1.3.0](https://github.com/ttnleipzig/regenfass-brand/compare/v1.2.0...v1.3.0) (2026-03-11)
 
 
