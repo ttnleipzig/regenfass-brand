@@ -121,9 +121,9 @@ If you want to customise the header for a different repository:
 ### Design Guidelines
 
 When customizing:
-- Maintain the navy background (#1E2A45)
+- The background is the waterline graphic (dark raindrop top, light blue water below; see `assets/backgrounds/waterline.svg`)
 - Keep the logo visible and properly sized
-- Ensure text is readable (white on navy)
+- Ensure text is readable (white on overlay)
 - Preserve the overall aesthetic and brand consistency
 
 ## Best Practices
@@ -160,10 +160,10 @@ When customizing:
 ### SVG Structure
 
 The SVG includes:
-- Navy background (#1E2A45)
+- Waterline background (from `assets/backgrounds/waterline.svg`: dark raindrop top, light blue water with waves below)
+- Dark gradient overlay for text contrast
 - Regenfass horizontal logo (aqua variant)
 - Title text: "Corporate Identity & Corporate Design"
-- Decorative circles (aqua and fuchsia with opacity)
 
 ### Fonts
 
@@ -173,10 +173,10 @@ The SVG uses:
 
 ### Colours
 
-- Background: Navy (#1E2A45)
-- Logo accents: Aqua (#0B2649)
+- Background: Waterline graphic (dark blue #0B2649 top with raindrops, light blue water below)
+- Overlay: Navy gradient for text contrast
+- Logo accents: Aqua (#00BCD4)
 - Text: White (#FFFFFF)
-- Decorative elements: Aqua (#0B2649) and Fuchsia (#FF008F) with 10% opacity
 
 ## Questions?
 

@@ -2,7 +2,7 @@
 /**
  * README Header Sample Banner Generator
  * Generates sample README header banners (1200×200) in Regenfass brand:
- * embedded 5.svg background, dark overlay, Regenfass logo, system UI font stack title.
+ * waterline background (assets/backgrounds/waterline.svg), dark overlay, Regenfass logo, system UI font stack title.
  */
 
 import { fileURLToPath } from 'url';
@@ -29,6 +29,9 @@ const HORIZONTAL_LOGO_PATH = join(projectRoot, 'assets', 'logos', 'horizontal', 
 /** Logo href used in template (relative to assets/). Samples in examples/github/ need a different path. */
 const LOGO_HREF_TEMPLATE = 'logos/horizontal/regenfass-horizontal-dark.svg';
 const LOGO_HREF_FOR_SAMPLES = '../../assets/logos/horizontal/regenfass-horizontal-dark.svg';
+/** Background image href in template; samples need path relative to examples/github/. */
+const BACKGROUND_HREF_TEMPLATE = 'backgrounds/waterline.svg';
+const BACKGROUND_HREF_FOR_SAMPLES = '../../assets/backgrounds/waterline.svg';
 
 function extractTemplateParts() {
   if (existsSync(TEMPLATE_SVG_PATH)) {
@@ -78,11 +81,15 @@ function buildReadmeHeaderSvg(title, opts = {}) {
   if (opts.fixLogoHrefForSamples && logo.includes(LOGO_HREF_TEMPLATE)) {
     logoBlock = logo.replace(new RegExp(LOGO_HREF_TEMPLATE.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), LOGO_HREF_FOR_SAMPLES);
   }
+  let backgroundBlock = background;
+  if (opts.fixLogoHrefForSamples && background.includes(BACKGROUND_HREF_TEMPLATE)) {
+    backgroundBlock = background.replace(new RegExp(BACKGROUND_HREF_TEMPLATE.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), BACKGROUND_HREF_FOR_SAMPLES);
+  }
   const overlayBlock = overlay ? `  <!-- Dark overlay for contrast -->\n  ${overlay}\n  ` : '';
   return `<svg width="1200" height="200" viewBox="0 0 1200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
   ${defs}
-  <!-- Background: current README header template -->
-  ${background}
+  <!-- Background: waterline -->
+  ${backgroundBlock}
 ${overlayBlock}  <!-- Regenfass logo -->
   ${logoBlock}
   <!-- Title (system UI stack) -->

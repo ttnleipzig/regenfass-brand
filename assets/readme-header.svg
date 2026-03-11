@@ -1,36 +1,14 @@
 <svg width="1200" height="200" viewBox="0 0 1200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <pattern id="raindrop-wallpaper-dark" x="0" y="0" width="176" height="176" patternUnits="userSpaceOnUse">
-      <g stroke-linecap="round" stroke-linejoin="round" fill="none">
-        <g opacity="0.2" transform="translate(24 20) scale(2.2)">
-          <path d="M7.502 19.423c2.602 2.105 6.395 2.105 8.996 0c2.602 -2.105 3.262 -5.708 1.566 -8.546l-4.89 -7.26c-.42 -.625 -1.287 -.803 -1.936 -.397a1.376 1.376 0 0 0 -.41 .397l-4.893 7.26c-1.695 2.838 -1.035 6.441 1.567 8.546" stroke="#FFFFFF" stroke-width="1.45"/>
-        </g>
-        <g opacity="0.12" transform="translate(116 42) scale(1.5)">
-          <path d="M7.502 19.423c2.602 2.105 6.395 2.105 8.996 0c2.602 -2.105 3.262 -5.708 1.566 -8.546l-4.89 -7.26c-.42 -.625 -1.287 -.803 -1.936 -.397a1.376 1.376 0 0 0 -.41 .397l-4.893 7.26c-1.695 2.838 -1.035 6.441 1.567 8.546" stroke="#D2F7FF" stroke-width="1.35"/>
-        </g>
-        <g opacity="0.08" transform="translate(64 108) scale(1.1)">
-          <path d="M7.502 19.423c2.602 2.105 6.395 2.105 8.996 0c2.602 -2.105 3.262 -5.708 1.566 -8.546l-4.89 -7.26c-.42 -.625 -1.287 -.803 -1.936 -.397a1.376 1.376 0 0 0 -.41 .397l-4.893 7.26c-1.695 2.838 -1.035 6.441 1.567 8.546" stroke="#FFFFFF" stroke-width="1.6"/>
-        </g>
-        <g opacity="0.14" transform="translate(134 122) scale(1.75)">
-          <path d="M7.502 19.423c2.602 2.105 6.395 2.105 8.996 0c2.602 -2.105 3.262 -5.708 1.566 -8.546l-4.89 -7.26c-.42 -.625 -1.287 -.803 -1.936 -.397a1.376 1.376 0 0 0 -.41 .397l-4.893 7.26c-1.695 2.838 -1.035 6.441 1.567 8.546" stroke="#7BE0F2" stroke-width="1.45"/>
-        </g>
-      </g>
-    </pattern>
-    <radialGradient id="ambient-glow-dark" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(820 180) rotate(135) scale(560 560)">
-      <stop stop-color="#FFFFFF" stop-opacity="0.08"/>
-      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
-    </radialGradient>
     <clipPath id="readme-header-bg-clip"><rect width="1200" height="200"/></clipPath>
     <linearGradient id="readme-header-overlay" x1="0" x2="1" y1="0" y2="0" gradientUnits="objectBoundingBox">
       <stop offset="0" stop-color="#0B2649" stop-opacity="0.8"/>
       <stop offset="1" stop-color="#0B2649" stop-opacity="0"/>
     </linearGradient>
   </defs>
-  <!-- Background: current README header template -->
-  <g clip-path="url(#readme-header-bg-clip)" transform="scale(1.171875)">
-    <rect width="1024" height="1024" fill="#0B2649"/>
-    <rect width="1024" height="1024" fill="url(#raindrop-wallpaper-dark)"/>
-    <rect width="1024" height="1024" fill="url(#ambient-glow-dark)"/>
+  <!-- Background: waterline (raindrop top, light blue water below) -->
+  <g clip-path="url(#readme-header-bg-clip)">
+    <image href="backgrounds/waterline.svg" x="0" y="0" width="1200" height="200" preserveAspectRatio="xMidYMid slice"/>
   </g>
   <!-- Overlay: left 50% → right 0% transparency (behind logo and text) -->
   <rect width="1200" height="200" fill="url(#readme-header-overlay)"/>

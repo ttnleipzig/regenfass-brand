@@ -109,7 +109,7 @@ After pushing, verify the preview appears:
 
 The site uses page-specific OG images in `assets/banner/opengraph/` (1200×630px PNG). Each banner shares:
 
-- **Background:** Abstract background image from `assets/backgrounds/5.svg` (scaled to cover 1200×630).
+- **Background:** Waterline from `assets/backgrounds/waterline.svg` (dark raindrop top, light blue water below; scaled to cover 1200×630).
 - **Logo:** Regenfass logo at the top.
 - **Typography:** System UI font stack (`ui-sans-serif`, `system-ui`, `sans-serif`, plus emoji fallbacks). No external font loading required.
 - **Content:** Page title, subtitle, optional tag line, and a page-specific graphic (e.g. colour swatches for Colours, “Aa” sample for Typography, avatar squares for Avatars).

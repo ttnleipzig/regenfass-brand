@@ -2,7 +2,7 @@
 /**
  * Generates Open Graph banner PNGs for all pages (1200×630).
  * SVG is not displayed by many platforms; output is PNG only.
- * Template: background from assets/backgrounds/5-dark.svg (or solid #0B2649 fallback),
+ * Template: background from assets/backgrounds/waterline.svg (or solid #0B2649 fallback),
  * Regenfass logo, brand typography (system UI stack), title/subtitle/tag, page-specific graphic.
  */
 
@@ -14,7 +14,7 @@ import sharp from "sharp";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "assets", "banner", "opengraph");
 const LOGO_SVG_PATH = join(__dirname, "..", "assets", "logos", "horizontal", "regenfass-horizontal-dark.svg");
-const BACKGROUND_SVG_PATH = join(__dirname, "..", "assets", "backgrounds", "5-dark.svg");
+const BACKGROUND_SVG_PATH = join(__dirname, "..", "assets", "backgrounds", "waterline.svg");
 
 /** Brand typography: system UI stack (see app/styles.css, guidelines/TYPOGRAPHY.md). Quotes escaped for SVG attributes. */
 const FONT_STACK =
