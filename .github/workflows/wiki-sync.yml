@@ -7,6 +7,8 @@ on:
       - main
     paths:
       - 'guidelines/**'
+      - 'assets/colors/swatches/**'
+      - 'scripts/sync-wiki.mjs'
 
 permissions:
   contents: write

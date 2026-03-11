@@ -7,7 +7,7 @@
  * Defaults: repoRoot=., outputDir=./wiki-output
  */
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, copyFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -15,6 +15,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = process.argv[2] || join(__dirname, '..');
 const OUTPUT_DIR = process.argv[3] || join(REPO_ROOT, 'wiki-output');
 const GUIDELINES_DIR = join(REPO_ROOT, 'guidelines');
+const SWATCHES_DIR = join(REPO_ROOT, 'assets', 'colors', 'swatches');
+const WIKI_SWATCHES_DIR = join(OUTPUT_DIR, 'assets', 'colors', 'swatches');
 
 const FILE_MAPPING = [
   ['LOGO_USAGE.md', 'Logo-Usage.md', 'Logo Usage'],
@@ -35,12 +37,44 @@ const LINK_REPLACEMENTS = [
   [/\[guidelines\]\(\.\)/g, '[guidelines](Home)'],
 ];
 
+// Replace image paths from ../assets/colors/swatches/ to assets/colors/swatches/ for wiki
+const IMAGE_PATH_REPLACEMENTS = [
+  [/\.\.\/assets\/colors\/swatches\//g, 'assets/colors/swatches/'],
+];
+
 function transformLinks(content) {
   let result = content;
   for (const [pattern, replacement] of LINK_REPLACEMENTS) {
     result = result.replace(pattern, replacement);
   }
+  // Transform image paths for wiki
+  for (const [pattern, replacement] of IMAGE_PATH_REPLACEMENTS) {
+    result = result.replace(pattern, replacement);
+  }
   return result;
+}
+
+function copySwatches() {
+  if (!existsSync(SWATCHES_DIR)) {
+    console.warn(`Warning: ${SWATCHES_DIR} not found, skipping swatch copy`);
+    return;
+  }
+  
+  ensureDir(WIKI_SWATCHES_DIR);
+  
+  const files = readdirSync(SWATCHES_DIR);
+  let copiedCount = 0;
+  
+  for (const file of files) {
+    if (file.endsWith('.svg')) {
+      const srcPath = join(SWATCHES_DIR, file);
+      const destPath = join(WIKI_SWATCHES_DIR, file);
+      copyFileSync(srcPath, destPath);
+      copiedCount++;
+    }
+  }
+  
+  console.log(`Copied ${copiedCount} swatch files to ${WIKI_SWATCHES_DIR}`);
 }
 
 function ensureDir(dir) {
@@ -51,6 +85,9 @@ function ensureDir(dir) {
 
 function main() {
   ensureDir(OUTPUT_DIR);
+  
+  // Copy swatch images to wiki output
+  copySwatches();
 
   for (const [srcName, destName, displayName] of FILE_MAPPING) {
     const srcPath = join(GUIDELINES_DIR, srcName);
