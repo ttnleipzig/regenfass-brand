@@ -44,8 +44,8 @@ When a user requests a logo, gather comprehensive design requirements:
      - **Emblem**: Text inside symbol (Starbucks, Harley-Davidson style)
 
 3. **Style Guidelines**
-   - Color palette (specific colors or let AI choose)
-   - Color psychology considerations
+   - Colour palette (specific colours or let AI choose)
+   - Colour psychology considerations
    - Font preferences (if text-based)
    - Visual style:
      - Minimalist
@@ -60,14 +60,14 @@ When a user requests a logo, gather comprehensive design requirements:
 4. **Technical Requirements**
    - Size constraints (will it be used small? large?)
    - Application contexts (website, print, merchandise, etc.)
-   - Color vs monochrome versions needed
+   - Colour vs monochrome versions needed
    - Background usage (light, dark, transparent)
    - Scalability requirements
 
 5. **Number of Variations**
    - How many different concepts? (Recommend 3-5)
    - How many layouts per concept? (Horizontal, vertical, square, circular)
-   - Color variations needed?
+   - Colour variations needed?
 
 ### Phase 2: Design Concept Development
 
@@ -115,7 +115,7 @@ Create variations exploring different visual approaches:
 - Different visual metaphors
 - Different style treatments
 - Different layouts and compositions
-- Different color applications
+- Different colour applications
 
 ### Phase 3: Layout Variations
 
@@ -133,9 +133,9 @@ For each concept, create multiple layout options:
 - Best for social media profiles, app icons
 - Taller aspect ratio
 
-#### Layout C: Square/Centered
+#### Layout C: Square/Centred
 
-- Icon and text centered
+- Icon and text centred
 - Best for favicon, app icon, profile picture
 - 1:1 aspect ratio
 
@@ -143,7 +143,7 @@ For each concept, create multiple layout options:
 
 - Symbol without text
 - Best for small sizes, watermarks
-- Compact, recognizable
+- Compact, recognisable
 
 #### Layout E: Text Only
 
@@ -153,7 +153,7 @@ For each concept, create multiple layout options:
 
 ### Phase 4: SVG Generation
 
-Create professional, optimized SVG code:
+Create professional, optimised SVG code:
 
 **Best Practices:**
 
@@ -177,7 +177,7 @@ Create professional, optimized SVG code:
    - Use relative units
    - Design at multiple sizes to test
 
-2. **Color Management**
+2. **Colour Management**
 
 ```xml
 <!-- Define colors once, reuse throughout -->
@@ -211,7 +211,7 @@ Create professional, optimized SVG code:
 
 ### Phase 5: Presentation
 
-Present logos in an organized, professional manner:
+Present logos in an organised, professional manner:
 
 ```markdown
 # Logo Design Concepts
@@ -247,20 +247,20 @@ Present logos in an organized, professional manner:
 **Usage:** Favicon, app icon, small spaces
 **Dimensions:** 64×64px (scalable)
 
-### Color Variations
+### Colour Variations
 
-**Full Color:**
+**Full Colour:**
 
 - Primary: #4F46E5 (Indigo)
 - Secondary: #10B981 (Emerald)
 
 **Monochrome (Dark):**
 
-- Single color: #1F2937 (Gray-900)
+- Single colour: #1F2937 (Grey-900)
 
 **Monochrome (Light):**
 
-- Single color: #FFFFFF (White)
+- Single colour: #FFFFFF (White)
 
 **Reversed:**
 
@@ -342,44 +342,44 @@ Maintain minimum clear space around logo:
 - **Digital:** 100px width minimum
 - **Print:** 1 inch width minimum
 
-## Color Usage
+## Colour Usage
 
-### Primary Color Palette
+### Primary Colour Palette
 
-- Use full color on white/light backgrounds
+- Use full colour on white/light backgrounds
 - Use monochrome white on dark backgrounds
 - Use monochrome dark on light backgrounds
 
-### Color Variations by Context
+### Colour Variations by Context
 
 **Website Headers:**
 
-- Full color version preferred
+- Full colour version preferred
 - Ensure 4.5:1 contrast with background
 
 **Social Media:**
 
 - Use square/circular crops
-- Provide background color if needed
+- Provide background colour if needed
 
 **Print Materials:**
 
-- Full color for color printing
+- Full colour for colour printing
 - Monochrome black for B&W printing
-- Consider spot color for cost-effective printing
+- Consider spot colour for cost-effective printing
 
 ## Incorrect Usage
 
 ❌ Do Not:
 
 - Stretch or distort the logo
-- Change colors outside approved palette
+- Change colours outside approved palette
 - Add effects (shadows, glows, etc.)
 - Rotate or skew the logo
 - Place on busy backgrounds without clear space
 - Recreate or modify logo elements
 
-## File Organization
+## File Organisation
 
 ```
 logos/
@@ -516,9 +516,9 @@ logos/
 </svg>
 ```
 
-## Color Psychology Guide
+## Colour Psychology Guide
 
-Help users choose appropriate colors:
+Help users choose appropriate colours:
 
 **Blue** (#0066CC, #4F46E5)
 
@@ -550,7 +550,7 @@ Help users choose appropriate colors:
 - Optimism, clarity, warmth
 - Industries: Food, children, energy
 
-**Black/Gray** (#1F2937, #6B7280)
+**Black/Grey** (#1F2937, #6B7280)
 
 - Sophisticated, modern, classic
 - Industries: Luxury, fashion, technology
@@ -565,14 +565,14 @@ After presenting initial concepts:
    - Any concerns or issues?
 
 2. **Refine Selected Concept**
-   - Adjust colors if needed
+   - Adjust colours if needed
    - Tweak proportions
    - Refine details
    - Test at different sizes
 
 3. **Create Final Variations**
    - All layout options
-   - All color variations
+   - All colour variations
    - Special use cases
 
 4. **Deliver Final Package**
@@ -592,13 +592,13 @@ When working with users:
 
 2. **Explain Design Choices**
    - Share rationale for visual metaphors
-   - Explain color psychology
+   - Explain colour psychology
    - Justify composition decisions
 
 3. **Provide Options**
    - Offer multiple concepts
    - Show layout variations
-   - Demonstrate color options
+   - Demonstrate colour options
 
 4. **Be Flexible**
    - Accept feedback gracefully
@@ -617,17 +617,17 @@ Provide complete logo package:
 1. **SVG Files**
    - All concepts (3-5)
    - All layouts per concept (3-5)
-   - All color variations (3-4)
+   - All colour variations (3-4)
    - Total: 30-75 files typically
 
 2. **Documentation**
    - Usage guidelines
-   - Color specifications
+   - Colour specifications
    - Size recommendations
    - Do's and don'ts
 
 3. **Technical Info**
-   - File organization structure
+   - File organisation structure
    - Export instructions (SVG to PNG)
    - Web implementation examples
    - Print specifications
@@ -647,7 +647,7 @@ Provide complete logo package:
 
 1. **Clarify:**
    - "I'll create a modern, tech-focused logo for CloudSync. A few questions:
-     - Preferred colors? (Suggesting blue for trust, or let me propose a palette)
+     - Preferred colours? (Suggesting blue for trust, or let me propose a palette)
      - Logo type preference? (I'm thinking combination mark - icon + text)
      - Any visual elements to avoid or include? (clouds, sync symbols, etc.)
      - How many concepts would you like to see? (I recommend 3-4)"
@@ -660,7 +660,7 @@ Provide complete logo package:
 
 3. **Create Variations:**
    - For each concept: horizontal, vertical, icon-only layouts
-   - Color variations: full color, monochrome, reversed
+   - Colour variations: full colour, monochrome, reversed
 
 4. **Present:**
    - Show all concepts with rationale
@@ -669,9 +669,9 @@ Provide complete logo package:
    - Offer iteration based on feedback
 
 5. **Refine:**
-   - User selects favorite concept
+   - User selects favourite concept
    - Make requested adjustments
-   - Finalize all variations
+   - Finalise all variations
    - Deliver complete package
 
 Remember: Great logos are simple, memorable, timeless, versatile, and appropriate. Focus on creating designs that will work across all applications and stand the test of time!

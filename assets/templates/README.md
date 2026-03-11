@@ -53,13 +53,13 @@ Use `{{#if variable}}...{{/if}}` to conditionally render content:
 - PDF size with bleed: **89mm x 59mm** (includes 2mm bleed on all sides)
 - Safe area: **82mm x 52mm** (content must be 1.5mm from edge)
 - Resolution: Minimum 300 DPI
-- Color mode: CMYK with "PSO Uncoated ISO12647 (Fogra 47L)" profile
+- Colour mode: CMYK with "PSO Uncoated ISO12647 (Fogra 47L)" profile
 - Page order: Front = Page 1, Back = Page 2
 
 ## Brand Guidelines
 
 The templates follow Regenfass brand guidelines:
-- Colors from `assets/colors/colors.json`
+- Colours from `assets/colors/colors.json`
 - Typography: System UI font stack (headings and body)
 - Logo: Regenfass and Venitus solid card variants (`regenfass-solo-light-card-solid.svg`, `regenfass-venitus-light-card-solid.svg`) for opaque print
 
@@ -88,7 +88,7 @@ When preparing business cards for printing, ensure:
 - Backgrounds and images extend to the bleed area (2mm on all sides)
 - Content is within the safe area (1.5mm from edge)
 - No crop marks or trim frames are included
-- CMYK color mode with "PSO Uncoated ISO12647 (Fogra 47L)" profile
+- CMYK colour mode with "PSO Uncoated ISO12647 (Fogra 47L)" profile
 - Minimum 300 DPI resolution
 
 ## Usage

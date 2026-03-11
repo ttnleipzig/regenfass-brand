@@ -12,7 +12,7 @@ ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Se
 
 - **Usage**: Headings and body text across the brand site and implementations.
 - **Line height**: 1.4
-- **No license required**: System and generic fonts only; no external font files needed for web.
+- **No licence required**: System and generic fonts only; no external font files needed for web.
 
 ### CSS variables (in `app/styles.css`)
 
@@ -27,7 +27,7 @@ ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Se
 This directory can hold **optional** font files (e.g. for PDF generation, print, or projects that require a specific typeface). The brand site does not load them by default.
 
 - If you add font files, use a structure like: `[font-family]/[weight]/[style].woff2` (or `.ttf`/`.otf` for PDF tools).
-- Document any added fonts and their licenses in the project’s [FONT_LICENSES.md](../../FONT_LICENSES.md).
+- Document any added fonts and their licences in the project’s [FONT_LICENSES.md](../../FONT_LICENSES.md).
 
 ## Typography guidelines
 

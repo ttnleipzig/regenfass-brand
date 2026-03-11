@@ -28,7 +28,7 @@ To generate your own business cards, use:
 pnpm generate-card
 ```
 
-This will prompt you interactively for all contact information and generate personalized business cards.
+This will prompt you interactively for all contact information and generate personalised business cards.
 
 ## Output Format
 

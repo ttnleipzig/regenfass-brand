@@ -112,16 +112,16 @@ The site uses page-specific OG images in `assets/banner/opengraph/` (1200×630px
 - **Background:** Abstract background image from `assets/backgrounds/5.svg` (scaled to cover 1200×630).
 - **Logo:** Regenfass logo at the top.
 - **Typography:** System UI font stack (`ui-sans-serif`, `system-ui`, `sans-serif`, plus emoji fallbacks). No external font loading required.
-- **Content:** Page title, subtitle, optional tag line, and a page-specific graphic (e.g. color swatches for Colors, “Aa” sample for Typography, avatar squares for Avatars).
+- **Content:** Page title, subtitle, optional tag line, and a page-specific graphic (e.g. colour swatches for Colours, “Aa” sample for Typography, avatar squares for Avatars).
 
-To regenerate all OG banners from the shared template, run `node scripts/generate-og-banners.mjs` (see script for page list and customization).
+To regenerate all OG banners from the shared template, run `node scripts/generate-og-banners.mjs` (see script for page list and customisation).
 
 ## Design Guidelines
 
 ### Content Layout
 
-1. **Logo**: Centered in the top area
-2. **Repository Name**: Prominent, centered
+1. **Logo**: Centred in the top area
+2. **Repository Name**: Prominent, centred
 3. **Description**: Brief, readable text
 4. **Decorative Elements**: Subtle, non-distracting
 
@@ -132,11 +132,11 @@ To regenerate all OG banners from the shared template, run `node scripts/generat
 - **Length**: Keep text concise (2-3 lines max)
 - **Safe Area**: Keep all text within the 1200x560px content area
 
-### Color Guidelines
+### Colour Guidelines
 
-- Use brand colors (Navy #1E2A45 background)
+- Use brand colours (Navy #1E2A45 background)
 - Ensure sufficient contrast for text
-- Use accent colors (Aqua #00FFDC) sparingly
+- Use accent colours (Aqua #00FFDC) sparingly
 
 ## Generating Custom Social Previews
 
@@ -241,9 +241,9 @@ pnpm generate:social-preview
 
 The social preview SVG includes:
 - Navy background (#1E2A45)
-- Regenfass horizontal logo (centered, top area)
+- Regenfass horizontal logo (centred, top area)
 - Repository name: "Regenfass Corporate Identity & Corporate Design"
-- Description: "Brand assets, logos, colors, fonts, and guidelines"
+- Description: "Brand assets, logos, colours, fonts, and guidelines"
 - Decorative circles (aqua and fuchsia with opacity)
 
 ### Fonts
@@ -251,18 +251,18 @@ The social preview SVG includes:
 - **System UI stack** (Bold, 700 for headings; Regular, 400 for body) for repository name and description
 - Fonts are referenced but may fall back to system fonts
 
-### Colors
+### Colours
 
 - Background: Navy (#1E2A45)
 - Logo accents: Aqua (#00FFDC)
-- Text: White (#FFFFFF) and Light Gray (#CCCCCC)
+- Text: White (#FFFFFF) and Light Grey (#CCCCCC)
 - Decorative elements: Aqua (#00FFDC) and Fuchsia (#FF008F) with 10% opacity
 
-## Customization
+## Customisation
 
 ### For Other Repositories
 
-To customize the social preview for a different repository:
+To customise the social preview for a different repository:
 
 1. Copy `.github/social-preview.svg` to your repository
 2. Edit the SVG to change:
@@ -276,8 +276,8 @@ To customize the social preview for a different repository:
 
 ### Design Guidelines
 
-When customizing:
-- Maintain brand colors (Navy background, Aqua accents)
+When customising:
+- Maintain brand colours (Navy background, Aqua accents)
 - Keep logo visible and properly sized
 - Ensure text is readable
 - Stay within safe area (1200x560px content area)
@@ -307,6 +307,6 @@ Test your social preview with these tools:
 If you have questions about social preview images, please refer to:
 - [GitHub Documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-social-previews)
 - [Logo Usage Guidelines](../guidelines/LOGO_USAGE.md)
-- [Color Palette](../guidelines/COLOR_PALETTE.md)
+- [Colour palette](../guidelines/COLOR_PALETTE.md)
 
 Or contact the designated maintainers listed in the CODEOWNERS file.

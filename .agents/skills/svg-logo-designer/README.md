@@ -10,8 +10,8 @@ This skill generates professional SVG logos from design specifications, providin
 
 - **Multiple Concepts**: 3-5 different design directions
 - **Layout Variations**: Horizontal, vertical, square, icon-only, text-only
-- **Color Variations**: Full color, monochrome, reversed
-- **Professional SVG Code**: Clean, optimized, accessible
+- **Colour Variations**: Full colour, monochrome, reversed
+- **Professional SVG Code**: Clean, optimised, accessible
 - **Usage Guidelines**: Complete documentation for proper logo usage
 - **Export Instructions**: SVG to PNG conversion guidance
 - **Scalable Designs**: Works at any size without quality loss
@@ -32,7 +32,7 @@ Initials/abbreviation logos (IBM, HBO style)
 
 ### Pictorial Mark
 Icon/symbol logos (Apple, Twitter style)
-- Recognizable imagery
+- Recognisable imagery
 - Strong visual identity
 - Best for: Established brands
 
@@ -52,7 +52,7 @@ Icon + text logos (Burger King, Lacoste style)
 Text inside symbol (Starbucks, Harley-Davidson style)
 - Traditional and classic
 - Badge-like appearance
-- Best for: Organizations, schools
+- Best for: Organisations, schools
 
 ## Workflow
 
@@ -60,7 +60,7 @@ Text inside symbol (Starbucks, Harley-Davidson style)
 - Brand information and industry
 - Target audience
 - Design preferences and style
-- Color palette
+- Colour palette
 - Logo type preference
 - Number of concepts needed
 
@@ -74,7 +74,7 @@ Text inside symbol (Starbucks, Harley-Davidson style)
 For each concept:
 - Horizontal lockup (website headers)
 - Vertical lockup (social media)
-- Square/centered (app icons)
+- Square/centred (app icons)
 - Icon only (small sizes)
 - Text only (minimal applications)
 
@@ -82,14 +82,14 @@ For each concept:
 - Clean, semantic SVG code
 - Optimized paths and shapes
 - Accessible with title/desc elements
-- Color management with CSS classes
+- Colour management with CSS classes
 - Scalable viewBox
 
 ### Phase 5: Presentation
 - Design rationale for each concept
 - SVG code for all variations
 - Usage context explanations
-- Color specifications
+- Colour specifications
 
 ### Phase 6: Deliverables
 - All SVG files (30-75 typically)
@@ -118,7 +118,7 @@ For each concept:
 **Yellow** - Optimism, clarity, warmth
 - Food, children, energy
 
-**Black/Gray** - Sophisticated, modern, classic
+**Black/Grey** - Sophisticated, modern, classic
 - Luxury, fashion, technology
 
 ## Installation
@@ -136,7 +136,7 @@ Create a logo for "CloudSync", a cloud storage startup.
 
 Industry: Technology, SaaS
 Style: Modern, trustworthy, clean
-Colors: Blue tones preferred
+Colours: Blue tones preferred
 Type: Combination mark (icon + text)
 Concepts: 3-4 different approaches
 
@@ -153,7 +153,7 @@ Colors: Red, green, gold
 Type: Emblem or combination mark
 Concepts: 3 concepts
 
-Need full color and monochrome versions.
+Need full colour and monochrome versions.
 ```
 
 ### Fitness Brand Logo
@@ -213,14 +213,14 @@ Every logo package includes:
 - Digital: 100px width minimum
 - Print: 1 inch width minimum
 
-### Color Specifications
-- Hex codes for all colors
+### Colour Specifications
+- Hex codes for all colours
 - Pantone equivalents (if requested)
 - CMYK values for print
 
 ### Incorrect Usage Examples
 - Don't stretch or distort
-- Don't change colors
+- Don't change colours
 - Don't add effects
 - Don't rotate/skew
 - Don't use on busy backgrounds
@@ -235,7 +235,7 @@ Every logo package includes:
 ## Best Practices
 
 Great logos are:
-- **Simple**: Easy to recognize and remember
+- **Simple**: Easy to recognise and remember
 - **Memorable**: Unique and distinctive
 - **Timeless**: Won't look dated quickly
 - **Versatile**: Works across all applications
@@ -246,17 +246,17 @@ Great logos are:
 1. **SVG Files** (30-75 files)
    - 3-5 concepts
    - 3-5 layouts per concept
-   - 3-4 color variations
+   - 3-4 colour variations
 
 2. **Documentation**
    - Design rationale for each concept
    - Usage guidelines
-   - Color specifications
+   - Colour specifications
    - Technical specs
 
 3. **Export Instructions**
    - SVG to PNG conversion
-   - File organization
+   - File organisation
    - Web implementation examples
 
 4. **Optional: Mockups**

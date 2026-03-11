@@ -7,13 +7,13 @@ This document describes typography and font licensing for Regenfass projects.
 The Regenfass brand uses the **system UI font stack** for all headings and body text:
 
 - **Stack:** `ui-sans-serif, system-ui, sans-serif`, plus emoji fallbacks (`"Apple Color Emoji"`, `"Segoe UI Emoji"`, `"Segoe UI Symbol"`, `"Noto Color Emoji"`).
-- **No external font files** are required; no font license is required for standard web, print, or email use of the brand site and templates when using this stack.
+- **No external font files** are required; no font licence is required for standard web, print, or email use of the brand site and templates when using this stack.
 
 See `app/styles.css` and [guidelines/TYPOGRAPHY.md](guidelines/TYPOGRAPHY.md) for usage.
 
 ---
 
-## Optional font files (third-party licenses)
+## Optional font files (third-party licences)
 
 The sections below apply **only** if optional font files (e.g. for PDF generation or legacy assets) are included in `assets/fonts/` or in a release. The brand does not ship or require these by default.
 
@@ -28,7 +28,7 @@ The sections below apply **only** if optional font files (e.g. for PDF generatio
 
 ### Hanken Grotesk License Details
 
-Hanken Grotesk is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: <https://scripts.sil.org/OFL>
+Hanken Grotesk is licensed under the SIL Open Font License, Version 1.1. This licence is available with a FAQ at: <https://scripts.sil.org/OFL>
 
 ### Hanken Grotesk Permissions
 
@@ -40,7 +40,7 @@ Hanken Grotesk is licensed under the SIL Open Font License, Version 1.1. This li
 ### Hanken Grotesk Limitations
 
 - ❌ Font may not be sold by itself
-- ❌ Original license must be included with font files
+- ❌ Original licence must be included with font files
 
 ### Hanken Grotesk Full License Text
 
@@ -57,7 +57,7 @@ The complete SIL Open Font License 1.1 can be found at: <https://scripts.sil.org
 
 ### Source Sans 3 License Details
 
-Source Sans 3 is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: <https://scripts.sil.org/OFL>
+Source Sans 3 is licensed under the SIL Open Font License, Version 1.1. This licence is available with a FAQ at: <https://scripts.sil.org/OFL>
 
 ### Source Sans 3 Permissions
 
@@ -69,7 +69,7 @@ Source Sans 3 is licensed under the SIL Open Font License, Version 1.1. This lic
 ### Source Sans 3 Limitations
 
 - ❌ Font may not be sold by itself
-- ❌ Original license must be included with font files
+- ❌ Original licence must be included with font files
 
 ### Source Sans 3 Full License Text
 
@@ -79,7 +79,7 @@ The complete SIL Open Font License 1.1 can be found at: <https://scripts.sil.org
 
 ## SIL Open Font License 1.1 Summary
 
-The SIL Open Font License (OFL) is a free, libre and open source license specifically designed for fonts and related software based on our experience in font design and linguistic software tool development.
+The SIL Open Font License (OFL) is a free, libre and open source licence specifically designed for fonts and related software based on our experience in font design and linguistic software tool development.
 
 ### Key Points
 
@@ -91,7 +91,7 @@ The SIL Open Font License (OFL) is a free, libre and open source license specifi
 
 ### Full License
 
-For the complete license text, visit: <https://scripts.sil.org/OFL>
+For the complete licence text, visit: <https://scripts.sil.org/OFL>
 
 ---
 

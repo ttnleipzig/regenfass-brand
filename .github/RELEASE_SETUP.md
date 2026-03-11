@@ -42,7 +42,7 @@ The `simple` release-type is flexible and works with any commit messages. Howeve
 
 - `feat: Add new logo variant` - Creates a minor version bump
 - `feat(docs): Update guidelines` - Creates a minor version bump (use `feat(docs):` instead of `docs:` to trigger a release)
-- `fix: Update color palette` - Creates a patch version bump
+- `fix: Update colour palette` - Creates a patch version bump
 - `docs: Update guidelines` - No version bump (documentation only, ignored by release-please)
 - `feat!: Breaking change` - Creates a major version bump
 

@@ -4,13 +4,13 @@ This guide explains how to use the README template for Regenfass repositories.
 
 ## Overview
 
-The README template (`README_TEMPLATE.md`) provides a standardized structure for all Regenfass repositories, ensuring consistent branding and documentation across projects.
+The README template (`README_TEMPLATE.md`) provides a standardised structure for all Regenfass repositories, ensuring consistent branding and documentation across projects.
 
 ## Quick Start
 
 1. Copy `assets/templates/README_TEMPLATE.md` to your repository root as `README.md`
 2. Replace all `{{VARIABLE}}` placeholders with your repository-specific content
-3. Customize sections as needed while maintaining the overall structure
+3. Customise sections as needed while maintaining the overall structure
 
 ## Template Variables
 
@@ -20,13 +20,13 @@ The template uses the following placeholders that must be replaced:
 
 - `{{REPO_NAME}}` - Repository name (e.g., "regenfass.brand")
 - `{{DESCRIPTION}}` - Short description of the repository
-- `{{ORG}}` - GitHub organization or username (e.g., "regenfass")
+- `{{ORG}}` - GitHub organisation or username (e.g., "regenfass")
 - `{{PURPOSE}}` - Detailed purpose/overview of the repository
 - `{{INSTALLATION}}` - Installation instructions
 - `{{USAGE}}` - Usage instructions and examples
 - `{{FEATURES}}` - List of key features
 - `{{DOCUMENTATION}}` - Links to additional documentation
-- `{{LICENSE}}` - License type (e.g., "GPL-3.0")
+- `{{LICENSE}}` - Licence type (e.g., "GPL-3.0")
 
 ### Variable Replacement Examples
 
@@ -100,9 +100,9 @@ Link to:
 - API documentation
 - Guides and tutorials
 
-### License Section
+### Licence Section
 
-Specify the license type. Common options:
+Specify the licence type. Common options:
 - `GPL-3.0` - GNU General Public License v3.0
 - `MIT` - MIT License
 - `Apache-2.0` - Apache License 2.0
@@ -111,7 +111,7 @@ Specify the license type. Common options:
 
 **Important:** The footer section with Regenfass branding should remain unchanged to maintain brand consistency across all repositories.
 
-## Customization Guidelines
+## Customisation Guidelines
 
 ### Do's
 

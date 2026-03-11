@@ -19,7 +19,7 @@ The header graphic is available in two formats:
 - **Height**: 200px
 - **Aspect Ratio**: 6:1
 
-These dimensions are optimized for GitHub README display width.
+These dimensions are optimised for GitHub README display width.
 
 ## Adding to README
 
@@ -47,9 +47,9 @@ If the header is in the repository root:
 ![Regenfass Corporate Identity & Corporate Design](./readme-header.svg)
 ```
 
-### Method 4: Centered Display
+### Method 4: Centred Display
 
-To center the header image:
+To centre the header image:
 
 ```markdown
 <div align="center">
@@ -109,7 +109,7 @@ node scripts/generate-readme-header.mjs \
 
 ### For Other Repositories
 
-If you want to customize the header for a different repository:
+If you want to customise the header for a different repository:
 
 1. Copy `assets/readme-header.svg` to your repository
 2. Edit the SVG file to change:
@@ -131,7 +131,7 @@ When customizing:
 1. **Use SVG when possible**: Better quality and smaller file size
 2. **Place at the top**: Header should be the first visual element
 3. **Include alt text**: Always provide descriptive alt text for accessibility
-4. **Center for impact**: Centering the header creates a more polished look
+4. **Centre for impact**: Centring the header creates a more polished look
 5. **Keep it updated**: Regenerate PNG if you modify the SVG
 
 ## Troubleshooting
@@ -171,7 +171,7 @@ The SVG uses:
 - **System UI font stack** (Bold, 700) for the title
 - Fonts are referenced but may fall back to system fonts if not available
 
-### Colors
+### Colours
 
 - Background: Navy (#1E2A45)
 - Logo accents: Aqua (#0B2649)
@@ -182,7 +182,7 @@ The SVG uses:
 
 If you have questions about using the README header graphic, please refer to:
 - [Logo Usage Guidelines](../guidelines/LOGO_USAGE.md)
-- [Color Palette](../guidelines/COLOR_PALETTE.md)
+- [Colour palette](../guidelines/COLOR_PALETTE.md)
 - [Typography Guidelines](../guidelines/TYPOGRAPHY.md)
 
 Or contact the designated maintainers listed in the CODEOWNERS file.

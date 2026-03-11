@@ -2,7 +2,7 @@
 
 ## Overview
 
-Regenfass wallpaper backgrounds use a repeating Tabler-style raindrop pattern. They are intended for brand surfaces that need a recognizable visual texture without becoming noisy or distracting.
+Regenfass wallpaper backgrounds use a repeating Tabler-style raindrop pattern. They are intended for brand surfaces that need a recognisable visual texture without becoming noisy or distracting.
 
 Available variants:
 
@@ -23,13 +23,13 @@ Use these backgrounds for:
 
 Use the dark blue variants when text or logos need maximum readability. Use orange and turquoise for campaign accents, promo assets, or theme-based variants.
 
-## Color Rules
+## Colour Rules
 
 - `darkBlue` is the default brand wallpaper.
 - `orange` is for high-energy accent moments, not for every page.
 - `turquoise` is for lighter, more technical, or innovation-focused touchpoints.
-- Keep one wallpaper color dominant per surface.
-- Do not mix multiple wallpaper colors in the same component unless the asset is explicitly designed for that.
+- Keep one wallpaper colour dominant per surface.
+- Do not mix multiple wallpaper colours in the same component unless the asset is explicitly designed for that.
 
 ## Composition Rules
 
@@ -37,7 +37,7 @@ Use the dark blue variants when text or logos need maximum readability. Use oran
 - Preserve enough empty space around logos and headings.
 - If text sits directly on the wallpaper, use a dark overlay or solid container where needed.
 - Do not stretch the pattern non-proportionally.
-- Prefer cover/crop behavior over distortion.
+- Prefer cover/crop behaviour over distortion.
 
 ## Contrast And Accessibility
 
@@ -55,7 +55,7 @@ Use the dark blue variants when text or logos need maximum readability. Use oran
 
 ## Do Not
 
-- recolor the pattern ad hoc
+- recolour the pattern ad hoc
 - add shadows, bevels, or 3D effects to the droplets
 - animate the wallpaper in standard brand usage
 - place dense body copy directly on top of the texture

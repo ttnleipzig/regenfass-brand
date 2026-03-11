@@ -1,13 +1,13 @@
 # Tailwind CSS Configuration
 
-This directory contains the complete Tailwind CSS theme configuration for Regenfass brand assets, including both colors and fonts.
+This directory contains the complete Tailwind CSS theme configuration for Regenfass brand assets, including both colours and fonts.
 
 ## Available Files
 
 | File Name            | Description                                          | Location                                                                    |
 |----------------------|------------------------------------------------------|-----------------------------------------------------------------------------|
-| `tailwind.config.js` | Complete Tailwind CSS config (colors + fonts)       | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/tailwind.config.js) |
-| Colors only          | Colors-only Tailwind config                         | [View](../colors/tailwind.config.js)                                        |
+| `tailwind.config.js` | Complete Tailwind CSS config (colours + fonts)       | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/tailwind.config.js) |
+| Colours only          | Colours-only Tailwind config                         | [View](../colors/tailwind.config.js)                                        |
 | Fonts only           | Fonts-only Tailwind config                          | [View](../fonts/tailwind.config.js)                                         |
 
 ## Quick Start
@@ -71,7 +71,7 @@ module.exports = {
 
 ## Usage Examples
 
-### Colors
+### Colours
 
 ```html
 <!-- Selection colors -->
@@ -209,7 +209,7 @@ Optional font files (e.g. for PDF) may be stored in `assets/fonts/`. See [fonts/
 
 For more detailed information:
 
-- **Colors**: See [colors/README.md](../colors/README.md) and [COLOR_PALETTE.md](../guidelines/COLOR_PALETTE.md)
+- **Colours**: See [colors/README.md](../colors/README.md) and [COLOR_PALETTE.md](../guidelines/COLOR_PALETTE.md)
 - **Fonts**: See [fonts/README.md](../fonts/README.md) and [TYPOGRAPHY.md](../guidelines/TYPOGRAPHY.md)
 
 ---

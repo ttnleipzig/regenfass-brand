@@ -2,7 +2,7 @@
 
 This folder contains sample LinkedIn images generated with the Regenfass brand assets:
 
-- **Background**: Graphic from `assets/backgrounds/` (default: 5-dark.svg), base fill set to brand color
+- **Background**: Graphic from `assets/backgrounds/` (default: 5-dark.svg), base fill set to brand colour
 - **Logo**: Solo icon for logo/photo/post; horizontal wordmark for title and culture banners. No text in banners.
 - **Regenfass palette**: Dark Blue (#0B2649), Orange (#FF5722), Turquoise (#00BCD4)
 - **Sizes**: LinkedIn-recommended dimensions (logo 400×400, title 4200×700, culture-main 1128×376, etc.)
