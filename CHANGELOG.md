@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/ttnleipzig/regenfass-brand/compare/v1.0.1...v1.0.2) (2026-03-11)
+
+
+### Bug Fixes
+
+* **navigation:** update logo source to dark variant for improved visibility on dark background ([b2ba677](https://github.com/ttnleipzig/regenfass-brand/commit/b2ba677fd8440790d9824ce987d933c1a3fa9027))
+
 ## [1.0.1](https://github.com/ttnleipzig/regenfass-brand/compare/v1.0.0...v1.0.1) (2026-03-10)
 
 
