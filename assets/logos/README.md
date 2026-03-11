@@ -50,7 +50,7 @@ Solo **dark** (for light backgrounds) is available on request.
 
 ### Tabler icon logos (`tabler/`)
 
-Vector SVG logos composed from [Tabler Icons](https://tabler.io/icons) (MIT). Use when a scalable, icon-library-consistent mark is preferred (e.g. favicons, small UI icons, or design systems that already use Tabler).
+Vector SVG logos composed from [Tabler Icons](https://tabler.io/icons) (MIT). Use when a scalable, icon-library-consistent mark is preferred (e.g. favicons, small UI icons, or design systems that already use Tabler). **Primary icon for web and app:** `regenfass-tabler-concept2-icon-light.svg` (bucket-droplet, turquoise) is used site-wide for favicon, footer, manifest, and alternate icons.
 
 | File | Description |
 |------|-------------|
@@ -85,6 +85,7 @@ Assets are served from the `assets` folder (e.g. Vite `publicDir: 'assets'`). In
 
 - `logos/horizontal/regenfass-horizontal-dark.svg`, `regenfass-horizontal-light.svg`
 - `logos/solo/regenfass-solo-light.svg`, `regenfass-solo-light.png`, `regenfass-solo-light-192.png`, `regenfass-solo-light-512.png`, `regenfass-solo-light-card-solid.svg`
+- **Primary icon:** `logos/tabler/regenfass-tabler-concept2-icon-light.svg` (favicon, footer, manifest, alternate icons)
 - `logos/tabler/regenfass-tabler-concept1-icon-light.svg`, `regenfass-tabler-concept1-icon-dark.svg`, and concept2/concept3 variants
 
 (and similarly for other files in the subdirectories.)

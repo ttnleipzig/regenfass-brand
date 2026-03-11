@@ -124,7 +124,7 @@ try {
 
 // Test logo file
 try {
-  const logoPath = join(projectRoot, 'assets', 'logos', 'regenfass-solo-light.svg');
+  const logoPath = join(projectRoot, 'assets', 'logos', 'tabler', 'regenfass-tabler-concept2-icon-light.svg');
   const logo = readFileSync(logoPath, 'utf-8');
   console.log('\n✓ Logo file found');
   console.log(`  Logo length: ${logo.length} chars`);

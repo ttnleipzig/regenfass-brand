@@ -26,7 +26,7 @@ const projectRoot = resolve(__dirname, '..');
 const CONFIG = loadConfig();
 const LINKEDIN_SPECS = CONFIG.linkedin.imageSpecs;
 
-const DEFAULT_LOGO_SOLO = join(projectRoot, 'assets', 'logos', 'solo', 'regenfass-solo-light.svg');
+const DEFAULT_LOGO_SOLO = join(projectRoot, 'assets', 'logos', 'tabler', 'regenfass-tabler-concept2-icon-light.svg');
 const DEFAULT_LOGO_HORIZONTAL = join(projectRoot, 'assets', 'logos', 'horizontal', 'regenfass-horizontal-light.svg');
 const HORIZONTAL_LOGO_ASPECT = 1479 / 280;
 

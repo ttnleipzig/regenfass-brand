@@ -21,11 +21,11 @@ These correspond to the horizontal, solo, and venitus variants in this repositor
 - **Light** (`regenfass-horizontal-light.svg`) – Use on light backgrounds.
 - PNG versions: `regenfass-horizontal-light-200x50.png`, `regenfass-horizontal-light-hr.png`.
 
-### Solo / icon (`solo/`)
+### Solo / icon (`solo/` and `tabler/`)
 
-- **Solo** (`regenfass-solo-light.svg`) – Icon-only, light; suitable for app icons, avatars, favicons, and small placements.
+- **Primary icon (web/app):** `logos/tabler/regenfass-tabler-concept2-icon-light.svg` – Tabler bucket-droplet icon (turquoise); used for favicon, footer, manifest, and alternate/apple-touch icons across the brand site.
+- **Solo** (`regenfass-solo-light.svg`) – Icon-only, light; suitable for app icons, avatars, and small placements. PNG sizes in `solo/`: `regenfass-solo-light.png` (500×500), `regenfass-solo-light-100.png`, `regenfass-solo-light-192.png`, `regenfass-solo-light-512.png` (PWA/manifest), `regenfass-solo-light-hr.png` (high resolution).
 - **Card-solid** (`regenfass-solo-light-card-solid.svg`) – Icon on solid navy (#1E2A45) for cards and similar uses.
-- **PNG sizes**: `regenfass-solo-light.png` (500×500), `regenfass-solo-light-100.png`, `regenfass-solo-light-192.png`, `regenfass-solo-light-512.png` (PWA/manifest), `regenfass-solo-light-hr.png` (high resolution).
 - Solo **dark** (for light backgrounds) is available on request.
 
 ### Venitus (`venitus/`)

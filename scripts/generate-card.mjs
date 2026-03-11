@@ -871,7 +871,7 @@ export async function generateBusinessCardWithPdfLib(contactData, outputDir) {
   
   // Load and convert logos. The secondary lockup is optional because
   // older asset paths may be absent in newer brand packages.
-  const logoPath = join(projectRoot, 'assets', 'logos', 'solo', 'regenfass-solo-light.svg');
+  const logoPath = join(projectRoot, 'assets', 'logos', 'tabler', 'regenfass-tabler-concept2-icon-light.svg');
   cardProgress('Lade Logo …', 'generating');
   const logoPngBuffer = await svgToPng(logoPath, 1000, 1000);
   const venitusCandidates = [
