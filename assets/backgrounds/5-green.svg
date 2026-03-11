@@ -1,0 +1,27 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="raindrop-wallpaper-green" x="0" y="0" width="176" height="176" patternUnits="userSpaceOnUse">
+      <g stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <g opacity="0.2" transform="translate(24 20) scale(2.2)">
+          <path d="M7.502 19.423c2.602 2.105 6.395 2.105 8.996 0c2.602 -2.105 3.262 -5.708 1.566 -8.546l-4.89 -7.26c-.42 -.625 -1.287 -.803 -1.936 -.397a1.376 1.376 0 0 0 -.41 .397l-4.893 7.26c-1.695 2.838 -1.035 6.441 1.567 8.546" stroke="#E8F5E9" stroke-width="1.45"/>
+        </g>
+        <g opacity="0.12" transform="translate(116 42) scale(1.5)">
+          <path d="M7.502 19.423c2.602 2.105 6.395 2.105 8.996 0c2.602 -2.105 3.262 -5.708 1.566 -8.546l-4.89 -7.26c-.42 -.625 -1.287 -.803 -1.936 -.397a1.376 1.376 0 0 0 -.41 .397l-4.893 7.26c-1.695 2.838 -1.035 6.441 1.567 8.546" stroke="#FFFFFF" stroke-width="1.35"/>
+        </g>
+        <g opacity="0.08" transform="translate(64 108) scale(1.1)">
+          <path d="M7.502 19.423c2.602 2.105 6.395 2.105 8.996 0c2.602 -2.105 3.262 -5.708 1.566 -8.546l-4.89 -7.26c-.42 -.625 -1.287 -.803 -1.936 -.397a1.376 1.376 0 0 0 -.41 .397l-4.893 7.26c-1.695 2.838 -1.035 6.441 1.567 8.546" stroke="#C8E6C9" stroke-width="1.6"/>
+        </g>
+        <g opacity="0.16" transform="translate(134 122) scale(1.75)">
+          <path d="M7.502 19.423c2.602 2.105 6.395 2.105 8.996 0c2.602 -2.105 3.262 -5.708 1.566 -8.546l-4.89 -7.26c-.42 -.625 -1.287 -.803 -1.936 -.397a1.376 1.376 0 0 0 -.41 .397l-4.893 7.26c-1.695 2.838 -1.035 6.441 1.567 8.546" stroke="#DCEDC8" stroke-width="1.45"/>
+        </g>
+      </g>
+    </pattern>
+    <radialGradient id="ambient-glow-green" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(240 180) rotate(38) scale(560 560)">
+      <stop stop-color="#FFFFFF" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1024" height="1024" fill="#22C55E"/>
+  <rect width="1024" height="1024" fill="url(#raindrop-wallpaper-green)"/>
+  <rect width="1024" height="1024" fill="url(#ambient-glow-green)"/>
+</svg>

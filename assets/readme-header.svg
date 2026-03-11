@@ -6,7 +6,7 @@
       <stop offset="1" stop-color="#0B2649" stop-opacity="0"/>
     </linearGradient>
   </defs>
-  <!-- Background: waterline (raindrop top, light blue water below) -->
+  <!-- Background: waterline -->
   <g clip-path="url(#readme-header-bg-clip)">
     <image href="backgrounds/waterline.svg" x="0" y="0" width="1200" height="200" preserveAspectRatio="xMidYMid slice"/>
   </g>

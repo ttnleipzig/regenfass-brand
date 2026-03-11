@@ -2,7 +2,7 @@
 
 ## Brand Colours
 
-The Regenfass colour palette consists of primary brand colours (Dark Blue, Orange, Turquoise) that work together for a consistent visual identity across all marketing and sales channels.
+The Regenfass colour palette consists of primary brand colours (Dark Blue, Green, Turquoise) and a complementary accent (Rose/Red) that work together for a consistent visual identity across all marketing and sales channels.
 
 ## Primary Colours
 
@@ -19,15 +19,15 @@ Pantone: 533 C
 
 **Usage**: Trust, professionalism; primary dark backgrounds, headings, key brand elements
 
-### Orange
+### Green
 
-<img src="../assets/colors/swatches/orange.svg" alt="Orange" width="60" height="36">
+<img src="../assets/colors/swatches/green.svg" alt="Green" width="60" height="36">
 
 ```text
-Name: Orange
-HEX: #FF5722
-RGB: 255 87 34
-Pantone: 1505 C
+Name: Green
+HEX: #22C55E
+RGB: 34 197 94
+Pantone: 354 C
 ```
 
 **Usage**: Energy, call-to-action; accents, highlights, interactive elements
@@ -45,9 +45,22 @@ Pantone: 319 C
 
 **Usage**: Clarity, innovation; secondary accents, links, supporting visuals
 
+### Complement (Rose/Red)
+
+<img src="../assets/colors/swatches/complement.svg" alt="Complement" width="60" height="36">
+
+```text
+Name: Complement
+HEX: #E11D48
+RGB: 225 29 72
+Pantone: 1925 C
+```
+
+**Usage**: Complementary accent; contrast to green, secondary CTAs, supporting highlights
+
 ## Colour Harmony and Shades
 
-Colour shades and harmony rules provide additional variations for contrast and visual hierarchy. Use the [Adobe Color Wheel](https://color.adobe.com/create/color-wheel) with a base colour in HEX (Cyan/Turquoise, Orange, or Dark Blue) to explore harmony rules.
+Colour shades and harmony rules provide additional variations for contrast and visual hierarchy. Use the [Adobe Color Wheel](https://color.adobe.com/create/color-wheel) with a base colour in HEX (Cyan/Turquoise, Green, or Dark Blue) to explore harmony rules.
 
 ### Analogous Harmony (Cyan #00BCD4)
 
@@ -71,15 +84,15 @@ Use for complementary palettes and secondary accents while keeping the base Turq
 | #00A4BA | Darker              |
 | #004A54 | Dark for contrast   |
 
-### Orange (#FF5722) Shading
+### Green (#22C55E) Shading
 
 | HEX     | Usage / note        |
 |---------|---------------------|
-| #FF5722 | Base                |
-| #E64C1E | Darker              |
-| #BF4019 | Medium dark         |
-| #802A11 | Dark                |
-| #401508 | Very dark           |
+| #22C55E | Base                |
+| #1DAA4F | Darker              |
+| #17883F | Medium dark         |
+| #0F5A2A | Dark                |
+| #082D15 | Very dark           |
 
 ### Dark Blue (#0B2649) Shading
 
@@ -96,8 +109,9 @@ Use for complementary palettes and secondary accents while keeping the base Turq
 For consistent reproduction in print and industrial applications, use the Pantone Color System (CMYK Pantone + solid coated). Find in Illustrator:
 
 - **Dark Blue:** Pantone 533 C
-- **Orange:** Pantone 1505 C
+- **Green:** Pantone 354 C
 - **Turquoise:** Pantone 319 C
+- **Complement:** Pantone 1925 C
 
 ## Neutral Colours
 
@@ -270,7 +284,7 @@ RGB: 128 0 71
 ### Backgrounds
 
 - **Light Backgrounds**: Use Dark Blue or dark grey for text and primary elements
-- **Dark Backgrounds**: Use white or Turquoise/Orange for text and accents (e.g. Dark Blue #0B2649 as background)
+- **Dark Backgrounds**: Use white or Turquoise/Green for text and accents (e.g. Dark Blue #0B2649 as background)
 - Ensure WCAG AA contrast ratios (4.5:1 for normal text, 3:1 for large text)
 
 ### Text
@@ -278,14 +292,14 @@ RGB: 128 0 71
 - **Headings**: Dark Blue (#0B2649) or dark grey
 - **Body Text**: Dark grey (#333333)
 - **Links**: Use Turquoise (#00BCD4) or darker shade (#00A4BA) on white backgrounds; check contrast for WCAG AA
-- **Link Hover**: Slightly lighter or darker Turquoise/Orange as appropriate
+- **Link Hover**: Slightly lighter or darker Turquoise/Green as appropriate
 - **Disabled Text**: Medium grey (#666666)
 
 ### Buttons and Interactive Elements
 
-- **Primary Actions**: Orange (#FF5722) or Turquoise (#00BCD4) on light backgrounds; white text on Dark Blue
+- **Primary Actions**: Green (#22C55E) or Turquoise (#00BCD4) on light backgrounds; white text on Dark Blue
 - **Secondary Actions**: Outlined with Dark Blue or Turquoise; neutral backgrounds
-- **Hover States**: Use shading variants (e.g. #E64C1E for Orange, #00A4BA for Turquoise)
+- **Hover States**: Use shading variants (e.g. #1DAA4F for Green, #00A4BA for Turquoise)
 - **Disabled State**: Light grey with reduced opacity
 
 ## Accessibility
@@ -312,7 +326,7 @@ All colour combinations must meet WCAG 2.1 Level AA standards for accessibility:
 
 ### Print
 
-- Use Pantone (533 C, 1505 C, 319 C) or CMYK values where defined
+- Use Pantone (533 C, 354 C, 319 C, 1925 C) or CMYK values where defined
 - Request colour proofs before final printing
 - Be aware that colours may vary between digital and print media
 
@@ -324,7 +338,7 @@ Colour palette files are available in multiple formats:
 - **CSS Variables**: `assets/colors/colors.css` for web projects
 - **JSON**: `assets/colors/colors.json` for developers and applications
 - **Colour Swatches**: SVG files in `assets/colors/swatches/` directory:
-  - Primary: `dark-blue.svg`, `orange.svg`, `turquoise.svg`
+  - Primary: `dark-blue.svg`, `green.svg`, `turquoise.svg`, `complement.svg`
   - Neutral: `white.svg`, `dark-gray.svg`, `medium-gray.svg`, `light-gray.svg`
   - Extended: `aqua.svg`, `aqua-medium.svg`, `aqua-dark.svg`, `navy.svg`, `navy-medium.svg`, `navy-light.svg`, `fuchsia.svg`, `fuchsia-medium.svg`, `fuchsia-light.svg` (see [assets/colors/README.md](../assets/colors/README.md))
 

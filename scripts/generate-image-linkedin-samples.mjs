@@ -31,7 +31,7 @@ async function generateSampleLinkedInImages() {
   }
   
   // Define variants to generate
-  const colors = ['darkBlue', 'orange', 'turquoise'];
+  const colors = ['darkBlue', 'green', 'turquoise'];
   const imageTypes = Object.keys(LINKEDIN_SPECS);
   
   // No text in banners; background graphic + logo only
@@ -77,7 +77,7 @@ async function main() {
     
     info('Generiere Beispiel-LinkedIn-Bilder mit verschiedenen Varianten:');
     info('  - Bildtypen: logo, title, culture-main, culture-module, photo, post');
-    info('  - Farben: Dark Blue, Orange, Turquoise (Regenfass-Palette)');
+    info('  - Farben: Dark Blue, Green, Turquoise (Regenfass-Palette)');
     info('  - Empfohlene Größen');
     info('');
     

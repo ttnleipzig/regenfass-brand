@@ -19,8 +19,9 @@ This directory contains the official Regenfass brand colour palette, including d
 | File Name                   | Format | Colour                  | Download                                                                                              |
 |-----------------------------|--------|------------------------|--------------------------------------------------------------------------------------------------------|
 | `swatches/dark-blue.svg`    | SVG    | Dark Blue (#0B2649)    | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/dark-blue.svg)       |
-| `swatches/orange.svg`       | SVG    | Orange (#FF5722)       | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/orange.svg)          |
+| `swatches/green.svg`       | SVG    | Green (#22C55E)        | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/green.svg)            |
 | `swatches/turquoise.svg`    | SVG    | Turquoise (#00BCD4)    | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/turquoise.svg)        |
+| `swatches/complement.svg`   | SVG    | Complement (#E11D48)   | [View](https://github.com/ttnleipzig/regenfass-brand/blob/main/assets/colors/swatches/complement.svg)       |
 
 **Neutral Colours:**
 
@@ -45,16 +46,17 @@ This directory contains the official Regenfass brand colour palette, including d
 
 ## Primary Brand Colours
 
-The Regenfass brand uses three primary colours for a consistent visual identity: Dark Blue, Orange, and Turquoise (with Pantone 533 C, 1505 C, 319 C for print).
+The Regenfass brand uses three primary colours for a consistent visual identity: Dark Blue, Green, and Turquoise (with Pantone 533 C, 354 C, 319 C for print), plus a complementary accent (Rose/Red).
 
 ### Primary Colours
-| Colour    | Hex       | RGB                | Description                          |
-|----------|-----------|--------------------|--------------------------------------|
-| Dark Blue | `#0B2649` | `rgb(11, 38, 73)`  | Primary dark; trust, professionalism |
-| Orange   | `#FF5722` | `rgb(255, 87, 34)` | Accent; energy, call-to-action       |
-| Turquoise | `#00BCD4` | `rgb(0, 188, 212)` | Accent; clarity, innovation         |
+| Colour    | Hex       | RGB                | Description                                    |
+|----------|-----------|--------------------|------------------------------------------------|
+| Dark Blue | `#0B2649` | `rgb(11, 38, 73)`  | Primary dark; trust, professionalism          |
+| Green    | `#22C55E` | `rgb(34, 197, 94)` | Accent; energy, call-to-action                 |
+| Turquoise | `#00BCD4` | `rgb(0, 188, 212)` | Accent; clarity, innovation                    |
+| Complement | `#E11D48` | `rgb(225, 29, 72)` | Complementary accent; contrast, secondary CTAs |
 
-**JSON keys** (in `colors.json`): `selection.darkBlue`, `selection.orange`, `selection.turquoise` (each with `hex`, `rgb`, `pantone`, `usage`, `shades`). The `primary` object is set to Dark Blue (#0B2649). Legacy keys `selection.aqua`, `selection.navy`, `selection.fuchsia` remain for backwards compatibility. For Tailwind, extend your theme with e.g. `darkBlue: '#0B2649'`, `orange: '#FF5722'`, `turquoise: '#00BCD4'` when consuming this palette.
+**JSON keys** (in `colors.json`): `selection.darkBlue`, `selection.green`, `selection.turquoise`, `selection.complement` (each with `hex`, `rgb`, `pantone`, `usage`, and `shades` where applicable). The `primary` object is set to Dark Blue (#0B2649). Legacy keys `selection.aqua`, `selection.navy`, `selection.fuchsia` remain for backwards compatibility. For Tailwind, extend your theme with e.g. `darkBlue: '#0B2649'`, `green: '#22C55E'`, `turquoise: '#00BCD4'`, `complement: '#E11D48'` when consuming this palette.
 
 ### Text colours
 
@@ -114,13 +116,13 @@ module.exports = {
 **Usage in HTML/Tailwind classes** (use primary brand colour utilities when available):
 
 ```html
-<!-- Primary brand colours (Dark Blue, Orange, Turquoise) -->
+<!-- Primary brand colours (Dark Blue, Green, Turquoise) -->
 <div class="bg-primary text-secondary">Primary background</div>
 <div class="bg-secondary text-primary">Secondary background</div>
 
 <!-- Inline HEX when custom utilities are not yet configured -->
 <div style="background-color: #0B2649; color: white;">Dark Blue background</div>
-<div style="background-color: #FF5722; color: white;">Orange accent</div>
+<div style="background-color: #22C55E; color: white;">Green accent</div>
 <div style="background-color: #00BCD4; color: white;">Turquoise accent</div>
 
 <!-- Neutral colours -->
@@ -139,14 +141,14 @@ module.exports = {
 
 Brand colours are documented with:
 
-- **Hex values** – For digital/web use (#0B2649, #FF5722, #00BCD4)
+- **Hex values** – For digital/web use (#0B2649, #22C55E, #00BCD4, #E11D48)
 - **RGB values** – For digital displays
-- **Pantone codes** – For print/screen printing (533 C, 1505 C, 319 C)
+- **Pantone codes** – For print/screen printing (533 C, 354 C, 319 C, 1925 C)
 - **CMYK** – Use Pantone solid coated or convert as needed for print
 
 ## Colour Usage
 
-- **Primary colours** – Dark Blue, Orange, Turquoise for major elements and accents
+- **Primary colours** – Dark Blue, Green, Turquoise for major elements and accents; Complement for secondary contrast
 - **Text colours** – White on dark backgrounds; dark grey on light backgrounds
 - **Accessibility** – Ensure colour combinations meet WCAG contrast requirements
 

@@ -41,7 +41,7 @@ function getLinkedInColors() {
   const c = CONFIG.linkedin?.colors || CONFIG.brand.colors;
   return {
     darkBlue: c.darkBlue ?? c.aqua ?? '#0B2649',
-    orange: c.orange ?? '#FF5722',
+    green: c.green ?? '#22C55E',
     turquoise: c.turquoise ?? '#00BCD4',
   };
 }
@@ -50,7 +50,7 @@ function getLinkedInColors() {
  * Normalize LinkedIn color input to a canonical config key.
  * Accepts variants like "darkblue", "dark-blue", and "darkBlue".
  * @param {string} color
- * @returns {'darkBlue' | 'orange' | 'turquoise' | null}
+ * @returns {'darkBlue' | 'green' | 'turquoise' | null}
  */
 function normalizeLinkedInColor(color) {
   const normalized = String(color ?? '')
@@ -59,7 +59,7 @@ function normalizeLinkedInColor(color) {
     .replace(/[\s_-]+/g, '');
 
   if (normalized === 'darkblue') return 'darkBlue';
-  if (normalized === 'orange') return 'orange';
+  if (normalized === 'green') return 'green';
   if (normalized === 'turquoise') return 'turquoise';
   return null;
 }
@@ -304,7 +304,7 @@ async function generateLinkedInImage(type, options) {
     const linkedinColors = getLinkedInColors();
     const normalizedColor = normalizeLinkedInColor(color);
     if (!normalizedColor) {
-      throw new Error(`Invalid color: ${color}. Must be one of: darkBlue, orange, turquoise`);
+      throw new Error(`Invalid color: ${color}. Must be one of: darkBlue, green, turquoise`);
     }
     const colorHex = linkedinColors[normalizedColor];
 
@@ -515,7 +515,7 @@ async function promptBrandColor() {
       message: 'Welche Regenfass-Farbe soll als Hintergrund verwendet werden?',
       choices: [
         { name: `Dark Blue (#${colors.darkBlue.replace('#', '')})`, value: 'darkBlue' },
-        { name: `Orange (#${colors.orange.replace('#', '')})`, value: 'orange' },
+        { name: `Green (#${colors.green.replace('#', '')})`, value: 'green' },
         { name: `Turquoise (#${colors.turquoise.replace('#', '')})`, value: 'turquoise' },
       ],
     },
@@ -652,7 +652,7 @@ Usage:
 
 Options:
   --type <type>      Image type: logo, title, culture-main, culture-module, photo, post
-  --color <color>    Regenfass color: darkBlue, orange, or turquoise
+  --color <color>    Regenfass color: darkBlue, green, or turquoise
   --logo <path>      Logo file path (optional; default: solo logo for logo/photo/post, horizontal wordmark for title/culture)
   --text <text>      Ignored; banners have no text (logo + background graphic only)
   --output <path>    Output file path
@@ -683,13 +683,13 @@ Examples:
   # Generate logo image
   node scripts/generate-image-linkedin.mjs \\
     --type logo \\
-    --color orange \\
-    --output output/linkedin-logo-orange.png
+    --color green \\
+    --output output/linkedin-logo-green.png
 
 Brand Colors:
-  - darkBlue:  #0B2649
-  - orange:    #FF5722
-  - turquoise: #00BCD4
+  - darkBlue:   #0B2649
+  - green:      #22C55E
+  - turquoise:  #00BCD4
 `);
 }
 
@@ -717,7 +717,7 @@ async function main() {
 
       // Validate color
       const normalizedColor = normalizeLinkedInColor(args.color);
-      const validColors = ['darkBlue', 'orange', 'turquoise'];
+      const validColors = ['darkBlue', 'green', 'turquoise'];
       if (!normalizedColor) {
         error(`Invalid color: ${args.color}. Must be one of: ${validColors.join(', ')}`);
         process.exit(1);

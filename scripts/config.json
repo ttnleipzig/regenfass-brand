@@ -32,8 +32,9 @@
     "backgroundPath": "assets/backgrounds/5-dark.svg",
     "colors": {
       "darkBlue": "#0B2649",
-      "orange": "#FF5722",
-      "turquoise": "#00BCD4"
+      "green": "#22C55E",
+      "turquoise": "#00BCD4",
+      "complement": "#E11D48"
     },
     "imageSpecs": {
       "logo": {

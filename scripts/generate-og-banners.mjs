@@ -76,19 +76,19 @@ function getPageGraphic(key) {
       return `
   <!-- Color swatches (primary palette) -->
   <rect x="120" y="165" width="300" height="300" rx="48" fill="#0B2649"/>
-  <rect x="450" y="165" width="300" height="300" rx="48" fill="#FF5722"/>
+  <rect x="450" y="165" width="300" height="300" rx="48" fill="#22C55E"/>
   <rect x="780" y="165" width="300" height="300" rx="48" fill="#00BCD4"/>`;
     case "fonts":
       return `
   <!-- Typography sample -->
   <text x="900" y="200" font-family="${FONT_STACK}" font-size="120" font-weight="700" fill="#00BCD4" opacity="0.2">Aa</text>
-  <text x="900" y="400" font-family="${FONT_STACK}" font-size="80" font-weight="400" fill="#FF5722" opacity="0.2">Aa</text>`;
+  <text x="900" y="400" font-family="${FONT_STACK}" font-size="80" font-weight="400" fill="#22C55E" opacity="0.2">Aa</text>`;
     case "avatars":
       return `
   <!-- Avatar examples -->
   <rect x="800" y="200" width="120" height="120" fill="#00BCD4" rx="8"/>
   <rect x="940" y="200" width="120" height="120" fill="#1E2A45" rx="8"/>
-  <rect x="800" y="340" width="120" height="120" fill="#FF5722" rx="8"/>
+  <rect x="800" y="340" width="120" height="120" fill="#22C55E" rx="8"/>
   <rect x="940" y="340" width="120" height="120" fill="#00BCD4" rx="8" opacity="0.7"/>`;
     default:
       return "";
@@ -125,7 +125,7 @@ const PAGES = [
     title: "Brand Colors",
     titleLine2: null,
     subtitle: "Official color palette and specifications",
-    tag: "Dark Blue • Orange • Turquoise",
+    tag: "Dark Blue • Green • Turquoise",
     accentColor: "#00BCD4",
   },
   {
@@ -158,7 +158,7 @@ const PAGES = [
     titleLine2: null,
     subtitle: "Square avatar graphics with cut-out portraits and brand colors",
     tag: "Square Format • Brand Colors • Cut-out Portraits",
-    accentColor: "#FF5722",
+    accentColor: "#22C55E",
   },
   {
     key: "business-cards",

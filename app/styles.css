@@ -2,13 +2,13 @@
 
 @theme {
     /* Brand Colors - Base = 500. Shades follow Adobe Color (same hue, varying lightness/saturation). */
-    /* See https://color.adobe.com/create/color-wheel – Turquoise, Dark Blue, Orange. */
+    /* See https://color.adobe.com/create/color-wheel – Turquoise, Dark Blue, Green. */
     --color-aqua: #00BCD4;
     --color-aqua-500: #00BCD4;
     --color-navy: #0B2649;
     --color-navy-500: #0B2649;
-    --color-fuchsia: #FF5722;
-    --color-fuchsia-500: #FF5722;
+    --color-fuchsia: #22C55E;
+    --color-fuchsia-500: #22C55E;
     --color-white: #FFFFFF;
     --color-black: #000000;
     --color-gray-dark: #333333;
@@ -32,16 +32,16 @@
     --color-navy-500: #0B2649;
     --color-navy-900: #0F172A; /* rgb(15, 23, 42) – header & footer background */
 
-    /* Orange (#FF5722) – tints and darker shades */
-    --color-fuchsia-50: #FFCCBC;
-    --color-fuchsia-100: #FFAB91;
-    --color-fuchsia-500: #FF5722;
-    --color-fuchsia-600: #E64C1E;
-    --color-fuchsia-700: #BF4019;
+    /* Green (#22C55E) – tints and darker shades */
+    --color-fuchsia-50: #DCFCE7;
+    --color-fuchsia-100: #BBF7D0;
+    --color-fuchsia-500: #22C55E;
+    --color-fuchsia-600: #1DAA4F;
+    --color-fuchsia-700: #17883F;
 
     /* Accessible on dark backgrounds (WCAG AA) */
     --color-aqua-on-dark: #4DD0E1;
-    --color-fuchsia-on-dark: #FF8A65;
+    --color-fuchsia-on-dark: #4ADE80;
     
     /* Fonts – headings and body: system UI stack */
     --font-heading: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";

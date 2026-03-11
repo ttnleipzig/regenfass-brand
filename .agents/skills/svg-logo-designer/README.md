@@ -112,7 +112,7 @@ For each concept:
 **Purple** - Creativity, luxury, spirituality
 - Beauty, tech, creative industries
 
-**Orange** - Friendly, energetic, affordable
+**Orange** - Friendly, energetic, affordable. For Regenfass brand use **Green** (#22C55E) and **Complement** (#E11D48).
 - Retail, food, entertainment
 
 **Yellow** - Optimism, clarity, warmth

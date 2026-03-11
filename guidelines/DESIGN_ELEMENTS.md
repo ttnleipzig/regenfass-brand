@@ -9,13 +9,13 @@ Guidelines for buttons, background overlays, borders, and image treatments to ke
 Use for main calls-to-action (e.g. “Contact”, “Learn more”).
 
 - **Font:** System UI stack (see [TYPOGRAPHY.md](TYPOGRAPHY.md)), weight 600, 13px.
-- **Background / border:** `#FF5722` (Orange).
+- **Background / border:** `#22C55E` (Green).
 - **Text:** White (`#FFFFFF`).
 - **Border radius:** 4px.
 - **Padding:** 10px 20px (top/bottom, left/right).
 - **Letter spacing:** 1px.
 - **Shadow:** `0px 0px 10px 0px rgba(0,0,0,0.2)`.
-- **Hover:** Background and border white; text `#FF5722`.
+- **Hover:** Background and border white; text `#22C55E`.
 
 Example CSS:
 
@@ -24,8 +24,8 @@ Example CSS:
   font-family: ui-sans-serif, system-ui, sans-serif;
   font-weight: 600;
   font-size: 13px;
-  background-color: #FF5722;
-  border-color: #FF5722;
+  background-color: #22C55E;
+  border-color: #22C55E;
   color: #FFFFFF;
   border-radius: 4px;
   display: inline-block;
@@ -36,7 +36,7 @@ Example CSS:
 .button:hover {
   background-color: #FFFFFF;
   border-color: #FFFFFF;
-  color: #FF5722;
+  color: #22C55E;
 }
 ```
 
@@ -74,7 +74,7 @@ On dark backgrounds (e.g. `bg-navy-900`, hero), `.heading-accent` uses the acces
 For dividers or framed content:
 
 - **Thickness:** 4pt.
-- **Colours:** `#FF5722` (Orange) or `#00BCD4` (Turquoise).
+- **Colours:** `#22C55E` (Green) or `#00BCD4` (Turquoise).
 
 Use one of these two colours only; avoid other border colours for brand elements.
 

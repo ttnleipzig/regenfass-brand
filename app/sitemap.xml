@@ -122,7 +122,7 @@
       <image:loc>{{repoBaseUrl}}/assets/backgrounds/5.svg</image:loc>
     </image:image>
     <image:image>
-      <image:loc>{{repoBaseUrl}}/assets/backgrounds/5-orange.svg</image:loc>
+      <image:loc>{{repoBaseUrl}}/assets/backgrounds/5-green.svg</image:loc>
     </image:image>
     <image:image>
       <image:loc>{{repoBaseUrl}}/assets/backgrounds/5-turquoise.svg</image:loc>

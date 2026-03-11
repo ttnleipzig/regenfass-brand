@@ -545,6 +545,8 @@ Help users choose appropriate colours:
 - Friendly, energetic, affordable
 - Industries: Retail, food, entertainment
 
+**Regenfass brand**: Use **Green** (#22C55E) as primary accent and **Complement** (#E11D48) for contrast when creating logos for the Regenfass brand.
+
 **Yellow** (#FBBF24, #FCD34D)
 
 - Optimism, clarity, warmth

@@ -4,7 +4,7 @@ Important changes to Regenfass’s visual identity. Use current guidelines and a
 
 ## 2020 – Colour policy
 
-**Early 2020:** Regenfass’s colour policy was updated. The former **pastel colour palette is discontinued**. Use only the current primary colours (Dark Blue `#0B2649`, Orange `#FF5722`, Turquoise `#00BCD4`) and the palettes defined in [COLOR_PALETTE.md](COLOR_PALETTE.md). Do not use old pastel variants for new materials.
+**Early 2020:** Regenfass’s colour policy was updated. The former **pastel colour palette is discontinued**. Use only the current primary colours (Dark Blue `#0B2649`, Green `#22C55E`, Turquoise `#00BCD4`, Complement `#E11D48`) and the palettes defined in [COLOR_PALETTE.md](COLOR_PALETTE.md). Do not use old pastel variants for new materials.
 
 ## 2021 – Logo update
 

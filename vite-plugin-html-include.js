@@ -327,7 +327,7 @@ const HERO_CONTENT_MAP = {
     heroSubtitle: 'Primärfarben und Farbharmonien für konsistente Markendarstellung',
     heroExtras: `
             <p class="font-body text-lg md:text-xl mb-4">
-                <span style="color: #0B2649; background: rgba(255,255,255,0.2); padding: 0.125rem 0.5rem; border-radius: 0.25rem;">Dark Blue</span> • <span style="color: #0B2649;">Orange</span> • <span style="color: #00BCD4;">Turquoise</span>
+                <span style="color: #0B2649; background: rgba(255,255,255,0.2); padding: 0.125rem 0.5rem; border-radius: 0.25rem;">Dark Blue</span> • <span style="color: #22C55E;">Green</span> • <span style="color: #00BCD4;">Turquoise</span>
             </p>
             <div style="height: 4px; width: 80px; background-color: #00BCD4; margin-top: 0.5rem;"></div>`,
   },

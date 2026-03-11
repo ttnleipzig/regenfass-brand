@@ -145,8 +145,8 @@ const COLORS = {
   darkGray: createColor(CONFIG.brand.colors.darkGray),
   mediumGray: createColor(CONFIG.brand.colors.mediumGray),
   black: createColor(CONFIG.brand.colors.black),
-  // Accent orange for back side background (see assets/colors/colors.json)
-  orange: createColor('#FF5722'),
+  // Accent green for back side background (see assets/colors/colors.json)
+  green: createColor('#22C55E'),
 };
 
 /**

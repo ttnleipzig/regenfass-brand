@@ -12,17 +12,23 @@
         "darkest": { "hex": "#081A33", "rgb": { "r": 8, "g": 26, "b": 51 } }
       }
     },
-    "orange": {
-      "hex": "#FF5722",
-      "rgb": { "r": 255, "g": 87, "b": 34 },
-      "pantone": "1505 C",
+    "green": {
+      "hex": "#22C55E",
+      "rgb": { "r": 34, "g": 197, "b": 94 },
+      "pantone": "354 C",
       "usage": "Accent; energy, call-to-action",
       "shades": {
-        "darker": { "hex": "#E64C1E", "rgb": { "r": 230, "g": 76, "b": 30 } },
-        "medium": { "hex": "#BF4019", "rgb": { "r": 191, "g": 64, "b": 25 } },
-        "dark": { "hex": "#802A11", "rgb": { "r": 128, "g": 42, "b": 17 } },
-        "darkest": { "hex": "#401508", "rgb": { "r": 64, "g": 21, "b": 8 } }
+        "darker": { "hex": "#1DAA4F", "rgb": { "r": 29, "g": 170, "b": 79 } },
+        "medium": { "hex": "#17883F", "rgb": { "r": 23, "g": 136, "b": 63 } },
+        "dark": { "hex": "#0F5A2A", "rgb": { "r": 15, "g": 90, "b": 42 } },
+        "darkest": { "hex": "#082D15", "rgb": { "r": 8, "g": 45, "b": 21 } }
       }
+    },
+    "complement": {
+      "hex": "#E11D48",
+      "rgb": { "r": 225, "g": 29, "b": 72 },
+      "pantone": "1925 C",
+      "usage": "Complementary accent; contrast to green, secondary CTAs"
     },
     "turquoise": {
       "hex": "#00BCD4",

@@ -3,8 +3,9 @@
 :root {
   /* Primary Brand Colors */
   --color-dark-blue: #0B2649;
-  --color-orange: #FF5722;
+  --color-green: #22C55E;
   --color-turquoise: #00BCD4;
+  --color-complement: #E11D48;
   
   /* Shaded Colors - Tailwind-like numbering (50=lightest, 900=darkest) */
   /* Dark Blue */
@@ -14,12 +15,12 @@
   --color-dark-blue-600: #0D2D57;
   --color-dark-blue-700: #081A33;
   
-  /* Orange */
-  --color-orange-50: #FF5722;
-  --color-orange-100: #E64C1E;
-  --color-orange-500: #BF4019;
-  --color-orange-600: #802A11;
-  --color-orange-700: #401508;
+  /* Green */
+  --color-green-50: #22C55E;
+  --color-green-100: #1DAA4F;
+  --color-green-500: #17883F;
+  --color-green-600: #0F5A2A;
+  --color-green-700: #082D15;
   
   /* Turquoise */
   --color-turquoise-50: #00C6E0;
@@ -39,8 +40,9 @@
   
   /* RGB Values (for use with opacity) */
   --color-dark-blue-rgb: 11, 38, 73;
-  --color-orange-rgb: 255, 87, 34;
+  --color-green-rgb: 34, 197, 94;
   --color-turquoise-rgb: 0, 188, 212;
+  --color-complement-rgb: 225, 29, 72;
   --color-white-rgb: 255, 255, 255;
   --color-gray-dark-rgb: 51, 51, 51;
   --color-gray-medium-rgb: 102, 102, 102;
@@ -52,11 +54,11 @@
   --color-dark-blue-500-rgb: 11, 38, 73;
   --color-dark-blue-600-rgb: 13, 45, 87;
   --color-dark-blue-700-rgb: 8, 26, 51;
-  --color-orange-50-rgb: 255, 87, 34;
-  --color-orange-100-rgb: 230, 76, 30;
-  --color-orange-500-rgb: 191, 64, 25;
-  --color-orange-600-rgb: 128, 42, 17;
-  --color-orange-700-rgb: 64, 21, 8;
+  --color-green-50-rgb: 34, 197, 94;
+  --color-green-100-rgb: 29, 170, 79;
+  --color-green-500-rgb: 23, 136, 63;
+  --color-green-600-rgb: 15, 90, 42;
+  --color-green-700-rgb: 8, 45, 21;
   --color-turquoise-50-rgb: 0, 198, 224;
   --color-turquoise-100-rgb: 0, 188, 212;
   --color-turquoise-500-rgb: 0, 182, 207;
@@ -72,7 +74,7 @@
 }
 
 .button-accent {
-  background-color: var(--color-orange);
+  background-color: var(--color-green);
   color: var(--color-white);
 }
 
@@ -89,5 +91,5 @@
 }
 
 /* Tailwind classes available (examples): bg-dark-blue-50, bg-dark-blue-100, bg-dark-blue-500, bg-dark-blue-600, bg-dark-blue-700 */
-/* Same pattern for orange and turquoise */
+/* Same pattern for green and turquoise */
 */

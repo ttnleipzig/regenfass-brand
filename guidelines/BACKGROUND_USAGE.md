@@ -8,7 +8,7 @@ Available variants:
 
 - `assets/backgrounds/5.svg` – dark blue wallpaper
 - `assets/backgrounds/5-dark.svg` – dark blue wallpaper optimized for dark-brand applications
-- `assets/backgrounds/5-orange.svg` – orange wallpaper
+- `assets/backgrounds/5-green.svg` – green wallpaper
 - `assets/backgrounds/5-turquoise.svg` – turquoise wallpaper
 
 ## Recommended Use
@@ -21,12 +21,12 @@ Use these backgrounds for:
 - presentation title slides
 - section headers and cover art
 
-Use the dark blue variants when text or logos need maximum readability. Use orange and turquoise for campaign accents, promo assets, or theme-based variants.
+Use the dark blue variants when text or logos need maximum readability. Use green and turquoise for campaign accents, promo assets, or theme-based variants.
 
 ## Colour Rules
 
 - `darkBlue` is the default brand wallpaper.
-- `orange` is for high-energy accent moments, not for every page.
+- `green` is for high-energy accent moments, not for every page.
 - `turquoise` is for lighter, more technical, or innovation-focused touchpoints.
 - Keep one wallpaper colour dominant per surface.
 - Do not mix multiple wallpaper colours in the same component unless the asset is explicitly designed for that.
@@ -43,7 +43,7 @@ Use the dark blue variants when text or logos need maximum readability. Use oran
 
 - Verify text contrast before shipping.
 - On dark blue wallpapers, prefer white text or the light horizontal logo.
-- On orange and turquoise wallpapers, check logo contrast carefully and switch to a dark or white variant as needed.
+- On green and turquoise wallpapers, check logo contrast carefully and switch to a dark or white variant as needed.
 - For long-form reading areas, place content on solid panels instead of directly on the pattern.
 
 ## Do
