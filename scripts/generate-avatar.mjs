@@ -27,15 +27,12 @@ const AVATAR_CONFIG = CONFIG.avatarGenerator;
 const FALLBACK_BACKGROUND_HEX = CONFIG.linkedin?.colors?.darkBlue ?? CONFIG.brand.colors.navy;
 
 /**
- * Resolve configured avatar background if available.
+ * Resolve configured avatar background path. Only the waterline background is used.
  * Returns null when the referenced asset is absent so callers can use a solid fallback.
  * @returns {string | null}
  */
 function resolveAvatarBackgroundPath() {
-  const candidates = [
-    AVATAR_CONFIG.abstractBackgroundPath,
-    CONFIG.linkedin?.backgroundPath,
-  ].filter(Boolean);
+  const candidates = [AVATAR_CONFIG.waterlineBackgroundPath].filter(Boolean);
 
   for (const candidate of candidates) {
     const fullPath = join(projectRoot, candidate);
@@ -52,7 +49,7 @@ function resolveAvatarBackgroundPath() {
  * @param {string} portraitPath - Path to cut-out portrait image (PNG with transparency)
  * @param {number} size - Output size in pixels (square)
  * @param {string} outputPath - Output file path
- * @param {{ grayscalePortrait?: boolean }} [options] - Optional: grayscalePortrait = true for person in grayscale, background in color
+ * @param {{ grayscalePortrait?: boolean }} [options] - Optional: grayscalePortrait for grayscale portrait, color background
  * @returns {Promise<void>}
  */
 async function generateAvatar(portraitPath, size, outputPath, options = {}) {
@@ -76,7 +73,7 @@ async function generateAvatar(portraitPath, size, outputPath, options = {}) {
 
     const backgroundPath = resolveAvatarBackgroundPath();
     const usesFallbackBackground = !backgroundPath;
-    info(`Generating ${size}x${size}px avatar${usesFallbackBackground ? ` with solid dark blue fallback background (${FALLBACK_BACKGROUND_HEX})` : ' with Tabler raindrop wallpaper background'}${grayscalePortrait ? ' (portrait in grayscale)' : ''}...`);
+    info(`Generating ${size}x${size}px avatar${usesFallbackBackground ? ` with solid dark blue fallback background (${FALLBACK_BACKGROUND_HEX})` : ' with waterline background'}${grayscalePortrait ? ' (portrait in grayscale)' : ''}...`);
 
     const targetSize = size;
 
@@ -144,6 +141,7 @@ function parseArgs() {
     portrait: null,
     size: AVATAR_CONFIG.defaults.size,
     output: null,
+    grayscale: false,
   };
 
   for (let i = 0; i < args.length; i++) {
@@ -154,6 +152,8 @@ function parseArgs() {
       parsed.size = parseInt(args[++i], 10);
     } else if (arg === '--output' && i + 1 < args.length) {
       parsed.output = args[++i];
+    } else if (arg === '--grayscale') {
+      parsed.grayscale = true;
     } else if (arg === '--help' || arg === '-h') {
       return { help: true };
     }
@@ -369,9 +369,10 @@ Options:
   --portrait <path>    Path to cut-out portrait image (PNG with transparency)
   --size <pixels>      Output size in pixels (square, default: 512)
   --output <path>      Output file path
+  --grayscale          Portrait in grayscale, background in color
   --help, -h           Show this help message
 
-Background: Tabler raindrop wallpaper from assets/backgrounds/5.svg with a solid dark blue fallback when the asset is missing.
+Background: waterline (dark top with raindrops, light blue water with waves below). Fallback: solid dark blue when asset is missing.
 The portrait is composited centered on top.
 
 If no arguments are provided, an interactive prompt will guide you through the process.
@@ -381,10 +382,10 @@ Examples:
   node scripts/generate-avatar.mjs
 
   # Generate 512x512px avatar
-  node scripts/generate-avatar.mjs --portrait path/to/portrait.png --size 512 --output output/avatar-512.png
+  node scripts/generate-avatar.mjs --portrait path/to/portrait.png --size 512 --output output/avatars/avatar-regenfass-avatar-alademann-512.png
 
   # Generate 256x256px avatar
-  node scripts/generate-avatar.mjs --portrait path/to/portrait.png --size 256 --output output/avatar-256.png
+  node scripts/generate-avatar.mjs --portrait path/to/portrait.png --size 256 --output output/avatars/avatar-regenfass-avatar-alademann-256.png
 `);
 }
 
@@ -404,7 +405,9 @@ async function main() {
 
     // If all required arguments are provided, use CLI mode
     if (args.portrait && args.output) {
-      await generateAvatar(args.portrait, args.size, args.output);
+      await generateAvatar(args.portrait, args.size, args.output, {
+        grayscalePortrait: args.grayscale,
+      });
       success('Avatar generation completed!');
       return;
     }

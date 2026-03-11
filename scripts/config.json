@@ -13,6 +13,7 @@
   },
   "avatarGenerator": {
     "abstractBackgroundPath": "assets/backgrounds/5.svg",
+    "waterlineBackgroundPath": "assets/backgrounds/waterline.svg",
     "defaults": {
       "size": 512,
       "outputDir": "output/avatars"

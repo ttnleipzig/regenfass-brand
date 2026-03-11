@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 /**
  * Generate sample avatars
- * Creates example avatars with the Tabler raindrop wallpaper background
+ * Creates example avatars with the waterline background (dark raindrop top, light blue water below).
+ * Output filenames follow avatar-<portrait-name>-<size>.png (e.g. avatar-regenfass-avatar-alademann-256.png).
+ * The avatars page references avatar-regenfass-avatar-alademann-*.png; use source/avatars/regenfass-avatar-alademann.png for the main example.
  */
 
 import { join, resolve, basename, extname } from 'path';
@@ -16,7 +18,7 @@ const __dirname = dirname(__filename);
 const projectRoot = resolve(__dirname, '..');
 
 /**
- * Generate all sample avatars (one per portrait and size)
+ * Generate all sample avatars (one per portrait and size) with waterline background only.
  */
 async function generateSampleAvatars() {
   const sourceDir = join(projectRoot, 'source', 'avatars');
@@ -54,7 +56,7 @@ async function generateSampleAvatars() {
     for (const size of sizes) {
       const fileNameSlug = portraitName;
 
-      // Full color
+      // Full color (waterline)
       const outputFileName = `avatar-${fileNameSlug}-${size}.png`;
       const outputPath = join(outputDir, outputFileName);
       try {
@@ -66,7 +68,7 @@ async function generateSampleAvatars() {
         error(`  Fehler bei ${outputFileName}: ${err.message}`);
       }
 
-      // Grayscale portrait, color background
+      // Grayscale portrait, waterline background
       const grayscaleFileName = `avatar-${fileNameSlug}-${size}-grayscale.png`;
       const grayscalePath = join(outputDir, grayscaleFileName);
       try {
@@ -88,11 +90,11 @@ async function generateSampleAvatars() {
  */
 async function main() {
   try {
-    header('Sample Avatars Generator', 'Generiere Beispiel-Avatare mit Regentropfen-Tapete', 'bgCyan');
+    header('Sample Avatars Generator', 'Generiere Beispiel-Avatare mit Wasserlinien-Hintergrund', 'bgCyan');
 
     info('Generiere Beispiel-Avatare:');
-    info('  - Hintergrund: Tabler raindrop wallpaper (immer in Farbe)');
-    info('  - Varianten: Farbe + Graustufen-Portrait (Person Grau, Hintergrund Farbe)');
+    info('  - Hintergrund: Wasserlinie (oben Regentropfen auf Dunkelblau, unten hellblaues Wasser mit Wellen)');
+    info('  - Varianten: Farbe + Graustufen-Portrait');
     info('  - Größen: 256px, 512px');
     info('');
 

@@ -1,0 +1,50 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Top: raindrop pattern (same as 5.svg) -->
+    <pattern id="raindrop-wallpaper" x="0" y="0" width="176" height="176" patternUnits="userSpaceOnUse">
+      <g stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <g opacity="0.22" transform="translate(24 20) scale(2.2)">
+          <path d="M7.502 19.423c2.602 2.105 6.395 2.105 8.996 0c2.602 -2.105 3.262 -5.708 1.566 -8.546l-4.89 -7.26c-.42 -.625 -1.287 -.803 -1.936 -.397a1.376 1.376 0 0 0 -.41 .397l-4.893 7.26c-1.695 2.838 -1.035 6.441 1.567 8.546" stroke="#9BE7F2" stroke-width="1.45"/>
+        </g>
+        <g opacity="0.14" transform="translate(116 42) scale(1.5)">
+          <path d="M7.502 19.423c2.602 2.105 6.395 2.105 8.996 0c2.602 -2.105 3.262 -5.708 1.566 -8.546l-4.89 -7.26c-.42 -.625 -1.287 -.803 -1.936 -.397a1.376 1.376 0 0 0 -.41 .397l-4.893 7.26c-1.695 2.838 -1.035 6.441 1.567 8.546" stroke="#FFFFFF" stroke-width="1.35"/>
+        </g>
+        <g opacity="0.1" transform="translate(64 108) scale(1.1)">
+          <path d="M7.502 19.423c2.602 2.105 6.395 2.105 8.996 0c2.602 -2.105 3.262 -5.708 1.566 -8.546l-4.89 -7.26c-.42 -.625 -1.287 -.803 -1.936 -.397a1.376 1.376 0 0 0 -.41 .397l-4.893 7.26c-1.695 2.838 -1.035 6.441 1.567 8.546" stroke="#9BE7F2" stroke-width="1.6"/>
+        </g>
+        <g opacity="0.16" transform="translate(134 122) scale(1.75)">
+          <path d="M7.502 19.423c2.602 2.105 6.395 2.105 8.996 0c2.602 -2.105 3.262 -5.708 1.566 -8.546l-4.89 -7.26c-.42 -.625 -1.287 -.803 -1.936 -.397a1.376 1.376 0 0 0 -.41 .397l-4.893 7.26c-1.695 2.838 -1.035 6.441 1.567 8.546" stroke="#6AD7E8" stroke-width="1.45"/>
+        </g>
+      </g>
+    </pattern>
+    <radialGradient id="ambient-glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(256 224) rotate(45) scale(620 620)">
+      <stop stop-color="#2A5979" stop-opacity="0.38"/>
+      <stop offset="1" stop-color="#2A5979" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Water fill (bottom half) -->
+    <linearGradient id="water-fill" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#4DD0E1"/>
+      <stop offset="0.5" stop-color="#00C6E0"/>
+      <stop offset="1" stop-color="#00BCD4"/>
+    </linearGradient>
+    <!-- Clip: top section only for raindrops -->
+    <clipPath id="top-section">
+      <rect x="0" y="0" width="1024" height="520"/>
+    </clipPath>
+  </defs>
+  <!-- Base: full dark blue -->
+  <rect width="1024" height="1024" fill="#0B2649"/>
+  <!-- Top: raindrops + glow (clipped to above waterline) -->
+  <g clip-path="url(#top-section)">
+    <rect width="1024" height="1024" fill="url(#raindrop-wallpaper)"/>
+    <rect width="1024" height="1024" fill="url(#ambient-glow)"/>
+  </g>
+  <!-- Bottom: water (wavy shape from ~y=520 down), waterline at ~half or slightly above -->
+  <path d="M-20,520 C180,475 380,565 512,520 S844,475 1044,520 L1044,1024 L-20,1024 Z" fill="url(#water-fill)"/>
+  <!-- Wave lines in water only -->
+  <path d="M0,600 Q160,565 320,600 T640,600 T960,600 L1024,600" fill="none" stroke="#00BCD4" stroke-width="1.5" stroke-opacity="0.4"/>
+  <path d="M0,680 Q140,650 280,680 T560,680 T840,680 L1024,680" fill="none" stroke="#4DD0E1" stroke-width="1" stroke-opacity="0.35"/>
+  <path d="M0,760 Q120,735 240,760 T480,760 T720,760 T960,760 L1024,760" fill="none" stroke="#00BCD4" stroke-width="1" stroke-opacity="0.22"/>
+  <!-- Waterline stroke (horizon) -->
+  <path d="M-20,520 C180,475 380,565 512,520 S844,475 1044,520" fill="none" stroke="#00A4BA" stroke-width="2.5" stroke-opacity="0.5" stroke-linecap="round"/>
+</svg>
