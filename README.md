@@ -1,6 +1,6 @@
 # Regenfass Corporate Identity & Corporate Design
 
-![Regenfass Corporate Identity & Corporate Design](assets/readme-header.svg)
+![Regenfass Brand System](examples/github/sample-readme-header-regenfass-brand.svg)
 
 Repository to hold and share Corporate Identity and Corporate Design of Regenfass.
 

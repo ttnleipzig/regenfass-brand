@@ -101,6 +101,9 @@ ${overlayBlock}  <!-- Regenfass logo -->
 }
 
 const EXAMPLE_REPOSITORIES = [
+  { id: 'regenfass-project', title: 'regenfass IoT Platform' },
+  { id: 'regenfass-brand', title: 'Regenfass Brand System' },
+  { id: 'regenfass-installer', title: 'Regenfass Installer' },
   { id: 'web-app', title: 'Web Application' },
   { id: 'api-service', title: 'API Service' },
   { id: 'mobile-app', title: 'Mobile App' },
