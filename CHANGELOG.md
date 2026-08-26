@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.5.1](https://github.com/ttnleipzig/regenfass-brand/compare/v1.5.0...v1.5.1) (2026-08-26)
+
+
+### Bug Fixes
+
+* **brand:** correct swatches and README banners ([d1545a1](https://github.com/ttnleipzig/regenfass-brand/commit/d1545a1872ab2cd0eae323b309e95c5f902f7281))
+* **brand:** make email waterline full width ([a7f4f81](https://github.com/ttnleipzig/regenfass-brand/commit/a7f4f8117d5cbdbe18f841d86961a78d33f4fac1))
+* **brand:** repair guidelines palette and waterline ([24dac95](https://github.com/ttnleipzig/regenfass-brand/commit/24dac95f3209d6bc8a3dd676e80b78214548ae79))
+* **brand:** sharpen transparent email waterline ([eac2835](https://github.com/ttnleipzig/regenfass-brand/commit/eac2835bf40db48c016d2732207f2dd5c3aa6c53))
+
 ## [1.5.0](https://github.com/ttnleipzig/regenfass-brand/compare/v1.4.0...v1.5.0) (2026-03-11)
 
 
